@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1)&#xA;   between 'add' operation ('add_ln80_63', src/honeybee.c:80) and 'add' operation ('add_ln80_2', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:05.404-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:05.325-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:05.250-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:05.125-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:04.943-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:04.511-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:04.330-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:04.011-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'honeybee_label3' (src/honeybee.c:78) because its parent loop or function is pipelined." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:00.490-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'honeybee_label4' (src/honeybee.c:77) because its parent loop or function is pipelined." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:06:00.433-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:05:48.085-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="honeybee_001" solutionName="solution4" date="2020-02-21T19:05:43.226-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5_honeybee_label4): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)&#xA;   between 'add' operation ('add_ln80_7', src/honeybee.c:80) and 'add' operation ('add_ln80_2', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution3" date="2020-02-21T19:04:25.868-0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5_honeybee_label4): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)&#xA;   between 'select' operation ('select_ln80_4', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80)." projectName="honeybee_001" solutionName="solution3" date="2020-02-21T19:04:25.802-0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'honeybee_label3' (src/honeybee.c:78) because its parent loop or function is pipelined." projectName="honeybee_001" solutionName="solution3" date="2020-02-21T19:04:22.806-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="honeybee_001" solutionName="solution3" date="2020-02-21T19:04:10.367-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="honeybee_001" solutionName="solution3" date="2020-02-21T19:04:05.434-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="honeybee_001" solutionName="solution2" date="2020-02-21T19:02:52.765-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="honeybee_001" solutionName="solution2" date="2020-02-21T19:02:47.876-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="honeybee_001" solutionName="solution1" date="2020-02-21T19:01:23.623-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="honeybee_001" solutionName="solution1" date="2020-02-21T19:01:18.448-0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="honeybee.h" path="/mnt/hgfs/Thesis/HoneyBee/src/honeybee.h"/>
+    <originFiles name="honeybee.c" path="/mnt/hgfs/Thesis/HoneyBee/src/honeybee.c"/>
+  </source>
+  <testbench>
+    <originFiles name="honeybee_test.c" path="/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

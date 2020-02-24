@@ -1,0 +1,117 @@
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-40-generic) on Fri Feb 21 19:05:42 PST 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee'
+Sourcing Tcl script '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution4/csynth.tcl'
+INFO: [HLS 200-10] Opening project '/mnt/hgfs/Thesis/HoneyBee/honeybee_001'.
+INFO: [HLS 200-10] Adding design file 'src/honeybee.h' to the project
+INFO: [HLS 200-10] Adding design file 'src/honeybee.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'src/honeybee_test.c' to the project
+INFO: [HLS 200-10] Opening solution '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution4'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 143 ; free virtual = 1075
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 143 ; free virtual = 1075
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 143 ; free virtual = 1075
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'lessThan' into 'lineIntersectPrism' (src/honeybee.c:60) automatically.
+INFO: [XFORM 203-602] Inlining function 'minFloat3' into 'lineIntersectPrism' (src/honeybee.c:62) automatically.
+INFO: [XFORM 203-602] Inlining function 'greaterThan' into 'lineIntersectPrism' (src/honeybee.c:65) automatically.
+INFO: [XFORM 203-602] Inlining function 'maxFloat3' into 'lineIntersectPrism' (src/honeybee.c:67) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 143 ; free virtual = 1075
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'honeybee_label5' (src/honeybee.c:76) in function 'honeybee' for pipelining.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'honeybee_label4' (src/honeybee.c:77) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'honeybee_label3' (src/honeybee.c:78) because its parent loop or function is pipelined.
+INFO: [HLS 200-489] Unrolling loop 'honeybee_label4' (src/honeybee.c:77) in function 'honeybee' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'honeybee_label3' (src/honeybee.c:78) in function 'honeybee' completely with a factor of 8.
+INFO: [XFORM 203-602] Inlining function 'lessThan' into 'lineIntersectPrism' (src/honeybee.c:60) automatically.
+INFO: [XFORM 203-602] Inlining function 'minFloat3' into 'lineIntersectPrism' (src/honeybee.c:62) automatically.
+INFO: [XFORM 203-602] Inlining function 'greaterThan' into 'lineIntersectPrism' (src/honeybee.c:65) automatically.
+INFO: [XFORM 203-602] Inlining function 'maxFloat3' into 'lineIntersectPrism' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:13:22) to (src/honeybee.c:70:5) in function 'lineIntersectPrism'... converting 7 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 127 ; free virtual = 1059
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 125 ; free virtual = 1057
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'honeybee' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lineIntersectPrism' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'lineIntersectPrism'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 22.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.84 seconds; current allocated memory: 116.140 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.7 seconds; current allocated memory: 116.725 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'honeybee_label5'.
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1)
+   between 'select' operation ('select_ln80_60', src/honeybee.c:80) and 'add' operation ('add_ln80', src/honeybee.c:80).
+WARNING: [SCHED 204-68] The II Violation in module 'honeybee' (Loop: honeybee_label5): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1)
+   between 'add' operation ('add_ln80_63', src/honeybee.c:80) and 'add' operation ('add_ln80_2', src/honeybee.c:80).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 19, Depth = 45.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.84 seconds; current allocated memory: 119.093 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.98 seconds; current allocated memory: 126.128 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lineIntersectPrism' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'honeybee_fsub_32ns_32ns_32_4_full_dsp_0' to 'honeybee_fsub_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fadd_32ns_32ns_32_4_full_dsp_0' to 'honeybee_fadd_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fdiv_32ns_32ns_32_10_0' to 'honeybee_fdiv_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fcmp_32ns_32ns_1_2_0' to 'honeybee_fcmp_32neOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fadd_32ncud': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fcmp_32neOg': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32ndEe': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fsub_32nbkb': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lineIntersectPrism'.
+INFO: [HLS 200-111]  Elapsed time: 4 seconds; current allocated memory: 127.893 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_z' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_z' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'honeybee' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'honeybee_sitofp_32ns_32_4_1' to 'honeybee_sitofp_3fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_sitofp_3fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'honeybee'.
+INFO: [HLS 200-111]  Elapsed time: 1.74 seconds; current allocated memory: 133.620 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 112.01 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:40 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 110 ; free virtual = 1023
+INFO: [VHDL 208-304] Generating VHDL RTL for honeybee.
+INFO: [VLOG 209-307] Generating Verilog RTL for honeybee.
+INFO: [HLS 200-112] Total elapsed time: 40.19 seconds; peak allocated memory: 133.620 MB.
