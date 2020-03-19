@@ -1,0 +1,21 @@
+   Build using "/tools/Xilinx/Vivado/2019.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_honeybee.cpp
+   Compiling (apcc) honeybee.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Tue Mar 17 21:44:51 PDT 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/361011584506691820620
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) honeybee_test.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Tue Mar 17 21:44:59 PDT 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/361681584506700023525
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe

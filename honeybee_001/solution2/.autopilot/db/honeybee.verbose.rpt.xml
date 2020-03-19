@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'honeybee'" level="0">
-<item name = "Date">Fri Feb 21 19:03:09 2020
+<item name = "Date">Tue Mar 17 21:26:17 2020
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">honeybee_001</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">553, 553, 5.530 us, 5.530 us, 553, 553, none</column>
+<column name="">105, 105, 1.050 us, 1.050 us, 105, 105, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- honeybee_label5_honeybee_label4_honeybee_label3">537, 537, 27, 1, 1, 512, yes</column>
+<column name="- honeybee_label5_honeybee_label4_honeybee_label3">89, 89, 27, 1, 1, 64, yes</column>
 </table>
 </item>
 </section>
@@ -48,12 +48,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 1230, -</column>
+<column name="Expression">-, -, 0, 1215, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, 20, 8168, 12373, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 374, -</column>
-<column name="Register">0, -, 2193, 288, -</column>
+<column name="Register">0, -, 2182, 288, -</column>
 <specialColumn name="Available">2060, 2800, 607200, 303600, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, ~0, 1, 4, 0</specialColumn>
 </table>
@@ -111,12 +111,12 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln76_1_fu_406_p2">+, 0, 0, 13, 1, 4</column>
-<column name="add_ln76_fu_386_p2">+, 0, 0, 17, 1, 10</column>
-<column name="add_ln77_fu_472_p2">+, 0, 0, 15, 1, 8</column>
+<column name="add_ln76_1_fu_406_p2">+, 0, 0, 12, 1, 3</column>
+<column name="add_ln76_fu_386_p2">+, 0, 0, 15, 1, 7</column>
+<column name="add_ln77_fu_472_p2">+, 0, 0, 15, 1, 6</column>
 <column name="collisionCount_fu_1301_p2">+, 0, 0, 39, 1, 32</column>
-<column name="j_fu_438_p2">+, 0, 0, 13, 1, 4</column>
-<column name="k_fu_466_p2">+, 0, 0, 13, 1, 4</column>
+<column name="j_fu_438_p2">+, 0, 0, 12, 1, 3</column>
+<column name="k_fu_466_p2">+, 0, 0, 12, 1, 3</column>
 <column name="and_ln20_1_fu_574_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln20_2_fu_743_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln20_3_fu_749_p2">and, 0, 0, 2, 1, 1</column>
@@ -175,9 +175,9 @@
 <column name="icmp_ln70_2_fu_1269_p2">icmp, 0, 0, 11, 8, 2</column>
 <column name="icmp_ln70_3_fu_1275_p2">icmp, 0, 0, 18, 23, 1</column>
 <column name="icmp_ln70_fu_1257_p2">icmp, 0, 0, 11, 8, 2</column>
-<column name="icmp_ln76_fu_380_p2">icmp, 0, 0, 13, 10, 11</column>
-<column name="icmp_ln77_fu_392_p2">icmp, 0, 0, 11, 8, 7</column>
-<column name="icmp_ln78_fu_418_p2">icmp, 0, 0, 11, 4, 5</column>
+<column name="icmp_ln76_fu_380_p2">icmp, 0, 0, 11, 7, 8</column>
+<column name="icmp_ln77_fu_392_p2">icmp, 0, 0, 11, 6, 5</column>
+<column name="icmp_ln78_fu_418_p2">icmp, 0, 0, 9, 3, 4</column>
 <column name="or_ln20_1_fu_562_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln20_2_fu_735_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln20_3_fu_739_p2">or, 0, 0, 2, 1, 1</column>
@@ -206,7 +206,7 @@
 <column name="min_4_fu_1209_p3">select, 0, 0, 32, 1, 32</column>
 <column name="min_7_fu_1215_p3">select, 0, 0, 32, 1, 32</column>
 <column name="select_ln76_10_fu_755_p3">select, 0, 0, 2, 1, 1</column>
-<column name="select_ln76_11_fu_430_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln76_11_fu_430_p3">select, 0, 0, 3, 1, 3</column>
 <column name="select_ln76_12_fu_1010_p3">select, 0, 0, 8, 1, 8</column>
 <column name="select_ln76_13_fu_648_p3">select, 0, 0, 8, 1, 8</column>
 <column name="select_ln76_14_fu_1072_p3">select, 0, 0, 8, 1, 8</column>
@@ -219,17 +219,17 @@
 <column name="select_ln76_7_fu_1118_p3">select, 0, 0, 2, 1, 1</column>
 <column name="select_ln76_8_fu_606_p3">select, 0, 0, 32, 1, 32</column>
 <column name="select_ln76_9_fu_642_p3">select, 0, 0, 2, 1, 1</column>
-<column name="select_ln76_fu_398_p3">select, 0, 0, 4, 1, 1</column>
-<column name="select_ln77_10_fu_478_p3">select, 0, 0, 8, 1, 1</column>
+<column name="select_ln76_fu_398_p3">select, 0, 0, 3, 1, 1</column>
+<column name="select_ln77_10_fu_478_p3">select, 0, 0, 6, 1, 1</column>
 <column name="select_ln77_2_fu_1065_p3">select, 0, 0, 2, 1, 1</column>
 <column name="select_ln77_3_fu_1139_p3">select, 0, 0, 2, 1, 1</column>
 <column name="select_ln77_4_fu_667_p3">select, 0, 0, 32, 1, 32</column>
 <column name="select_ln77_5_fu_702_p3">select, 0, 0, 2, 1, 1</column>
 <column name="select_ln77_6_fu_776_p3">select, 0, 0, 2, 1, 1</column>
-<column name="select_ln77_7_fu_458_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln77_7_fu_458_p3">select, 0, 0, 3, 1, 3</column>
 <column name="select_ln77_8_fu_1079_p3">select, 0, 0, 8, 1, 8</column>
 <column name="select_ln77_9_fu_716_p3">select, 0, 0, 8, 1, 8</column>
-<column name="select_ln77_fu_450_p3">select, 0, 0, 4, 1, 1</column>
+<column name="select_ln77_fu_450_p3">select, 0, 0, 3, 1, 1</column>
 <column name="select_ln80_fu_1307_p3">select, 0, 0, 32, 1, 32</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln14_fu_332_p2">xor, 0, 0, 33, 32, 33</column>
@@ -255,16 +255,16 @@
 <column name="grp_fu_297_p1">15, 3, 32, 96</column>
 <column name="grp_fu_305_p0">15, 3, 32, 96</column>
 <column name="grp_fu_305_p1">15, 3, 32, 96</column>
-<column name="i_0_reg_127">9, 2, 4, 8</column>
-<column name="indvar_flatten85_reg_116">9, 2, 10, 20</column>
-<column name="indvar_flatten_reg_138">9, 2, 8, 16</column>
-<column name="j_0_reg_149">9, 2, 4, 8</column>
-<column name="k_0_reg_160">9, 2, 4, 8</column>
+<column name="i_0_reg_127">9, 2, 3, 6</column>
+<column name="indvar_flatten85_reg_116">9, 2, 7, 14</column>
+<column name="indvar_flatten_reg_138">9, 2, 6, 12</column>
+<column name="j_0_reg_149">9, 2, 3, 6</column>
+<column name="k_0_reg_160">9, 2, 3, 6</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln76_1_reg_1448">4, 0, 4, 0</column>
+<column name="add_ln76_1_reg_1448">3, 0, 3, 0</column>
 <column name="and_ln20_1_reg_1618">1, 0, 1, 0</column>
 <column name="and_ln40_1_reg_1728">1, 0, 1, 0</column>
 <column name="and_ln76_reg_1453">1, 0, 1, 0</column>
@@ -300,7 +300,7 @@
 <column name="bitcast_ln20_2_reg_1400">32, 0, 32, 0</column>
 <column name="bitcast_ln40_2_reg_1383">32, 0, 32, 0</column>
 <column name="collisionCount_2_reg_171">32, 0, 32, 0</column>
-<column name="i_0_reg_127">4, 0, 4, 0</column>
+<column name="i_0_reg_127">3, 0, 3, 0</column>
 <column name="icmp_ln20_10_reg_1662">1, 0, 1, 0</column>
 <column name="icmp_ln20_4_reg_1405">1, 0, 1, 0</column>
 <column name="icmp_ln20_5_reg_1630">1, 0, 1, 0</column>
@@ -319,11 +319,11 @@
 <column name="icmp_ln70_reg_1788">1, 0, 1, 0</column>
 <column name="icmp_ln76_reg_1421">1, 0, 1, 0</column>
 <column name="icmp_ln77_reg_1430">1, 0, 1, 0</column>
-<column name="indvar_flatten85_reg_116">10, 0, 10, 0</column>
-<column name="indvar_flatten_reg_138">8, 0, 8, 0</column>
-<column name="j_0_reg_149">4, 0, 4, 0</column>
-<column name="j_reg_1470">4, 0, 4, 0</column>
-<column name="k_0_reg_160">4, 0, 4, 0</column>
+<column name="indvar_flatten85_reg_116">7, 0, 7, 0</column>
+<column name="indvar_flatten_reg_138">6, 0, 6, 0</column>
+<column name="j_0_reg_149">3, 0, 3, 0</column>
+<column name="j_reg_1470">3, 0, 3, 0</column>
+<column name="k_0_reg_160">3, 0, 3, 0</column>
 <column name="max_2_reg_1590">32, 0, 32, 0</column>
 <column name="max_2_reg_1590_pp0_iter18_reg">32, 0, 32, 0</column>
 <column name="max_3_reg_1677">32, 0, 32, 0</column>
@@ -354,7 +354,7 @@
 <column name="select_ln77_4_reg_1651">32, 0, 32, 0</column>
 <column name="select_ln77_6_reg_1672">1, 0, 1, 0</column>
 <column name="select_ln77_6_reg_1672_pp0_iter21_reg">1, 0, 1, 0</column>
-<column name="select_ln77_reg_1475">4, 0, 4, 0</column>
+<column name="select_ln77_reg_1475">3, 0, 3, 0</column>
 <column name="tmp_1_i3_i_reg_1338">32, 0, 32, 0</column>
 <column name="tmp_1_i_i_reg_1369">32, 0, 32, 0</column>
 <column name="tmp_i1_i_mid1_reg_1553">32, 0, 32, 0</column>

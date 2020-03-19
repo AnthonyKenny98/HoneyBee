@@ -41,7 +41,7 @@ set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7vx485t:-ffg1157:-1
 set SourceFiles {sc {} c ../../src/honeybee.c}
-set SourceFlags {sc {} c {{}}}
+set SourceFlags {sc {} c -Wno-unknown-pragmas}
 set DirectiveFile /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/solution3.directive
 set TBFiles {verilog ../../src/honeybee_test.c bc ../../src/honeybee_test.c vhdl ../../src/honeybee_test.c sc ../../src/honeybee_test.c cas ../../src/honeybee_test.c c {}}
 set SpecLanguage C

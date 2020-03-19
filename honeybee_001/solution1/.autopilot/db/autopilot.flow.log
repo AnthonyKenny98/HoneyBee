@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1 opened at Fri Feb 21 19:01:18 PST 2020
+INFO-FLOW: Workspace /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1 opened at Tue Mar 17 21:17:41 PDT 2020
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
@@ -16,6 +16,7 @@ Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/comm
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.13 sec.
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
@@ -29,7 +30,7 @@ Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/inte
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Command     import_lib done; 0.22 sec.
+Command     import_lib done; 0.27 sec.
 Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
@@ -43,11 +44,11 @@ Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/inte
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
-Command         ap_source done; 0.28 sec.
+Command         ap_source done; 0.16 sec.
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.52 sec.
-Command     ap_source done; 0.54 sec.
+Command       ap_source done; 0.36 sec.
+Command     ap_source done; 0.37 sec.
 Execute     open_platform DefaultPlatform 
 Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
@@ -62,54 +63,10 @@ Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     set_part xc7vx485t-ffg1157-1 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data single -quiet 
-Command       ap_part_info done; 4 sec.
+Command       ap_part_info done; 3.74 sec.
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Execute       add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
 Execute         get_default_platform 
-Execute         open_platform DefaultPlatform 
-Execute         import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source done; 0.11 sec.
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source done; 0.15 sec.
-Command         ap_source done; 0.15 sec.
 Execute         ap_part_info -data single -name xc7vx485t-ffg1157-1 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
@@ -117,84 +74,29 @@ Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info
 Execute         config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Execute         config_chip_info -quiet -speed slow 
-Command       add_library done; 0.3 sec.
+Command       add_library done; 0.18 sec.
 Execute       add_library xilinx/virtex7/virtex7_fpv6 
 Execute         get_default_platform 
-Execute         open_platform DefaultPlatform 
-Execute         import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute                 source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute                 source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
 INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
-Command       ap_part_info done; 0.2 sec.
 Execute       get_default_platform 
-Command     set_part done; 4.98 sec.
+Command     set_part done; 4.6 sec.
 Execute     ap_part_info -data single -name xc7vx485t-ffg1157-1 
 Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
 Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Command     ap_part_info done; 0.15 sec.
 Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Execute     config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
 Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Command     ap_part_info done; 0.13 sec.
 Execute     config_chip_info -quiet -speed slow 
-Command   open_solution done; 6.26 sec.
-Execute   set_part xc7vx485tffg1157-1 
-Execute     ap_part_info -name xc7vx485tffg1157-1 -data single -quiet 
-Execute     ap_part_info -name xc7vx485tffg1157-1 -data info 
+Command   open_solution done; 6 sec.
+Execute   set_part xc7vx485t-ffg1157-1 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data single -quiet 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Command     ap_part_info done; 0.12 sec.
 Execute     add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
 Execute       get_default_platform 
-Execute       open_platform DefaultPlatform 
-Execute       import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source done; 0.23 sec.
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.38 sec.
-Command       ap_source done; 0.38 sec.
 Execute       ap_part_info -data single -name xc7vx485t-ffg1157-1 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
@@ -202,24 +104,12 @@ Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info
 Execute       config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Execute       config_chip_info -quiet -speed slow 
-Command     add_library done; 0.67 sec.
+Command     add_library done; 0.22 sec.
 Execute     add_library xilinx/virtex7/virtex7_fpv6 
 Execute       get_default_platform 
-Execute       open_platform DefaultPlatform 
-Execute       import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
-Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
-Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
-Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
-Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 Execute     get_default_platform 
-Command   set_part done; 1.05 sec.
+Command   set_part done; 0.56 sec.
 Execute   create_clock -period 10 -name default 
 Execute   source ./honeybee_001/solution1/directives.tcl 
 Execute   csynth_design 
@@ -245,16 +135,16 @@ Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info
 Execute       is_encrypted src/honeybee.c 
 INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
-Execute       clang  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "src/honeybee.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c" 
-INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E src/honeybee.c -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c
-Command       clang done; 2.57 sec.
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "src/honeybee.c"   -Wno-unknown-pragmas  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c" 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E src/honeybee.c -Wno-unknown-pragmas -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c
+Command       clang done; 3.65 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c std=gnu89 
 INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
 INFO-FLOW: Syntax Checking before pre-processing...
-Execute       clang -syntaxcheck -src /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c"  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/useless.bc"  
-INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/useless.bc
-Command       clang done; 2.39 sec.
-INFO-FLOW: Done: GCC PP time: 5 seconds per iteration
+Execute       clang -syntaxcheck -src /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -Wno-unknown-pragmas  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c"  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -Wno-unknown-pragmas -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/useless.bc
+Command       clang done; 3.08 sec.
+INFO-FLOW: Done: GCC PP time: 6.8 seconds per iteration
 Execute       source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
@@ -269,30 +159,31 @@ Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c std=gnu89 
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/tidy-3.1.honeybee.pp.0.c.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/tidy-3.1.honeybee.pp.0.c.out.log 2> /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/tidy-3.1.honeybee.pp.0.c.err.log 
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/xilinx-legacy-rewriter.honeybee.pp.0.c.out.log 2> /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/xilinx-legacy-rewriter.honeybee.pp.0.c.err.log 
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.2 seconds per iteration
+Command       tidy_31 done; 0.15 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.3 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.1.c std=gnu89 
 INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.1.c -- -std=gnu89 -fhls -ferror-limit=0
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
 INFO-FLOW: Processing labels
-Execute       clang -src /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c  -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.bc" 
-INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.bc
-Command       clang done; 2.19 sec.
+Execute       clang -src /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c  -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c"  -Wno-unknown-pragmas  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.bc" 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.pragma.2.c -Wno-unknown-pragmas -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.bc
+Command       clang done; 3 sec.
 INFO-FLOW: Linking Debug ...
 Execute       llvm-ld /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.g.bc -hls-opt -except-internalize honeybee -L/tools/Xilinx/Vivado/2019.2/lnx64/lib -lhlsm -lhlsmc++ -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g 
-Command       llvm-ld done; 1.1 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 141 ; free virtual = 1093
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 141 ; free virtual = 1093
+Command       llvm-ld done; 1.44 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 577 ; free virtual = 2384
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 577 ; free virtual = 2384
 Execute       get_config_sdx -target 
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute         transform -promote-dbg-pointer /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.pp.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.pp.0.bc -f 
 Execute         llvm-ld /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/tools/Xilinx/Vivado/2019.2/lnx64/lib -lfloatconversion -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.0 
-Command         llvm-ld done; 1.4 sec.
+Command         llvm-ld done; 2.83 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top honeybee -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.0.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 141 ; free virtual = 1093
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 576 ; free virtual = 2384
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.1.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.2.prechk.bc -f 
@@ -300,9 +191,10 @@ INFO: [XFORM 203-602] Inlining function 'lessThan' into 'lineIntersectPrism' (sr
 INFO: [XFORM 203-602] Inlining function 'minFloat3' into 'lineIntersectPrism' (src/honeybee.c:62) automatically.
 INFO: [XFORM 203-602] Inlining function 'greaterThan' into 'lineIntersectPrism' (src/honeybee.c:65) automatically.
 INFO: [XFORM 203-602] Inlining function 'maxFloat3' into 'lineIntersectPrism' (src/honeybee.c:67) automatically.
+Command         transform done; 0.21 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.2.prechk.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 141 ; free virtual = 1093
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 576 ; free virtual = 2384
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.g.1.bc to /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -312,18 +204,19 @@ INFO: [XFORM 203-602] Inlining function 'minFloat3' into 'lineIntersectPrism' (s
 INFO: [XFORM 203-602] Inlining function 'greaterThan' into 'lineIntersectPrism' (src/honeybee.c:65) automatically.
 INFO: [XFORM 203-602] Inlining function 'maxFloat3' into 'lineIntersectPrism' (src/honeybee.c:67) automatically.
 INFO: [XFORM 203-602] Inlining function 'lineIntersectPrism' into 'honeybee' (src/honeybee.c:80) automatically.
-Command         transform done; 0.21 sec.
+Command         transform done; 0.64 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.o.1.tmp.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:78:54) to (src/honeybee.c:78:48) in function 'honeybee'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 127 ; free virtual = 1079
+Command         transform done; 0.24 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 560 ; free virtual = 2368
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.o.2.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-Command         transform done; 0.19 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 126 ; free virtual = 1079
+Command         transform done; 0.37 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 560 ; free virtual = 2367
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 2.11 sec.
-Command     elaborate done; 11.05 sec.
+Command       opt_and_import_c done; 4.8 sec.
+Command     elaborate done; 16.97 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -349,12 +242,12 @@ Execute       set_default_model honeybee
 Execute       schedule -model honeybee 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.16 sec.
-INFO: [HLS 200-111]  Elapsed time: 19.39 seconds; current allocated memory: 104.307 MB.
+Command       schedule done; 0.36 sec.
+INFO: [HLS 200-111]  Elapsed time: 25.36 seconds; current allocated memory: 104.285 MB.
 Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.verbose.sched.rpt 
-Command       syn_report done; 0.25 sec.
+Command       syn_report done; 0.43 sec.
 Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.sched.adb -f 
-Command       db_write done; 0.11 sec.
+Command       db_write done; 0.19 sec.
 INFO-FLOW: Finish scheduling honeybee.
 Execute       set_default_model honeybee 
 Execute       bind -model honeybee 
@@ -364,11 +257,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.43 seconds; current allocated memory: 105.096 MB.
+Command       bind done; 0.28 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.91 seconds; current allocated memory: 105.058 MB.
 Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.verbose.bind.rpt 
-Command       syn_report done; 0.36 sec.
+Command       syn_report done; 0.74 sec.
 Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.bind.adb -f 
-Command       db_write done; 0.12 sec.
+Command       db_write done; 0.35 sec.
 INFO-FLOW: Finish binding honeybee.
 Execute       get_model_list honeybee -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
@@ -398,22 +292,24 @@ INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32ndEe': 2 instance(
 INFO: [RTGEN 206-100] Generating core module 'honeybee_fsub_32ncud': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'honeybee_sitofp_3eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'honeybee'.
-Command       create_rtl_model done; 0.24 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.75 seconds; current allocated memory: 106.676 MB.
+Command       create_rtl_model done; 0.54 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.7 seconds; current allocated memory: 106.669 MB.
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
 Execute       gen_rtl honeybee -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/syn/systemc/honeybee -synmodules honeybee 
 Execute       gen_rtl honeybee -istop -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/syn/vhdl/honeybee 
 Command       gen_rtl done; 0.16 sec.
 Execute       gen_rtl honeybee -istop -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/syn/verilog/honeybee 
+Command       gen_rtl done; 0.11 sec.
 Execute       syn_report -csynth -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/syn/report/honeybee_csynth.rpt 
 Execute       syn_report -rtlxml -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/syn/report/honeybee_csynth.xml 
 Execute       syn_report -verbosereport -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.verbose.rpt 
-Command       syn_report done; 0.39 sec.
+Command       syn_report done; 0.77 sec.
 Execute       db_write -model honeybee -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.adb 
-Command       db_write done; 0.25 sec.
+Command       db_write done; 0.39 sec.
 Execute       gen_tb_info honeybee -p /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee 
 Execute       export_constraint_db -f -tool general -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.constraint.tcl 
 Execute       syn_report -designview -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.design.xml 
+Command       syn_report done; 0.15 sec.
 Execute       get_config_rtl -disable_wave_debug 
 Execute       syn_report -wcfg -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee_dataflow_ana.wcfg 
 Execute       syn_report -protoinst -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.protoinst 
@@ -470,16 +366,18 @@ Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/in
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
 Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Command           ap_source done; 0.12 sec.
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source done; 0.21 sec.
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source done; 0.12 sec.
+Command           ap_source done; 0.59 sec.
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.16 sec.
-Command       ap_source done; 0.16 sec.
+Command         ap_source done; 1.04 sec.
+Command       ap_source done; 1.06 sec.
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
@@ -487,6 +385,7 @@ INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Command       ap_part_info done; 0.18 sec.
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.compgen.tcl 
@@ -500,7 +399,7 @@ Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
-Command       ap_source done; 0.46 sec.
+Command       ap_source done; 2.25 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
 INFO-FLOW: DBG:CMD: read_platform_lib /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl
@@ -525,8 +424,8 @@ Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
 Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.14 sec.
-Command       ap_source done; 0.14 sec.
+Command         ap_source done; 0.13 sec.
+Command       ap_source done; 0.13 sec.
 Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
 Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=honeybee xml_exists=0
@@ -549,7 +448,7 @@ Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
-Command       ap_source done; 0.32 sec.
+Command       ap_source done; 0.38 sec.
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.compgen.tcl 
@@ -581,7 +480,7 @@ Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
 Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
-Command       ap_source done; 0.42 sec.
+Command       ap_source done; 0.47 sec.
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
 Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
@@ -633,10 +532,428 @@ Execute       get_config_rtl -stall_sig_gen
 Execute       get_config_rtl -profile 
 INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/kernel.internal.xml
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 114 ; free virtual = 1069
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 976.602 ; gain = 536.891 ; free physical = 547 ; free virtual = 2358
 INFO: [VHDL 208-304] Generating VHDL RTL for honeybee.
 INFO: [VLOG 209-307] Generating Verilog RTL for honeybee.
-Command     autosyn done; 7.34 sec.
-Command   csynth_design done; 18.44 sec.
-Command ap_source done; 26.12 sec.
+Command     autosyn done; 13.76 sec.
+Command   csynth_design done; 30.8 sec.
+Command ap_source done; 38.13 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1 opened at Tue Mar 17 21:18:38 PDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.19 sec.
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.36 sec.
+Command     ap_source done; 0.37 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7vx485t-ffg1157-1 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data single -quiet 
+Command       ap_part_info done; 1.72 sec.
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/virtex7/virtex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Command       ap_part_info done; 0.14 sec.
+Execute       get_default_platform 
+Command     set_part done; 2.17 sec.
+Execute     ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 2.99 sec.
+Execute   cosim_design 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.12 sec.
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.2 sec.
+Command     ap_source done; 0.2 sec.
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee.h 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee.c 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: TB processing: /mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c
+Execute     tidy_31 xilinx-tb-xfmat /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     tidy_31 xilinx-tb31-process /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: TB processing: /mnt/hgfs/Thesis/HoneyBee/src/honeybee.c /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c
+Execute     tidy_31 xilinx-tb-xfmat /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     tidy_31 xilinx-tb31-process /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command     ap_source done; 0.4 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute     source .run_sim.tcl 
+Execute       source check_sim.tcl 
+Execute       source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command     ap_source done; 55 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+Command   cosim_design done; 123.42 sec.
+Command ap_source done; 126.52 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1 opened at Tue Mar 17 21:21:30 PDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library '/tools/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.13 sec.
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.2 sec.
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.28 sec.
+Command     ap_source done; 0.29 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7vx485t-ffg1157-1 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data single -quiet 
+Command       ap_part_info done; 2.31 sec.
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/virtex7/virtex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.7 sec.
+Execute     ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 3.53 sec.
+Execute   cosim_design 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.17 sec.
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee.h 
+Execute     is_encrypted /mnt/hgfs/Thesis/HoneyBee/src/honeybee.c 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: TB processing: /mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c
+Execute     tidy_31 xilinx-tb-xfmat /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     tidy_31 xilinx-tb31-process /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee_test.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: TB processing: /mnt/hgfs/Thesis/HoneyBee/src/honeybee.c /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c
+Execute     tidy_31 xilinx-tb-xfmat /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     tidy_31 xilinx-tb31-process /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/honeybee.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command     ap_source done; 0.48 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/.autopilot/db/honeybee.tbgen.tcl 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute     source .run_sim.tcl 
+Execute       source check_sim.tcl 
+Execute       source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command     ap_source done; 56.1 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+Command   cosim_design done; 120.36 sec.
+Command ap_source done; 124.07 sec.
 Execute cleanup_all 

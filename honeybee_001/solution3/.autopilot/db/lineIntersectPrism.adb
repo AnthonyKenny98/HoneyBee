@@ -5691,7 +5691,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>and_ln70_1_fu_583_p2</rtlName>
+              <rtlName>ap_return</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -9474,7 +9474,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln70_1_fu_583_p2 ( and ) </first>
+          <first>and_ln70_fu_577_p2 ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -9497,7 +9497,7 @@
           </second>
         </item>
         <item>
-          <first>and_ln70_fu_577_p2 ( and ) </first>
+          <first>ap_return ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -10243,73 +10243,12 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>1</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_return</first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
-              <second>2</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>2</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>9</second>
-            </item>
-          </second>
-        </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>38</count>
+        <count>36</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_ce_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>ap_return_int_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
         <item>
           <first>edge_p1_x_int_reg</first>
           <second>
@@ -11433,19 +11372,19 @@
           </second>
         </item>
         <item>
-          <first>and_ln70_1_fu_583_p2 ( and ) </first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>108</item>
-          </second>
-        </item>
-        <item>
           <first>and_ln70_fu_577_p2 ( and ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
             <item>106</item>
+          </second>
+        </item>
+        <item>
+          <first>ap_return ( and ) </first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>108</item>
           </second>
         </item>
         <item>

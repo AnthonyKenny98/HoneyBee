@@ -1,5 +1,5 @@
 ********************************************
-HoneyBee Test completed with 1 errors in 2 ms
+HoneyBee Test completed with 0 errors in 1023 us
 ************************************************
 INFO: [XSIM 43-3496] Using init file passed via -initfile option "/tools/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
 Vivado Simulator 2019.2
@@ -14,18 +14,22 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/hon
 INFO: [VRFC 10-311] analyzing module apatb_honeybee_top
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fcmp_32neOg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module honeybee_fcmp_32neOg
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fsub_32ncud.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_fsub_32ncud
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_faddfsubbkb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_faddfsubbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_sitofp_3eOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module honeybee_sitofp_3eOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fcmp_32nfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module honeybee_fcmp_32nfYi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fdiv_32ndEe.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_fdiv_32ndEe
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_faddfsub_2_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_faddfsub_2_full_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fsub_2_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_fsub_2_full_dsp_32'
+INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_sitofp_2_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_sitofp_2_no_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_fcmp_0_no_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fdiv_8_no_dsp_32.vhd" into library xil_defaultlib
@@ -35,6 +39,7 @@ Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_faddfsub_2_full_dsp_32.vhd:206]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fsub_2_full_dsp_32.vhd:201]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fdiv_8_no_dsp_32.vhd:201]
+WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_sitofp_2_no_dsp_32.vhd:196]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fcmp_0_no_dsp_32.vhd:200]
 Completed static elaboration
 Starting simulation data flow analysis
@@ -60,6 +65,8 @@ Compiling package unisim.vcomponents
 Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
+Compiling package floating_point_v7_1_9.vt2mutils
+Compiling package floating_point_v7_1_9.vt2mcomps
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=7,length=0)\]
@@ -205,6 +212,31 @@ Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
 Compiling architecture honeybee_ap_fdiv_8_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_fdiv_8_no_dsp_32 [honeybee_ap_fdiv_8_no_dsp_32_def...]
 Compiling module xil_defaultlib.honeybee_fdiv_32ndEe(ID=1)
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.norm_zero_det [\norm_zero_det(data_width=7,norm...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.mux4 [\mux4(c_xdevicefamily="virtex7",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=2)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.mux4 [\mux4(c_xdevicefamily="virtex7",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=32)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.shift_msb_first [\shift_msb_first(a_width=32,resu...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_9.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture synth of entity floating_point_v7_1_9.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_1_9.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9_viv [\floating_point_v7_1_9_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
+Compiling architecture honeybee_ap_sitofp_2_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_sitofp_2_no_dsp_32 [honeybee_ap_sitofp_2_no_dsp_32_d...]
+Compiling module xil_defaultlib.honeybee_sitofp_3eOg(ID=1)
 Compiling architecture synth of entity floating_point_v7_1_9.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
 Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
 Compiling architecture synth of entity floating_point_v7_1_9.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
@@ -220,7 +252,7 @@ Compiling architecture rtl of entity floating_point_v7_1_9.fp_cmp [\fp_cmp(c_xde
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9_viv [\floating_point_v7_1_9_viv(c_xde...]
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
 Compiling architecture honeybee_ap_fcmp_0_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_fcmp_0_no_dsp_32 [honeybee_ap_fcmp_0_no_dsp_32_def...]
-Compiling module xil_defaultlib.honeybee_fcmp_32neOg(ID=1)
+Compiling module xil_defaultlib.honeybee_fcmp_32nfYi(ID=1)
 Compiling module xil_defaultlib.honeybee
 Compiling module xil_defaultlib.apatb_honeybee_top
 Compiling module work.glbl
@@ -232,8 +264,8 @@ Built simulation snapshot honeybee
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/xsim.dir/honeybee/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/xsim.dir/honeybee/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Feb 21 16:26:24 2020. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Fri Feb 21 16:26:24 2020...
+INFO: [Common 17-186] '/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/xsim.dir/honeybee/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Mar 17 21:23:06 2020. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Mar 17 21:23:06 2020...
 
 ****** xsim v2019.2 (64-bit)
   **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
@@ -256,26 +288,349 @@ source honeybee.tcl
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
 Time: 165 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 165 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U2/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Time: 245 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 165 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U3/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Time: 285 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 205 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Time: 465 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 205 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U2/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Time: 505 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 205 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U3/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-// RTL Simulation : 1 / 1 [100.00%] @ "355000"
+Time: 705 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 745 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 965 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1005 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1225 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1265 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1485 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1525 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1755 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1795 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1995 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2035 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2255 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2295 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2515 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2555 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2775 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2815 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3045 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3085 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3285 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3325 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3545 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3585 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3805 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 3845 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4065 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4105 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4335 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4375 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4575 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4615 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4835 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 4875 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5095 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5135 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5355 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5395 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5635 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5675 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5855 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 5895 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6095 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6135 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6355 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6395 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6615 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6655 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6875 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 6915 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7145 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7185 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7385 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7425 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7645 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7685 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7905 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7945 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8165 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8205 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8435 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8475 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8675 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8715 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8935 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 8975 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9195 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9235 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9455 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9495 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9725 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9765 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 9965 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10005 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10225 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10265 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10485 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10525 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10745 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 10785 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11025 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11065 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11245 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11285 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11485 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11525 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11745 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 11785 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12005 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12045 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12265 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12305 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12535 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12575 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12775 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 12815 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13035 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13075 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13295 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13335 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13555 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13595 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13825 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 13865 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14065 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14105 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14325 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14365 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14585 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14625 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14845 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 14885 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15115 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15155 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15355 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15395 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15615 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15655 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15875 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 15915 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16135 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16175 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16415 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16455 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16635 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16675 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16875 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 16915 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17135 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17175 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17395 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17435 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17655 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17695 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17925 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 17965 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18165 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18205 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18425 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18465 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18685 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18725 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18945 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 18985 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19215 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19255 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19455 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19495 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19715 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19755 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 19975 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20015 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20235 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20275 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20505 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20545 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20745 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 20785 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21005 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21045 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21265 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21305 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21525 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 21565 ns  Iteration: 11  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [100.00%] @ "21745000"
 ////////////////////////////////////////////////////////////////////////////////////
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 385 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 385 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U2/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 385 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U3/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-$finish called at time : 395 ns : File "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee.autotb.v" Line 740
+Time: 21775 ns  Iteration: 12  Process: /apatb_honeybee_top/AESL_inst_honeybee/honeybee_faddfsubbkb_U1/honeybee_ap_faddfsub_2_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2019.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+$finish called at time : 21785 ns : File "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee.autotb.v" Line 560
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:05 . Memory (MB): peak = 1433.359 ; gain = 0.000 ; free physical = 338 ; free virtual = 2220
 ## quit
-INFO: [Common 17-206] Exiting xsim at Fri Feb 21 16:26:42 2020...
+INFO: [Common 17-206] Exiting xsim at Tue Mar 17 21:23:33 2020...
 ********************************************
-HoneyBee Test completed with 1 errors in 0 ms
+HoneyBee Test completed with 0 errors in 369 us
 ************************************************

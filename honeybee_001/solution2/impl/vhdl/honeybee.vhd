@@ -30,7 +30,7 @@ end;
 architecture behav of honeybee is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.724875,HLS_SYN_LAT=553,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=20,HLS_SYN_FF=10361,HLS_SYN_LUT=14265,HLS_VERSION=2019_2}";
+    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.724875,HLS_SYN_LAT=105,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=20,HLS_SYN_FF=10350,HLS_SYN_LUT=14250,HLS_VERSION=2019_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (16 downto 0) := "00000000000000001";
@@ -60,19 +60,19 @@ architecture behav of honeybee is
     constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv10_0 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
-    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
+    constant ap_const_lv7_0 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
+    constant ap_const_lv6_0 : STD_LOGIC_VECTOR (5 downto 0) := "000000";
     constant ap_const_lv32_3F800000 : STD_LOGIC_VECTOR (31 downto 0) := "00111111100000000000000000000000";
     constant ap_const_lv32_5 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000101";
     constant ap_const_lv32_80000000 : STD_LOGIC_VECTOR (31 downto 0) := "10000000000000000000000000000000";
     constant ap_const_lv23_0 : STD_LOGIC_VECTOR (22 downto 0) := "00000000000000000000000";
-    constant ap_const_lv10_200 : STD_LOGIC_VECTOR (9 downto 0) := "1000000000";
-    constant ap_const_lv10_1 : STD_LOGIC_VECTOR (9 downto 0) := "0000000001";
-    constant ap_const_lv8_40 : STD_LOGIC_VECTOR (7 downto 0) := "01000000";
-    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
-    constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
-    constant ap_const_lv8_1 : STD_LOGIC_VECTOR (7 downto 0) := "00000001";
+    constant ap_const_lv7_40 : STD_LOGIC_VECTOR (6 downto 0) := "1000000";
+    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
+    constant ap_const_lv6_10 : STD_LOGIC_VECTOR (5 downto 0) := "010000";
+    constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
+    constant ap_const_lv3_4 : STD_LOGIC_VECTOR (2 downto 0) := "100";
+    constant ap_const_lv6_1 : STD_LOGIC_VECTOR (5 downto 0) := "000001";
     constant ap_const_lv32_17 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010111";
     constant ap_const_lv32_1E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011110";
     constant ap_const_lv8_FF : STD_LOGIC_VECTOR (7 downto 0) := "11111111";
@@ -87,11 +87,11 @@ architecture behav of honeybee is
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal indvar_flatten85_reg_116 : STD_LOGIC_VECTOR (9 downto 0);
-    signal i_0_reg_127 : STD_LOGIC_VECTOR (3 downto 0);
-    signal indvar_flatten_reg_138 : STD_LOGIC_VECTOR (7 downto 0);
-    signal j_0_reg_149 : STD_LOGIC_VECTOR (3 downto 0);
-    signal k_0_reg_160 : STD_LOGIC_VECTOR (3 downto 0);
+    signal indvar_flatten85_reg_116 : STD_LOGIC_VECTOR (6 downto 0);
+    signal i_0_reg_127 : STD_LOGIC_VECTOR (2 downto 0);
+    signal indvar_flatten_reg_138 : STD_LOGIC_VECTOR (5 downto 0);
+    signal j_0_reg_149 : STD_LOGIC_VECTOR (2 downto 0);
+    signal k_0_reg_160 : STD_LOGIC_VECTOR (2 downto 0);
     signal collisionCount_2_reg_171 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_188_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal reg_321 : STD_LOGIC_VECTOR (31 downto 0);
@@ -179,7 +179,7 @@ architecture behav of honeybee is
     signal icmp_ln76_reg_1421_pp0_iter23_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln76_reg_1421_pp0_iter24_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln76_reg_1421_pp0_iter25_reg : STD_LOGIC_VECTOR (0 downto 0);
-    signal add_ln76_fu_386_p2 : STD_LOGIC_VECTOR (9 downto 0);
+    signal add_ln76_fu_386_p2 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_enable_reg_pp0_iter0 : STD_LOGIC := '0';
     signal icmp_ln77_fu_392_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln77_reg_1430 : STD_LOGIC_VECTOR (0 downto 0);
@@ -206,8 +206,8 @@ architecture behav of honeybee is
     signal icmp_ln77_reg_1430_pp0_iter21_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln77_reg_1430_pp0_iter22_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln77_reg_1430_pp0_iter23_reg : STD_LOGIC_VECTOR (0 downto 0);
-    signal add_ln76_1_fu_406_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal add_ln76_1_reg_1448 : STD_LOGIC_VECTOR (3 downto 0);
+    signal add_ln76_1_fu_406_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal add_ln76_1_reg_1448 : STD_LOGIC_VECTOR (2 downto 0);
     signal and_ln76_fu_424_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln76_reg_1453 : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln76_reg_1453_pp0_iter1_reg : STD_LOGIC_VECTOR (0 downto 0);
@@ -233,14 +233,14 @@ architecture behav of honeybee is
     signal and_ln76_reg_1453_pp0_iter21_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln76_reg_1453_pp0_iter22_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln76_reg_1453_pp0_iter23_reg : STD_LOGIC_VECTOR (0 downto 0);
-    signal select_ln76_11_fu_430_p3 : STD_LOGIC_VECTOR (3 downto 0);
-    signal j_fu_438_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal j_reg_1470 : STD_LOGIC_VECTOR (3 downto 0);
-    signal select_ln77_fu_450_p3 : STD_LOGIC_VECTOR (3 downto 0);
-    signal select_ln77_reg_1475 : STD_LOGIC_VECTOR (3 downto 0);
-    signal select_ln77_7_fu_458_p3 : STD_LOGIC_VECTOR (3 downto 0);
-    signal k_fu_466_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal select_ln77_10_fu_478_p3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal select_ln76_11_fu_430_p3 : STD_LOGIC_VECTOR (2 downto 0);
+    signal j_fu_438_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal j_reg_1470 : STD_LOGIC_VECTOR (2 downto 0);
+    signal select_ln77_fu_450_p3 : STD_LOGIC_VECTOR (2 downto 0);
+    signal select_ln77_reg_1475 : STD_LOGIC_VECTOR (2 downto 0);
+    signal select_ln77_7_fu_458_p3 : STD_LOGIC_VECTOR (2 downto 0);
+    signal k_fu_466_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal select_ln77_10_fu_478_p3 : STD_LOGIC_VECTOR (5 downto 0);
     signal grp_fu_274_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal obs_x_reg_1510 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_277_p1 : STD_LOGIC_VECTOR (31 downto 0);
@@ -416,9 +416,9 @@ architecture behav of honeybee is
     signal trunc_ln20_fu_360_p1 : STD_LOGIC_VECTOR (22 downto 0);
     signal icmp_ln78_fu_418_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal xor_ln76_fu_412_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal select_ln76_fu_398_p3 : STD_LOGIC_VECTOR (3 downto 0);
+    signal select_ln76_fu_398_p3 : STD_LOGIC_VECTOR (2 downto 0);
     signal or_ln77_fu_444_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal add_ln77_fu_472_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal add_ln77_fu_472_p2 : STD_LOGIC_VECTOR (5 downto 0);
     signal bitcast_ln20_fu_498_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal trunc_ln20_1_fu_501_p1 : STD_LOGIC_VECTOR (22 downto 0);
     signal bitcast_ln20_1_fu_521_p1 : STD_LOGIC_VECTOR (31 downto 0);
@@ -1565,7 +1565,7 @@ begin
             if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (icmp_ln76_fu_380_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
                 i_0_reg_127 <= select_ln76_11_fu_430_p3;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state15)) then 
-                i_0_reg_127 <= ap_const_lv4_0;
+                i_0_reg_127 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -1576,7 +1576,7 @@ begin
             if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (icmp_ln76_fu_380_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
                 indvar_flatten85_reg_116 <= add_ln76_fu_386_p2;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state15)) then 
-                indvar_flatten85_reg_116 <= ap_const_lv10_0;
+                indvar_flatten85_reg_116 <= ap_const_lv7_0;
             end if; 
         end if;
     end process;
@@ -1587,7 +1587,7 @@ begin
             if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (icmp_ln76_fu_380_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
                 indvar_flatten_reg_138 <= select_ln77_10_fu_478_p3;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state15)) then 
-                indvar_flatten_reg_138 <= ap_const_lv8_0;
+                indvar_flatten_reg_138 <= ap_const_lv6_0;
             end if; 
         end if;
     end process;
@@ -1598,7 +1598,7 @@ begin
             if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (icmp_ln76_fu_380_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
                 j_0_reg_149 <= select_ln77_7_fu_458_p3;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state15)) then 
-                j_0_reg_149 <= ap_const_lv4_0;
+                j_0_reg_149 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -1609,7 +1609,7 @@ begin
             if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (icmp_ln76_fu_380_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
                 k_0_reg_160 <= k_fu_466_p2;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state15)) then 
-                k_0_reg_160 <= ap_const_lv4_0;
+                k_0_reg_160 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -2006,9 +2006,9 @@ begin
                 ap_NS_fsm <= "XXXXXXXXXXXXXXXXX";
         end case;
     end process;
-    add_ln76_1_fu_406_p2 <= std_logic_vector(unsigned(ap_const_lv4_1) + unsigned(i_0_reg_127));
-    add_ln76_fu_386_p2 <= std_logic_vector(unsigned(ap_const_lv10_1) + unsigned(indvar_flatten85_reg_116));
-    add_ln77_fu_472_p2 <= std_logic_vector(unsigned(ap_const_lv8_1) + unsigned(indvar_flatten_reg_138));
+    add_ln76_1_fu_406_p2 <= std_logic_vector(unsigned(ap_const_lv3_1) + unsigned(i_0_reg_127));
+    add_ln76_fu_386_p2 <= std_logic_vector(unsigned(ap_const_lv7_1) + unsigned(indvar_flatten85_reg_116));
+    add_ln77_fu_472_p2 <= std_logic_vector(unsigned(ap_const_lv6_1) + unsigned(indvar_flatten_reg_138));
     and_ln20_1_fu_574_p2 <= (grp_fu_289_p2 and and_ln20_fu_568_p2);
     and_ln20_2_fu_743_p2 <= (or_ln20_3_fu_739_p2 and or_ln20_2_fu_735_p2);
     and_ln20_3_fu_749_p2 <= (grp_fu_293_p2 and and_ln20_2_fu_743_p2);
@@ -2383,11 +2383,11 @@ begin
     icmp_ln70_2_fu_1269_p2 <= "0" when (tmp_14_fu_1243_p4 = ap_const_lv8_FF) else "1";
     icmp_ln70_3_fu_1275_p2 <= "1" when (trunc_ln70_1_fu_1253_p1 = ap_const_lv23_0) else "0";
     icmp_ln70_fu_1257_p2 <= "0" when (tmp_13_fu_1226_p4 = ap_const_lv8_FF) else "1";
-    icmp_ln76_fu_380_p2 <= "1" when (indvar_flatten85_reg_116 = ap_const_lv10_200) else "0";
-    icmp_ln77_fu_392_p2 <= "1" when (indvar_flatten_reg_138 = ap_const_lv8_40) else "0";
-    icmp_ln78_fu_418_p2 <= "1" when (k_0_reg_160 = ap_const_lv4_8) else "0";
-    j_fu_438_p2 <= std_logic_vector(unsigned(ap_const_lv4_1) + unsigned(select_ln76_fu_398_p3));
-    k_fu_466_p2 <= std_logic_vector(unsigned(ap_const_lv4_1) + unsigned(select_ln77_fu_450_p3));
+    icmp_ln76_fu_380_p2 <= "1" when (indvar_flatten85_reg_116 = ap_const_lv7_40) else "0";
+    icmp_ln77_fu_392_p2 <= "1" when (indvar_flatten_reg_138 = ap_const_lv6_10) else "0";
+    icmp_ln78_fu_418_p2 <= "1" when (k_0_reg_160 = ap_const_lv3_4) else "0";
+    j_fu_438_p2 <= std_logic_vector(unsigned(ap_const_lv3_1) + unsigned(select_ln76_fu_398_p3));
+    k_fu_466_p2 <= std_logic_vector(unsigned(ap_const_lv3_1) + unsigned(select_ln77_fu_450_p3));
     max_4_fu_829_p3 <= 
         max_3_reg_1677_pp0_iter21_reg when (and_ln22_1_fu_823_p2(0) = '1') else 
         select_ln76_2_reg_1623_pp0_iter21_reg;
@@ -2471,10 +2471,10 @@ begin
         icmp_ln20_4_reg_1405 when (icmp_ln77_reg_1430_pp0_iter18_reg(0) = '1') else 
         icmp_ln20_3_fu_556_p2;
     select_ln76_fu_398_p3 <= 
-        ap_const_lv4_0 when (icmp_ln77_fu_392_p2(0) = '1') else 
+        ap_const_lv3_0 when (icmp_ln77_fu_392_p2(0) = '1') else 
         j_0_reg_149;
     select_ln77_10_fu_478_p3 <= 
-        ap_const_lv8_1 when (icmp_ln77_fu_392_p2(0) = '1') else 
+        ap_const_lv6_1 when (icmp_ln77_fu_392_p2(0) = '1') else 
         add_ln77_fu_472_p2;
     select_ln77_1_fu_1029_p3 <= 
         y_assign_mid1_reg_1706 when (and_ln76_reg_1453_pp0_iter22_reg(0) = '1') else 
@@ -2504,7 +2504,7 @@ begin
         tmp_7_mid1_fu_676_p4 when (and_ln76_reg_1453_pp0_iter18_reg(0) = '1') else 
         select_ln76_15_fu_709_p3;
     select_ln77_fu_450_p3 <= 
-        ap_const_lv4_0 when (or_ln77_fu_444_p2(0) = '1') else 
+        ap_const_lv3_0 when (or_ln77_fu_444_p2(0) = '1') else 
         k_0_reg_160;
     select_ln80_fu_1307_p3 <= 
         collisionCount_fu_1301_p2 when (and_ln70_1_fu_1295_p2(0) = '1') else 

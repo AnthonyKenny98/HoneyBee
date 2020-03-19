@@ -937,9 +937,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="4" op_0_bw="4" op_1_bw="0" op_2_bw="4" op_3_bw="0">
+<Node id="28" bw="3" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0">
 <![CDATA[
-:0  %i_0 = phi i4 [ 0, %0 ], [ %i, %honeybee_label5_end ]
+:0  %i_0 = phi i3 [ 0, %0 ], [ %i, %honeybee_label5_end ]
 
 ]]></Node>
 <StgValue><ssdm name="i_0"/></StgValue>
@@ -952,9 +952,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="32" op_0_bw="4">
+<Node id="29" bw="32" op_0_bw="3">
 <![CDATA[
-:1  %zext_ln76 = zext i4 %i_0 to i32
+:1  %zext_ln76 = zext i3 %i_0 to i32
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln76"/></StgValue>
@@ -967,9 +967,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="30" bw="1" op_0_bw="4" op_1_bw="4">
+<Node id="30" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:2  %icmp_ln76 = icmp eq i4 %i_0, -8
+:2  %icmp_ln76 = icmp eq i3 %i_0, -4
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln76"/></StgValue>
@@ -984,7 +984,7 @@
 
 <Node id="31" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -997,9 +997,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="4" op_0_bw="4" op_1_bw="4">
+<Node id="32" bw="3" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:4  %i = add i4 %i_0, 1
+:4  %i = add i3 %i_0, 1
 
 ]]></Node>
 <StgValue><ssdm name="i"/></StgValue>
@@ -1741,9 +1741,9 @@ honeybee_label5_begin:13  br label %2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="4" op_0_bw="4" op_1_bw="0" op_2_bw="4" op_3_bw="0">
+<Node id="50" bw="3" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0">
 <![CDATA[
-:0  %j_0 = phi i4 [ 0, %honeybee_label5_begin ], [ %j, %honeybee_label4_end ]
+:0  %j_0 = phi i3 [ 0, %honeybee_label5_begin ], [ %j, %honeybee_label4_end ]
 
 ]]></Node>
 <StgValue><ssdm name="j_0"/></StgValue>
@@ -1756,9 +1756,9 @@ honeybee_label5_begin:13  br label %2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="32" op_0_bw="4">
+<Node id="51" bw="32" op_0_bw="3">
 <![CDATA[
-:1  %zext_ln77 = zext i4 %j_0 to i32
+:1  %zext_ln77 = zext i3 %j_0 to i32
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln77"/></StgValue>
@@ -1771,9 +1771,9 @@ honeybee_label5_begin:13  br label %2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="1" op_0_bw="4" op_1_bw="4">
+<Node id="52" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:2  %icmp_ln77 = icmp eq i4 %j_0, -8
+:2  %icmp_ln77 = icmp eq i3 %j_0, -4
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln77"/></StgValue>
@@ -1788,7 +1788,7 @@ honeybee_label5_begin:13  br label %2
 
 <Node id="53" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-:3  %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)
+:3  %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
 
 ]]></Node>
 <StgValue><ssdm name="empty_5"/></StgValue>
@@ -1801,9 +1801,9 @@ honeybee_label5_begin:13  br label %2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="4" op_0_bw="4" op_1_bw="4">
+<Node id="54" bw="3" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:4  %j = add i4 %j_0, 1
+:4  %j = add i3 %j_0, 1
 
 ]]></Node>
 <StgValue><ssdm name="j"/></StgValue>
@@ -2857,9 +2857,9 @@ honeybee_label4_begin:31  br label %3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="90" bw="4" op_0_bw="4" op_1_bw="0" op_2_bw="4" op_3_bw="0">
+<Node id="90" bw="3" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0">
 <![CDATA[
-:0  %k_0 = phi i4 [ 0, %honeybee_label4_begin ], [ %k, %_ifconv ]
+:0  %k_0 = phi i3 [ 0, %honeybee_label4_begin ], [ %k, %_ifconv ]
 
 ]]></Node>
 <StgValue><ssdm name="k_0"/></StgValue>
@@ -2872,9 +2872,9 @@ honeybee_label4_begin:31  br label %3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="91" bw="32" op_0_bw="4">
+<Node id="91" bw="32" op_0_bw="3">
 <![CDATA[
-:1  %zext_ln78 = zext i4 %k_0 to i32
+:1  %zext_ln78 = zext i3 %k_0 to i32
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln78"/></StgValue>
@@ -2887,9 +2887,9 @@ honeybee_label4_begin:31  br label %3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="92" bw="1" op_0_bw="4" op_1_bw="4">
+<Node id="92" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:2  %icmp_ln78 = icmp eq i4 %k_0, -8
+:2  %icmp_ln78 = icmp eq i3 %k_0, -4
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln78"/></StgValue>
@@ -2904,7 +2904,7 @@ honeybee_label4_begin:31  br label %3
 
 <Node id="93" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-:3  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)
+:3  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
 
 ]]></Node>
 <StgValue><ssdm name="empty_6"/></StgValue>
@@ -2917,9 +2917,9 @@ honeybee_label4_begin:31  br label %3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="94" bw="4" op_0_bw="4" op_1_bw="4">
+<Node id="94" bw="3" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-:4  %k = add i4 %k_0, 1
+:4  %k = add i3 %k_0, 1
 
 ]]></Node>
 <StgValue><ssdm name="k"/></StgValue>

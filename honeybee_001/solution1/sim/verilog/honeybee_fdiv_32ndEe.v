@@ -7,7 +7,7 @@
 
 module honeybee_fdiv_32ndEe
 #(parameter
-    ID         = 7,
+    ID         = 4,
     NUM_STAGE  = 10,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

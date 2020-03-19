@@ -10,18 +10,22 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/hon
 INFO: [VRFC 10-311] analyzing module apatb_honeybee_top
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fcmp_32neOg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module honeybee_fcmp_32neOg
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fsub_32ncud.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_fsub_32ncud
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_faddfsubbkb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_faddfsubbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_sitofp_3eOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module honeybee_sitofp_3eOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fcmp_32nfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module honeybee_fcmp_32nfYi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/honeybee_fdiv_32ndEe.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module honeybee_fdiv_32ndEe
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_faddfsub_2_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_faddfsub_2_full_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fsub_2_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_fsub_2_full_dsp_32'
+INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_sitofp_2_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_sitofp_2_no_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'honeybee_ap_fcmp_0_no_dsp_32'
 INFO: [VRFC 10-163] Analyzing VHDL file "/mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution1/sim/verilog/ip/xil_defaultlib/honeybee_ap_fdiv_8_no_dsp_32.vhd" into library xil_defaultlib
@@ -31,6 +35,7 @@ Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_faddfsub_2_full_dsp_32.vhd:206]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fsub_2_full_dsp_32.vhd:201]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fdiv_8_no_dsp_32.vhd:201]
+WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_sitofp_2_no_dsp_32.vhd:196]
 WARNING: [VRFC 10-3499] library name 'floating_point_v7_1_9' of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/honeybee_ap_fcmp_0_no_dsp_32.vhd:200]
 Completed static elaboration
 Starting simulation data flow analysis
@@ -56,6 +61,8 @@ Compiling package unisim.vcomponents
 Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
+Compiling package floating_point_v7_1_9.vt2mutils
+Compiling package floating_point_v7_1_9.vt2mcomps
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=7,length=0)\]
@@ -201,6 +208,31 @@ Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
 Compiling architecture honeybee_ap_fdiv_8_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_fdiv_8_no_dsp_32 [honeybee_ap_fdiv_8_no_dsp_32_def...]
 Compiling module xil_defaultlib.honeybee_fdiv_32ndEe(ID=1)
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.norm_zero_det [\norm_zero_det(data_width=7,norm...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.mux4 [\mux4(c_xdevicefamily="virtex7",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=2)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.mux4 [\mux4(c_xdevicefamily="virtex7",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_9.delay [\delay(width=32)\]
+Compiling architecture rtl of entity floating_point_v7_1_9.shift_msb_first [\shift_msb_first(a_width=32,resu...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_9.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity floating_point_v7_1_9.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture synth of entity floating_point_v7_1_9.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_1_9.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9_viv [\floating_point_v7_1_9_viv(c_xde...]
+Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
+Compiling architecture honeybee_ap_sitofp_2_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_sitofp_2_no_dsp_32 [honeybee_ap_sitofp_2_no_dsp_32_d...]
+Compiling module xil_defaultlib.honeybee_sitofp_3eOg(ID=1)
 Compiling architecture synth of entity floating_point_v7_1_9.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
 Compiling architecture struct of entity floating_point_v7_1_9.carry_chain [\carry_chain(c_xdevicefamily="vi...]
 Compiling architecture synth of entity floating_point_v7_1_9.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
@@ -216,7 +248,7 @@ Compiling architecture rtl of entity floating_point_v7_1_9.fp_cmp [\fp_cmp(c_xde
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9_viv [\floating_point_v7_1_9_viv(c_xde...]
 Compiling architecture xilinx of entity floating_point_v7_1_9.floating_point_v7_1_9 [\floating_point_v7_1_9(c_xdevice...]
 Compiling architecture honeybee_ap_fcmp_0_no_dsp_32_arch of entity xil_defaultlib.honeybee_ap_fcmp_0_no_dsp_32 [honeybee_ap_fcmp_0_no_dsp_32_def...]
-Compiling module xil_defaultlib.honeybee_fcmp_32neOg(ID=1)
+Compiling module xil_defaultlib.honeybee_fcmp_32nfYi(ID=1)
 Compiling module xil_defaultlib.honeybee
 Compiling module xil_defaultlib.apatb_honeybee_top
 Compiling module work.glbl

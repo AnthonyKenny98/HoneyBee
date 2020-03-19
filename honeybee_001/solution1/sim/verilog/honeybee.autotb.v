@@ -14,27 +14,18 @@
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
 `define AUTOTB_CLOCK_PERIOD_DIV2 5.00
 
-`define AESL_DEPTH_obs_x 1
-`define AESL_DEPTH_obs_y 1
-`define AESL_DEPTH_obs_z 1
 `define AESL_DEPTH_edge_p1_x 1
 `define AESL_DEPTH_edge_p1_y 1
 `define AESL_DEPTH_edge_p1_z 1
 `define AESL_DEPTH_edge_p2_x 1
 `define AESL_DEPTH_edge_p2_y 1
 `define AESL_DEPTH_edge_p2_z 1
-`define AUTOTB_TVIN_obs_x  "../tv/cdatafile/c.honeybee.autotvin_obs_x.dat"
-`define AUTOTB_TVIN_obs_y  "../tv/cdatafile/c.honeybee.autotvin_obs_y.dat"
-`define AUTOTB_TVIN_obs_z  "../tv/cdatafile/c.honeybee.autotvin_obs_z.dat"
 `define AUTOTB_TVIN_edge_p1_x  "../tv/cdatafile/c.honeybee.autotvin_edge_p1_x.dat"
 `define AUTOTB_TVIN_edge_p1_y  "../tv/cdatafile/c.honeybee.autotvin_edge_p1_y.dat"
 `define AUTOTB_TVIN_edge_p1_z  "../tv/cdatafile/c.honeybee.autotvin_edge_p1_z.dat"
 `define AUTOTB_TVIN_edge_p2_x  "../tv/cdatafile/c.honeybee.autotvin_edge_p2_x.dat"
 `define AUTOTB_TVIN_edge_p2_y  "../tv/cdatafile/c.honeybee.autotvin_edge_p2_y.dat"
 `define AUTOTB_TVIN_edge_p2_z  "../tv/cdatafile/c.honeybee.autotvin_edge_p2_z.dat"
-`define AUTOTB_TVIN_obs_x_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_obs_x.dat"
-`define AUTOTB_TVIN_obs_y_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_obs_y.dat"
-`define AUTOTB_TVIN_obs_z_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_obs_z.dat"
 `define AUTOTB_TVIN_edge_p1_x_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_edge_p1_x.dat"
 `define AUTOTB_TVIN_edge_p1_y_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_edge_p1_y.dat"
 `define AUTOTB_TVIN_edge_p1_z_out_wrapc  "../tv/rtldatafile/rtl.honeybee.autotvin_edge_p1_z.dat"
@@ -47,10 +38,7 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 1;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 21;
-parameter LENGTH_obs_x = 1;
-parameter LENGTH_obs_y = 1;
-parameter LENGTH_obs_z = 1;
+parameter LATENCY_ESTIMATION = 2160;
 parameter LENGTH_edge_p1_x = 1;
 parameter LENGTH_edge_p1_y = 1;
 parameter LENGTH_edge_p1_z = 1;
@@ -91,16 +79,13 @@ wire ap_start;
 wire ap_done;
 wire ap_idle;
 wire ap_ready;
-wire [31 : 0] obs_x;
-wire [31 : 0] obs_y;
-wire [31 : 0] obs_z;
 wire [31 : 0] edge_p1_x;
 wire [31 : 0] edge_p1_y;
 wire [31 : 0] edge_p1_z;
 wire [31 : 0] edge_p2_x;
 wire [31 : 0] edge_p2_y;
 wire [31 : 0] edge_p2_z;
-wire [0 : 0] ap_return;
+wire [31 : 0] ap_return;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -122,9 +107,6 @@ wire ap_rst_n;
     .ap_done(ap_done),
     .ap_idle(ap_idle),
     .ap_ready(ap_ready),
-    .obs_x(obs_x),
-    .obs_y(obs_y),
-    .obs_z(obs_z),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
@@ -163,168 +145,6 @@ assign AESL_continue = tb_continue;
             end
         end
     end
-// The signal of port obs_x
-reg [31: 0] AESL_REG_obs_x = 0;
-assign obs_x = AESL_REG_obs_x;
-initial begin : read_file_process_obs_x
-    integer fp;
-    integer err;
-    integer ret;
-    integer proc_rand;
-    reg [127  : 0] token;
-    integer i;
-    reg transaction_finish;
-    integer transaction_idx;
-    transaction_idx = 0;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_obs_x,"r");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_obs_x);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    if (token != "[[[runtime]]]") begin
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    while (token != "[[[/runtime]]]") begin
-        if (token != "[[transaction]]") begin
-            $display("ERROR: Simulation using HLS TB failed.");
-              $finish;
-        end
-        read_token(fp, token);  // skip transaction number
-          read_token(fp, token);
-            # 0.2;
-            while(ready_wire !== 1) begin
-                @(posedge AESL_clock);
-                # 0.2;
-            end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_obs_x);
-              if (ret != 1) begin
-                  $display("Failed to parse token!");
-                $display("ERROR: Simulation using HLS TB failed.");
-                  $finish;
-              end
-            @(posedge AESL_clock);
-              read_token(fp, token);
-        end
-          read_token(fp, token);
-    end
-    $fclose(fp);
-end
-
-
-// The signal of port obs_y
-reg [31: 0] AESL_REG_obs_y = 0;
-assign obs_y = AESL_REG_obs_y;
-initial begin : read_file_process_obs_y
-    integer fp;
-    integer err;
-    integer ret;
-    integer proc_rand;
-    reg [127  : 0] token;
-    integer i;
-    reg transaction_finish;
-    integer transaction_idx;
-    transaction_idx = 0;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_obs_y,"r");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_obs_y);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    if (token != "[[[runtime]]]") begin
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    while (token != "[[[/runtime]]]") begin
-        if (token != "[[transaction]]") begin
-            $display("ERROR: Simulation using HLS TB failed.");
-              $finish;
-        end
-        read_token(fp, token);  // skip transaction number
-          read_token(fp, token);
-            # 0.2;
-            while(ready_wire !== 1) begin
-                @(posedge AESL_clock);
-                # 0.2;
-            end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_obs_y);
-              if (ret != 1) begin
-                  $display("Failed to parse token!");
-                $display("ERROR: Simulation using HLS TB failed.");
-                  $finish;
-              end
-            @(posedge AESL_clock);
-              read_token(fp, token);
-        end
-          read_token(fp, token);
-    end
-    $fclose(fp);
-end
-
-
-// The signal of port obs_z
-reg [31: 0] AESL_REG_obs_z = 0;
-assign obs_z = AESL_REG_obs_z;
-initial begin : read_file_process_obs_z
-    integer fp;
-    integer err;
-    integer ret;
-    integer proc_rand;
-    reg [127  : 0] token;
-    integer i;
-    reg transaction_finish;
-    integer transaction_idx;
-    transaction_idx = 0;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_obs_z,"r");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_obs_z);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    if (token != "[[[runtime]]]") begin
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    while (token != "[[[/runtime]]]") begin
-        if (token != "[[transaction]]") begin
-            $display("ERROR: Simulation using HLS TB failed.");
-              $finish;
-        end
-        read_token(fp, token);  // skip transaction number
-          read_token(fp, token);
-            # 0.2;
-            while(ready_wire !== 1) begin
-                @(posedge AESL_clock);
-                # 0.2;
-            end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_obs_z);
-              if (ret != 1) begin
-                  $display("Failed to parse token!");
-                $display("ERROR: Simulation using HLS TB failed.");
-                  $finish;
-              end
-            @(posedge AESL_clock);
-              read_token(fp, token);
-        end
-          read_token(fp, token);
-    end
-    $fclose(fp);
-end
-
-
 // The signal of port edge_p1_x
 reg [31: 0] AESL_REG_edge_p1_x = 0;
 assign edge_p1_x = AESL_REG_edge_p1_x;
@@ -746,15 +566,6 @@ initial begin
 end
 
 
-reg end_obs_x;
-reg [31:0] size_obs_x;
-reg [31:0] size_obs_x_backup;
-reg end_obs_y;
-reg [31:0] size_obs_y;
-reg [31:0] size_obs_y_backup;
-reg end_obs_z;
-reg [31:0] size_obs_z;
-reg [31:0] size_obs_z_backup;
 reg end_edge_p1_x;
 reg [31:0] size_edge_p1_x;
 reg [31:0] size_edge_p1_x_backup;

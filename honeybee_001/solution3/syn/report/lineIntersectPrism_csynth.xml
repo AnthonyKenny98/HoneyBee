@@ -39,8 +39,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>18</DSP48E>
-<FF>6509</FF>
-<LUT>7799</LUT>
+<FF>6507</FF>
+<LUT>7790</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -85,17 +85,6 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_ce</name>
-<Object>lineIntersectPrism</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>obs_x</name>

@@ -67,6 +67,9 @@ architecture arch of honeybee_fcmp_32neOg is
     signal din0_buf1   : std_logic_vector(din0_WIDTH-1 downto 0);
     signal din1_buf1   : std_logic_vector(din1_WIDTH-1 downto 0);
     signal opcode_buf1 : std_logic_vector(4 downto 0);
+    signal ce_r      : std_logic;
+    signal dout_i    : std_logic_vector(dout_WIDTH-1 downto 0);
+    signal dout_r    : std_logic_vector(dout_WIDTH-1 downto 0);
 begin
     --------------------- Instantiation -----------------
     honeybee_ap_fcmp_0_no_dsp_32_u : component honeybee_ap_fcmp_0_no_dsp_32
@@ -87,7 +90,7 @@ begin
     b_tvalid  <= '1';
     b_tdata   <= din1_buf1;
     op_tvalid <= '1';
-    dout      <= r_tdata(0 downto 0);
+    dout_i    <= r_tdata(0 downto 0);
 
     --------------------- Opcode ------------------------
     process (opcode_buf1) begin
@@ -114,4 +117,19 @@ begin
         end if;
     end process;
 
+    process (clk) begin
+        if clk'event and clk = '1' then
+            ce_r <= ce;
+        end if;
+    end process;
+
+    process (clk) begin
+        if clk'event and clk = '1' then
+            if ce_r = '1' then
+                dout_r <= dout_i;
+            end if;
+        end if;
+    end process;
+
+    dout <= dout_i when ce_r = '1' else dout_r;
 end architecture;

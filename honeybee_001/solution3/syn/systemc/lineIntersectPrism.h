@@ -19,7 +19,7 @@
 namespace ap_rtl {
 
 struct lineIntersectPrism : public sc_module {
-    // Port declarations 13
+    // Port declarations 12
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst;
     sc_in< sc_lv<32> > obs_x;
@@ -32,10 +32,10 @@ struct lineIntersectPrism : public sc_module {
     sc_in< sc_lv<32> > edge_p2_y;
     sc_in< sc_lv<32> > edge_p2_z;
     sc_out< sc_lv<1> > ap_return;
-    sc_in< sc_logic > ap_ce;
-    sc_signal< sc_lv<32> > ap_var_for_const0;
-    sc_signal< sc_lv<5> > ap_var_for_const1;
+    sc_signal< sc_logic > ap_var_for_const0;
+    sc_signal< sc_lv<32> > ap_var_for_const1;
     sc_signal< sc_lv<5> > ap_var_for_const2;
+    sc_signal< sc_lv<5> > ap_var_for_const3;
 
 
     // Module declarations
@@ -224,31 +224,7 @@ struct lineIntersectPrism : public sc_module {
     sc_signal< sc_lv<1> > or_ln70_1_fu_573_p2;
     sc_signal< sc_lv<1> > and_ln70_fu_577_p2;
     sc_signal< sc_lv<1> > grp_fu_185_p2;
-    sc_signal< sc_logic > grp_fu_86_ce;
-    sc_signal< sc_logic > grp_fu_92_ce;
-    sc_signal< sc_logic > grp_fu_98_ce;
-    sc_signal< sc_logic > grp_fu_104_ce;
-    sc_signal< sc_logic > grp_fu_110_ce;
-    sc_signal< sc_logic > grp_fu_116_ce;
-    sc_signal< sc_logic > grp_fu_122_ce;
-    sc_signal< sc_logic > grp_fu_127_ce;
-    sc_signal< sc_logic > grp_fu_132_ce;
-    sc_signal< sc_logic > grp_fu_137_ce;
-    sc_signal< sc_logic > grp_fu_141_ce;
-    sc_signal< sc_logic > grp_fu_145_ce;
-    sc_signal< sc_logic > grp_fu_149_ce;
-    sc_signal< sc_logic > grp_fu_153_ce;
-    sc_signal< sc_logic > grp_fu_157_ce;
-    sc_signal< sc_logic > grp_fu_161_ce;
     sc_signal< bool > ap_block_pp0_stage0_00001;
-    sc_signal< sc_logic > grp_fu_165_ce;
-    sc_signal< sc_logic > grp_fu_169_ce;
-    sc_signal< sc_logic > grp_fu_173_ce;
-    sc_signal< sc_logic > grp_fu_177_ce;
-    sc_signal< sc_logic > grp_fu_181_ce;
-    sc_signal< sc_logic > grp_fu_185_ce;
-    sc_signal< sc_lv<1> > and_ln70_1_fu_583_p2;
-    sc_signal< sc_logic > ap_ce_reg;
     sc_signal< sc_lv<32> > obs_x_int_reg;
     sc_signal< sc_lv<32> > obs_y_int_reg;
     sc_signal< sc_lv<32> > obs_z_int_reg;
@@ -258,9 +234,7 @@ struct lineIntersectPrism : public sc_module {
     sc_signal< sc_lv<32> > edge_p2_x_int_reg;
     sc_signal< sc_lv<32> > edge_p2_y_int_reg;
     sc_signal< sc_lv<32> > edge_p2_z_int_reg;
-    sc_signal< sc_lv<1> > ap_return_int_reg;
     static const sc_logic ap_const_logic_1;
-    static const sc_logic ap_const_logic_0;
     static const bool ap_const_boolean_1;
     static const bool ap_const_boolean_0;
     static const sc_lv<32> ap_const_lv32_3F800000;
@@ -270,10 +244,12 @@ struct lineIntersectPrism : public sc_module {
     static const sc_lv<23> ap_const_lv23_0;
     static const sc_lv<5> ap_const_lv5_2;
     static const sc_lv<5> ap_const_lv5_4;
+    static const sc_logic ap_const_logic_0;
     // Thread declarations
     void thread_ap_var_for_const0();
     void thread_ap_var_for_const1();
     void thread_ap_var_for_const2();
+    void thread_ap_var_for_const3();
     void thread_ap_clk_no_reset_();
     void thread_and_ln20_1_fu_265_p2();
     void thread_and_ln20_fu_259_p2();
@@ -287,7 +263,6 @@ struct lineIntersectPrism : public sc_module {
     void thread_and_ln42_fu_467_p2();
     void thread_and_ln45_1_fu_491_p2();
     void thread_and_ln45_fu_485_p2();
-    void thread_and_ln70_1_fu_583_p2();
     void thread_and_ln70_fu_577_p2();
     void thread_ap_block_pp0_stage0();
     void thread_ap_block_pp0_stage0_00001();
@@ -323,28 +298,6 @@ struct lineIntersectPrism : public sc_module {
     void thread_bitcast_ln42_fu_432_p1();
     void thread_bitcast_ln70_1_fu_528_p1();
     void thread_bitcast_ln70_fu_511_p1();
-    void thread_grp_fu_104_ce();
-    void thread_grp_fu_110_ce();
-    void thread_grp_fu_116_ce();
-    void thread_grp_fu_122_ce();
-    void thread_grp_fu_127_ce();
-    void thread_grp_fu_132_ce();
-    void thread_grp_fu_137_ce();
-    void thread_grp_fu_141_ce();
-    void thread_grp_fu_145_ce();
-    void thread_grp_fu_149_ce();
-    void thread_grp_fu_153_ce();
-    void thread_grp_fu_157_ce();
-    void thread_grp_fu_161_ce();
-    void thread_grp_fu_165_ce();
-    void thread_grp_fu_169_ce();
-    void thread_grp_fu_173_ce();
-    void thread_grp_fu_177_ce();
-    void thread_grp_fu_181_ce();
-    void thread_grp_fu_185_ce();
-    void thread_grp_fu_86_ce();
-    void thread_grp_fu_92_ce();
-    void thread_grp_fu_98_ce();
     void thread_icmp_ln20_1_fu_229_p2();
     void thread_icmp_ln20_2_fu_241_p2();
     void thread_icmp_ln20_3_fu_247_p2();

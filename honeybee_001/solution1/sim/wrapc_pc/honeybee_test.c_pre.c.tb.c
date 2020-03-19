@@ -2943,7 +2943,7 @@ typedef struct edge {
     point_t p2;
 } edge_t;
 
-_Bool honeybee(point_t ogm, edge_t edge);
+int honeybee(edge_t edge);
 # 9 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c" 2
 
 float randy(int max) {
@@ -2964,46 +2964,31 @@ int main(int argc, char* argv[]) {
     srand ((unsigned int) time(((void*)0))*10000000);
 
 
-    int ogm[32][32][32];
-    for (int i=0; i<32; i++) {
-        for (int j=0; j<32; j++) {
-            for (int k=0; k<32; k++) ogm[i][j][k] = 0;
-        }
-    }
-
-
-    edge_t edges[100];
-    for (int ii=0; ii<100; ii++) {
-        edges[ii] = (edge_t) {
-        .p1 = (point_t) {.x=randy(32), .y=randy(32), .z=randy(32)},
-        .p2 = (point_t) {.x=randy(32), .y=randy(32), .z=randy(32)}
-        };
-    }
-
-
-    clock_t start, finish;
-    start = clock() / (((__clock_t) 1000000) / 1000);
-    errors += 
+    clock_t start, finish, total;
+     start = clock() / (((__clock_t) 1000000) / 1000000);
+        
 #ifndef HLS_FASTSIM
 #define honeybee AESL_WRAP_honeybee
 #endif
-# 42 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 25 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 honeybee(
-        (point_t) {.x=1., .y=1., .z=1.},
-        (edge_t) {
-            .p1 = (point_t) {.x=0., .y=0., .z=0.},
-            .p2 = (point_t) {.x=4., .y=4., .z=4.}
-        }
-    );
+            (edge_t) {
+                .p1 = (point_t) {.x=0., .y=0., .z=0.},
+                .p2 = (point_t) {.x=3., .y=3., .z=3.}
+            }
+        );
 #undef honeybee
-# 42 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 25 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 
-    finish = clock() / (((__clock_t) 1000000) / 1000);
+        finish = clock() / (((__clock_t) 1000000) / 1000000);
+        total = (finish - start);
 
 
-    printf("********************************************\nHoneyBee Test completed with %d errors in %ld ms\n************************************************\n", errors, (finish - start));
+    printf("********************************************\n");
+    printf("HoneyBee Test completed with %d errors in %ld us\n", errors, total);
+    printf("************************************************\n");
     return 0;
 }
 #endif
-# 54 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 39 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 

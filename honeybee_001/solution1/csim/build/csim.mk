@@ -86,6 +86,6 @@ $(ObjDir)/honeybee_test.o: ../../../../src/honeybee_test.c $(ObjDir)/.dir
 
 $(ObjDir)/honeybee.o: ../../../../src/honeybee.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../src/honeybee.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(AUTOCC) -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/honeybee.d

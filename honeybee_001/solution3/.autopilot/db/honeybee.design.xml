@@ -5,22 +5,28 @@
 <ModuleName>honeybee</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_lineIntersectPrism_fu_156</InstName>
+<InstName>grp_lineIntersectPrism_fu_147</InstName>
 <ModuleName>lineIntersectPrism</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>156</ID>
+<ID>147</ID>
 </Instance>
 <Instance>
-<InstName>grp_lineIntersectPrism_fu_170</InstName>
+<InstName>grp_lineIntersectPrism_fu_161</InstName>
 <ModuleName>lineIntersectPrism</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>170</ID>
+<ID>161</ID>
 </Instance>
 <Instance>
-<InstName>grp_lineIntersectPrism_fu_184</InstName>
+<InstName>grp_lineIntersectPrism_fu_175</InstName>
 <ModuleName>lineIntersectPrism</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>184</ID>
+<ID>175</ID>
+</Instance>
+<Instance>
+<InstName>grp_lineIntersectPrism_fu_189</InstName>
+<ModuleName>lineIntersectPrism</ModuleName>
+<IsCompInst>true</IsCompInst>
+<ID>189</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -52,8 +58,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>18</DSP48E>
-<FF>6509</FF>
-<LUT>7799</LUT>
+<FF>6507</FF>
+<LUT>7790</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -90,17 +96,6 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_ce</name>
-<Object>lineIntersectPrism</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>obs_x</name>
@@ -209,34 +204,34 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>8.516</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.976</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>220</Best-caseLatency>
-<Average-caseLatency>220</Average-caseLatency>
-<Worst-caseLatency>220</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.200 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.200 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.200 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>221</PipelineInitiationInterval>
+<Best-caseLatency>44</Best-caseLatency>
+<Average-caseLatency>44</Average-caseLatency>
+<Worst-caseLatency>44</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.440 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.440 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.440 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>45</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <honeybee_label5_honeybee_label4>
 <Name>honeybee_label5_honeybee_label4</Name>
-<TripCount>64</TripCount>
-<Latency>218</Latency>
-<PipelineII>3</PipelineII>
-<PipelineDepth>30</PipelineDepth>
+<TripCount>16</TripCount>
+<Latency>42</Latency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>28</PipelineDepth>
 </honeybee_label5_honeybee_label4>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<DSP48E>54</DSP48E>
-<FF>20040</FF>
-<LUT>24652</LUT>
+<DSP48E>72</DSP48E>
+<FF>26604</FF>
+<LUT>32316</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'lineIntersectPrism'
 ================================================================
-* Date:           Fri Feb 21 19:04:28 2020
+* Date:           Tue Mar 17 21:43:49 2020
 
 * Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
 * Project:        honeybee_001
@@ -53,10 +53,10 @@
 |FIFO             |        -|      -|       -|       -|    -|
 |Instance         |        -|     18|    5223|    7194|    -|
 |Memory           |        -|      -|       -|       -|    -|
-|Multiplexer      |        -|      -|       -|       9|    -|
-|Register         |        0|      -|    1286|     128|    -|
+|Multiplexer      |        -|      -|       -|       -|    -|
+|Register         |        0|      -|    1284|     128|    -|
 +-----------------+---------+-------+--------+--------+-----+
-|Total            |        0|     18|    6509|    7799|    0|
+|Total            |        0|     18|    6507|    7790|    0|
 +-----------------+---------+-------+--------+--------+-----+
 |Available        |     2060|   2800|  607200|  303600|    0|
 +-----------------+---------+-------+--------+--------+-----+
@@ -119,8 +119,8 @@
     |and_ln42_fu_467_p2     |    and   |      0|  0|   2|           1|           1|
     |and_ln45_1_fu_491_p2   |    and   |      0|  0|   2|           1|           1|
     |and_ln45_fu_485_p2     |    and   |      0|  0|   2|           1|           1|
-    |and_ln70_1_fu_583_p2   |    and   |      0|  0|   2|           1|           1|
     |and_ln70_fu_577_p2     |    and   |      0|  0|   2|           1|           1|
+    |ap_return              |    and   |      0|  0|   2|           1|           1|
     |icmp_ln20_1_fu_229_p2  |   icmp   |      0|  0|  18|          23|           1|
     |icmp_ln20_2_fu_241_p2  |   icmp   |      0|  0|  11|           8|           2|
     |icmp_ln20_3_fu_247_p2  |   icmp   |      0|  0|  18|          23|           1|
@@ -156,20 +156,12 @@
     +-----------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +-----------+----+-----------+-----+-----------+
-    |    Name   | LUT| Input Size| Bits| Total Bits|
-    +-----------+----+-----------+-----+-----------+
-    |ap_return  |   9|          2|    1|          2|
-    +-----------+----+-----------+-----+-----------+
-    |Total      |   9|          2|    1|          2|
-    +-----------+----+-----------+-----+-----------+
+    N/A
 
     * Register: 
     +------------------------------+----+----+-----+-----------+
     |             Name             | FF | LUT| Bits| Const Bits|
     +------------------------------+----+----+-----+-----------+
-    |ap_ce_reg                     |   1|   0|    1|          0|
-    |ap_return_int_reg             |   1|   0|    1|          0|
     |edge_p1_x_int_reg             |  32|   0|   32|          0|
     |edge_p1_y_int_reg             |  32|   0|   32|          0|
     |edge_p1_z_int_reg             |  32|   0|   32|          0|
@@ -211,7 +203,7 @@
     |tmp_1_i7_reg_667              |  64|  32|   32|          0|
     |tmp_1_i_reg_643               |  64|  32|   32|          0|
     +------------------------------+----+----+-----+-----------+
-    |Total                         |1286| 128| 1158|          0|
+    |Total                         |1284| 128| 1156|          0|
     +------------------------------+----+----+-----+-----------+
 
 
@@ -226,7 +218,6 @@
 |ap_clk     |  in |    1| ap_ctrl_hs | lineIntersectPrism | return value |
 |ap_rst     |  in |    1| ap_ctrl_hs | lineIntersectPrism | return value |
 |ap_return  | out |    1| ap_ctrl_hs | lineIntersectPrism | return value |
-|ap_ce      |  in |    1| ap_ctrl_hs | lineIntersectPrism | return value |
 |obs_x      |  in |   32|   ap_none  |        obs_x       |    scalar    |
 |obs_y      |  in |   32|   ap_none  |        obs_y       |    scalar    |
 |obs_z      |  in |   32|   ap_none  |        obs_z       |    scalar    |
@@ -255,7 +246,7 @@ HasMFsm: 2
 HasVarLatency: 0
 IsPipeline: 1
 IsRtlPipelined: 1
-IsInstanceOverlapped: 1
+IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0

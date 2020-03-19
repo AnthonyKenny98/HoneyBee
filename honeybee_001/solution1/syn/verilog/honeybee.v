@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.080920,HLS_SYN_LAT=15100,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=6,HLS_SYN_FF=2511,HLS_SYN_LUT=3907,HLS_VERSION=2019_2}" *)
+(* CORE_GENERATION_INFO="honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.080920,HLS_SYN_LAT=2160,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=6,HLS_SYN_FF=2505,HLS_SYN_LUT=3898,HLS_VERSION=2019_2}" *)
 
 module honeybee (
         ap_clk,
@@ -148,8 +148,8 @@ wire   [31:0] grp_fu_143_p2;
 reg   [31:0] tmp_1_i7_i_reg_716;
 wire   [31:0] zext_ln76_fu_199_p1;
 wire    ap_CS_fsm_state5;
-wire   [3:0] i_fu_210_p2;
-reg   [3:0] i_reg_729;
+wire   [2:0] i_fu_210_p2;
+reg   [2:0] i_reg_729;
 reg   [31:0] min_reg_734;
 wire    ap_CS_fsm_state26;
 wire   [31:0] grp_fu_154_p2;
@@ -164,8 +164,8 @@ wire   [0:0] icmp_ln20_1_fu_238_p2;
 reg   [0:0] icmp_ln20_1_reg_763;
 wire   [31:0] zext_ln77_fu_244_p1;
 wire    ap_CS_fsm_state27;
-wire   [3:0] j_fu_255_p2;
-reg   [3:0] j_reg_776;
+wire   [2:0] j_fu_255_p2;
+reg   [2:0] j_reg_776;
 wire   [0:0] or_ln40_fu_276_p2;
 reg   [0:0] or_ln40_reg_781;
 wire   [0:0] icmp_ln77_fu_249_p2;
@@ -185,8 +185,8 @@ wire   [0:0] and_ln20_1_fu_387_p2;
 reg   [0:0] and_ln20_1_reg_823;
 wire   [31:0] zext_ln78_fu_393_p1;
 wire    ap_CS_fsm_state51;
-wire   [3:0] k_fu_404_p2;
-reg   [3:0] k_reg_836;
+wire   [2:0] k_fu_404_p2;
+reg   [2:0] k_reg_836;
 wire   [31:0] max_fu_482_p3;
 reg   [31:0] max_reg_841;
 wire    ap_CS_fsm_state70;
@@ -202,10 +202,10 @@ wire   [0:0] icmp_ln70_2_fu_614_p2;
 reg   [0:0] icmp_ln70_2_reg_863;
 wire   [0:0] icmp_ln70_3_fu_620_p2;
 reg   [0:0] icmp_ln70_3_reg_868;
-reg   [3:0] i_0_reg_98;
-reg   [3:0] j_0_reg_109;
+reg   [2:0] i_0_reg_98;
+reg   [2:0] j_0_reg_109;
 wire   [0:0] icmp_ln78_fu_398_p2;
-reg   [3:0] k_0_reg_120;
+reg   [2:0] k_0_reg_120;
 wire    ap_CS_fsm_state76;
 reg   [31:0] collisionCount_0_fu_58;
 wire   [31:0] select_ln80_fu_652_p3;
@@ -435,7 +435,7 @@ always @ (posedge ap_clk) begin
     if (((icmp_ln77_fu_249_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state27))) begin
         i_0_reg_98 <= i_reg_729;
     end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        i_0_reg_98 <= 4'd0;
+        i_0_reg_98 <= 3'd0;
     end
 end
 
@@ -443,7 +443,7 @@ always @ (posedge ap_clk) begin
     if (((icmp_ln78_fu_398_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state51))) begin
         j_0_reg_109 <= j_reg_776;
     end else if ((1'b1 == ap_CS_fsm_state26)) begin
-        j_0_reg_109 <= 4'd0;
+        j_0_reg_109 <= 3'd0;
     end
 end
 
@@ -451,7 +451,7 @@ always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state76)) begin
         k_0_reg_120 <= k_reg_836;
     end else if ((1'b1 == ap_CS_fsm_state50)) begin
-        k_0_reg_120 <= 4'd0;
+        k_0_reg_120 <= 3'd0;
     end
 end
 
@@ -1072,7 +1072,7 @@ assign bitcast_ln70_fu_568_p1 = max_reg_841;
 
 assign collisionCount_fu_646_p2 = (32'd1 + collisionCount_0_fu_58);
 
-assign i_fu_210_p2 = (i_0_reg_98 + 4'd1);
+assign i_fu_210_p2 = (i_0_reg_98 + 3'd1);
 
 assign icmp_ln20_1_fu_238_p2 = ((trunc_ln20_fu_234_p1 == 23'd0) ? 1'b1 : 1'b0);
 
@@ -1106,15 +1106,15 @@ assign icmp_ln70_3_fu_620_p2 = ((trunc_ln70_1_fu_598_p1 == 23'd0) ? 1'b1 : 1'b0)
 
 assign icmp_ln70_fu_602_p2 = ((tmp_13_fu_571_p4 != 8'd255) ? 1'b1 : 1'b0);
 
-assign icmp_ln76_fu_204_p2 = ((i_0_reg_98 == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln76_fu_204_p2 = ((i_0_reg_98 == 3'd4) ? 1'b1 : 1'b0);
 
-assign icmp_ln77_fu_249_p2 = ((j_0_reg_109 == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln77_fu_249_p2 = ((j_0_reg_109 == 3'd4) ? 1'b1 : 1'b0);
 
-assign icmp_ln78_fu_398_p2 = ((k_0_reg_120 == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln78_fu_398_p2 = ((k_0_reg_120 == 3'd4) ? 1'b1 : 1'b0);
 
-assign j_fu_255_p2 = (j_0_reg_109 + 4'd1);
+assign j_fu_255_p2 = (j_0_reg_109 + 3'd1);
 
-assign k_fu_404_p2 = (k_0_reg_120 + 4'd1);
+assign k_fu_404_p2 = (k_0_reg_120 + 3'd1);
 
 assign max_4_fu_457_p3 = ((and_ln22_1_fu_451_p2[0:0] === 1'b1) ? reg_189 : max_2_reg_741);
 

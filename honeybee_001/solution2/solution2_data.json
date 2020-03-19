@@ -94,7 +94,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "553",
+    "Latency": "105",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -346,10 +346,10 @@
       }},
     "Metrics": {"honeybee": {
         "Latency": {
-          "LatencyBest": "553",
-          "LatencyAvg": "553",
-          "LatencyWorst": "553",
-          "PipelineII": "554",
+          "LatencyBest": "105",
+          "LatencyAvg": "105",
+          "LatencyWorst": "105",
+          "PipelineII": "106",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -360,16 +360,16 @@
         },
         "Loops": [{
             "Name": "honeybee_label5_honeybee_label4_honeybee_label3",
-            "TripCount": "512",
-            "Latency": "537",
+            "TripCount": "64",
+            "Latency": "89",
             "PipelineII": "1",
             "PipelineDepth": "27"
           }],
         "Area": {
           "BRAM_18K": "0",
           "DSP48E": "20",
-          "FF": "10361",
-          "LUT": "14265",
+          "FF": "10350",
+          "LUT": "14250",
           "URAM": "0"
         }
       }}
@@ -384,7 +384,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-02-21 19:03:17 PST",
+    "Time": "2020-03-17 21:26:24 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

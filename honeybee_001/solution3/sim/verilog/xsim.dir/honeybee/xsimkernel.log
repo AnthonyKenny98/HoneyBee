@@ -1,0 +1,7 @@
+Running: xsim.dir/honeybee/xsimk -simmode gui -wdb honeybee.wdb -simrunnum 0 -socket 59697
+Design successfully loaded
+Design Loading Memory Usage: 115444 KB (Peak: 116404 KB)
+Design Loading CPU Usage: 330 ms
+Simulation completed
+Simulation Memory Usage: 204540 KB (Peak: 254712 KB)
+Simulation CPU Usage: 1500 ms

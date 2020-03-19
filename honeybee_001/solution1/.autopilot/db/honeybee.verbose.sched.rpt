@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'honeybee'
 ================================================================
-* Date:           Fri Feb 21 19:01:36 2020
+* Date:           Tue Mar 17 21:18:05 2020
 
 * Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
 * Project:        honeybee_001
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-------+-------+---------+
-    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
-    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
-    +---------+---------+----------+----------+-------+-------+---------+
-    |    15100|    15100| 0.151 ms | 0.151 ms |  15100|  15100|   none  |
-    +---------+---------+----------+----------+-------+-------+---------+
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     2160|     2160| 21.600 us | 21.600 us |  2160|  2160|   none  |
+    +---------+---------+-----------+-----------+------+------+---------+
 
     + Detail: 
         * Instance: 
@@ -41,9 +41,9 @@
         |                      |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +----------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- honeybee_label5     |    15096|    15096|      1887|          -|          -|     8|    no    |
-        | + honeybee_label4    |     1864|     1864|       233|          -|          -|     8|    no    |
-        |  ++ honeybee_label3  |      208|      208|        26|          -|          -|     8|    no    |
+        |- honeybee_label5     |     2156|     2156|       539|          -|          -|     4|    no    |
+        | + honeybee_label4    |      516|      516|       129|          -|          -|     4|    no    |
+        |  ++ honeybee_label3  |      104|      104|        26|          -|          -|     4|    no    |
         +----------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -194,11 +194,11 @@ ST_4 : Operation 104 [1/4] (8.21ns)   --->   "%tmp_1_i7_i = fsub float %edge_p2_
 ST_4 : Operation 105 [1/1] (1.18ns)   --->   "br label %1" [src/honeybee.c:76]   --->   Operation 105 'br' <Predicate = true> <Delay = 1.18>
 
 State 5 <SV = 4> <Delay = 6.74>
-ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %honeybee_label5_end ]"   --->   Operation 106 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 107 [1/1] (0.00ns)   --->   "%zext_ln76 = zext i4 %i_0 to i32" [src/honeybee.c:76]   --->   Operation 107 'zext' 'zext_ln76' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 108 [1/1] (1.12ns)   --->   "%icmp_ln76 = icmp eq i4 %i_0, -8" [src/honeybee.c:76]   --->   Operation 108 'icmp' 'icmp_ln76' <Predicate = true> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 109 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 110 [1/1] (1.36ns)   --->   "%i = add i4 %i_0, 1" [src/honeybee.c:76]   --->   Operation 110 'add' 'i' <Predicate = true> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%i_0 = phi i3 [ 0, %0 ], [ %i, %honeybee_label5_end ]"   --->   Operation 106 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 107 [1/1] (0.00ns)   --->   "%zext_ln76 = zext i3 %i_0 to i32" [src/honeybee.c:76]   --->   Operation 107 'zext' 'zext_ln76' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 108 [1/1] (0.86ns)   --->   "%icmp_ln76 = icmp eq i3 %i_0, -4" [src/honeybee.c:76]   --->   Operation 108 'icmp' 'icmp_ln76' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 109 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 110 [1/1] (1.18ns)   --->   "%i = add i3 %i_0, 1" [src/honeybee.c:76]   --->   Operation 110 'add' 'i' <Predicate = true> <Delay = 1.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_5 : Operation 111 [1/1] (0.00ns)   --->   "br i1 %icmp_ln76, label %4, label %honeybee_label5_begin" [src/honeybee.c:76]   --->   Operation 111 'br' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 112 [4/4] (6.74ns)   --->   "%obs_x = sitofp i32 %zext_ln76 to float" [src/honeybee.c:79]   --->   Operation 112 'sitofp' 'obs_x' <Predicate = (!icmp_ln76)> <Delay = 6.74> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 6.74> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
 ST_5 : Operation 113 [1/1] (0.00ns)   --->   "%collisionCount_0_loa_1 = load i32* %collisionCount_0" [src/honeybee.c:84]   --->   Operation 113 'load' 'collisionCount_0_loa_1' <Predicate = (icmp_ln76)> <Delay = 0.00>
@@ -287,11 +287,11 @@ ST_26 : Operation 153 [1/1] (1.48ns)   --->   "%icmp_ln20_1 = icmp eq i23 %trunc
 ST_26 : Operation 154 [1/1] (1.18ns)   --->   "br label %2" [src/honeybee.c:77]   --->   Operation 154 'br' <Predicate = true> <Delay = 1.18>
 
 State 27 <SV = 26> <Delay = 6.74>
-ST_27 : Operation 155 [1/1] (0.00ns)   --->   "%j_0 = phi i4 [ 0, %honeybee_label5_begin ], [ %j, %honeybee_label4_end ]"   --->   Operation 155 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln77 = zext i4 %j_0 to i32" [src/honeybee.c:77]   --->   Operation 156 'zext' 'zext_ln77' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 157 [1/1] (1.12ns)   --->   "%icmp_ln77 = icmp eq i4 %j_0, -8" [src/honeybee.c:77]   --->   Operation 157 'icmp' 'icmp_ln77' <Predicate = true> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_27 : Operation 158 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 158 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 159 [1/1] (1.36ns)   --->   "%j = add i4 %j_0, 1" [src/honeybee.c:77]   --->   Operation 159 'add' 'j' <Predicate = true> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 155 [1/1] (0.00ns)   --->   "%j_0 = phi i3 [ 0, %honeybee_label5_begin ], [ %j, %honeybee_label4_end ]"   --->   Operation 155 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln77 = zext i3 %j_0 to i32" [src/honeybee.c:77]   --->   Operation 156 'zext' 'zext_ln77' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 157 [1/1] (0.86ns)   --->   "%icmp_ln77 = icmp eq i3 %j_0, -4" [src/honeybee.c:77]   --->   Operation 157 'icmp' 'icmp_ln77' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 158 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 158 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 159 [1/1] (1.18ns)   --->   "%j = add i3 %j_0, 1" [src/honeybee.c:77]   --->   Operation 159 'add' 'j' <Predicate = true> <Delay = 1.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_27 : Operation 160 [1/1] (0.00ns)   --->   "br i1 %icmp_ln77, label %honeybee_label5_end, label %honeybee_label4_begin" [src/honeybee.c:77]   --->   Operation 160 'br' <Predicate = true> <Delay = 0.00>
 ST_27 : Operation 161 [4/4] (6.74ns)   --->   "%obs_y = sitofp i32 %zext_ln77 to float" [src/honeybee.c:79]   --->   Operation 161 'sitofp' 'obs_y' <Predicate = (!icmp_ln77)> <Delay = 6.74> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 6.74> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
 ST_27 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln40, i32 23, i32 30)" [src/honeybee.c:40->src/honeybee.c:62->src/honeybee.c:80]   --->   Operation 162 'partselect' 'tmp_2' <Predicate = (!icmp_ln77)> <Delay = 0.00>
@@ -404,11 +404,11 @@ ST_50 : Operation 222 [1/1] (0.61ns) (out node of the LUT)   --->   "%and_ln20_1
 ST_50 : Operation 223 [1/1] (1.18ns)   --->   "br label %3" [src/honeybee.c:78]   --->   Operation 223 'br' <Predicate = true> <Delay = 1.18>
 
 State 51 <SV = 50> <Delay = 6.74>
-ST_51 : Operation 224 [1/1] (0.00ns)   --->   "%k_0 = phi i4 [ 0, %honeybee_label4_begin ], [ %k, %_ifconv ]"   --->   Operation 224 'phi' 'k_0' <Predicate = true> <Delay = 0.00>
-ST_51 : Operation 225 [1/1] (0.00ns)   --->   "%zext_ln78 = zext i4 %k_0 to i32" [src/honeybee.c:78]   --->   Operation 225 'zext' 'zext_ln78' <Predicate = true> <Delay = 0.00>
-ST_51 : Operation 226 [1/1] (1.12ns)   --->   "%icmp_ln78 = icmp eq i4 %k_0, -8" [src/honeybee.c:78]   --->   Operation 226 'icmp' 'icmp_ln78' <Predicate = true> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_51 : Operation 227 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 227 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
-ST_51 : Operation 228 [1/1] (1.36ns)   --->   "%k = add i4 %k_0, 1" [src/honeybee.c:78]   --->   Operation 228 'add' 'k' <Predicate = true> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 224 [1/1] (0.00ns)   --->   "%k_0 = phi i3 [ 0, %honeybee_label4_begin ], [ %k, %_ifconv ]"   --->   Operation 224 'phi' 'k_0' <Predicate = true> <Delay = 0.00>
+ST_51 : Operation 225 [1/1] (0.00ns)   --->   "%zext_ln78 = zext i3 %k_0 to i32" [src/honeybee.c:78]   --->   Operation 225 'zext' 'zext_ln78' <Predicate = true> <Delay = 0.00>
+ST_51 : Operation 226 [1/1] (0.86ns)   --->   "%icmp_ln78 = icmp eq i3 %k_0, -4" [src/honeybee.c:78]   --->   Operation 226 'icmp' 'icmp_ln78' <Predicate = true> <Delay = 0.86> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 227 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 227 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_51 : Operation 228 [1/1] (1.18ns)   --->   "%k = add i3 %k_0, 1" [src/honeybee.c:78]   --->   Operation 228 'add' 'k' <Predicate = true> <Delay = 1.18> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_51 : Operation 229 [1/1] (0.00ns)   --->   "br i1 %icmp_ln78, label %honeybee_label4_end, label %_ifconv" [src/honeybee.c:78]   --->   Operation 229 'br' <Predicate = true> <Delay = 0.00>
 ST_51 : Operation 230 [4/4] (6.74ns)   --->   "%obs_z = sitofp i32 %zext_ln78 to float" [src/honeybee.c:79]   --->   Operation 230 'sitofp' 'obs_z' <Predicate = (!icmp_ln78)> <Delay = 6.74> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 6.74> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
 ST_51 : Operation 231 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str1, i32 %tmp_1)" [src/honeybee.c:82]   --->   Operation 231 'specregionend' 'empty_7' <Predicate = (icmp_ln78)> <Delay = 0.00>

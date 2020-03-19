@@ -21,27 +21,27 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>15100</Best-caseLatency>
-<Average-caseLatency>15100</Average-caseLatency>
-<Worst-caseLatency>15100</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.151 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.151 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.151 ms</Worst-caseRealTimeLatency>
-<Interval-min>15101</Interval-min>
-<Interval-max>15101</Interval-max>
+<Best-caseLatency>2160</Best-caseLatency>
+<Average-caseLatency>2160</Average-caseLatency>
+<Worst-caseLatency>2160</Worst-caseLatency>
+<Best-caseRealTimeLatency>21.600 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>21.600 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>21.600 us</Worst-caseRealTimeLatency>
+<Interval-min>2161</Interval-min>
+<Interval-max>2161</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <honeybee_label5>
-<TripCount>8</TripCount>
-<Latency>15096</Latency>
-<IterationLatency>1887</IterationLatency>
+<TripCount>4</TripCount>
+<Latency>2156</Latency>
+<IterationLatency>539</IterationLatency>
 <honeybee_label4>
-<TripCount>8</TripCount>
-<Latency>1864</Latency>
-<IterationLatency>233</IterationLatency>
+<TripCount>4</TripCount>
+<Latency>516</Latency>
+<IterationLatency>129</IterationLatency>
 <honeybee_label3>
-<TripCount>8</TripCount>
-<Latency>208</Latency>
+<TripCount>4</TripCount>
+<Latency>104</Latency>
 <IterationLatency>26</IterationLatency>
 </honeybee_label3>
 </honeybee_label4>
@@ -52,8 +52,8 @@
 <AreaEstimates>
 <Resources>
 <DSP48E>6</DSP48E>
-<FF>2511</FF>
-<LUT>3907</LUT>
+<FF>2505</FF>
+<LUT>3898</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>

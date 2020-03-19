@@ -42,12 +42,6 @@ using namespace sc_dt;
 // [dump_enumeration [get_enumeration_list]] ---------->
 
 
-// wrapc file define: "obs_x"
-#define AUTOTB_TVIN_obs_x  "../tv/cdatafile/c.honeybee.autotvin_obs_x.dat"
-// wrapc file define: "obs_y"
-#define AUTOTB_TVIN_obs_y  "../tv/cdatafile/c.honeybee.autotvin_obs_y.dat"
-// wrapc file define: "obs_z"
-#define AUTOTB_TVIN_obs_z  "../tv/cdatafile/c.honeybee.autotvin_obs_z.dat"
 // wrapc file define: "edge_p1_x"
 #define AUTOTB_TVIN_edge_p1_x  "../tv/cdatafile/c.honeybee.autotvin_edge_p1_x.dat"
 // wrapc file define: "edge_p1_y"
@@ -72,9 +66,6 @@ class INTER_TCL_FILE {
 	public:
 		INTER_TCL_FILE(const char* name) {
 			mName = name;
-			obs_x_depth = 0;
-			obs_y_depth = 0;
-			obs_z_depth = 0;
 			edge_p1_x_depth = 0;
 			edge_p1_y_depth = 0;
 			edge_p1_z_depth = 0;
@@ -101,9 +92,6 @@ class INTER_TCL_FILE {
 
 		string get_depth_list () {
 			stringstream total_list;
-			total_list << "{obs_x " << obs_x_depth << "}\n";
-			total_list << "{obs_y " << obs_y_depth << "}\n";
-			total_list << "{obs_z " << obs_z_depth << "}\n";
 			total_list << "{edge_p1_x " << edge_p1_x_depth << "}\n";
 			total_list << "{edge_p1_y " << edge_p1_y_depth << "}\n";
 			total_list << "{edge_p1_z " << edge_p1_z_depth << "}\n";
@@ -118,9 +106,6 @@ class INTER_TCL_FILE {
 			(*class_num) = (*class_num) > num ? (*class_num) : num;
 		}
 	public:
-		int obs_x_depth;
-		int obs_y_depth;
-		int obs_z_depth;
 		int edge_p1_x_depth;
 		int edge_p1_y_depth;
 		int edge_p1_z_depth;
@@ -135,12 +120,10 @@ class INTER_TCL_FILE {
 		const char* mName;
 };
 
-extern "C" _Bool honeybee (
-point_t obs,
+extern "C" int honeybee (
 edge_t edge);
 
-extern "C" _Bool AESL_WRAP_honeybee (
-point_t obs,
+extern "C" int AESL_WRAP_honeybee (
 edge_t edge)
 {
 	refine_signal_handler();
@@ -155,7 +138,7 @@ edge_t edge)
 		string AESL_num;
 		static AESL_FILE_HANDLER aesl_fh;
 
-		_Bool AESL_return;
+		int AESL_return;
 
 		// output port post check: "ap_return"
 		aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // [[transaction]]
@@ -169,7 +152,7 @@ edge_t edge)
 		{
 			aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // data
 
-			sc_bv<1> ap_return_pc_buffer;
+			sc_bv<32> ap_return_pc_buffer;
 			int i = 0;
 
 			while (AESL_token != "[[/transaction]]")
@@ -238,31 +221,31 @@ edge_t edge)
 			{
 				// RTL Name: ap_return
 				{
-					// bitslice(0, 0)
+					// bitslice(31, 0)
 					// {
-						// celement: return(0, 0)
+						// celement: return(31, 0)
 						// {
-							sc_lv<1> return_lv0_0_1_0;
+							sc_lv<32> return_lv0_0_1_0;
 						// }
 					// }
 
-					// bitslice(0, 0)
+					// bitslice(31, 0)
 					{
-						// celement: return(0, 0)
+						// celement: return(31, 0)
 						{
 							// carray: (0) => (1) @ (0)
 							{
 								if (&(AESL_return) != NULL) // check the null address if the c port is array or others
 								{
-									return_lv0_0_1_0.range(0, 0) = sc_bv<1>(ap_return_pc_buffer.range(0, 0));
+									return_lv0_0_1_0.range(31, 0) = sc_bv<32>(ap_return_pc_buffer.range(31, 0));
 								}
 							}
 						}
 					}
 
-					// bitslice(0, 0)
+					// bitslice(31, 0)
 					{
-						// celement: return(0, 0)
+						// celement: return(31, 0)
 						{
 							// carray: (0) => (1) @ (0)
 							{
@@ -293,18 +276,6 @@ edge_t edge)
 		static unsigned AESL_transaction;
 
 		static AESL_FILE_HANDLER aesl_fh;
-
-		// "obs_x"
-		char* tvin_obs_x = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_obs_x);
-
-		// "obs_y"
-		char* tvin_obs_y = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_obs_y);
-
-		// "obs_z"
-		char* tvin_obs_z = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_obs_z);
 
 		// "edge_p1_x"
 		char* tvin_edge_p1_x = new char[50];
@@ -337,132 +308,6 @@ edge_t edge)
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
-
-		// [[transaction]]
-		sprintf(tvin_obs_x, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_obs_x, tvin_obs_x);
-
-		sc_bv<32> obs_x_tvin_wrapc_buffer;
-
-		// RTL Name: obs_x
-		{
-			// bitslice(31, 0)
-			{
-				// celement: obs.x(31, 0)
-				{
-					// carray: (0) => (0) @ (0)
-					{
-						// sub                   : 
-						// ori_name              : obs.x
-						// sub_1st_elem          : 
-						// ori_name_1st_elem     : obs.x
-						// regulate_c_name       : obs_x
-						// input_type_conversion : *(int*)&obs.x
-						if (&(obs.x) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<32> obs_x_tmp_mem;
-							obs_x_tmp_mem = *(int*)&obs.x;
-							obs_x_tvin_wrapc_buffer.range(31, 0) = obs_x_tmp_mem.range(31, 0);
-						}
-					}
-				}
-			}
-		}
-
-		// dump tv to file
-		for (int i = 0; i < 1; i++)
-		{
-			sprintf(tvin_obs_x, "%s\n", (obs_x_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_obs_x, tvin_obs_x);
-		}
-
-		tcl_file.set_num(1, &tcl_file.obs_x_depth);
-		sprintf(tvin_obs_x, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_obs_x, tvin_obs_x);
-
-		// [[transaction]]
-		sprintf(tvin_obs_y, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_obs_y, tvin_obs_y);
-
-		sc_bv<32> obs_y_tvin_wrapc_buffer;
-
-		// RTL Name: obs_y
-		{
-			// bitslice(31, 0)
-			{
-				// celement: obs.y(31, 0)
-				{
-					// carray: (0) => (0) @ (0)
-					{
-						// sub                   : 
-						// ori_name              : obs.y
-						// sub_1st_elem          : 
-						// ori_name_1st_elem     : obs.y
-						// regulate_c_name       : obs_y
-						// input_type_conversion : *(int*)&obs.y
-						if (&(obs.y) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<32> obs_y_tmp_mem;
-							obs_y_tmp_mem = *(int*)&obs.y;
-							obs_y_tvin_wrapc_buffer.range(31, 0) = obs_y_tmp_mem.range(31, 0);
-						}
-					}
-				}
-			}
-		}
-
-		// dump tv to file
-		for (int i = 0; i < 1; i++)
-		{
-			sprintf(tvin_obs_y, "%s\n", (obs_y_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_obs_y, tvin_obs_y);
-		}
-
-		tcl_file.set_num(1, &tcl_file.obs_y_depth);
-		sprintf(tvin_obs_y, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_obs_y, tvin_obs_y);
-
-		// [[transaction]]
-		sprintf(tvin_obs_z, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_obs_z, tvin_obs_z);
-
-		sc_bv<32> obs_z_tvin_wrapc_buffer;
-
-		// RTL Name: obs_z
-		{
-			// bitslice(31, 0)
-			{
-				// celement: obs.z(31, 0)
-				{
-					// carray: (0) => (0) @ (0)
-					{
-						// sub                   : 
-						// ori_name              : obs.z
-						// sub_1st_elem          : 
-						// ori_name_1st_elem     : obs.z
-						// regulate_c_name       : obs_z
-						// input_type_conversion : *(int*)&obs.z
-						if (&(obs.z) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<32> obs_z_tmp_mem;
-							obs_z_tmp_mem = *(int*)&obs.z;
-							obs_z_tvin_wrapc_buffer.range(31, 0) = obs_z_tmp_mem.range(31, 0);
-						}
-					}
-				}
-			}
-		}
-
-		// dump tv to file
-		for (int i = 0; i < 1; i++)
-		{
-			sprintf(tvin_obs_z, "%s\n", (obs_z_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_obs_z, tvin_obs_z);
-		}
-
-		tcl_file.set_num(1, &tcl_file.obs_z_depth);
-		sprintf(tvin_obs_z, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_obs_z, tvin_obs_z);
 
 		// [[transaction]]
 		sprintf(tvin_edge_p1_x, "[[transaction]] %d\n", AESL_transaction);
@@ -719,7 +564,7 @@ edge_t edge)
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		_Bool AESL_return = honeybee(obs, edge);
+		int AESL_return = honeybee(edge);
 
 		CodeState = DUMP_OUTPUTS;
 
@@ -727,13 +572,13 @@ edge_t edge)
 		sprintf(tvout_ap_return, "[[transaction]] %d\n", AESL_transaction);
 		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
 
-		sc_bv<1> ap_return_tvout_wrapc_buffer;
+		sc_bv<32> ap_return_tvout_wrapc_buffer;
 
 		// RTL Name: ap_return
 		{
-			// bitslice(0, 0)
+			// bitslice(31, 0)
 			{
-				// celement: return(0, 0)
+				// celement: return(31, 0)
 				{
 					// carray: (0) => (1) @ (0)
 					{
@@ -745,9 +590,9 @@ edge_t edge)
 						// input_type_conversion : AESL_return
 						if (&(AESL_return) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<1> return_tmp_mem;
+							sc_lv<32> return_tmp_mem;
 							return_tmp_mem = AESL_return;
-							ap_return_tvout_wrapc_buffer.range(0, 0) = return_tmp_mem.range(0, 0);
+							ap_return_tvout_wrapc_buffer.range(31, 0) = return_tmp_mem.range(31, 0);
 						}
 					}
 				}
@@ -766,12 +611,6 @@ edge_t edge)
 		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
 
 		CodeState = DELETE_CHAR_BUFFERS;
-		// release memory allocation: "obs_x"
-		delete [] tvin_obs_x;
-		// release memory allocation: "obs_y"
-		delete [] tvin_obs_y;
-		// release memory allocation: "obs_z"
-		delete [] tvin_obs_z;
 		// release memory allocation: "edge_p1_x"
 		delete [] tvin_edge_p1_x;
 		// release memory allocation: "edge_p1_y"

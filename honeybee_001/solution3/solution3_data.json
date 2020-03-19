@@ -100,7 +100,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "220",
+    "Latency": "44",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -341,15 +341,19 @@
       "Instances": [
         {
           "ModuleName": "lineIntersectPrism",
-          "InstanceName": "grp_lineIntersectPrism_fu_156"
+          "InstanceName": "grp_lineIntersectPrism_fu_147"
         },
         {
           "ModuleName": "lineIntersectPrism",
-          "InstanceName": "grp_lineIntersectPrism_fu_170"
+          "InstanceName": "grp_lineIntersectPrism_fu_161"
         },
         {
           "ModuleName": "lineIntersectPrism",
-          "InstanceName": "grp_lineIntersectPrism_fu_184"
+          "InstanceName": "grp_lineIntersectPrism_fu_175"
+        },
+        {
+          "ModuleName": "lineIntersectPrism",
+          "InstanceName": "grp_lineIntersectPrism_fu_189"
         }
       ]
     },
@@ -387,37 +391,37 @@
         "Area": {
           "BRAM_18K": "0",
           "DSP48E": "18",
-          "FF": "6509",
-          "LUT": "7799",
+          "FF": "6507",
+          "LUT": "7790",
           "URAM": "0"
         }
       },
       "honeybee": {
         "Latency": {
-          "LatencyBest": "220",
-          "LatencyAvg": "220",
-          "LatencyWorst": "220",
-          "PipelineII": "221",
+          "LatencyBest": "44",
+          "LatencyAvg": "44",
+          "LatencyWorst": "44",
+          "PipelineII": "45",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.516"
+          "Estimate": "8.976"
         },
         "Loops": [{
             "Name": "honeybee_label5_honeybee_label4",
-            "TripCount": "64",
-            "Latency": "218",
-            "PipelineII": "3",
-            "PipelineDepth": "30"
+            "TripCount": "16",
+            "Latency": "42",
+            "PipelineII": "1",
+            "PipelineDepth": "28"
           }],
         "Area": {
           "BRAM_18K": "0",
-          "DSP48E": "54",
-          "FF": "20040",
-          "LUT": "24652",
+          "DSP48E": "72",
+          "FF": "26604",
+          "LUT": "32316",
           "URAM": "0"
         }
       }
@@ -433,7 +437,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-02-21 19:04:35 PST",
+    "Time": "2020-03-17 21:43:57 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

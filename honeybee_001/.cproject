@@ -51,8 +51,6 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.482670589" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
-                                    									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
@@ -86,8 +84,6 @@
                                 <option id="gnu.c.compiler.exe.debug.option.debugging.level.142810705" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1592118128" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
                                     									
@@ -191,6 +187,38 @@
                         					
                     </fileInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1585332828.1371788145" name="honeybee.h" rcbsApplicability="disable" resourcePath="source/honeybee.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1585332828.869422016" name="honeybee.c" rcbsApplicability="disable" resourcePath="source/honeybee.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1731257508.951266098">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1731257508.951266098" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1731257508">
+                            							
+                            <option id="gnu.c.compiler.option.preprocessor.def.symbols.2020521089" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+                            							
+                            <option id="gnu.c.compiler.option.include.paths.814182289" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/systemc/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.c.compiler.option.misc.other.2043221932" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1576737173" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding="solution1|solution2|solution3|solution4|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -253,8 +281,6 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.363818649" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
-                                    									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
@@ -278,8 +304,6 @@
                                 <option id="gnu.c.compiler.exe.release.option.debugging.level.1935581468" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1566662836" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
                                     									
@@ -368,6 +392,38 @@
                             <option id="gnu.c.compiler.option.misc.other.468742197" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
                             							
                             <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.890793205" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.596234557.1167448776" name="honeybee.h" rcbsApplicability="disable" resourcePath="source/honeybee.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.596234557.1424788021" name="honeybee.c" rcbsApplicability="disable" resourcePath="source/honeybee.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.646786458.717904958">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.646786458.717904958" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.646786458">
+                            							
+                            <option id="gnu.c.compiler.option.preprocessor.def.symbols.586935969" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+                            							
+                            <option id="gnu.c.compiler.option.include.paths.130601353" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/mnt/hgfs/Thesis/HoneyBee"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2019.2/lnx64/tools/systemc/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.c.compiler.option.misc.other.899917859" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1901003383" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
                             						
                         </tool>
                         					

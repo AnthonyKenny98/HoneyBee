@@ -3138,15 +3138,15 @@ _Bool lineIntersectPrism(point_t obs, edge_t edge) {
 int honeybee(edge_t edge) {
     int collisionCount = 0;
 
- honeybee_label5:for (int i=0; i<8; i++) {
+ honeybee_label5:for (int i=0; i<32; i++) {
 #pragma HLS PIPELINE
 # 76 "src/honeybee.c"
 
-        honeybee_label4:for (int j=0; j<8; j++) {
+        honeybee_label4:for (int j=0; j<32; j++) {
 #pragma HLS PIPELINE
 # 77 "src/honeybee.c"
 
-            honeybee_label3:for (int k=0; k<8; k++) {
+            honeybee_label3:for (int k=0; k<32; k++) {
 #pragma HLS PIPELINE
 # 78 "src/honeybee.c"
 

@@ -2,9 +2,12 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-02-21 21:37:38
+* @Last Modified time: 2020-03-19 17:27:45
 */
 #include "honeybee.h"
+
+// TODO, expand this. Should be able to hard code it for max value
+char bit_vals[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 
 float greaterThan(float x1, float x2, float x0) {
     return (x0-x1)/(x2-x1);
@@ -14,7 +17,7 @@ float lessThan(float x1, float x2, float x0, float X) {
     return (x0-x1+X)/(x2-x1);
 }
 
-float maxFloat3(float x, float y, float z) {
+float maxOf3(float x, float y, float z) {
     float max;
     // Implementation 1
     if (x > y) {
@@ -24,17 +27,10 @@ float maxFloat3(float x, float y, float z) {
         max = y;
         if (z > y) max = z;
     }
-    // Implementation 2
-    // if (x > y) {
-    //     max = x;
-    // } else {
-    //     max = y;
-    // }
-    // if (z > max) max = z;
     return max;
 }
 
-float minFloat3(float x, float y, float z) {
+float minOf3(float x, float y, float z) {
     float min;
     // Implementation 1
     if (x < y) {
@@ -44,24 +40,17 @@ float minFloat3(float x, float y, float z) {
         min = y;
         if (z < y) min = z;
     }
-    // Implementation 2
-    // if (x < y) {
-    //     max = x;
-    // } else {
-    //     max = y;
-    // }
-    // if (z < max) max = z;
     return min;
 }
 
 bool lineIntersectPrism(point_t obs, edge_t edge) {
 
-    float max = minFloat3(
+    float max = minOf3(
         lessThan(edge.p1.x, edge.p2.x, obs.x, RESOLUTION),
         lessThan(edge.p1.y, edge.p2.y, obs.y, RESOLUTION),
         lessThan(edge.p1.z, edge.p2.z, obs.z, RESOLUTION)
     );
-    float min = maxFloat3(
+    float min = maxOf3(
         greaterThan(edge.p1.x, edge.p2.x, obs.x),
         greaterThan(edge.p1.y, edge.p2.y, obs.y),
         greaterThan(edge.p1.z, edge.p2.z, obs.z)
@@ -70,16 +59,18 @@ bool lineIntersectPrism(point_t obs, edge_t edge) {
     return min < max;
 }
 
-int honeybee(edge_t edge) {
-    int collisionCount = 0;
+char honeybee(edge_t edge) {
+    char collisions = 0;
 
-	honeybee_label5:for (int i=0; i<XDIM; i++) {
-        honeybee_label4:for (int j=0; j<YDIM; j++) {
-            honeybee_label3:for (int k=0; k<ZDIM; k++) {
+	honeybee_label5:for (int i=0; i<DIM; i++) {
+        honeybee_label4:for (int j=0; j<DIM; j++) {
+            honeybee_label3:for (int k=0; k<DIM; k++) {
                 point_t obs = {.x = (float) i, .y = (float) j, .z = (float) k};
-                if (lineIntersectPrism(obs, edge)) collisionCount++;
+                if (lineIntersectPrism(obs, edge)) {
+                    collisions = collisions | bit_vals[i+j+k];
+                }
             }
         }
     }
-    return collisionCount;
+    return collisions;
 }

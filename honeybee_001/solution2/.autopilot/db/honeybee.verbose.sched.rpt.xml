@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'honeybee'" level="0">
-<item name = "Date">Fri Feb 21 19:03:06 2020
+<item name = "Date">Tue Mar 17 21:26:14 2020
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">honeybee_001</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">553, 553, 5.530 us, 5.530 us, 553, 553, none</column>
+<column name="">105, 105, 1.050 us, 1.050 us, 105, 105, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- honeybee_label5_honeybee_label4_honeybee_label3">537, 537, 27, 1, 1, 512, yes</column>
+<column name="- honeybee_label5_honeybee_label4_honeybee_label3">89, 89, 27, 1, 1, 64, yes</column>
 </table>
 </item>
 </section>

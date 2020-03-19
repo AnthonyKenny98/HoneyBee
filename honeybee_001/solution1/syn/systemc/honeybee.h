@@ -84,8 +84,8 @@ struct honeybee : public sc_module {
     sc_signal< sc_lv<32> > tmp_1_i7_i_reg_716;
     sc_signal< sc_lv<32> > zext_ln76_fu_199_p1;
     sc_signal< sc_logic > ap_CS_fsm_state5;
-    sc_signal< sc_lv<4> > i_fu_210_p2;
-    sc_signal< sc_lv<4> > i_reg_729;
+    sc_signal< sc_lv<3> > i_fu_210_p2;
+    sc_signal< sc_lv<3> > i_reg_729;
     sc_signal< sc_lv<32> > min_reg_734;
     sc_signal< sc_logic > ap_CS_fsm_state26;
     sc_signal< sc_lv<32> > grp_fu_154_p2;
@@ -100,8 +100,8 @@ struct honeybee : public sc_module {
     sc_signal< sc_lv<1> > icmp_ln20_1_reg_763;
     sc_signal< sc_lv<32> > zext_ln77_fu_244_p1;
     sc_signal< sc_logic > ap_CS_fsm_state27;
-    sc_signal< sc_lv<4> > j_fu_255_p2;
-    sc_signal< sc_lv<4> > j_reg_776;
+    sc_signal< sc_lv<3> > j_fu_255_p2;
+    sc_signal< sc_lv<3> > j_reg_776;
     sc_signal< sc_lv<1> > or_ln40_fu_276_p2;
     sc_signal< sc_lv<1> > or_ln40_reg_781;
     sc_signal< sc_lv<1> > icmp_ln77_fu_249_p2;
@@ -121,8 +121,8 @@ struct honeybee : public sc_module {
     sc_signal< sc_lv<1> > and_ln20_1_reg_823;
     sc_signal< sc_lv<32> > zext_ln78_fu_393_p1;
     sc_signal< sc_logic > ap_CS_fsm_state51;
-    sc_signal< sc_lv<4> > k_fu_404_p2;
-    sc_signal< sc_lv<4> > k_reg_836;
+    sc_signal< sc_lv<3> > k_fu_404_p2;
+    sc_signal< sc_lv<3> > k_reg_836;
     sc_signal< sc_lv<32> > max_fu_482_p3;
     sc_signal< sc_lv<32> > max_reg_841;
     sc_signal< sc_logic > ap_CS_fsm_state70;
@@ -138,10 +138,10 @@ struct honeybee : public sc_module {
     sc_signal< sc_lv<1> > icmp_ln70_2_reg_863;
     sc_signal< sc_lv<1> > icmp_ln70_3_fu_620_p2;
     sc_signal< sc_lv<1> > icmp_ln70_3_reg_868;
-    sc_signal< sc_lv<4> > i_0_reg_98;
-    sc_signal< sc_lv<4> > j_0_reg_109;
+    sc_signal< sc_lv<3> > i_0_reg_98;
+    sc_signal< sc_lv<3> > j_0_reg_109;
     sc_signal< sc_lv<1> > icmp_ln78_fu_398_p2;
-    sc_signal< sc_lv<4> > k_0_reg_120;
+    sc_signal< sc_lv<3> > k_0_reg_120;
     sc_signal< sc_logic > ap_CS_fsm_state76;
     sc_signal< sc_lv<32> > collisionCount_0_fu_58;
     sc_signal< sc_lv<32> > select_ln80_fu_652_p3;
@@ -325,7 +325,7 @@ struct honeybee : public sc_module {
     static const sc_lv<32> ap_const_lv32_45;
     static const sc_lv<32> ap_const_lv32_49;
     static const sc_lv<32> ap_const_lv32_4A;
-    static const sc_lv<4> ap_const_lv4_0;
+    static const sc_lv<3> ap_const_lv3_0;
     static const sc_lv<1> ap_const_lv1_1;
     static const sc_lv<32> ap_const_lv32_4B;
     static const sc_lv<32> ap_const_lv32_1;
@@ -342,8 +342,8 @@ struct honeybee : public sc_module {
     static const sc_lv<32> ap_const_lv32_30;
     static const sc_lv<32> ap_const_lv32_44;
     static const sc_lv<32> ap_const_lv32_48;
-    static const sc_lv<4> ap_const_lv4_8;
-    static const sc_lv<4> ap_const_lv4_1;
+    static const sc_lv<3> ap_const_lv3_4;
+    static const sc_lv<3> ap_const_lv3_1;
     static const sc_lv<23> ap_const_lv23_0;
     static const sc_lv<32> ap_const_lv32_17;
     static const sc_lv<8> ap_const_lv8_FF;

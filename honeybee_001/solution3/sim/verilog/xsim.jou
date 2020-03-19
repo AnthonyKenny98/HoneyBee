@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Mar 17 21:47:00 2020
+# Process ID: 37465
+# Current directory: /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/honeybee/xsim_script.tcl}
+# Log file: /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/sim/verilog/xsim.log
+# Journal file: /mnt/hgfs/Thesis/HoneyBee/honeybee_001/solution3/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/honeybee/xsim_script.tcl
+source honeybee.tcl

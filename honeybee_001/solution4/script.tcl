@@ -5,11 +5,11 @@
 ############################################################
 open_project honeybee_001
 set_top honeybee
-add_files src/honeybee.h
-add_files src/honeybee.c
+add_files src/honeybee.c -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
+add_files src/honeybee.h -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 add_files -tb src/honeybee_test.c -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution4"
-set_part {xc7vx485tffg1157-1}
+set_part {xc7vx485t-ffg1157-1}
 create_clock -period 10 -name default
 source "./honeybee_001/solution4/directives.tcl"
 csim_design

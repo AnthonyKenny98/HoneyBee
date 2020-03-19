@@ -898,7 +898,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -1010,7 +1010,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.12</m_delay>
+				<m_delay>0.86</m_delay>
 				<m_topoIndex>15</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1046,7 +1046,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1059,7 +1059,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.36</m_delay>
+				<m_delay>1.18</m_delay>
 				<m_topoIndex>16</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1853,7 +1853,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -1965,7 +1965,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.12</m_delay>
+				<m_delay>0.86</m_delay>
 				<m_topoIndex>34</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -2001,7 +2001,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -2014,7 +2014,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.36</m_delay>
+				<m_delay>1.18</m_delay>
 				<m_topoIndex>35</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -3950,7 +3950,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -4062,7 +4062,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.12</m_delay>
+				<m_delay>0.86</m_delay>
 				<m_topoIndex>70</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4098,7 +4098,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -4111,7 +4111,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.36</m_delay>
+				<m_delay>1.18</m_delay>
 				<m_topoIndex>71</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -7709,7 +7709,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -7732,10 +7732,10 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>8</content>
+				<content>4</content>
 			</item>
 			<item class_id_reference="16" object_id="_139">
 				<Value>
@@ -7755,7 +7755,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>3</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>1</content>
@@ -10061,8 +10061,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>15100</mMinLatency>
-			<mMaxLatency>15100</mMaxLatency>
+			<mMinLatency>2160</mMinLatency>
+			<mMaxLatency>2160</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -10105,10 +10105,10 @@
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
-			<mMinTripCount>8</mMinTripCount>
-			<mMaxTripCount>8</mMaxTripCount>
-			<mMinLatency>15096</mMinLatency>
-			<mMaxLatency>15096</mMaxLatency>
+			<mMinTripCount>4</mMinTripCount>
+			<mMaxTripCount>4</mMaxTripCount>
+			<mMinLatency>2156</mMinLatency>
+			<mMaxLatency>2156</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -10152,10 +10152,10 @@
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
-			<mMinTripCount>8</mMinTripCount>
-			<mMaxTripCount>8</mMaxTripCount>
-			<mMinLatency>1864</mMinLatency>
-			<mMaxLatency>1864</mMaxLatency>
+			<mMinTripCount>4</mMinTripCount>
+			<mMaxTripCount>4</mMaxTripCount>
+			<mMinLatency>516</mMinLatency>
+			<mMaxLatency>516</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -10198,10 +10198,10 @@
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
-			<mMinTripCount>8</mMinTripCount>
-			<mMaxTripCount>8</mMaxTripCount>
-			<mMinLatency>208</mMinLatency>
-			<mMaxLatency>208</mMaxLatency>
+			<mMinTripCount>4</mMinTripCount>
+			<mMaxTripCount>4</mMaxTripCount>
+			<mMinLatency>104</mMinLatency>
+			<mMaxLatency>104</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>

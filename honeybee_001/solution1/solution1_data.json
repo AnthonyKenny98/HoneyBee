@@ -93,7 +93,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "15100",
+    "Latency": "2160",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -337,10 +337,10 @@
       }},
     "Metrics": {"honeybee": {
         "Latency": {
-          "LatencyBest": "15100",
-          "LatencyAvg": "15100",
-          "LatencyWorst": "15100",
-          "PipelineII": "15101",
+          "LatencyBest": "2160",
+          "LatencyAvg": "2160",
+          "LatencyWorst": "2160",
+          "PipelineII": "2161",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -351,20 +351,20 @@
         },
         "Loops": [{
             "Name": "honeybee_label5",
-            "TripCount": "8",
-            "Latency": "15096",
+            "TripCount": "4",
+            "Latency": "2156",
             "PipelineII": "",
-            "PipelineDepth": "1887",
+            "PipelineDepth": "539",
             "Loops": [{
                 "Name": "honeybee_label4",
-                "TripCount": "8",
-                "Latency": "1864",
+                "TripCount": "4",
+                "Latency": "516",
                 "PipelineII": "",
-                "PipelineDepth": "233",
+                "PipelineDepth": "129",
                 "Loops": [{
                     "Name": "honeybee_label3",
-                    "TripCount": "8",
-                    "Latency": "208",
+                    "TripCount": "4",
+                    "Latency": "104",
                     "PipelineII": "",
                     "PipelineDepth": "26"
                   }]
@@ -372,8 +372,8 @@
           }],
         "Area": {
           "DSP48E": "6",
-          "FF": "2511",
-          "LUT": "3907",
+          "FF": "2505",
+          "LUT": "3898",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -389,7 +389,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-02-21 19:01:43 PST",
+    "Time": "2020-03-17 21:18:18 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

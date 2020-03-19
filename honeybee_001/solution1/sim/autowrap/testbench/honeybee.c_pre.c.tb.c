@@ -2942,7 +2942,7 @@ typedef struct edge {
     point_t p2;
 } edge_t;
 
-_Bool honeybee(point_t ogm, edge_t edge);
+int honeybee(edge_t edge);
 # 8 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee.c" 2
 
 float greaterThan(float x1, float x2, float x0) {
@@ -2993,7 +2993,7 @@ float minFloat3(float x, float y, float z) {
     return min;
 }
 
-_Bool honeybee(point_t obs, edge_t edge) {
+_Bool lineIntersectPrism(point_t obs, edge_t edge) {
 
     float max = minFloat3(
         lessThan(edge.p1.x, edge.p2.x, obs.x, 1),
@@ -3007,4 +3007,18 @@ _Bool honeybee(point_t obs, edge_t edge) {
     );
 
     return min < max;
+}
+
+int honeybee(edge_t edge) {
+    int collisionCount = 0;
+
+ honeybee_label5:for (int i=0; i<4; i++) {
+        honeybee_label4:for (int j=0; j<4; j++) {
+            honeybee_label3:for (int k=0; k<4; k++) {
+                point_t obs = {.x = (float) i, .y = (float) j, .z = (float) k};
+                if (lineIntersectPrism(obs, edge)) collisionCount++;
+            }
+        }
+    }
+    return collisionCount;
 }

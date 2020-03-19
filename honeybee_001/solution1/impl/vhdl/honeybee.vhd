@@ -30,7 +30,7 @@ end;
 architecture behav of honeybee is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.080920,HLS_SYN_LAT=15100,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=6,HLS_SYN_FF=2511,HLS_SYN_LUT=3907,HLS_VERSION=2019_2}";
+    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7vx485t-ffg1157-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.080920,HLS_SYN_LAT=2160,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=6,HLS_SYN_FF=2505,HLS_SYN_LUT=3898,HLS_VERSION=2019_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (75 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000001";
@@ -132,7 +132,7 @@ architecture behav of honeybee is
     constant ap_const_lv32_45 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000101";
     constant ap_const_lv32_49 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001001";
     constant ap_const_lv32_4A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001010";
-    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv32_4B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001011";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
@@ -149,8 +149,8 @@ architecture behav of honeybee is
     constant ap_const_lv32_30 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110000";
     constant ap_const_lv32_44 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000100";
     constant ap_const_lv32_48 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001000";
-    constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
-    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
+    constant ap_const_lv3_4 : STD_LOGIC_VECTOR (2 downto 0) := "100";
+    constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
     constant ap_const_lv23_0 : STD_LOGIC_VECTOR (22 downto 0) := "00000000000000000000000";
     constant ap_const_lv32_17 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010111";
     constant ap_const_lv8_FF : STD_LOGIC_VECTOR (7 downto 0) := "11111111";
@@ -204,8 +204,8 @@ architecture behav of honeybee is
     signal zext_ln76_fu_199_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal i_fu_210_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal i_reg_729 : STD_LOGIC_VECTOR (3 downto 0);
+    signal i_fu_210_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal i_reg_729 : STD_LOGIC_VECTOR (2 downto 0);
     signal min_reg_734 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state26 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state26 : signal is "none";
@@ -222,8 +222,8 @@ architecture behav of honeybee is
     signal zext_ln77_fu_244_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state27 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state27 : signal is "none";
-    signal j_fu_255_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal j_reg_776 : STD_LOGIC_VECTOR (3 downto 0);
+    signal j_fu_255_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal j_reg_776 : STD_LOGIC_VECTOR (2 downto 0);
     signal or_ln40_fu_276_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal or_ln40_reg_781 : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln77_fu_249_p2 : STD_LOGIC_VECTOR (0 downto 0);
@@ -246,8 +246,8 @@ architecture behav of honeybee is
     signal zext_ln78_fu_393_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state51 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state51 : signal is "none";
-    signal k_fu_404_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal k_reg_836 : STD_LOGIC_VECTOR (3 downto 0);
+    signal k_fu_404_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal k_reg_836 : STD_LOGIC_VECTOR (2 downto 0);
     signal max_fu_482_p3 : STD_LOGIC_VECTOR (31 downto 0);
     signal max_reg_841 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state70 : STD_LOGIC;
@@ -266,10 +266,10 @@ architecture behav of honeybee is
     signal icmp_ln70_2_reg_863 : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln70_3_fu_620_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln70_3_reg_868 : STD_LOGIC_VECTOR (0 downto 0);
-    signal i_0_reg_98 : STD_LOGIC_VECTOR (3 downto 0);
-    signal j_0_reg_109 : STD_LOGIC_VECTOR (3 downto 0);
+    signal i_0_reg_98 : STD_LOGIC_VECTOR (2 downto 0);
+    signal j_0_reg_109 : STD_LOGIC_VECTOR (2 downto 0);
     signal icmp_ln78_fu_398_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal k_0_reg_120 : STD_LOGIC_VECTOR (3 downto 0);
+    signal k_0_reg_120 : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_CS_fsm_state76 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state76 : signal is "none";
     signal collisionCount_0_fu_58 : STD_LOGIC_VECTOR (31 downto 0);
@@ -607,7 +607,7 @@ begin
             if (((icmp_ln77_fu_249_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state27))) then 
                 i_0_reg_98 <= i_reg_729;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-                i_0_reg_98 <= ap_const_lv4_0;
+                i_0_reg_98 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -618,7 +618,7 @@ begin
             if (((icmp_ln78_fu_398_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state51))) then 
                 j_0_reg_109 <= j_reg_776;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state26)) then 
-                j_0_reg_109 <= ap_const_lv4_0;
+                j_0_reg_109 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -629,7 +629,7 @@ begin
             if ((ap_const_logic_1 = ap_CS_fsm_state76)) then 
                 k_0_reg_120 <= k_reg_836;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state50)) then 
-                k_0_reg_120 <= ap_const_lv4_0;
+                k_0_reg_120 <= ap_const_lv3_0;
             end if; 
         end if;
     end process;
@@ -1171,7 +1171,7 @@ begin
         end if; 
     end process;
 
-    i_fu_210_p2 <= std_logic_vector(unsigned(i_0_reg_98) + unsigned(ap_const_lv4_1));
+    i_fu_210_p2 <= std_logic_vector(unsigned(i_0_reg_98) + unsigned(ap_const_lv3_1));
     icmp_ln20_1_fu_238_p2 <= "1" when (trunc_ln20_fu_234_p1 = ap_const_lv23_0) else "0";
     icmp_ln20_2_fu_364_p2 <= "0" when (tmp_6_fu_350_p4 = ap_const_lv8_FF) else "1";
     icmp_ln20_3_fu_370_p2 <= "1" when (trunc_ln20_1_fu_360_p1 = ap_const_lv23_0) else "0";
@@ -1188,11 +1188,11 @@ begin
     icmp_ln70_2_fu_614_p2 <= "0" when (tmp_14_fu_588_p4 = ap_const_lv8_FF) else "1";
     icmp_ln70_3_fu_620_p2 <= "1" when (trunc_ln70_1_fu_598_p1 = ap_const_lv23_0) else "0";
     icmp_ln70_fu_602_p2 <= "0" when (tmp_13_fu_571_p4 = ap_const_lv8_FF) else "1";
-    icmp_ln76_fu_204_p2 <= "1" when (i_0_reg_98 = ap_const_lv4_8) else "0";
-    icmp_ln77_fu_249_p2 <= "1" when (j_0_reg_109 = ap_const_lv4_8) else "0";
-    icmp_ln78_fu_398_p2 <= "1" when (k_0_reg_120 = ap_const_lv4_8) else "0";
-    j_fu_255_p2 <= std_logic_vector(unsigned(j_0_reg_109) + unsigned(ap_const_lv4_1));
-    k_fu_404_p2 <= std_logic_vector(unsigned(k_0_reg_120) + unsigned(ap_const_lv4_1));
+    icmp_ln76_fu_204_p2 <= "1" when (i_0_reg_98 = ap_const_lv3_4) else "0";
+    icmp_ln77_fu_249_p2 <= "1" when (j_0_reg_109 = ap_const_lv3_4) else "0";
+    icmp_ln78_fu_398_p2 <= "1" when (k_0_reg_120 = ap_const_lv3_4) else "0";
+    j_fu_255_p2 <= std_logic_vector(unsigned(j_0_reg_109) + unsigned(ap_const_lv3_1));
+    k_fu_404_p2 <= std_logic_vector(unsigned(k_0_reg_120) + unsigned(ap_const_lv3_1));
     max_4_fu_457_p3 <= 
         reg_189 when (and_ln22_1_fu_451_p2(0) = '1') else 
         max_2_reg_741;

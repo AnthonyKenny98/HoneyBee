@@ -36,7 +36,7 @@ set C_modelArgMapList {[
  	{ "Name" : "edge_p2_z", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 1} ]}
 # RTL Port declarations: 
-set portNum 13
+set portNum 12
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -50,7 +50,6 @@ set portList {
 	{ edge_p2_y sc_in sc_lv 32 signal 7 } 
 	{ edge_p2_z sc_in sc_lv 32 signal 8 } 
 	{ ap_return sc_out sc_lv 1 signal -1 } 
-	{ ap_ce sc_in sc_logic 1 ce -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -64,8 +63,7 @@ set NewPortList {[
  	{ "name": "edge_p2_x", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "edge_p2_x", "role": "default" }} , 
  	{ "name": "edge_p2_y", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "edge_p2_y", "role": "default" }} , 
  	{ "name": "edge_p2_z", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "edge_p2_z", "role": "default" }} , 
- 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }} , 
- 	{ "name": "ap_ce", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "ce", "bundle":{"name": "ap_ce", "role": "default" }}  ]}
+ 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"],
@@ -77,7 +75,7 @@ set RtlHierarchyInfo {[
 		"VariableLatency" : "0", "ExactLatency" : "21", "EstimateLatencyMin" : "21", "EstimateLatencyMax" : "21",
 		"Combinational" : "0",
 		"Datapath" : "1",
-		"ClockEnable" : "1",
+		"ClockEnable" : "0",
 		"HasSubDataflow" : "0",
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",

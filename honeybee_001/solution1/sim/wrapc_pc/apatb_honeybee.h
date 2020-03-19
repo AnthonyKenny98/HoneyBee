@@ -3,6 +3,5 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
-extern _Bool AESL_WRAP_honeybee (
-point_t obs,
+extern int AESL_WRAP_honeybee (
 edge_t edge);

@@ -8,7 +8,7 @@ set stage_num 4
 set max_latency -1
 set registered_input 1
 set impl_style full_dsp
-set Futype4reduceCEFanout 0
+set Futype4reduceCEFanout 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
@@ -99,7 +99,7 @@ set stage_num 4
 set max_latency -1
 set registered_input 1
 set impl_style full_dsp
-set Futype4reduceCEFanout 0
+set Futype4reduceCEFanout 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
@@ -189,7 +189,7 @@ set op fdiv
 set stage_num 10
 set max_latency -1
 set registered_input 1
-set Futype4reduceCEFanout 0
+set Futype4reduceCEFanout 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
@@ -277,7 +277,7 @@ set op fcmp
 set stage_num 2
 set max_latency -1
 set registered_input 1
-set Futype4reduceCEFanout 0
+set Futype4reduceCEFanout 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
@@ -557,26 +557,6 @@ eval "cg_default_interface_gen_reset { \
 }"
 } else {
 puts "@W \[IMPL-114\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
-}
-}
-
-
-# Adapter definition:
-set PortName ap_ce
-set DataWd 1 
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc cg_default_interface_gen_ce] == "cg_default_interface_gen_ce"} {
-eval "cg_default_interface_gen_ce { \
-    id -4 \
-    name ${PortName} \
-    reset_level 1 \
-    sync_rst true \
-    corename apif_ap_ce \
-    data_wd ${DataWd} \
-    op interface \
-}"
-} else {
-puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
 }
 }
 

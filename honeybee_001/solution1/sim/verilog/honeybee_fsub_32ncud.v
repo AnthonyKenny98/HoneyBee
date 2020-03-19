@@ -7,7 +7,7 @@
 
 module honeybee_fsub_32ncud
 #(parameter
-    ID         = 4,
+    ID         = 2,
     NUM_STAGE  = 4,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

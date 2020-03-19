@@ -52,6 +52,9 @@ wire [7:0]            r_tdata;
 reg  [din0_WIDTH-1:0] din0_buf1;
 reg  [din1_WIDTH-1:0] din1_buf1;
 reg  [4:0]            opcode_buf1;
+reg                   ce_r;
+wire [dout_WIDTH-1:0] dout_i;
+reg  [dout_WIDTH-1:0] dout_r;
 //------------------------Instantiation------------------
 honeybee_ap_fcmp_0_no_dsp_32 honeybee_ap_fcmp_0_no_dsp_32_u (
     .s_axis_a_tvalid         ( a_tvalid ),
@@ -69,7 +72,7 @@ assign a_tdata   = din0_buf1;
 assign b_tvalid  = 1'b1;
 assign b_tdata   = din1_buf1;
 assign op_tvalid = 1'b1;
-assign dout      = r_tdata[0];
+assign dout_i    = r_tdata[0];
 
 always @(*) begin
     case (opcode_buf1)
@@ -92,4 +95,15 @@ always @(posedge clk) begin
     end
 end
 
+always @ (posedge clk) begin
+    ce_r <= ce;
+end
+
+always @ (posedge clk) begin
+    if (ce_r) begin
+        dout_r <= dout_i;
+    end
+end
+
+assign dout = ce_r?dout_i:dout_r;
 endmodule
