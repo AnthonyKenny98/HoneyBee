@@ -2,21 +2,22 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-19 17:28:37
+* @Last Modified time: 2020-03-20 06:41:00
 */
 
 #include "honeybee.h"
 #include <stdio.h>
 
-#define NUMEDGES 100-
+#define NUMEDGES 100
 
 float randy(int max) {
     return ((float)rand() / (float)RAND_MAX) * max;
 }
 
-void printBinary(char bus) {
-    for (int i = 0; i < 8; i++) {
-        printf("%d", !!((bus << i) & 0x80));
+void printBinary(Dout_t bus) {
+    for (int i = 0; i < DIM*DIM*DIM; i++) {
+        printf("%d", !!((bus << i) & 0x8000000000000000));
+        if ((i+1) % 4 == 0) printf(" ");
     }
     printf("\n");
 }
@@ -29,7 +30,7 @@ int main(int argc, char* argv[]) {
     // Configure Randomness
     srand ((unsigned int) time(NULL)*10000000);
 
-    unsigned char result;
+    Dout_t result;
 
     // Call HoneyBee
     clock_t start, finish, total;
@@ -42,6 +43,8 @@ int main(int argc, char* argv[]) {
         );
         finish = clock() / (CLOCKS_PER_SEC / 1000000);
         total = (finish - start);
+
+    result = 2;
 
     // Print Results
     printf("********************************************\n");

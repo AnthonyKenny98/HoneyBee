@@ -2,12 +2,17 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-19 17:27:45
+* @Last Modified time: 2020-03-19 18:49:23
 */
 #include "honeybee.h"
 
 // TODO, expand this. Should be able to hard code it for max value
-char bit_vals[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+Dout_t bit_vals[64] = {
+    1, 2, 4, 8, 16, 32, 64, 128,
+    256, 512, 1024, 2048, 4096, 8192, 16348, 32768,
+    65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388208,
+    16776416, 33552832, 67105664, 134211328, 268422656, 536845312, 1073690624, 2147381248
+};
 
 float greaterThan(float x1, float x2, float x0) {
     return (x0-x1)/(x2-x1);
@@ -19,7 +24,6 @@ float lessThan(float x1, float x2, float x0, float X) {
 
 float maxOf3(float x, float y, float z) {
     float max;
-    // Implementation 1
     if (x > y) {
         max = x;
         if (z > x) max = z;
@@ -32,7 +36,6 @@ float maxOf3(float x, float y, float z) {
 
 float minOf3(float x, float y, float z) {
     float min;
-    // Implementation 1
     if (x < y) {
         min = x;
         if (z < x) min = z;
@@ -59,12 +62,12 @@ bool lineIntersectPrism(point_t obs, edge_t edge) {
     return min < max;
 }
 
-char honeybee(edge_t edge) {
-    char collisions = 0;
+Dout_t honeybee(edge_t edge) {
+    Dout_t collisions = 0;
 
-	honeybee_label5:for (int i=0; i<DIM; i++) {
-        honeybee_label4:for (int j=0; j<DIM; j++) {
-            honeybee_label3:for (int k=0; k<DIM; k++) {
+	for (int i=0; i<DIM; i++) {
+        for (int j=0; j<DIM; j++) {
+            for (int k=0; k<DIM; k++) {
                 point_t obs = {.x = (float) i, .y = (float) j, .z = (float) k};
                 if (lineIntersectPrism(obs, edge)) {
                     collisions = collisions | bit_vals[i+j+k];
