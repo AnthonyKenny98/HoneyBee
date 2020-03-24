@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-20 06:41:00
+* @Last Modified time: 2020-03-20 09:03:05
 */
 
 #include "honeybee.h"
@@ -10,13 +10,20 @@
 
 #define NUMEDGES 100
 
+#if DIM == 2
+    #define MSB 0x80
+#elif DIM == 4
+    #define MSB 0x8000000000000000
+#endif
+
 float randy(int max) {
     return ((float)rand() / (float)RAND_MAX) * max;
 }
 
+// Print binary representation of Dout_t representing data bus
 void printBinary(Dout_t bus) {
     for (int i = 0; i < DIM*DIM*DIM; i++) {
-        printf("%d", !!((bus << i) & 0x8000000000000000));
+        printf("%d", !!((bus << i) & MSB));
         if ((i+1) % 4 == 0) printf(" ");
     }
     printf("\n");
@@ -38,13 +45,11 @@ int main(int argc, char* argv[]) {
         result = honeybee(
             (edge_t) {
                 .p1 = (point_t) {.x=0., .y=0., .z=0.},
-                .p2 = (point_t) {.x=2., .y=1., .z=0.}
+                .p2 = (point_t) {.x=1.5, .y=1.25, .z=1.5}
             }
         );
         finish = clock() / (CLOCKS_PER_SEC / 1000000);
         total = (finish - start);
-
-    result = 2;
 
     // Print Results
     printf("********************************************\n");

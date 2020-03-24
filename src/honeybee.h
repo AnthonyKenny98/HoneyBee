@@ -1,18 +1,23 @@
 #ifndef HONEYBEE
 #define HONEYBEE
 
-// #define EPSILON 1
-// #define EPSILON 2
-#define EPSILON 4
-
-#define RESOLUTION 1
-
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
 #include <time.h>
 
-#include "types.h"
+// #define EPSILON 1
+//#define EPSILON 2
+ #define EPSILON 4
+#define RESOLUTION 1
+
+#if EPSILON <= 2
+    typedef unsigned char Dout_t;
+    #define DIM 2
+#elif EPSILON <=4
+    typedef int64_t Dout_t;
+    #define DIM 4
+#endif
 
 typedef struct point {
     float x;

@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-19 18:49:23
+* @Last Modified time: 2020-03-20 08:49:21
 */
 #include "honeybee.h"
 
@@ -46,32 +46,40 @@ float minOf3(float x, float y, float z) {
     return min;
 }
 
-bool lineIntersectPrism(point_t obs, edge_t edge) {
+bool lineIntersectGrid(point_t grid, edge_t edge) {
 
     float max = minOf3(
-        lessThan(edge.p1.x, edge.p2.x, obs.x, RESOLUTION),
-        lessThan(edge.p1.y, edge.p2.y, obs.y, RESOLUTION),
-        lessThan(edge.p1.z, edge.p2.z, obs.z, RESOLUTION)
+        lessThan(edge.p1.x, edge.p2.x, grid.x, RESOLUTION),
+        lessThan(edge.p1.y, edge.p2.y, grid.y, RESOLUTION),
+        lessThan(edge.p1.z, edge.p2.z, grid.z, RESOLUTION)
     );
     float min = maxOf3(
-        greaterThan(edge.p1.x, edge.p2.x, obs.x),
-        greaterThan(edge.p1.y, edge.p2.y, obs.y),
-        greaterThan(edge.p1.z, edge.p2.z, obs.z)
+        greaterThan(edge.p1.x, edge.p2.x, grid.x),
+        greaterThan(edge.p1.y, edge.p2.y, grid.y),
+        greaterThan(edge.p1.z, edge.p2.z, grid.z)
     );
 
     return min < max;
 }
 
+// HoneyBee Function
 Dout_t honeybee(edge_t edge) {
+    
+    // Collision Bus: Set for a datatype that represents correct bus width
     Dout_t collisions = 0;
 
-	for (int i=0; i<DIM; i++) {
-        for (int j=0; j<DIM; j++) {
-            for (int k=0; k<DIM; k++) {
-                point_t obs = {.x = (float) i, .y = (float) j, .z = (float) k};
-                if (lineIntersectPrism(obs, edge)) {
-                    collisions = collisions | bit_vals[i+j+k];
+    int b = 0;
+    // Iterate through potential swept area
+	honeybee_upper_loop:for (int k=0; k<DIM; k++) {
+        honeybee_mid_loop:for (int j=0; j<DIM; j++) {
+            honeybee_lower_loop:for (int i=0; i<DIM; i++) {
+                
+                // Check collision with grid
+                point_t grid = {.x = (float) i, .y = (float) j, .z = (float) k};
+                if (lineIntersectGrid(grid, edge)) {
+                    collisions = collisions | (0b1 << b);
                 }
+            b++;
             }
         }
     }
