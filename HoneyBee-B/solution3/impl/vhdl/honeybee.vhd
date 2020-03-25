@@ -23,298 +23,122 @@ port (
     edge_p2_x : IN STD_LOGIC_VECTOR (31 downto 0);
     edge_p2_y : IN STD_LOGIC_VECTOR (31 downto 0);
     edge_p2_z : IN STD_LOGIC_VECTOR (31 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (63 downto 0) );
+    ap_return : OUT STD_LOGIC_VECTOR (7 downto 0) );
 end;
 
 
 architecture behav of honeybee is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.750000,HLS_SYN_LAT=157,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=192,HLS_SYN_FF=67707,HLS_SYN_LUT=114089,HLS_VERSION=2019_2}";
+    "honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.921200,HLS_SYN_LAT=517,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=136,HLS_SYN_FF=22753,HLS_SYN_LUT=51726,HLS_VERSION=2019_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (10 downto 0) := "00000000001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (10 downto 0) := "00000000010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (10 downto 0) := "00000000100";
-    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (10 downto 0) := "00000001000";
-    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (10 downto 0) := "00000010000";
-    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (10 downto 0) := "00000100000";
-    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (10 downto 0) := "00001000000";
-    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (10 downto 0) := "00010000000";
-    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (10 downto 0) := "00100000000";
-    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (10 downto 0) := "01000000000";
-    constant ap_ST_fsm_state11 : STD_LOGIC_VECTOR (10 downto 0) := "10000000000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (8 downto 0) := "000000010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (8 downto 0) := "000000100";
+    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (8 downto 0) := "000001000";
+    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (8 downto 0) := "000010000";
+    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (8 downto 0) := "000100000";
+    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (8 downto 0) := "001000000";
+    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (8 downto 0) := "010000000";
+    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (8 downto 0) := "100000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
     constant ap_const_lv32_6 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000110";
     constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
     constant ap_const_boolean_0 : BOOLEAN := false;
-    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
-    constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv32_A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001010";
-    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
-    constant ap_const_lv7_0 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
-    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
     constant ap_const_lv32_7 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000111";
     constant ap_const_lv32_3F800000 : STD_LOGIC_VECTOR (31 downto 0) := "00111111100000000000000000000000";
-    constant ap_const_lv32_40000000 : STD_LOGIC_VECTOR (31 downto 0) := "01000000000000000000000000000000";
-    constant ap_const_lv32_40400000 : STD_LOGIC_VECTOR (31 downto 0) := "01000000010000000000000000000000";
-    constant ap_const_lv3_4 : STD_LOGIC_VECTOR (2 downto 0) := "100";
+    constant ap_const_lv2_2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
+    constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
+    constant ap_const_lv4_4 : STD_LOGIC_VECTOR (3 downto 0) := "0100";
+    constant ap_const_lv3_2 : STD_LOGIC_VECTOR (2 downto 0) := "010";
+    constant ap_const_lv5_1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
+    constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
     constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
-    constant ap_const_lv7_10 : STD_LOGIC_VECTOR (6 downto 0) := "0010000";
-    constant ap_const_lv6_4 : STD_LOGIC_VECTOR (5 downto 0) := "000100";
-    constant ap_const_lv6_1 : STD_LOGIC_VECTOR (5 downto 0) := "000001";
-    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
-    constant ap_const_lv6_3 : STD_LOGIC_VECTOR (5 downto 0) := "000011";
-    constant ap_const_lv7_4 : STD_LOGIC_VECTOR (6 downto 0) := "0000100";
-    constant ap_const_lv6_5 : STD_LOGIC_VECTOR (5 downto 0) := "000101";
-    constant ap_const_lv6_C : STD_LOGIC_VECTOR (5 downto 0) := "001100";
-    constant ap_const_lv7_5 : STD_LOGIC_VECTOR (6 downto 0) := "0000101";
-    constant ap_const_lv6_D : STD_LOGIC_VECTOR (5 downto 0) := "001101";
-    constant ap_const_lv6_F : STD_LOGIC_VECTOR (5 downto 0) := "001111";
-    constant ap_const_lv6_7 : STD_LOGIC_VECTOR (5 downto 0) := "000111";
-    constant ap_const_lv7_6 : STD_LOGIC_VECTOR (6 downto 0) := "0000110";
-    constant ap_const_lv7_7 : STD_LOGIC_VECTOR (6 downto 0) := "0000111";
+    constant ap_const_lv8_1 : STD_LOGIC_VECTOR (7 downto 0) := "00000001";
+    constant ap_const_lv3_3 : STD_LOGIC_VECTOR (2 downto 0) := "011";
+    constant ap_const_lv32_5 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000101";
+    constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (10 downto 0) := "00000000001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal k_fu_405_p2 : STD_LOGIC_VECTOR (2 downto 0);
-    signal k_reg_1017 : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_fu_391_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grid_z_reg_1022 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k_fu_207_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal k_reg_415 : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_fu_193_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grid_z_reg_420 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state7 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state7 : signal is "none";
-    signal grp_lineIntersectGrid_fu_151_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_reg_1042 : STD_LOGIC_VECTOR (0 downto 0);
+    signal b_fu_213_p2 : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
-    signal grp_lineIntersectGrid_fu_151_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_151_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_166_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_166_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_181_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_181_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_196_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_196_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_211_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_211_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_226_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_226_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_241_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_241_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_256_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_256_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_271_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_271_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_286_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_286_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_301_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_301_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_316_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_316_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_331_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_331_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_346_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_346_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_361_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_361_ap_done : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_376_ap_ready : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_376_ap_done : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_133_ap_ready : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_133_ap_done : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_148_ap_ready : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_148_ap_done : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_163_ap_ready : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_163_ap_done : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_178_ap_ready : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_178_ap_done : STD_LOGIC;
     signal ap_block_state9_on_subcall_done : BOOLEAN;
-    signal grp_lineIntersectGrid_fu_166_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_0_1_reg_1047 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_181_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_0_2_reg_1052 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_196_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_0_3_reg_1057 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_211_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_1_reg_1062 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_226_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_1_1_reg_1067 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_241_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_1_2_reg_1072 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_256_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_1_3_reg_1077 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_271_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_2_reg_1082 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_286_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_2_1_reg_1087 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_301_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_2_2_reg_1092 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_316_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_2_3_reg_1097 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_331_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_3_reg_1102 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_346_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_3_1_reg_1107 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_361_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_3_2_reg_1112 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_lineIntersectGrid_fu_376_ap_return : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_4_3_3_reg_1117 : STD_LOGIC_VECTOR (0 downto 0);
-    signal b_fu_411_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal b_reg_1122 : STD_LOGIC_VECTOR (6 downto 0);
-    signal ap_CS_fsm_state10 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state10 : signal is "none";
-    signal trunc_ln73_fu_417_p1 : STD_LOGIC_VECTOR (5 downto 0);
-    signal trunc_ln73_reg_1127 : STD_LOGIC_VECTOR (5 downto 0);
-    signal or_ln82_fu_421_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal or_ln82_reg_1132 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_fu_427_p1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal zext_ln82_reg_1137 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_1_fu_521_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_1_reg_1143 : STD_LOGIC_VECTOR (6 downto 0);
-    signal or_ln82_3_fu_527_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal or_ln82_3_reg_1148 : STD_LOGIC_VECTOR (5 downto 0);
-    signal add_ln82_2_fu_537_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_2_reg_1153 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_3_fu_553_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_3_reg_1158 : STD_LOGIC_VECTOR (6 downto 0);
-    signal or_ln79_2_fu_657_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_2_reg_1163 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_12_fu_675_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_12_reg_1168 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_15_fu_883_p2 : STD_LOGIC_VECTOR (63 downto 0);
-    signal ap_CS_fsm_state11 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state11 : signal is "none";
-    signal grp_lineIntersectGrid_fu_151_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_151_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_166_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_166_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_181_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_181_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_196_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_196_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_211_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_211_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_226_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_226_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_241_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_241_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_256_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_256_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_271_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_271_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_286_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_286_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_301_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_301_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_316_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_316_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_331_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_331_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_346_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_346_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_361_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_361_ap_idle : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_376_ap_start : STD_LOGIC;
-    signal grp_lineIntersectGrid_fu_376_ap_idle : STD_LOGIC;
-    signal k_0_reg_116 : STD_LOGIC_VECTOR (2 downto 0);
-    signal b_0_reg_127 : STD_LOGIC_VECTOR (6 downto 0);
-    signal collisions_0_reg_139 : STD_LOGIC_VECTOR (63 downto 0);
-    signal grp_lineIntersectGrid_fu_151_ap_start_reg : STD_LOGIC := '0';
+    signal or_ln158_3_fu_353_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_segmentIntersectsGri_fu_133_ap_start : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_133_ap_idle : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_133_ap_return : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_segmentIntersectsGri_fu_148_ap_start : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_148_ap_idle : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_148_ap_return : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_segmentIntersectsGri_fu_163_ap_start : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_163_ap_idle : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_163_ap_return : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_segmentIntersectsGri_fu_178_ap_start : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_178_ap_idle : STD_LOGIC;
+    signal grp_segmentIntersectsGri_fu_178_ap_return : STD_LOGIC_VECTOR (0 downto 0);
+    signal k_0_reg_98 : STD_LOGIC_VECTOR (1 downto 0);
+    signal b_0_reg_109 : STD_LOGIC_VECTOR (3 downto 0);
+    signal collisions_0_reg_121 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_segmentIntersectsGri_fu_133_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state8 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state8 : signal is "none";
-    signal grp_lineIntersectGrid_fu_166_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_181_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_196_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_211_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_226_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_241_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_256_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_271_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_286_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_301_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_316_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_331_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_346_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_361_ap_start_reg : STD_LOGIC := '0';
-    signal grp_lineIntersectGrid_fu_376_ap_start_reg : STD_LOGIC := '0';
-    signal grp_fu_391_p0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln73_1_fu_431_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_fu_435_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln82_1_fu_448_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_3_fu_458_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_1_fu_462_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_2_fu_454_p1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_fu_475_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal zext_ln82_4_fu_481_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_2_fu_485_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln82_2_fu_498_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_5_fu_504_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_3_fu_508_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_7_fu_533_p1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal or_ln82_5_fu_543_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_11_fu_549_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_12_fu_559_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln82_6_fu_572_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_16_fu_582_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_13_fu_586_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_15_fu_578_p1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal add_ln82_6_fu_599_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal zext_ln82_17_fu_605_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_14_fu_609_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln82_7_fu_622_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_18_fu_628_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_15_fu_632_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_fu_441_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_1_fu_468_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_2_fu_491_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_3_fu_514_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_1_fu_651_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_fu_645_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_12_fu_565_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_13_fu_592_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_14_fu_615_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_15_fu_638_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_11_fu_669_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_10_fu_663_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_1_fu_681_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_4_fu_687_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_8_fu_700_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_5_fu_703_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_9_fu_716_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_6_fu_719_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln82_4_fu_732_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal zext_ln82_10_fu_737_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_7_fu_741_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_6_fu_684_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_8_fu_754_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal zext_ln82_12_fu_767_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_9_fu_770_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal add_ln82_4_fu_783_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal zext_ln82_13_fu_788_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_10_fu_792_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal add_ln82_5_fu_805_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal zext_ln82_14_fu_810_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal shl_ln80_11_fu_814_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_4_fu_693_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_5_fu_709_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_6_fu_725_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_7_fu_747_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_4_fu_833_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_3_fu_827_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_5_fu_839_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_8_fu_760_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_9_fu_776_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_10_fu_798_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal select_ln79_11_fu_820_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_8_fu_856_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_7_fu_850_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_9_fu_862_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_13_fu_868_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_6_fu_845_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal or_ln79_14_fu_873_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sext_ln79_fu_879_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal icmp_ln73_fu_399_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (10 downto 0);
+    signal grp_segmentIntersectsGri_fu_148_ap_start_reg : STD_LOGIC := '0';
+    signal grp_segmentIntersectsGri_fu_163_ap_start_reg : STD_LOGIC := '0';
+    signal grp_segmentIntersectsGri_fu_178_ap_start_reg : STD_LOGIC := '0';
+    signal grp_fu_193_p0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal trunc_ln152_fu_219_p1 : STD_LOGIC_VECTOR (2 downto 0);
+    signal or_ln161_fu_223_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal zext_ln152_1_fu_233_p1 : STD_LOGIC_VECTOR (4 downto 0);
+    signal shl_ln159_fu_237_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal or_ln161_1_fu_251_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal zext_ln161_1_fu_257_p1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal shl_ln159_1_fu_261_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal zext_ln161_fu_229_p1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal shl_ln159_2_fu_275_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal or_ln161_2_fu_289_p2 : STD_LOGIC_VECTOR (2 downto 0);
+    signal zext_ln161_2_fu_295_p1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal shl_ln159_3_fu_299_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal select_ln158_1_fu_267_p3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal trunc_ln158_fu_313_p1 : STD_LOGIC_VECTOR (4 downto 0);
+    signal select_ln158_fu_243_p3 : STD_LOGIC_VECTOR (4 downto 0);
+    signal tmp_62_fu_323_p4 : STD_LOGIC_VECTOR (2 downto 0);
+    signal or_ln158_fu_317_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal select_ln158_2_fu_281_p3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal select_ln158_3_fu_305_p3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal or_ln158_1_fu_341_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal tmp_fu_333_p3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal or_ln158_2_fu_347_p2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal icmp_ln152_fu_201_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (8 downto 0);
 
-    component lineIntersectGrid IS
+    component segmentIntersectsGri IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -322,20 +146,20 @@ architecture behav of honeybee is
         ap_done : OUT STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        grid_x : IN STD_LOGIC_VECTOR (31 downto 0);
-        grid_y : IN STD_LOGIC_VECTOR (31 downto 0);
-        grid_z : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p1_x : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p1_y : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p1_z : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p2_x : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p2_y : IN STD_LOGIC_VECTOR (31 downto 0);
         edge_p2_z : IN STD_LOGIC_VECTOR (31 downto 0);
+        grid_x : IN STD_LOGIC_VECTOR (31 downto 0);
+        grid_y : IN STD_LOGIC_VECTOR (31 downto 0);
+        grid_z : IN STD_LOGIC_VECTOR (31 downto 0);
         ap_return : OUT STD_LOGIC_VECTOR (0 downto 0) );
     end component;
 
 
-    component honeybee_sitofp_3fYi IS
+    component honeybee_sitofp_3hbi IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -352,311 +176,83 @@ architecture behav of honeybee is
 
 
 begin
-    grp_lineIntersectGrid_fu_151 : component lineIntersectGrid
+    grp_segmentIntersectsGri_fu_133 : component segmentIntersectsGri
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_151_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_151_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_151_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_151_ap_ready,
+        ap_start => grp_segmentIntersectsGri_fu_133_ap_start,
+        ap_done => grp_segmentIntersectsGri_fu_133_ap_done,
+        ap_idle => grp_segmentIntersectsGri_fu_133_ap_idle,
+        ap_ready => grp_segmentIntersectsGri_fu_133_ap_ready,
+        edge_p1_x => edge_p1_x,
+        edge_p1_y => edge_p1_y,
+        edge_p1_z => edge_p1_z,
+        edge_p2_x => edge_p2_x,
+        edge_p2_y => edge_p2_y,
+        edge_p2_z => edge_p2_z,
         grid_x => ap_const_lv32_0,
         grid_y => ap_const_lv32_0,
-        grid_z => grid_z_reg_1022,
+        grid_z => grid_z_reg_420,
+        ap_return => grp_segmentIntersectsGri_fu_133_ap_return);
+
+    grp_segmentIntersectsGri_fu_148 : component segmentIntersectsGri
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        ap_start => grp_segmentIntersectsGri_fu_148_ap_start,
+        ap_done => grp_segmentIntersectsGri_fu_148_ap_done,
+        ap_idle => grp_segmentIntersectsGri_fu_148_ap_idle,
+        ap_ready => grp_segmentIntersectsGri_fu_148_ap_ready,
         edge_p1_x => edge_p1_x,
         edge_p1_y => edge_p1_y,
         edge_p1_z => edge_p1_z,
         edge_p2_x => edge_p2_x,
         edge_p2_y => edge_p2_y,
         edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_151_ap_return);
-
-    grp_lineIntersectGrid_fu_166 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_166_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_166_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_166_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_166_ap_ready,
         grid_x => ap_const_lv32_3F800000,
         grid_y => ap_const_lv32_0,
-        grid_z => grid_z_reg_1022,
+        grid_z => grid_z_reg_420,
+        ap_return => grp_segmentIntersectsGri_fu_148_ap_return);
+
+    grp_segmentIntersectsGri_fu_163 : component segmentIntersectsGri
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        ap_start => grp_segmentIntersectsGri_fu_163_ap_start,
+        ap_done => grp_segmentIntersectsGri_fu_163_ap_done,
+        ap_idle => grp_segmentIntersectsGri_fu_163_ap_idle,
+        ap_ready => grp_segmentIntersectsGri_fu_163_ap_ready,
         edge_p1_x => edge_p1_x,
         edge_p1_y => edge_p1_y,
         edge_p1_z => edge_p1_z,
         edge_p2_x => edge_p2_x,
         edge_p2_y => edge_p2_y,
         edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_166_ap_return);
-
-    grp_lineIntersectGrid_fu_181 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_181_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_181_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_181_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_181_ap_ready,
-        grid_x => ap_const_lv32_40000000,
-        grid_y => ap_const_lv32_0,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_181_ap_return);
-
-    grp_lineIntersectGrid_fu_196 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_196_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_196_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_196_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_196_ap_ready,
-        grid_x => ap_const_lv32_40400000,
-        grid_y => ap_const_lv32_0,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_196_ap_return);
-
-    grp_lineIntersectGrid_fu_211 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_211_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_211_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_211_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_211_ap_ready,
         grid_x => ap_const_lv32_0,
         grid_y => ap_const_lv32_3F800000,
-        grid_z => grid_z_reg_1022,
+        grid_z => grid_z_reg_420,
+        ap_return => grp_segmentIntersectsGri_fu_163_ap_return);
+
+    grp_segmentIntersectsGri_fu_178 : component segmentIntersectsGri
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        ap_start => grp_segmentIntersectsGri_fu_178_ap_start,
+        ap_done => grp_segmentIntersectsGri_fu_178_ap_done,
+        ap_idle => grp_segmentIntersectsGri_fu_178_ap_idle,
+        ap_ready => grp_segmentIntersectsGri_fu_178_ap_ready,
         edge_p1_x => edge_p1_x,
         edge_p1_y => edge_p1_y,
         edge_p1_z => edge_p1_z,
         edge_p2_x => edge_p2_x,
         edge_p2_y => edge_p2_y,
         edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_211_ap_return);
-
-    grp_lineIntersectGrid_fu_226 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_226_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_226_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_226_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_226_ap_ready,
         grid_x => ap_const_lv32_3F800000,
         grid_y => ap_const_lv32_3F800000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_226_ap_return);
+        grid_z => grid_z_reg_420,
+        ap_return => grp_segmentIntersectsGri_fu_178_ap_return);
 
-    grp_lineIntersectGrid_fu_241 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_241_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_241_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_241_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_241_ap_ready,
-        grid_x => ap_const_lv32_40000000,
-        grid_y => ap_const_lv32_3F800000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_241_ap_return);
-
-    grp_lineIntersectGrid_fu_256 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_256_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_256_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_256_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_256_ap_ready,
-        grid_x => ap_const_lv32_40400000,
-        grid_y => ap_const_lv32_3F800000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_256_ap_return);
-
-    grp_lineIntersectGrid_fu_271 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_271_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_271_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_271_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_271_ap_ready,
-        grid_x => ap_const_lv32_0,
-        grid_y => ap_const_lv32_40000000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_271_ap_return);
-
-    grp_lineIntersectGrid_fu_286 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_286_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_286_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_286_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_286_ap_ready,
-        grid_x => ap_const_lv32_3F800000,
-        grid_y => ap_const_lv32_40000000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_286_ap_return);
-
-    grp_lineIntersectGrid_fu_301 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_301_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_301_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_301_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_301_ap_ready,
-        grid_x => ap_const_lv32_40000000,
-        grid_y => ap_const_lv32_40000000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_301_ap_return);
-
-    grp_lineIntersectGrid_fu_316 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_316_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_316_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_316_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_316_ap_ready,
-        grid_x => ap_const_lv32_40400000,
-        grid_y => ap_const_lv32_40000000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_316_ap_return);
-
-    grp_lineIntersectGrid_fu_331 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_331_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_331_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_331_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_331_ap_ready,
-        grid_x => ap_const_lv32_0,
-        grid_y => ap_const_lv32_40400000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_331_ap_return);
-
-    grp_lineIntersectGrid_fu_346 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_346_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_346_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_346_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_346_ap_ready,
-        grid_x => ap_const_lv32_3F800000,
-        grid_y => ap_const_lv32_40400000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_346_ap_return);
-
-    grp_lineIntersectGrid_fu_361 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_361_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_361_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_361_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_361_ap_ready,
-        grid_x => ap_const_lv32_40000000,
-        grid_y => ap_const_lv32_40400000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_361_ap_return);
-
-    grp_lineIntersectGrid_fu_376 : component lineIntersectGrid
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
-        ap_start => grp_lineIntersectGrid_fu_376_ap_start,
-        ap_done => grp_lineIntersectGrid_fu_376_ap_done,
-        ap_idle => grp_lineIntersectGrid_fu_376_ap_idle,
-        ap_ready => grp_lineIntersectGrid_fu_376_ap_ready,
-        grid_x => ap_const_lv32_40400000,
-        grid_y => ap_const_lv32_40400000,
-        grid_z => grid_z_reg_1022,
-        edge_p1_x => edge_p1_x,
-        edge_p1_y => edge_p1_y,
-        edge_p1_z => edge_p1_z,
-        edge_p2_x => edge_p2_x,
-        edge_p2_y => edge_p2_y,
-        edge_p2_z => edge_p2_z,
-        ap_return => grp_lineIntersectGrid_fu_376_ap_return);
-
-    honeybee_sitofp_3fYi_U26 : component honeybee_sitofp_3fYi
+    honeybee_sitofp_3hbi_U56 : component honeybee_sitofp_3hbi
     generic map (
         ID => 1,
         NUM_STAGE => 6,
@@ -665,9 +261,9 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => grp_fu_391_p0,
+        din0 => grp_fu_193_p0,
         ce => ap_const_logic_1,
-        dout => grp_fu_391_p1);
+        dout => grp_fu_193_p1);
 
 
 
@@ -685,337 +281,107 @@ begin
     end process;
 
 
-    grp_lineIntersectGrid_fu_151_ap_start_reg_assign_proc : process(ap_clk)
+    grp_segmentIntersectsGri_fu_133_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_151_ap_start_reg <= ap_const_logic_0;
+                grp_segmentIntersectsGri_fu_133_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_151_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_151_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_151_ap_start_reg <= ap_const_logic_0;
+                    grp_segmentIntersectsGri_fu_133_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_segmentIntersectsGri_fu_133_ap_ready = ap_const_logic_1)) then 
+                    grp_segmentIntersectsGri_fu_133_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_lineIntersectGrid_fu_166_ap_start_reg_assign_proc : process(ap_clk)
+    grp_segmentIntersectsGri_fu_148_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_166_ap_start_reg <= ap_const_logic_0;
+                grp_segmentIntersectsGri_fu_148_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_166_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_166_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_166_ap_start_reg <= ap_const_logic_0;
+                    grp_segmentIntersectsGri_fu_148_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_segmentIntersectsGri_fu_148_ap_ready = ap_const_logic_1)) then 
+                    grp_segmentIntersectsGri_fu_148_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_lineIntersectGrid_fu_181_ap_start_reg_assign_proc : process(ap_clk)
+    grp_segmentIntersectsGri_fu_163_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_181_ap_start_reg <= ap_const_logic_0;
+                grp_segmentIntersectsGri_fu_163_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_181_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_181_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_181_ap_start_reg <= ap_const_logic_0;
+                    grp_segmentIntersectsGri_fu_163_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_segmentIntersectsGri_fu_163_ap_ready = ap_const_logic_1)) then 
+                    grp_segmentIntersectsGri_fu_163_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_lineIntersectGrid_fu_196_ap_start_reg_assign_proc : process(ap_clk)
+    grp_segmentIntersectsGri_fu_178_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_196_ap_start_reg <= ap_const_logic_0;
+                grp_segmentIntersectsGri_fu_178_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_196_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_196_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_196_ap_start_reg <= ap_const_logic_0;
+                    grp_segmentIntersectsGri_fu_178_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_segmentIntersectsGri_fu_178_ap_ready = ap_const_logic_1)) then 
+                    grp_segmentIntersectsGri_fu_178_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_lineIntersectGrid_fu_211_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_211_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_211_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_211_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_211_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_226_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_226_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_226_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_226_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_226_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_241_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_241_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_241_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_241_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_241_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_256_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_256_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_256_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_256_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_256_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_271_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_271_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_271_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_271_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_271_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_286_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_286_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_286_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_286_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_286_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_301_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_301_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_301_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_301_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_301_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_316_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_316_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_316_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_316_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_316_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_331_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_331_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_331_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_331_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_331_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_346_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_346_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_346_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_346_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_346_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_361_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_361_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_361_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_361_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_361_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    grp_lineIntersectGrid_fu_376_ap_start_reg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                grp_lineIntersectGrid_fu_376_ap_start_reg <= ap_const_logic_0;
-            else
-                if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                    grp_lineIntersectGrid_fu_376_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_lineIntersectGrid_fu_376_ap_ready = ap_const_logic_1)) then 
-                    grp_lineIntersectGrid_fu_376_ap_start_reg <= ap_const_logic_0;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    b_0_reg_127_assign_proc : process (ap_clk)
+    b_0_reg_109_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state11)) then 
-                b_0_reg_127 <= b_reg_1122;
+            if (((ap_const_boolean_0 = ap_block_state9_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
+                b_0_reg_109 <= b_fu_213_p2;
             elsif (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
-                b_0_reg_127 <= ap_const_lv7_0;
+                b_0_reg_109 <= ap_const_lv4_0;
             end if; 
         end if;
     end process;
 
-    collisions_0_reg_139_assign_proc : process (ap_clk)
+    collisions_0_reg_121_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state11)) then 
-                collisions_0_reg_139 <= or_ln79_15_fu_883_p2;
+            if (((ap_const_boolean_0 = ap_block_state9_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
+                collisions_0_reg_121 <= or_ln158_3_fu_353_p2;
             elsif (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
-                collisions_0_reg_139 <= ap_const_lv64_0;
+                collisions_0_reg_121 <= ap_const_lv8_0;
             end if; 
         end if;
     end process;
 
-    k_0_reg_116_assign_proc : process (ap_clk)
+    k_0_reg_98_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state11)) then 
-                k_0_reg_116 <= k_reg_1017;
+            if (((ap_const_boolean_0 = ap_block_state9_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
+                k_0_reg_98 <= k_reg_415;
             elsif (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
-                k_0_reg_116 <= ap_const_lv3_0;
+                k_0_reg_98 <= ap_const_lv2_0;
             end if; 
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state10) and (tmp_4_2_reg_1082 = ap_const_lv1_1))) then
-                add_ln82_1_reg_1143 <= add_ln82_1_fu_521_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state10) and (tmp_4_1_2_reg_1072 = ap_const_lv1_1))) then
-                    add_ln82_2_reg_1153(6 downto 1) <= add_ln82_2_fu_537_p2(6 downto 1);
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state10) and (tmp_4_2_1_reg_1087 = ap_const_lv1_1))) then
-                add_ln82_3_reg_1158 <= add_ln82_3_fu_553_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state10)) then
-                b_reg_1122 <= b_fu_411_p2;
-                or_ln79_12_reg_1168 <= or_ln79_12_fu_675_p2;
-                or_ln79_2_reg_1163 <= or_ln79_2_fu_657_p2;
-                    or_ln82_3_reg_1148(1) <= or_ln82_3_fu_527_p2(1);    or_ln82_3_reg_1148(5 downto 3) <= or_ln82_3_fu_527_p2(5 downto 3);
-                    or_ln82_reg_1132(1 downto 0) <= or_ln82_fu_421_p2(1 downto 0);    or_ln82_reg_1132(5 downto 3) <= or_ln82_fu_421_p2(5 downto 3);
-                trunc_ln73_reg_1127 <= trunc_ln73_fu_417_p1;
-                    zext_ln82_reg_1137(1 downto 0) <= zext_ln82_fu_427_p1(1 downto 0);    zext_ln82_reg_1137(5 downto 3) <= zext_ln82_fu_427_p1(5 downto 3);
-            end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state7)) then
-                grid_z_reg_1022 <= grp_fu_391_p1;
+                grid_z_reg_420 <= grp_fu_193_p1;
             end if;
         end if;
     end process;
@@ -1023,41 +389,12 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                k_reg_1017 <= k_fu_405_p2;
+                k_reg_415 <= k_fu_207_p2;
             end if;
         end if;
     end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state9) and (ap_const_boolean_0 = ap_block_state9_on_subcall_done))) then
-                tmp_4_0_1_reg_1047 <= grp_lineIntersectGrid_fu_166_ap_return;
-                tmp_4_0_2_reg_1052 <= grp_lineIntersectGrid_fu_181_ap_return;
-                tmp_4_0_3_reg_1057 <= grp_lineIntersectGrid_fu_196_ap_return;
-                tmp_4_1_1_reg_1067 <= grp_lineIntersectGrid_fu_226_ap_return;
-                tmp_4_1_2_reg_1072 <= grp_lineIntersectGrid_fu_241_ap_return;
-                tmp_4_1_3_reg_1077 <= grp_lineIntersectGrid_fu_256_ap_return;
-                tmp_4_1_reg_1062 <= grp_lineIntersectGrid_fu_211_ap_return;
-                tmp_4_2_1_reg_1087 <= grp_lineIntersectGrid_fu_286_ap_return;
-                tmp_4_2_2_reg_1092 <= grp_lineIntersectGrid_fu_301_ap_return;
-                tmp_4_2_3_reg_1097 <= grp_lineIntersectGrid_fu_316_ap_return;
-                tmp_4_2_reg_1082 <= grp_lineIntersectGrid_fu_271_ap_return;
-                tmp_4_3_1_reg_1107 <= grp_lineIntersectGrid_fu_346_ap_return;
-                tmp_4_3_2_reg_1112 <= grp_lineIntersectGrid_fu_361_ap_return;
-                tmp_4_3_3_reg_1117 <= grp_lineIntersectGrid_fu_376_ap_return;
-                tmp_4_3_reg_1102 <= grp_lineIntersectGrid_fu_331_ap_return;
-                tmp_4_reg_1042 <= grp_lineIntersectGrid_fu_151_ap_return;
-            end if;
-        end if;
-    end process;
-    or_ln82_reg_1132(2) <= '1';
-    zext_ln82_reg_1137(2) <= '1';
-    zext_ln82_reg_1137(6) <= '0';
-    or_ln82_3_reg_1148(0) <= '1';
-    or_ln82_3_reg_1148(2) <= '1';
-    add_ln82_2_reg_1153(0) <= '0';
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state9, ap_block_state9_on_subcall_done, icmp_ln73_fu_399_p2)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state9, ap_block_state9_on_subcall_done, icmp_ln152_fu_201_p2)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -1067,7 +404,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state2) and (icmp_ln73_fu_399_p2 = ap_const_lv1_1))) then
+                if (((icmp_ln152_fu_201_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state3;
@@ -1085,43 +422,30 @@ begin
             when ap_ST_fsm_state8 => 
                 ap_NS_fsm <= ap_ST_fsm_state9;
             when ap_ST_fsm_state9 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state9) and (ap_const_boolean_0 = ap_block_state9_on_subcall_done))) then
-                    ap_NS_fsm <= ap_ST_fsm_state10;
+                if (((ap_const_boolean_0 = ap_block_state9_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
+                    ap_NS_fsm <= ap_ST_fsm_state2;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state9;
                 end if;
-            when ap_ST_fsm_state10 => 
-                ap_NS_fsm <= ap_ST_fsm_state11;
-            when ap_ST_fsm_state11 => 
-                ap_NS_fsm <= ap_ST_fsm_state2;
             when others =>  
-                ap_NS_fsm <= "XXXXXXXXXXX";
+                ap_NS_fsm <= "XXXXXXXXX";
         end case;
     end process;
-    add_ln82_1_fu_521_p2 <= std_logic_vector(unsigned(ap_const_lv7_4) + unsigned(zext_ln82_fu_427_p1));
-    add_ln82_2_fu_537_p2 <= std_logic_vector(unsigned(ap_const_lv7_1) + unsigned(zext_ln82_7_fu_533_p1));
-    add_ln82_3_fu_553_p2 <= std_logic_vector(unsigned(ap_const_lv7_5) + unsigned(zext_ln82_fu_427_p1));
-    add_ln82_4_fu_783_p2 <= std_logic_vector(unsigned(ap_const_lv7_6) + unsigned(zext_ln82_reg_1137));
-    add_ln82_5_fu_805_p2 <= std_logic_vector(unsigned(ap_const_lv7_7) + unsigned(zext_ln82_reg_1137));
-    add_ln82_6_fu_599_p2 <= std_logic_vector(unsigned(ap_const_lv7_1) + unsigned(zext_ln82_15_fu_578_p1));
-    add_ln82_fu_475_p2 <= std_logic_vector(unsigned(ap_const_lv7_1) + unsigned(zext_ln82_2_fu_454_p1));
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
-    ap_CS_fsm_state10 <= ap_CS_fsm(9);
-    ap_CS_fsm_state11 <= ap_CS_fsm(10);
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
     ap_CS_fsm_state7 <= ap_CS_fsm(6);
     ap_CS_fsm_state8 <= ap_CS_fsm(7);
     ap_CS_fsm_state9 <= ap_CS_fsm(8);
 
-    ap_block_state9_on_subcall_done_assign_proc : process(grp_lineIntersectGrid_fu_151_ap_done, grp_lineIntersectGrid_fu_166_ap_done, grp_lineIntersectGrid_fu_181_ap_done, grp_lineIntersectGrid_fu_196_ap_done, grp_lineIntersectGrid_fu_211_ap_done, grp_lineIntersectGrid_fu_226_ap_done, grp_lineIntersectGrid_fu_241_ap_done, grp_lineIntersectGrid_fu_256_ap_done, grp_lineIntersectGrid_fu_271_ap_done, grp_lineIntersectGrid_fu_286_ap_done, grp_lineIntersectGrid_fu_301_ap_done, grp_lineIntersectGrid_fu_316_ap_done, grp_lineIntersectGrid_fu_331_ap_done, grp_lineIntersectGrid_fu_346_ap_done, grp_lineIntersectGrid_fu_361_ap_done, grp_lineIntersectGrid_fu_376_ap_done)
+    ap_block_state9_on_subcall_done_assign_proc : process(grp_segmentIntersectsGri_fu_133_ap_done, grp_segmentIntersectsGri_fu_148_ap_done, grp_segmentIntersectsGri_fu_163_ap_done, grp_segmentIntersectsGri_fu_178_ap_done)
     begin
-                ap_block_state9_on_subcall_done <= ((grp_lineIntersectGrid_fu_241_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_226_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_211_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_196_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_181_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_166_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_151_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_376_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_361_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_346_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_331_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_316_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_301_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_286_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_271_ap_done = ap_const_logic_0) or (grp_lineIntersectGrid_fu_256_ap_done = ap_const_logic_0));
+                ap_block_state9_on_subcall_done <= ((grp_segmentIntersectsGri_fu_178_ap_done = ap_const_logic_0) or (grp_segmentIntersectsGri_fu_163_ap_done = ap_const_logic_0) or (grp_segmentIntersectsGri_fu_148_ap_done = ap_const_logic_0) or (grp_segmentIntersectsGri_fu_133_ap_done = ap_const_logic_0));
     end process;
 
 
-    ap_done_assign_proc : process(ap_CS_fsm_state2, icmp_ln73_fu_399_p2)
+    ap_done_assign_proc : process(ap_CS_fsm_state2, icmp_ln152_fu_201_p2)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state2) and (icmp_ln73_fu_399_p2 = ap_const_lv1_1))) then 
+        if (((icmp_ln152_fu_201_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -1139,145 +463,53 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state2, icmp_ln73_fu_399_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state2, icmp_ln152_fu_201_p2)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state2) and (icmp_ln73_fu_399_p2 = ap_const_lv1_1))) then 
+        if (((icmp_ln152_fu_201_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    ap_return <= collisions_0_reg_139;
-    b_fu_411_p2 <= std_logic_vector(unsigned(ap_const_lv7_10) + unsigned(b_0_reg_127));
-    grp_fu_391_p0 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(k_0_reg_116),32));
-    grp_lineIntersectGrid_fu_151_ap_start <= grp_lineIntersectGrid_fu_151_ap_start_reg;
-    grp_lineIntersectGrid_fu_166_ap_start <= grp_lineIntersectGrid_fu_166_ap_start_reg;
-    grp_lineIntersectGrid_fu_181_ap_start <= grp_lineIntersectGrid_fu_181_ap_start_reg;
-    grp_lineIntersectGrid_fu_196_ap_start <= grp_lineIntersectGrid_fu_196_ap_start_reg;
-    grp_lineIntersectGrid_fu_211_ap_start <= grp_lineIntersectGrid_fu_211_ap_start_reg;
-    grp_lineIntersectGrid_fu_226_ap_start <= grp_lineIntersectGrid_fu_226_ap_start_reg;
-    grp_lineIntersectGrid_fu_241_ap_start <= grp_lineIntersectGrid_fu_241_ap_start_reg;
-    grp_lineIntersectGrid_fu_256_ap_start <= grp_lineIntersectGrid_fu_256_ap_start_reg;
-    grp_lineIntersectGrid_fu_271_ap_start <= grp_lineIntersectGrid_fu_271_ap_start_reg;
-    grp_lineIntersectGrid_fu_286_ap_start <= grp_lineIntersectGrid_fu_286_ap_start_reg;
-    grp_lineIntersectGrid_fu_301_ap_start <= grp_lineIntersectGrid_fu_301_ap_start_reg;
-    grp_lineIntersectGrid_fu_316_ap_start <= grp_lineIntersectGrid_fu_316_ap_start_reg;
-    grp_lineIntersectGrid_fu_331_ap_start <= grp_lineIntersectGrid_fu_331_ap_start_reg;
-    grp_lineIntersectGrid_fu_346_ap_start <= grp_lineIntersectGrid_fu_346_ap_start_reg;
-    grp_lineIntersectGrid_fu_361_ap_start <= grp_lineIntersectGrid_fu_361_ap_start_reg;
-    grp_lineIntersectGrid_fu_376_ap_start <= grp_lineIntersectGrid_fu_376_ap_start_reg;
-    icmp_ln73_fu_399_p2 <= "1" when (k_0_reg_116 = ap_const_lv3_4) else "0";
-    k_fu_405_p2 <= std_logic_vector(unsigned(k_0_reg_116) + unsigned(ap_const_lv3_1));
-    or_ln79_10_fu_663_p2 <= (select_ln79_13_fu_592_p3 or select_ln79_12_fu_565_p3);
-    or_ln79_11_fu_669_p2 <= (select_ln79_15_fu_638_p3 or select_ln79_14_fu_615_p3);
-    or_ln79_12_fu_675_p2 <= (or_ln79_11_fu_669_p2 or or_ln79_10_fu_663_p2);
-    or_ln79_13_fu_868_p2 <= (or_ln79_9_fu_862_p2 or or_ln79_12_reg_1168);
-    or_ln79_14_fu_873_p2 <= (or_ln79_6_fu_845_p2 or or_ln79_13_fu_868_p2);
-    or_ln79_15_fu_883_p2 <= (sext_ln79_fu_879_p1 or collisions_0_reg_139);
-    or_ln79_1_fu_651_p2 <= (select_ln79_3_fu_514_p3 or select_ln79_2_fu_491_p3);
-    or_ln79_2_fu_657_p2 <= (or_ln79_fu_645_p2 or or_ln79_1_fu_651_p2);
-    or_ln79_3_fu_827_p2 <= (select_ln79_5_fu_709_p3 or select_ln79_4_fu_693_p3);
-    or_ln79_4_fu_833_p2 <= (select_ln79_7_fu_747_p3 or select_ln79_6_fu_725_p3);
-    or_ln79_5_fu_839_p2 <= (or_ln79_4_fu_833_p2 or or_ln79_3_fu_827_p2);
-    or_ln79_6_fu_845_p2 <= (or_ln79_5_fu_839_p2 or or_ln79_2_reg_1163);
-    or_ln79_7_fu_850_p2 <= (select_ln79_9_fu_776_p3 or select_ln79_8_fu_760_p3);
-    or_ln79_8_fu_856_p2 <= (select_ln79_11_fu_820_p3 or select_ln79_10_fu_798_p3);
-    or_ln79_9_fu_862_p2 <= (or_ln79_8_fu_856_p2 or or_ln79_7_fu_850_p2);
-    or_ln79_fu_645_p2 <= (select_ln79_fu_441_p3 or select_ln79_1_fu_468_p3);
-    or_ln82_1_fu_448_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_1);
-    or_ln82_2_fu_498_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_3);
-    or_ln82_3_fu_527_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_5);
-    or_ln82_4_fu_732_p2 <= (trunc_ln73_reg_1127 or ap_const_lv6_7);
-    or_ln82_5_fu_543_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_C);
-    or_ln82_6_fu_572_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_D);
-    or_ln82_7_fu_622_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_F);
-    or_ln82_fu_421_p2 <= (trunc_ln73_fu_417_p1 or ap_const_lv6_4);
-    select_ln79_10_fu_798_p3 <= 
-        shl_ln80_10_fu_792_p2 when (tmp_4_2_2_reg_1092(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_11_fu_820_p3 <= 
-        shl_ln80_11_fu_814_p2 when (tmp_4_2_3_reg_1097(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_12_fu_565_p3 <= 
-        shl_ln80_12_fu_559_p2 when (tmp_4_3_reg_1102(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_13_fu_592_p3 <= 
-        shl_ln80_13_fu_586_p2 when (tmp_4_3_1_reg_1107(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_14_fu_615_p3 <= 
-        shl_ln80_14_fu_609_p2 when (tmp_4_3_2_reg_1112(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_15_fu_638_p3 <= 
-        shl_ln80_15_fu_632_p2 when (tmp_4_3_3_reg_1117(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_1_fu_468_p3 <= 
-        shl_ln80_1_fu_462_p2 when (tmp_4_0_1_reg_1047(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_2_fu_491_p3 <= 
-        shl_ln80_2_fu_485_p2 when (tmp_4_0_2_reg_1052(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_3_fu_514_p3 <= 
-        shl_ln80_3_fu_508_p2 when (tmp_4_0_3_reg_1057(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_4_fu_693_p3 <= 
-        shl_ln80_4_fu_687_p2 when (tmp_4_1_reg_1062(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_5_fu_709_p3 <= 
-        shl_ln80_5_fu_703_p2 when (tmp_4_1_1_reg_1067(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_6_fu_725_p3 <= 
-        shl_ln80_6_fu_719_p2 when (tmp_4_1_2_reg_1072(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_7_fu_747_p3 <= 
-        shl_ln80_7_fu_741_p2 when (tmp_4_1_3_reg_1077(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_8_fu_760_p3 <= 
-        shl_ln80_8_fu_754_p2 when (tmp_4_2_reg_1082(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_9_fu_776_p3 <= 
-        shl_ln80_9_fu_770_p2 when (tmp_4_2_1_reg_1087(0) = '1') else 
-        ap_const_lv32_0;
-    select_ln79_fu_441_p3 <= 
-        shl_ln80_fu_435_p2 when (tmp_4_reg_1042(0) = '1') else 
-        ap_const_lv32_0;
-        sext_ln79_fu_879_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(or_ln79_14_fu_873_p2),64));
-
-    shl_ln80_10_fu_792_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_13_fu_788_p1(31-1 downto 0)))));
-    shl_ln80_11_fu_814_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_14_fu_810_p1(31-1 downto 0)))));
-    shl_ln80_12_fu_559_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_11_fu_549_p1(31-1 downto 0)))));
-    shl_ln80_13_fu_586_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_16_fu_582_p1(31-1 downto 0)))));
-    shl_ln80_14_fu_609_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_17_fu_605_p1(31-1 downto 0)))));
-    shl_ln80_15_fu_632_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_18_fu_628_p1(31-1 downto 0)))));
-    shl_ln80_1_fu_462_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_3_fu_458_p1(31-1 downto 0)))));
-    shl_ln80_2_fu_485_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_4_fu_481_p1(31-1 downto 0)))));
-    shl_ln80_3_fu_508_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_5_fu_504_p1(31-1 downto 0)))));
-    shl_ln80_4_fu_687_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_1_fu_681_p1(31-1 downto 0)))));
-    shl_ln80_5_fu_703_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_8_fu_700_p1(31-1 downto 0)))));
-    shl_ln80_6_fu_719_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_9_fu_716_p1(31-1 downto 0)))));
-    shl_ln80_7_fu_741_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_10_fu_737_p1(31-1 downto 0)))));
-    shl_ln80_8_fu_754_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_6_fu_684_p1(31-1 downto 0)))));
-    shl_ln80_9_fu_770_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln82_12_fu_767_p1(31-1 downto 0)))));
-    shl_ln80_fu_435_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv32_1),to_integer(unsigned('0' & zext_ln73_1_fu_431_p1(31-1 downto 0)))));
-    trunc_ln73_fu_417_p1 <= b_0_reg_127(6 - 1 downto 0);
-    zext_ln73_1_fu_431_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(b_0_reg_127),32));
-    zext_ln82_10_fu_737_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_4_fu_732_p2),32));
-    zext_ln82_11_fu_549_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_5_fu_543_p2),32));
-    zext_ln82_12_fu_767_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_3_reg_1158),32));
-    zext_ln82_13_fu_788_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_4_fu_783_p2),32));
-    zext_ln82_14_fu_810_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_5_fu_805_p2),32));
-    zext_ln82_15_fu_578_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_6_fu_572_p2),7));
-    zext_ln82_16_fu_582_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_6_fu_572_p2),32));
-    zext_ln82_17_fu_605_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_6_fu_599_p2),32));
-    zext_ln82_18_fu_628_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_7_fu_622_p2),32));
-    zext_ln82_1_fu_681_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_reg_1132),32));
-    zext_ln82_2_fu_454_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_1_fu_448_p2),7));
-    zext_ln82_3_fu_458_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_1_fu_448_p2),32));
-    zext_ln82_4_fu_481_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_fu_475_p2),32));
-    zext_ln82_5_fu_504_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_2_fu_498_p2),32));
-    zext_ln82_6_fu_684_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_1_reg_1143),32));
-    zext_ln82_7_fu_533_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_3_fu_527_p2),7));
-    zext_ln82_8_fu_700_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_3_reg_1148),32));
-    zext_ln82_9_fu_716_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(add_ln82_2_reg_1153),32));
-    zext_ln82_fu_427_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln82_fu_421_p2),7));
+    ap_return <= collisions_0_reg_121;
+    b_fu_213_p2 <= std_logic_vector(unsigned(ap_const_lv4_4) + unsigned(b_0_reg_109));
+    grp_fu_193_p0 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(k_0_reg_98),32));
+    grp_segmentIntersectsGri_fu_133_ap_start <= grp_segmentIntersectsGri_fu_133_ap_start_reg;
+    grp_segmentIntersectsGri_fu_148_ap_start <= grp_segmentIntersectsGri_fu_148_ap_start_reg;
+    grp_segmentIntersectsGri_fu_163_ap_start <= grp_segmentIntersectsGri_fu_163_ap_start_reg;
+    grp_segmentIntersectsGri_fu_178_ap_start <= grp_segmentIntersectsGri_fu_178_ap_start_reg;
+    icmp_ln152_fu_201_p2 <= "1" when (k_0_reg_98 = ap_const_lv2_2) else "0";
+    k_fu_207_p2 <= std_logic_vector(unsigned(k_0_reg_98) + unsigned(ap_const_lv2_1));
+    or_ln158_1_fu_341_p2 <= (select_ln158_3_fu_305_p3 or select_ln158_2_fu_281_p3);
+    or_ln158_2_fu_347_p2 <= (tmp_fu_333_p3 or or_ln158_1_fu_341_p2);
+    or_ln158_3_fu_353_p2 <= (or_ln158_2_fu_347_p2 or collisions_0_reg_121);
+    or_ln158_fu_317_p2 <= (trunc_ln158_fu_313_p1 or select_ln158_fu_243_p3);
+    or_ln161_1_fu_251_p2 <= (trunc_ln152_fu_219_p1 or ap_const_lv3_1);
+    or_ln161_2_fu_289_p2 <= (trunc_ln152_fu_219_p1 or ap_const_lv3_3);
+    or_ln161_fu_223_p2 <= (trunc_ln152_fu_219_p1 or ap_const_lv3_2);
+    select_ln158_1_fu_267_p3 <= 
+        shl_ln159_1_fu_261_p2 when (grp_segmentIntersectsGri_fu_148_ap_return(0) = '1') else 
+        ap_const_lv8_0;
+    select_ln158_2_fu_281_p3 <= 
+        shl_ln159_2_fu_275_p2 when (grp_segmentIntersectsGri_fu_163_ap_return(0) = '1') else 
+        ap_const_lv8_0;
+    select_ln158_3_fu_305_p3 <= 
+        shl_ln159_3_fu_299_p2 when (grp_segmentIntersectsGri_fu_178_ap_return(0) = '1') else 
+        ap_const_lv8_0;
+    select_ln158_fu_243_p3 <= 
+        shl_ln159_fu_237_p2 when (grp_segmentIntersectsGri_fu_133_ap_return(0) = '1') else 
+        ap_const_lv5_0;
+    shl_ln159_1_fu_261_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv8_1),to_integer(unsigned('0' & zext_ln161_1_fu_257_p1(8-1 downto 0)))));
+    shl_ln159_2_fu_275_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv8_1),to_integer(unsigned('0' & zext_ln161_fu_229_p1(8-1 downto 0)))));
+    shl_ln159_3_fu_299_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv8_1),to_integer(unsigned('0' & zext_ln161_2_fu_295_p1(8-1 downto 0)))));
+    shl_ln159_fu_237_p2 <= std_logic_vector(shift_left(unsigned(ap_const_lv5_1),to_integer(unsigned('0' & zext_ln152_1_fu_233_p1(5-1 downto 0)))));
+    tmp_62_fu_323_p4 <= select_ln158_1_fu_267_p3(7 downto 5);
+    tmp_fu_333_p3 <= (tmp_62_fu_323_p4 & or_ln158_fu_317_p2);
+    trunc_ln152_fu_219_p1 <= b_0_reg_109(3 - 1 downto 0);
+    trunc_ln158_fu_313_p1 <= select_ln158_1_fu_267_p3(5 - 1 downto 0);
+    zext_ln152_1_fu_233_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(b_0_reg_109),5));
+    zext_ln161_1_fu_257_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln161_1_fu_251_p2),8));
+    zext_ln161_2_fu_295_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln161_2_fu_289_p2),8));
+    zext_ln161_fu_229_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln161_fu_223_p2),8));
 end behav;

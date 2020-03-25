@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.750000,HLS_SYN_LAT=33,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=768,HLS_SYN_FF=268561,HLS_SYN_LUT=443027,HLS_VERSION=2019_2}" *)
+(* CORE_GENERATION_INFO="honeybee,hls_ip_2019_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.921200,HLS_SYN_LAT=251,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=272,HLS_SYN_FF=44714,HLS_SYN_LUT=101911,HLS_VERSION=2019_2}" *)
 
 module honeybee (
         ap_clk,
@@ -25,11 +25,8 @@ module honeybee (
         ap_return
 );
 
-parameter    ap_ST_fsm_state1 = 5'd1;
-parameter    ap_ST_fsm_state2 = 5'd2;
-parameter    ap_ST_fsm_state3 = 5'd4;
-parameter    ap_ST_fsm_state4 = 5'd8;
-parameter    ap_ST_fsm_state5 = 5'd16;
+parameter    ap_ST_fsm_state1 = 2'd1;
+parameter    ap_ST_fsm_state2 = 2'd2;
 
 input   ap_clk;
 input   ap_rst;
@@ -43,1861 +40,249 @@ input  [31:0] edge_p1_z;
 input  [31:0] edge_p2_x;
 input  [31:0] edge_p2_y;
 input  [31:0] edge_p2_z;
-output  [63:0] ap_return;
+output  [7:0] ap_return;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
 
-(* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [0:0] grp_lineIntersectGrid_fu_136_ap_return;
-reg   [0:0] tmp_4_reg_2719;
+wire    grp_segmentIntersectsGri_fu_82_ap_start;
+wire    grp_segmentIntersectsGri_fu_82_ap_done;
+wire    grp_segmentIntersectsGri_fu_82_ap_idle;
+wire    grp_segmentIntersectsGri_fu_82_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_82_ap_return;
+wire    grp_segmentIntersectsGri_fu_104_ap_start;
+wire    grp_segmentIntersectsGri_fu_104_ap_done;
+wire    grp_segmentIntersectsGri_fu_104_ap_idle;
+wire    grp_segmentIntersectsGri_fu_104_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_104_ap_return;
+wire    grp_segmentIntersectsGri_fu_126_ap_start;
+wire    grp_segmentIntersectsGri_fu_126_ap_done;
+wire    grp_segmentIntersectsGri_fu_126_ap_idle;
+wire    grp_segmentIntersectsGri_fu_126_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_126_ap_return;
+wire    grp_segmentIntersectsGri_fu_148_ap_start;
+wire    grp_segmentIntersectsGri_fu_148_ap_done;
+wire    grp_segmentIntersectsGri_fu_148_ap_idle;
+wire    grp_segmentIntersectsGri_fu_148_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_148_ap_return;
+wire    grp_segmentIntersectsGri_fu_170_ap_start;
+wire    grp_segmentIntersectsGri_fu_170_ap_done;
+wire    grp_segmentIntersectsGri_fu_170_ap_idle;
+wire    grp_segmentIntersectsGri_fu_170_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_170_ap_return;
+wire    grp_segmentIntersectsGri_fu_192_ap_start;
+wire    grp_segmentIntersectsGri_fu_192_ap_done;
+wire    grp_segmentIntersectsGri_fu_192_ap_idle;
+wire    grp_segmentIntersectsGri_fu_192_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_192_ap_return;
+wire    grp_segmentIntersectsGri_fu_214_ap_start;
+wire    grp_segmentIntersectsGri_fu_214_ap_done;
+wire    grp_segmentIntersectsGri_fu_214_ap_idle;
+wire    grp_segmentIntersectsGri_fu_214_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_214_ap_return;
+wire    grp_segmentIntersectsGri_fu_236_ap_start;
+wire    grp_segmentIntersectsGri_fu_236_ap_done;
+wire    grp_segmentIntersectsGri_fu_236_ap_idle;
+wire    grp_segmentIntersectsGri_fu_236_ap_ready;
+wire   [0:0] grp_segmentIntersectsGri_fu_236_ap_return;
+reg    grp_segmentIntersectsGri_fu_82_ap_start_reg;
 wire    ap_CS_fsm_state2;
-wire    grp_lineIntersectGrid_fu_136_ap_ready;
-wire    grp_lineIntersectGrid_fu_136_ap_done;
-wire    grp_lineIntersectGrid_fu_158_ap_ready;
-wire    grp_lineIntersectGrid_fu_158_ap_done;
-wire    grp_lineIntersectGrid_fu_180_ap_ready;
-wire    grp_lineIntersectGrid_fu_180_ap_done;
-wire    grp_lineIntersectGrid_fu_202_ap_ready;
-wire    grp_lineIntersectGrid_fu_202_ap_done;
-wire    grp_lineIntersectGrid_fu_224_ap_ready;
-wire    grp_lineIntersectGrid_fu_224_ap_done;
-wire    grp_lineIntersectGrid_fu_246_ap_ready;
-wire    grp_lineIntersectGrid_fu_246_ap_done;
-wire    grp_lineIntersectGrid_fu_268_ap_ready;
-wire    grp_lineIntersectGrid_fu_268_ap_done;
-wire    grp_lineIntersectGrid_fu_290_ap_ready;
-wire    grp_lineIntersectGrid_fu_290_ap_done;
-wire    grp_lineIntersectGrid_fu_312_ap_ready;
-wire    grp_lineIntersectGrid_fu_312_ap_done;
-wire    grp_lineIntersectGrid_fu_334_ap_ready;
-wire    grp_lineIntersectGrid_fu_334_ap_done;
-wire    grp_lineIntersectGrid_fu_356_ap_ready;
-wire    grp_lineIntersectGrid_fu_356_ap_done;
-wire    grp_lineIntersectGrid_fu_378_ap_ready;
-wire    grp_lineIntersectGrid_fu_378_ap_done;
-wire    grp_lineIntersectGrid_fu_400_ap_ready;
-wire    grp_lineIntersectGrid_fu_400_ap_done;
-wire    grp_lineIntersectGrid_fu_422_ap_ready;
-wire    grp_lineIntersectGrid_fu_422_ap_done;
-wire    grp_lineIntersectGrid_fu_444_ap_ready;
-wire    grp_lineIntersectGrid_fu_444_ap_done;
-wire    grp_lineIntersectGrid_fu_466_ap_ready;
-wire    grp_lineIntersectGrid_fu_466_ap_done;
-wire    grp_lineIntersectGrid_fu_488_ap_ready;
-wire    grp_lineIntersectGrid_fu_488_ap_done;
-wire    grp_lineIntersectGrid_fu_510_ap_ready;
-wire    grp_lineIntersectGrid_fu_510_ap_done;
-wire    grp_lineIntersectGrid_fu_532_ap_ready;
-wire    grp_lineIntersectGrid_fu_532_ap_done;
-wire    grp_lineIntersectGrid_fu_554_ap_ready;
-wire    grp_lineIntersectGrid_fu_554_ap_done;
-wire    grp_lineIntersectGrid_fu_576_ap_ready;
-wire    grp_lineIntersectGrid_fu_576_ap_done;
-wire    grp_lineIntersectGrid_fu_598_ap_ready;
-wire    grp_lineIntersectGrid_fu_598_ap_done;
-wire    grp_lineIntersectGrid_fu_620_ap_ready;
-wire    grp_lineIntersectGrid_fu_620_ap_done;
-wire    grp_lineIntersectGrid_fu_642_ap_ready;
-wire    grp_lineIntersectGrid_fu_642_ap_done;
-wire    grp_lineIntersectGrid_fu_664_ap_ready;
-wire    grp_lineIntersectGrid_fu_664_ap_done;
-wire    grp_lineIntersectGrid_fu_686_ap_ready;
-wire    grp_lineIntersectGrid_fu_686_ap_done;
-wire    grp_lineIntersectGrid_fu_708_ap_ready;
-wire    grp_lineIntersectGrid_fu_708_ap_done;
-wire    grp_lineIntersectGrid_fu_730_ap_ready;
-wire    grp_lineIntersectGrid_fu_730_ap_done;
-wire    grp_lineIntersectGrid_fu_752_ap_ready;
-wire    grp_lineIntersectGrid_fu_752_ap_done;
-wire    grp_lineIntersectGrid_fu_774_ap_ready;
-wire    grp_lineIntersectGrid_fu_774_ap_done;
-wire    grp_lineIntersectGrid_fu_796_ap_ready;
-wire    grp_lineIntersectGrid_fu_796_ap_done;
-wire    grp_lineIntersectGrid_fu_818_ap_ready;
-wire    grp_lineIntersectGrid_fu_818_ap_done;
-wire    grp_lineIntersectGrid_fu_840_ap_ready;
-wire    grp_lineIntersectGrid_fu_840_ap_done;
-wire    grp_lineIntersectGrid_fu_862_ap_ready;
-wire    grp_lineIntersectGrid_fu_862_ap_done;
-wire    grp_lineIntersectGrid_fu_884_ap_ready;
-wire    grp_lineIntersectGrid_fu_884_ap_done;
-wire    grp_lineIntersectGrid_fu_906_ap_ready;
-wire    grp_lineIntersectGrid_fu_906_ap_done;
-wire    grp_lineIntersectGrid_fu_928_ap_ready;
-wire    grp_lineIntersectGrid_fu_928_ap_done;
-wire    grp_lineIntersectGrid_fu_950_ap_ready;
-wire    grp_lineIntersectGrid_fu_950_ap_done;
-wire    grp_lineIntersectGrid_fu_972_ap_ready;
-wire    grp_lineIntersectGrid_fu_972_ap_done;
-wire    grp_lineIntersectGrid_fu_994_ap_ready;
-wire    grp_lineIntersectGrid_fu_994_ap_done;
-wire    grp_lineIntersectGrid_fu_1016_ap_ready;
-wire    grp_lineIntersectGrid_fu_1016_ap_done;
-wire    grp_lineIntersectGrid_fu_1038_ap_ready;
-wire    grp_lineIntersectGrid_fu_1038_ap_done;
-wire    grp_lineIntersectGrid_fu_1060_ap_ready;
-wire    grp_lineIntersectGrid_fu_1060_ap_done;
-wire    grp_lineIntersectGrid_fu_1082_ap_ready;
-wire    grp_lineIntersectGrid_fu_1082_ap_done;
-wire    grp_lineIntersectGrid_fu_1104_ap_ready;
-wire    grp_lineIntersectGrid_fu_1104_ap_done;
-wire    grp_lineIntersectGrid_fu_1126_ap_ready;
-wire    grp_lineIntersectGrid_fu_1126_ap_done;
-wire    grp_lineIntersectGrid_fu_1148_ap_ready;
-wire    grp_lineIntersectGrid_fu_1148_ap_done;
-wire    grp_lineIntersectGrid_fu_1170_ap_ready;
-wire    grp_lineIntersectGrid_fu_1170_ap_done;
-wire    grp_lineIntersectGrid_fu_1192_ap_ready;
-wire    grp_lineIntersectGrid_fu_1192_ap_done;
-wire    grp_lineIntersectGrid_fu_1214_ap_ready;
-wire    grp_lineIntersectGrid_fu_1214_ap_done;
-wire    grp_lineIntersectGrid_fu_1236_ap_ready;
-wire    grp_lineIntersectGrid_fu_1236_ap_done;
-wire    grp_lineIntersectGrid_fu_1258_ap_ready;
-wire    grp_lineIntersectGrid_fu_1258_ap_done;
-wire    grp_lineIntersectGrid_fu_1280_ap_ready;
-wire    grp_lineIntersectGrid_fu_1280_ap_done;
-wire    grp_lineIntersectGrid_fu_1302_ap_ready;
-wire    grp_lineIntersectGrid_fu_1302_ap_done;
-wire    grp_lineIntersectGrid_fu_1324_ap_ready;
-wire    grp_lineIntersectGrid_fu_1324_ap_done;
-wire    grp_lineIntersectGrid_fu_1346_ap_ready;
-wire    grp_lineIntersectGrid_fu_1346_ap_done;
-wire    grp_lineIntersectGrid_fu_1368_ap_ready;
-wire    grp_lineIntersectGrid_fu_1368_ap_done;
-wire    grp_lineIntersectGrid_fu_1390_ap_ready;
-wire    grp_lineIntersectGrid_fu_1390_ap_done;
-wire    grp_lineIntersectGrid_fu_1412_ap_ready;
-wire    grp_lineIntersectGrid_fu_1412_ap_done;
-wire    grp_lineIntersectGrid_fu_1434_ap_ready;
-wire    grp_lineIntersectGrid_fu_1434_ap_done;
-wire    grp_lineIntersectGrid_fu_1456_ap_ready;
-wire    grp_lineIntersectGrid_fu_1456_ap_done;
-wire    grp_lineIntersectGrid_fu_1478_ap_ready;
-wire    grp_lineIntersectGrid_fu_1478_ap_done;
-wire    grp_lineIntersectGrid_fu_1500_ap_ready;
-wire    grp_lineIntersectGrid_fu_1500_ap_done;
-wire    grp_lineIntersectGrid_fu_1522_ap_ready;
-wire    grp_lineIntersectGrid_fu_1522_ap_done;
+reg    grp_segmentIntersectsGri_fu_104_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_126_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_148_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_170_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_192_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_214_ap_start_reg;
+reg    grp_segmentIntersectsGri_fu_236_ap_start_reg;
+wire   [1:0] select_ln159_fu_262_p3;
+wire   [1:0] zext_ln158_fu_258_p1;
+wire   [1:0] select_ln158_fu_270_p3;
+wire   [2:0] or_ln_fu_282_p3;
+wire   [2:0] zext_ln158_1_fu_278_p1;
+wire   [2:0] select_ln158_1_fu_290_p3;
+wire   [3:0] or_ln159_1_fu_302_p3;
+wire   [3:0] zext_ln158_2_fu_298_p1;
+wire   [3:0] select_ln158_2_fu_310_p3;
+wire   [4:0] or_ln159_2_fu_322_p3;
+wire   [4:0] zext_ln158_3_fu_318_p1;
+wire   [4:0] select_ln158_3_fu_330_p3;
+wire   [5:0] or_ln159_3_fu_342_p3;
+wire   [5:0] zext_ln158_4_fu_338_p1;
+wire   [5:0] select_ln158_4_fu_350_p3;
+wire   [6:0] or_ln159_4_fu_362_p3;
+wire   [6:0] zext_ln158_5_fu_358_p1;
+wire   [6:0] select_ln158_5_fu_370_p3;
+wire   [7:0] or_ln159_5_fu_382_p3;
+wire   [7:0] zext_ln158_6_fu_378_p1;
 reg    ap_block_state2_on_subcall_done;
-wire   [0:0] grp_lineIntersectGrid_fu_158_ap_return;
-reg   [0:0] tmp_4_0_0_1_reg_2725;
-wire   [0:0] grp_lineIntersectGrid_fu_180_ap_return;
-reg   [0:0] tmp_4_0_0_2_reg_2730;
-wire   [0:0] grp_lineIntersectGrid_fu_202_ap_return;
-reg   [0:0] tmp_4_0_0_3_reg_2735;
-wire   [0:0] grp_lineIntersectGrid_fu_224_ap_return;
-reg   [0:0] tmp_4_0_1_reg_2740;
-wire   [0:0] grp_lineIntersectGrid_fu_246_ap_return;
-reg   [0:0] tmp_4_0_1_1_reg_2745;
-wire   [0:0] grp_lineIntersectGrid_fu_268_ap_return;
-reg   [0:0] tmp_4_0_1_2_reg_2750;
-wire   [0:0] grp_lineIntersectGrid_fu_290_ap_return;
-reg   [0:0] tmp_4_0_1_3_reg_2755;
-wire   [0:0] grp_lineIntersectGrid_fu_312_ap_return;
-reg   [0:0] tmp_4_0_2_reg_2760;
-wire   [0:0] grp_lineIntersectGrid_fu_334_ap_return;
-reg   [0:0] tmp_4_0_2_1_reg_2765;
-wire   [0:0] grp_lineIntersectGrid_fu_356_ap_return;
-reg   [0:0] tmp_4_0_2_2_reg_2770;
-wire   [0:0] grp_lineIntersectGrid_fu_378_ap_return;
-reg   [0:0] tmp_4_0_2_3_reg_2775;
-wire   [0:0] grp_lineIntersectGrid_fu_400_ap_return;
-reg   [0:0] tmp_4_0_3_reg_2780;
-wire   [0:0] grp_lineIntersectGrid_fu_422_ap_return;
-reg   [0:0] tmp_4_0_3_1_reg_2785;
-wire   [0:0] grp_lineIntersectGrid_fu_444_ap_return;
-reg   [0:0] tmp_4_0_3_2_reg_2790;
-wire   [0:0] grp_lineIntersectGrid_fu_466_ap_return;
-reg   [0:0] tmp_4_0_3_3_reg_2795;
-wire   [0:0] grp_lineIntersectGrid_fu_488_ap_return;
-reg   [0:0] tmp_4_1_reg_2800;
-wire   [0:0] grp_lineIntersectGrid_fu_510_ap_return;
-reg   [0:0] tmp_4_1_0_1_reg_2805;
-wire   [0:0] grp_lineIntersectGrid_fu_532_ap_return;
-reg   [0:0] tmp_4_1_0_2_reg_2810;
-wire   [0:0] grp_lineIntersectGrid_fu_554_ap_return;
-reg   [0:0] tmp_4_1_0_3_reg_2815;
-wire   [0:0] grp_lineIntersectGrid_fu_576_ap_return;
-reg   [0:0] tmp_4_1_1_reg_2820;
-wire   [0:0] grp_lineIntersectGrid_fu_598_ap_return;
-reg   [0:0] tmp_4_1_1_1_reg_2825;
-wire   [0:0] grp_lineIntersectGrid_fu_620_ap_return;
-reg   [0:0] tmp_4_1_1_2_reg_2830;
-wire   [0:0] grp_lineIntersectGrid_fu_642_ap_return;
-reg   [0:0] tmp_4_1_1_3_reg_2835;
-wire   [0:0] grp_lineIntersectGrid_fu_664_ap_return;
-reg   [0:0] tmp_4_1_2_reg_2840;
-wire   [0:0] grp_lineIntersectGrid_fu_686_ap_return;
-reg   [0:0] tmp_4_1_2_1_reg_2845;
-wire   [0:0] grp_lineIntersectGrid_fu_708_ap_return;
-reg   [0:0] tmp_4_1_2_2_reg_2850;
-wire   [0:0] grp_lineIntersectGrid_fu_730_ap_return;
-reg   [0:0] tmp_4_1_2_3_reg_2855;
-wire   [0:0] grp_lineIntersectGrid_fu_752_ap_return;
-reg   [0:0] tmp_4_1_3_reg_2860;
-wire   [0:0] grp_lineIntersectGrid_fu_774_ap_return;
-reg   [0:0] tmp_4_1_3_1_reg_2865;
-wire   [0:0] grp_lineIntersectGrid_fu_796_ap_return;
-reg   [0:0] tmp_4_1_3_2_reg_2870;
-wire   [0:0] grp_lineIntersectGrid_fu_818_ap_return;
-reg   [0:0] tmp_4_1_3_3_reg_2875;
-wire   [0:0] or_ln79_6_fu_1580_p2;
-reg   [0:0] or_ln79_6_reg_2880;
-wire   [0:0] grp_lineIntersectGrid_fu_1016_ap_return;
-reg   [0:0] tmp_4_2_2_reg_2885;
-wire   [0:0] grp_lineIntersectGrid_fu_1038_ap_return;
-reg   [0:0] tmp_4_2_2_1_reg_2890;
-wire   [0:0] grp_lineIntersectGrid_fu_1060_ap_return;
-reg   [0:0] tmp_4_2_2_2_reg_2895;
-wire   [0:0] grp_lineIntersectGrid_fu_1082_ap_return;
-reg   [0:0] tmp_4_2_2_3_reg_2900;
-wire   [0:0] or_ln79_9_fu_1598_p2;
-reg   [0:0] or_ln79_9_reg_2905;
-wire   [0:0] or_ln79_21_fu_1640_p2;
-reg   [0:0] or_ln79_21_reg_2910;
-wire   [0:0] grp_lineIntersectGrid_fu_1368_ap_return;
-reg   [0:0] tmp_4_3_2_reg_2915;
-wire   [0:0] grp_lineIntersectGrid_fu_1390_ap_return;
-reg   [0:0] tmp_4_3_2_1_reg_2920;
-wire   [0:0] grp_lineIntersectGrid_fu_1412_ap_return;
-reg   [0:0] tmp_4_3_2_2_reg_2925;
-wire   [0:0] grp_lineIntersectGrid_fu_1434_ap_return;
-reg   [0:0] tmp_4_3_2_3_reg_2930;
-wire   [0:0] or_ln79_24_fu_1658_p2;
-reg   [0:0] or_ln79_24_reg_2935;
-wire   [8:0] select_ln79_7_fu_1807_p3;
-reg   [8:0] select_ln79_7_reg_2940;
-wire    ap_CS_fsm_state3;
-wire   [0:0] or_ln79_14_fu_1833_p2;
-reg   [0:0] or_ln79_14_reg_2946;
-wire   [0:0] or_ln79_29_fu_1857_p2;
-reg   [0:0] or_ln79_29_reg_2951;
-wire   [20:0] select_ln79_19_fu_2081_p3;
-reg   [20:0] select_ln79_19_reg_2956;
-wire    ap_CS_fsm_state4;
-wire    grp_lineIntersectGrid_fu_136_ap_start;
-wire    grp_lineIntersectGrid_fu_136_ap_idle;
-wire    grp_lineIntersectGrid_fu_158_ap_start;
-wire    grp_lineIntersectGrid_fu_158_ap_idle;
-wire    grp_lineIntersectGrid_fu_180_ap_start;
-wire    grp_lineIntersectGrid_fu_180_ap_idle;
-wire    grp_lineIntersectGrid_fu_202_ap_start;
-wire    grp_lineIntersectGrid_fu_202_ap_idle;
-wire    grp_lineIntersectGrid_fu_224_ap_start;
-wire    grp_lineIntersectGrid_fu_224_ap_idle;
-wire    grp_lineIntersectGrid_fu_246_ap_start;
-wire    grp_lineIntersectGrid_fu_246_ap_idle;
-wire    grp_lineIntersectGrid_fu_268_ap_start;
-wire    grp_lineIntersectGrid_fu_268_ap_idle;
-wire    grp_lineIntersectGrid_fu_290_ap_start;
-wire    grp_lineIntersectGrid_fu_290_ap_idle;
-wire    grp_lineIntersectGrid_fu_312_ap_start;
-wire    grp_lineIntersectGrid_fu_312_ap_idle;
-wire    grp_lineIntersectGrid_fu_334_ap_start;
-wire    grp_lineIntersectGrid_fu_334_ap_idle;
-wire    grp_lineIntersectGrid_fu_356_ap_start;
-wire    grp_lineIntersectGrid_fu_356_ap_idle;
-wire    grp_lineIntersectGrid_fu_378_ap_start;
-wire    grp_lineIntersectGrid_fu_378_ap_idle;
-wire    grp_lineIntersectGrid_fu_400_ap_start;
-wire    grp_lineIntersectGrid_fu_400_ap_idle;
-wire    grp_lineIntersectGrid_fu_422_ap_start;
-wire    grp_lineIntersectGrid_fu_422_ap_idle;
-wire    grp_lineIntersectGrid_fu_444_ap_start;
-wire    grp_lineIntersectGrid_fu_444_ap_idle;
-wire    grp_lineIntersectGrid_fu_466_ap_start;
-wire    grp_lineIntersectGrid_fu_466_ap_idle;
-wire    grp_lineIntersectGrid_fu_488_ap_start;
-wire    grp_lineIntersectGrid_fu_488_ap_idle;
-wire    grp_lineIntersectGrid_fu_510_ap_start;
-wire    grp_lineIntersectGrid_fu_510_ap_idle;
-wire    grp_lineIntersectGrid_fu_532_ap_start;
-wire    grp_lineIntersectGrid_fu_532_ap_idle;
-wire    grp_lineIntersectGrid_fu_554_ap_start;
-wire    grp_lineIntersectGrid_fu_554_ap_idle;
-wire    grp_lineIntersectGrid_fu_576_ap_start;
-wire    grp_lineIntersectGrid_fu_576_ap_idle;
-wire    grp_lineIntersectGrid_fu_598_ap_start;
-wire    grp_lineIntersectGrid_fu_598_ap_idle;
-wire    grp_lineIntersectGrid_fu_620_ap_start;
-wire    grp_lineIntersectGrid_fu_620_ap_idle;
-wire    grp_lineIntersectGrid_fu_642_ap_start;
-wire    grp_lineIntersectGrid_fu_642_ap_idle;
-wire    grp_lineIntersectGrid_fu_664_ap_start;
-wire    grp_lineIntersectGrid_fu_664_ap_idle;
-wire    grp_lineIntersectGrid_fu_686_ap_start;
-wire    grp_lineIntersectGrid_fu_686_ap_idle;
-wire    grp_lineIntersectGrid_fu_708_ap_start;
-wire    grp_lineIntersectGrid_fu_708_ap_idle;
-wire    grp_lineIntersectGrid_fu_730_ap_start;
-wire    grp_lineIntersectGrid_fu_730_ap_idle;
-wire    grp_lineIntersectGrid_fu_752_ap_start;
-wire    grp_lineIntersectGrid_fu_752_ap_idle;
-wire    grp_lineIntersectGrid_fu_774_ap_start;
-wire    grp_lineIntersectGrid_fu_774_ap_idle;
-wire    grp_lineIntersectGrid_fu_796_ap_start;
-wire    grp_lineIntersectGrid_fu_796_ap_idle;
-wire    grp_lineIntersectGrid_fu_818_ap_start;
-wire    grp_lineIntersectGrid_fu_818_ap_idle;
-wire    grp_lineIntersectGrid_fu_840_ap_start;
-wire    grp_lineIntersectGrid_fu_840_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_840_ap_return;
-wire    grp_lineIntersectGrid_fu_862_ap_start;
-wire    grp_lineIntersectGrid_fu_862_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_862_ap_return;
-wire    grp_lineIntersectGrid_fu_884_ap_start;
-wire    grp_lineIntersectGrid_fu_884_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_884_ap_return;
-wire    grp_lineIntersectGrid_fu_906_ap_start;
-wire    grp_lineIntersectGrid_fu_906_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_906_ap_return;
-wire    grp_lineIntersectGrid_fu_928_ap_start;
-wire    grp_lineIntersectGrid_fu_928_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_928_ap_return;
-wire    grp_lineIntersectGrid_fu_950_ap_start;
-wire    grp_lineIntersectGrid_fu_950_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_950_ap_return;
-wire    grp_lineIntersectGrid_fu_972_ap_start;
-wire    grp_lineIntersectGrid_fu_972_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_972_ap_return;
-wire    grp_lineIntersectGrid_fu_994_ap_start;
-wire    grp_lineIntersectGrid_fu_994_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_994_ap_return;
-wire    grp_lineIntersectGrid_fu_1016_ap_start;
-wire    grp_lineIntersectGrid_fu_1016_ap_idle;
-wire    grp_lineIntersectGrid_fu_1038_ap_start;
-wire    grp_lineIntersectGrid_fu_1038_ap_idle;
-wire    grp_lineIntersectGrid_fu_1060_ap_start;
-wire    grp_lineIntersectGrid_fu_1060_ap_idle;
-wire    grp_lineIntersectGrid_fu_1082_ap_start;
-wire    grp_lineIntersectGrid_fu_1082_ap_idle;
-wire    grp_lineIntersectGrid_fu_1104_ap_start;
-wire    grp_lineIntersectGrid_fu_1104_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1104_ap_return;
-wire    grp_lineIntersectGrid_fu_1126_ap_start;
-wire    grp_lineIntersectGrid_fu_1126_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1126_ap_return;
-wire    grp_lineIntersectGrid_fu_1148_ap_start;
-wire    grp_lineIntersectGrid_fu_1148_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1148_ap_return;
-wire    grp_lineIntersectGrid_fu_1170_ap_start;
-wire    grp_lineIntersectGrid_fu_1170_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1170_ap_return;
-wire    grp_lineIntersectGrid_fu_1192_ap_start;
-wire    grp_lineIntersectGrid_fu_1192_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1192_ap_return;
-wire    grp_lineIntersectGrid_fu_1214_ap_start;
-wire    grp_lineIntersectGrid_fu_1214_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1214_ap_return;
-wire    grp_lineIntersectGrid_fu_1236_ap_start;
-wire    grp_lineIntersectGrid_fu_1236_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1236_ap_return;
-wire    grp_lineIntersectGrid_fu_1258_ap_start;
-wire    grp_lineIntersectGrid_fu_1258_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1258_ap_return;
-wire    grp_lineIntersectGrid_fu_1280_ap_start;
-wire    grp_lineIntersectGrid_fu_1280_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1280_ap_return;
-wire    grp_lineIntersectGrid_fu_1302_ap_start;
-wire    grp_lineIntersectGrid_fu_1302_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1302_ap_return;
-wire    grp_lineIntersectGrid_fu_1324_ap_start;
-wire    grp_lineIntersectGrid_fu_1324_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1324_ap_return;
-wire    grp_lineIntersectGrid_fu_1346_ap_start;
-wire    grp_lineIntersectGrid_fu_1346_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1346_ap_return;
-wire    grp_lineIntersectGrid_fu_1368_ap_start;
-wire    grp_lineIntersectGrid_fu_1368_ap_idle;
-wire    grp_lineIntersectGrid_fu_1390_ap_start;
-wire    grp_lineIntersectGrid_fu_1390_ap_idle;
-wire    grp_lineIntersectGrid_fu_1412_ap_start;
-wire    grp_lineIntersectGrid_fu_1412_ap_idle;
-wire    grp_lineIntersectGrid_fu_1434_ap_start;
-wire    grp_lineIntersectGrid_fu_1434_ap_idle;
-wire    grp_lineIntersectGrid_fu_1456_ap_start;
-wire    grp_lineIntersectGrid_fu_1456_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1456_ap_return;
-wire    grp_lineIntersectGrid_fu_1478_ap_start;
-wire    grp_lineIntersectGrid_fu_1478_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1478_ap_return;
-wire    grp_lineIntersectGrid_fu_1500_ap_start;
-wire    grp_lineIntersectGrid_fu_1500_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1500_ap_return;
-wire    grp_lineIntersectGrid_fu_1522_ap_start;
-wire    grp_lineIntersectGrid_fu_1522_ap_idle;
-wire   [0:0] grp_lineIntersectGrid_fu_1522_ap_return;
-reg    grp_lineIntersectGrid_fu_136_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_158_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_180_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_202_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_224_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_246_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_268_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_290_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_312_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_334_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_356_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_378_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_400_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_422_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_444_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_466_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_488_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_510_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_532_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_554_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_576_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_598_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_620_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_642_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_664_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_686_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_708_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_730_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_752_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_774_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_796_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_818_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_840_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_862_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_884_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_906_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_928_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_950_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_972_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_994_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1016_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1038_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1060_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1082_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1104_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1126_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1148_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1170_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1192_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1214_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1236_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1258_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1280_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1302_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1324_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1346_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1368_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1390_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1412_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1434_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1456_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1478_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1500_ap_start_reg;
-reg    grp_lineIntersectGrid_fu_1522_ap_start_reg;
-wire   [0:0] or_ln79_1_fu_1550_p2;
-wire   [0:0] or_ln79_fu_1544_p2;
-wire   [0:0] or_ln79_4_fu_1568_p2;
-wire   [0:0] or_ln79_3_fu_1562_p2;
-wire   [0:0] or_ln79_5_fu_1574_p2;
-wire   [0:0] or_ln79_2_fu_1556_p2;
-wire   [0:0] or_ln79_8_fu_1592_p2;
-wire   [0:0] or_ln79_7_fu_1586_p2;
-wire   [0:0] or_ln79_16_fu_1610_p2;
-wire   [0:0] or_ln79_15_fu_1604_p2;
-wire   [0:0] or_ln79_19_fu_1628_p2;
-wire   [0:0] or_ln79_18_fu_1622_p2;
-wire   [0:0] or_ln79_20_fu_1634_p2;
-wire   [0:0] or_ln79_17_fu_1616_p2;
-wire   [0:0] or_ln79_23_fu_1652_p2;
-wire   [0:0] or_ln79_22_fu_1646_p2;
-wire   [1:0] select_ln80_fu_1667_p3;
-wire   [1:0] zext_ln79_fu_1664_p1;
-wire   [1:0] select_ln79_fu_1674_p3;
-wire   [2:0] or_ln_fu_1685_p3;
-wire   [2:0] zext_ln79_1_fu_1681_p1;
-wire   [2:0] select_ln79_1_fu_1693_p3;
-wire   [3:0] or_ln80_1_fu_1704_p3;
-wire   [3:0] zext_ln79_2_fu_1700_p1;
-wire   [3:0] select_ln79_2_fu_1712_p3;
-wire   [4:0] or_ln80_2_fu_1723_p3;
-wire   [4:0] zext_ln79_3_fu_1719_p1;
-wire   [4:0] select_ln79_3_fu_1731_p3;
-wire   [5:0] or_ln80_3_fu_1742_p3;
-wire   [5:0] zext_ln79_4_fu_1738_p1;
-wire   [5:0] select_ln79_4_fu_1750_p3;
-wire   [6:0] or_ln80_4_fu_1761_p3;
-wire   [6:0] zext_ln79_5_fu_1757_p1;
-wire   [6:0] select_ln79_5_fu_1769_p3;
-wire   [7:0] or_ln80_5_fu_1780_p3;
-wire   [7:0] zext_ln79_6_fu_1776_p1;
-wire   [7:0] select_ln79_6_fu_1788_p3;
-wire   [8:0] or_ln80_6_fu_1799_p3;
-wire   [8:0] zext_ln79_7_fu_1795_p1;
-wire   [0:0] or_ln79_11_fu_1818_p2;
-wire   [0:0] or_ln79_10_fu_1814_p2;
-wire   [0:0] or_ln79_12_fu_1822_p2;
-wire   [0:0] or_ln79_13_fu_1828_p2;
-wire   [0:0] or_ln79_26_fu_1842_p2;
-wire   [0:0] or_ln79_25_fu_1838_p2;
-wire   [0:0] or_ln79_27_fu_1846_p2;
-wire   [0:0] or_ln79_28_fu_1852_p2;
-wire   [9:0] or_ln80_7_fu_1865_p3;
-wire   [9:0] zext_ln79_8_fu_1862_p1;
-wire   [9:0] select_ln79_8_fu_1872_p3;
-wire   [10:0] or_ln80_8_fu_1883_p3;
-wire   [10:0] zext_ln79_9_fu_1879_p1;
-wire   [10:0] select_ln79_9_fu_1891_p3;
-wire   [11:0] or_ln80_9_fu_1902_p3;
-wire   [11:0] zext_ln79_10_fu_1898_p1;
-wire   [11:0] select_ln79_10_fu_1910_p3;
-wire   [12:0] or_ln80_s_fu_1921_p3;
-wire   [12:0] zext_ln79_11_fu_1917_p1;
-wire   [12:0] select_ln79_11_fu_1929_p3;
-wire   [13:0] or_ln80_10_fu_1940_p3;
-wire   [13:0] zext_ln79_12_fu_1936_p1;
-wire   [13:0] select_ln79_12_fu_1948_p3;
-wire   [14:0] or_ln80_11_fu_1959_p3;
-wire   [14:0] zext_ln79_13_fu_1955_p1;
-wire   [14:0] select_ln79_13_fu_1967_p3;
-wire   [15:0] or_ln80_12_fu_1978_p3;
-wire   [15:0] zext_ln79_14_fu_1974_p1;
-wire   [15:0] select_ln79_14_fu_1986_p3;
-wire   [16:0] or_ln80_13_fu_1997_p3;
-wire   [16:0] zext_ln79_15_fu_1993_p1;
-wire   [16:0] select_ln79_15_fu_2005_p3;
-wire   [17:0] or_ln80_14_fu_2016_p3;
-wire   [17:0] zext_ln79_16_fu_2012_p1;
-wire   [17:0] select_ln79_16_fu_2024_p3;
-wire   [18:0] or_ln80_15_fu_2035_p3;
-wire   [18:0] zext_ln79_17_fu_2031_p1;
-wire   [18:0] select_ln79_17_fu_2043_p3;
-wire   [19:0] or_ln80_16_fu_2054_p3;
-wire   [19:0] zext_ln79_18_fu_2050_p1;
-wire   [19:0] select_ln79_18_fu_2062_p3;
-wire   [20:0] or_ln80_17_fu_2073_p3;
-wire   [20:0] zext_ln79_19_fu_2069_p1;
-wire    ap_CS_fsm_state5;
-wire   [21:0] or_ln80_18_fu_2091_p3;
-wire   [21:0] zext_ln79_20_fu_2088_p1;
-wire   [21:0] select_ln79_20_fu_2098_p3;
-wire   [22:0] or_ln80_19_fu_2109_p3;
-wire   [22:0] zext_ln79_21_fu_2105_p1;
-wire   [22:0] select_ln79_21_fu_2117_p3;
-wire   [23:0] or_ln80_20_fu_2128_p3;
-wire   [23:0] zext_ln79_22_fu_2124_p1;
-wire   [23:0] select_ln79_22_fu_2136_p3;
-wire   [24:0] or_ln80_21_fu_2147_p3;
-wire   [24:0] zext_ln79_23_fu_2143_p1;
-wire   [24:0] select_ln79_23_fu_2155_p3;
-wire   [25:0] or_ln80_22_fu_2166_p3;
-wire   [25:0] zext_ln79_24_fu_2162_p1;
-wire   [25:0] select_ln79_24_fu_2174_p3;
-wire   [26:0] or_ln80_23_fu_2185_p3;
-wire   [26:0] zext_ln79_25_fu_2181_p1;
-wire   [26:0] select_ln79_25_fu_2193_p3;
-wire   [27:0] or_ln80_24_fu_2204_p3;
-wire   [27:0] zext_ln79_26_fu_2200_p1;
-wire   [27:0] select_ln79_26_fu_2212_p3;
-wire   [28:0] or_ln80_25_fu_2223_p3;
-wire   [28:0] zext_ln79_27_fu_2219_p1;
-wire   [28:0] select_ln79_27_fu_2231_p3;
-wire   [29:0] or_ln80_26_fu_2242_p3;
-wire   [29:0] zext_ln79_28_fu_2238_p1;
-wire   [29:0] select_ln79_28_fu_2250_p3;
-wire   [30:0] or_ln80_27_fu_2261_p3;
-wire   [30:0] zext_ln79_29_fu_2257_p1;
-wire   [30:0] select_ln79_29_fu_2269_p3;
-wire   [31:0] or_ln80_28_fu_2280_p3;
-wire   [31:0] zext_ln79_30_fu_2276_p1;
-wire   [0:0] or_ln79_30_fu_2295_p2;
-wire   [31:0] select_ln79_30_fu_2288_p3;
-wire   [31:0] select_ln79_31_fu_2299_p3;
-reg   [4:0] ap_NS_fsm;
+reg   [1:0] ap_NS_fsm;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 5'd1;
-#0 grp_lineIntersectGrid_fu_136_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_158_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_180_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_202_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_224_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_246_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_268_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_290_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_312_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_334_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_356_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_378_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_400_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_422_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_444_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_466_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_488_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_510_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_532_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_554_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_576_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_598_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_620_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_642_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_664_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_686_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_708_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_730_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_752_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_774_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_796_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_818_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_840_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_862_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_884_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_906_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_928_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_950_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_972_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_994_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1016_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1038_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1060_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1082_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1104_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1126_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1148_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1170_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1192_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1214_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1236_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1258_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1280_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1302_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1324_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1346_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1368_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1390_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1412_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1434_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1456_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1478_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1500_ap_start_reg = 1'b0;
-#0 grp_lineIntersectGrid_fu_1522_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 2'd1;
+#0 grp_segmentIntersectsGri_fu_82_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_104_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_126_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_148_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_170_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_192_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_214_ap_start_reg = 1'b0;
+#0 grp_segmentIntersectsGri_fu_236_ap_start_reg = 1'b0;
 end
 
-lineIntersectGrid grp_lineIntersectGrid_fu_136(
+segmentIntersectsGri grp_segmentIntersectsGri_fu_82(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_136_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_136_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_136_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_136_ap_ready),
+    .ap_start(grp_segmentIntersectsGri_fu_82_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_82_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_82_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_82_ap_ready),
+    .edge_p1_x(edge_p1_x),
+    .edge_p1_y(edge_p1_y),
+    .edge_p1_z(edge_p1_z),
+    .edge_p2_x(edge_p2_x),
+    .edge_p2_y(edge_p2_y),
+    .edge_p2_z(edge_p2_z),
     .grid_x(32'd0),
     .grid_y(32'd0),
     .grid_z(32'd0),
+    .ap_return(grp_segmentIntersectsGri_fu_82_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_104(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_104_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_104_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_104_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_104_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_136_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_158(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_158_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_158_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_158_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_158_ap_ready),
     .grid_x(32'd1065353216),
     .grid_y(32'd0),
     .grid_z(32'd0),
+    .ap_return(grp_segmentIntersectsGri_fu_104_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_126(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_126_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_126_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_126_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_126_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_158_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_180(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_180_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_180_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_180_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_180_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd0),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_180_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_202(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_202_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_202_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_202_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_202_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd0),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_202_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_224(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_224_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_224_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_224_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_224_ap_ready),
     .grid_x(32'd0),
     .grid_y(32'd1065353216),
     .grid_z(32'd0),
+    .ap_return(grp_segmentIntersectsGri_fu_126_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_148(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_148_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_148_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_148_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_148_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_224_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_246(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_246_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_246_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_246_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_246_ap_ready),
     .grid_x(32'd1065353216),
     .grid_y(32'd1065353216),
     .grid_z(32'd0),
+    .ap_return(grp_segmentIntersectsGri_fu_148_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_170(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_170_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_170_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_170_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_170_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_246_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_268(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_268_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_268_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_268_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_268_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_268_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_290(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_290_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_290_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_290_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_290_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_290_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_312(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_312_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_312_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_312_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_312_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_312_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_334(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_334_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_334_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_334_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_334_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_334_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_356(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_356_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_356_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_356_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_356_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_356_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_378(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_378_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_378_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_378_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_378_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_378_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_400(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_400_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_400_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_400_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_400_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_400_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_422(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_422_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_422_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_422_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_422_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_422_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_444(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_444_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_444_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_444_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_444_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_444_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_466(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_466_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_466_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_466_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_466_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd0),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_466_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_488(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_488_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_488_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_488_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_488_ap_ready),
     .grid_x(32'd0),
     .grid_y(32'd0),
     .grid_z(32'd1065353216),
+    .ap_return(grp_segmentIntersectsGri_fu_170_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_192(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_192_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_192_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_192_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_192_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_488_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_510(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_510_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_510_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_510_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_510_ap_ready),
     .grid_x(32'd1065353216),
     .grid_y(32'd0),
     .grid_z(32'd1065353216),
+    .ap_return(grp_segmentIntersectsGri_fu_192_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_214(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_214_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_214_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_214_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_214_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_510_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_532(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_532_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_532_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_532_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_532_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd0),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_532_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_554(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_554_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_554_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_554_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_554_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd0),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_554_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_576(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_576_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_576_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_576_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_576_ap_ready),
     .grid_x(32'd0),
     .grid_y(32'd1065353216),
     .grid_z(32'd1065353216),
+    .ap_return(grp_segmentIntersectsGri_fu_214_ap_return)
+);
+
+segmentIntersectsGri grp_segmentIntersectsGri_fu_236(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_segmentIntersectsGri_fu_236_ap_start),
+    .ap_done(grp_segmentIntersectsGri_fu_236_ap_done),
+    .ap_idle(grp_segmentIntersectsGri_fu_236_ap_idle),
+    .ap_ready(grp_segmentIntersectsGri_fu_236_ap_ready),
     .edge_p1_x(edge_p1_x),
     .edge_p1_y(edge_p1_y),
     .edge_p1_z(edge_p1_z),
     .edge_p2_x(edge_p2_x),
     .edge_p2_y(edge_p2_y),
     .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_576_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_598(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_598_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_598_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_598_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_598_ap_ready),
     .grid_x(32'd1065353216),
     .grid_y(32'd1065353216),
     .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_598_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_620(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_620_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_620_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_620_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_620_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_620_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_642(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_642_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_642_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_642_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_642_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_642_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_664(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_664_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_664_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_664_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_664_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_664_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_686(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_686_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_686_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_686_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_686_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_686_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_708(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_708_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_708_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_708_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_708_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_708_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_730(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_730_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_730_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_730_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_730_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_730_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_752(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_752_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_752_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_752_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_752_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_752_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_774(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_774_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_774_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_774_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_774_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_774_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_796(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_796_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_796_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_796_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_796_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_796_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_818(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_818_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_818_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_818_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_818_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1065353216),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_818_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_840(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_840_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_840_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_840_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_840_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd0),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_840_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_862(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_862_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_862_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_862_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_862_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd0),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_862_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_884(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_884_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_884_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_884_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_884_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd0),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_884_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_906(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_906_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_906_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_906_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_906_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd0),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_906_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_928(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_928_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_928_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_928_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_928_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_928_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_950(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_950_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_950_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_950_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_950_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_950_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_972(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_972_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_972_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_972_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_972_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_972_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_994(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_994_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_994_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_994_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_994_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_994_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1016(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1016_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1016_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1016_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1016_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1016_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1038(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1038_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1038_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1038_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1038_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1038_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1060(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1060_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1060_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1060_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1060_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1060_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1082(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1082_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1082_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1082_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1082_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1082_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1104(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1104_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1104_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1104_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1104_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1104_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1126(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1126_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1126_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1126_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1126_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1126_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1148(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1148_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1148_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1148_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1148_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1148_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1170(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1170_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1170_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1170_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1170_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1073741824),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1170_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1192(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1192_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1192_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1192_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1192_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd0),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1192_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1214(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1214_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1214_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1214_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1214_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd0),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1214_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1236(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1236_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1236_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1236_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1236_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd0),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1236_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1258(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1258_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1258_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1258_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1258_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd0),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1258_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1280(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1280_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1280_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1280_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1280_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1280_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1302(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1302_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1302_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1302_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1302_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1302_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1324(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1324_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1324_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1324_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1324_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1324_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1346(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1346_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1346_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1346_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1346_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1065353216),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1346_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1368(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1368_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1368_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1368_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1368_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1368_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1390(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1390_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1390_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1390_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1390_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1390_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1412(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1412_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1412_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1412_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1412_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1412_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1434(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1434_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1434_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1434_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1434_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1073741824),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1434_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1456(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1456_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1456_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1456_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1456_ap_ready),
-    .grid_x(32'd0),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1456_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1478(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1478_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1478_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1478_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1478_ap_ready),
-    .grid_x(32'd1065353216),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1478_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1500(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1500_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1500_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1500_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1500_ap_ready),
-    .grid_x(32'd1073741824),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1500_ap_return)
-);
-
-lineIntersectGrid grp_lineIntersectGrid_fu_1522(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_lineIntersectGrid_fu_1522_ap_start),
-    .ap_done(grp_lineIntersectGrid_fu_1522_ap_done),
-    .ap_idle(grp_lineIntersectGrid_fu_1522_ap_idle),
-    .ap_ready(grp_lineIntersectGrid_fu_1522_ap_ready),
-    .grid_x(32'd1077936128),
-    .grid_y(32'd1077936128),
-    .grid_z(32'd1077936128),
-    .edge_p1_x(edge_p1_x),
-    .edge_p1_y(edge_p1_y),
-    .edge_p1_z(edge_p1_z),
-    .edge_p2_x(edge_p2_x),
-    .edge_p2_y(edge_p2_y),
-    .edge_p2_z(edge_p2_z),
-    .ap_return(grp_lineIntersectGrid_fu_1522_ap_return)
+    .ap_return(grp_segmentIntersectsGri_fu_236_ap_return)
 );
 
 always @ (posedge ap_clk) begin
@@ -1910,837 +295,102 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1016_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_104_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1016_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1016_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1016_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_104_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_104_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_104_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1038_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_126_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1038_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1038_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1038_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_126_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_126_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_126_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1060_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_148_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1060_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1060_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1060_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_148_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_148_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_148_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1082_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_170_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1082_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1082_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1082_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_170_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_170_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_170_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1104_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_192_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1104_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1104_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1104_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_192_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_192_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_192_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1126_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_214_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1126_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1126_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1126_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_214_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_214_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_214_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1148_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_236_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1148_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1148_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1148_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_236_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_236_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_236_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1170_ap_start_reg <= 1'b0;
+        grp_segmentIntersectsGri_fu_82_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1170_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1170_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1170_ap_start_reg <= 1'b0;
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_segmentIntersectsGri_fu_82_ap_start_reg <= 1'b1;
+        end else if ((grp_segmentIntersectsGri_fu_82_ap_ready == 1'b1)) begin
+            grp_segmentIntersectsGri_fu_82_ap_start_reg <= 1'b0;
         end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1192_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1192_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1192_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1192_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1214_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1214_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1214_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1214_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1236_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1236_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1236_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1236_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1258_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1258_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1258_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1258_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1280_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1280_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1280_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1280_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1302_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1302_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1302_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1302_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1324_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1324_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1324_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1324_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1346_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1346_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1346_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1346_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1368_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1368_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1368_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1368_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_136_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_136_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_136_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_136_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1390_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1390_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1390_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1390_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1412_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1412_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1412_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1412_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1434_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1434_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1434_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1434_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1456_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1456_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1456_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1456_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1478_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1478_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1478_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1478_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1500_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1500_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1500_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1500_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_1522_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_1522_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_1522_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_1522_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_158_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_158_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_158_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_158_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_180_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_180_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_180_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_180_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_202_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_202_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_202_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_202_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_224_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_224_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_224_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_224_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_246_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_246_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_246_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_246_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_268_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_268_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_268_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_268_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_290_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_290_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_290_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_290_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_312_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_312_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_312_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_312_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_334_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_334_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_334_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_334_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_356_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_356_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_356_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_356_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_378_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_378_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_378_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_378_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_400_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_400_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_400_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_400_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_422_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_422_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_422_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_422_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_444_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_444_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_444_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_444_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_466_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_466_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_466_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_466_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_488_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_488_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_488_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_488_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_510_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_510_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_510_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_510_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_532_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_532_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_532_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_532_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_554_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_554_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_554_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_554_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_576_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_576_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_576_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_576_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_598_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_598_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_598_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_598_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_620_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_620_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_620_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_620_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_642_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_642_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_642_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_642_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_664_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_664_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_664_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_664_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_686_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_686_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_686_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_686_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_708_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_708_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_708_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_708_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_730_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_730_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_730_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_730_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_752_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_752_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_752_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_752_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_774_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_774_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_774_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_774_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_796_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_796_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_796_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_796_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_818_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_818_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_818_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_818_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_840_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_840_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_840_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_840_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_862_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_862_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_862_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_862_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_884_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_884_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_884_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_884_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_906_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_906_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_906_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_906_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_928_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_928_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_928_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_928_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_950_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_950_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_950_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_950_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_972_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_972_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_972_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_972_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_lineIntersectGrid_fu_994_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_lineIntersectGrid_fu_994_ap_start_reg <= 1'b1;
-        end else if ((grp_lineIntersectGrid_fu_994_ap_ready == 1'b1)) begin
-            grp_lineIntersectGrid_fu_994_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        or_ln79_14_reg_2946 <= or_ln79_14_fu_1833_p2;
-        or_ln79_29_reg_2951 <= or_ln79_29_fu_1857_p2;
-        select_ln79_7_reg_2940 <= select_ln79_7_fu_1807_p3;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_state2_on_subcall_done) & (1'b1 == ap_CS_fsm_state2))) begin
-        or_ln79_21_reg_2910 <= or_ln79_21_fu_1640_p2;
-        or_ln79_24_reg_2935 <= or_ln79_24_fu_1658_p2;
-        or_ln79_6_reg_2880 <= or_ln79_6_fu_1580_p2;
-        or_ln79_9_reg_2905 <= or_ln79_9_fu_1598_p2;
-        tmp_4_0_0_1_reg_2725 <= grp_lineIntersectGrid_fu_158_ap_return;
-        tmp_4_0_0_2_reg_2730 <= grp_lineIntersectGrid_fu_180_ap_return;
-        tmp_4_0_0_3_reg_2735 <= grp_lineIntersectGrid_fu_202_ap_return;
-        tmp_4_0_1_1_reg_2745 <= grp_lineIntersectGrid_fu_246_ap_return;
-        tmp_4_0_1_2_reg_2750 <= grp_lineIntersectGrid_fu_268_ap_return;
-        tmp_4_0_1_3_reg_2755 <= grp_lineIntersectGrid_fu_290_ap_return;
-        tmp_4_0_1_reg_2740 <= grp_lineIntersectGrid_fu_224_ap_return;
-        tmp_4_0_2_1_reg_2765 <= grp_lineIntersectGrid_fu_334_ap_return;
-        tmp_4_0_2_2_reg_2770 <= grp_lineIntersectGrid_fu_356_ap_return;
-        tmp_4_0_2_3_reg_2775 <= grp_lineIntersectGrid_fu_378_ap_return;
-        tmp_4_0_2_reg_2760 <= grp_lineIntersectGrid_fu_312_ap_return;
-        tmp_4_0_3_1_reg_2785 <= grp_lineIntersectGrid_fu_422_ap_return;
-        tmp_4_0_3_2_reg_2790 <= grp_lineIntersectGrid_fu_444_ap_return;
-        tmp_4_0_3_3_reg_2795 <= grp_lineIntersectGrid_fu_466_ap_return;
-        tmp_4_0_3_reg_2780 <= grp_lineIntersectGrid_fu_400_ap_return;
-        tmp_4_1_0_1_reg_2805 <= grp_lineIntersectGrid_fu_510_ap_return;
-        tmp_4_1_0_2_reg_2810 <= grp_lineIntersectGrid_fu_532_ap_return;
-        tmp_4_1_0_3_reg_2815 <= grp_lineIntersectGrid_fu_554_ap_return;
-        tmp_4_1_1_1_reg_2825 <= grp_lineIntersectGrid_fu_598_ap_return;
-        tmp_4_1_1_2_reg_2830 <= grp_lineIntersectGrid_fu_620_ap_return;
-        tmp_4_1_1_3_reg_2835 <= grp_lineIntersectGrid_fu_642_ap_return;
-        tmp_4_1_1_reg_2820 <= grp_lineIntersectGrid_fu_576_ap_return;
-        tmp_4_1_2_1_reg_2845 <= grp_lineIntersectGrid_fu_686_ap_return;
-        tmp_4_1_2_2_reg_2850 <= grp_lineIntersectGrid_fu_708_ap_return;
-        tmp_4_1_2_3_reg_2855 <= grp_lineIntersectGrid_fu_730_ap_return;
-        tmp_4_1_2_reg_2840 <= grp_lineIntersectGrid_fu_664_ap_return;
-        tmp_4_1_3_1_reg_2865 <= grp_lineIntersectGrid_fu_774_ap_return;
-        tmp_4_1_3_2_reg_2870 <= grp_lineIntersectGrid_fu_796_ap_return;
-        tmp_4_1_3_3_reg_2875 <= grp_lineIntersectGrid_fu_818_ap_return;
-        tmp_4_1_3_reg_2860 <= grp_lineIntersectGrid_fu_752_ap_return;
-        tmp_4_1_reg_2800 <= grp_lineIntersectGrid_fu_488_ap_return;
-        tmp_4_2_2_1_reg_2890 <= grp_lineIntersectGrid_fu_1038_ap_return;
-        tmp_4_2_2_2_reg_2895 <= grp_lineIntersectGrid_fu_1060_ap_return;
-        tmp_4_2_2_3_reg_2900 <= grp_lineIntersectGrid_fu_1082_ap_return;
-        tmp_4_2_2_reg_2885 <= grp_lineIntersectGrid_fu_1016_ap_return;
-        tmp_4_3_2_1_reg_2920 <= grp_lineIntersectGrid_fu_1390_ap_return;
-        tmp_4_3_2_2_reg_2925 <= grp_lineIntersectGrid_fu_1412_ap_return;
-        tmp_4_3_2_3_reg_2930 <= grp_lineIntersectGrid_fu_1434_ap_return;
-        tmp_4_3_2_reg_2915 <= grp_lineIntersectGrid_fu_1368_ap_return;
-        tmp_4_reg_2719 <= grp_lineIntersectGrid_fu_136_ap_return;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        select_ln79_19_reg_2956 <= select_ln79_19_fu_2081_p3;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
+    if (((1'b0 == ap_block_state2_on_subcall_done) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -2756,7 +406,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
+    if (((1'b0 == ap_block_state2_on_subcall_done) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -2766,7 +416,7 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
@@ -2774,19 +424,10 @@ always @ (*) begin
         end
         ap_ST_fsm_state2 : begin
             if (((1'b0 == ap_block_state2_on_subcall_done) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
+                ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end
-        end
-        ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
-        end
-        ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
-        end
-        ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -2798,394 +439,66 @@ assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
-
-assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
-
-assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
-
 always @ (*) begin
-    ap_block_state2_on_subcall_done = ((grp_lineIntersectGrid_fu_378_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_356_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_334_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_312_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_290_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_268_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_246_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_224_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_202_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_180_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_158_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_136_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1522_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1500_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1478_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1456_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1434_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1412_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1390_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1368_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1346_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1324_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1302_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1280_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1258_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1236_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1214_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1192_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1170_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1148_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1126_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1104_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1082_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1060_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1038_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_1016_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_994_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_972_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_950_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_928_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_906_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_884_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_862_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_840_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_818_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_796_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_774_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_752_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_730_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_708_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_686_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_664_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_642_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_620_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_598_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_576_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_554_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_532_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_510_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_488_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_466_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_444_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_422_ap_done == 1'b0) | (grp_lineIntersectGrid_fu_400_ap_done == 1'b0));
+    ap_block_state2_on_subcall_done = ((grp_segmentIntersectsGri_fu_148_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_126_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_104_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_82_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_236_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_214_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_192_ap_done == 1'b0) | (grp_segmentIntersectsGri_fu_170_ap_done == 1'b0));
 end
 
-assign ap_return = $signed(select_ln79_31_fu_2299_p3);
+assign ap_return = ((grp_segmentIntersectsGri_fu_236_ap_return[0:0] === 1'b1) ? or_ln159_5_fu_382_p3 : zext_ln158_6_fu_378_p1);
 
-assign grp_lineIntersectGrid_fu_1016_ap_start = grp_lineIntersectGrid_fu_1016_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_104_ap_start = grp_segmentIntersectsGri_fu_104_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1038_ap_start = grp_lineIntersectGrid_fu_1038_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_126_ap_start = grp_segmentIntersectsGri_fu_126_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1060_ap_start = grp_lineIntersectGrid_fu_1060_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_148_ap_start = grp_segmentIntersectsGri_fu_148_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1082_ap_start = grp_lineIntersectGrid_fu_1082_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_170_ap_start = grp_segmentIntersectsGri_fu_170_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1104_ap_start = grp_lineIntersectGrid_fu_1104_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_192_ap_start = grp_segmentIntersectsGri_fu_192_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1126_ap_start = grp_lineIntersectGrid_fu_1126_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_214_ap_start = grp_segmentIntersectsGri_fu_214_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1148_ap_start = grp_lineIntersectGrid_fu_1148_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_236_ap_start = grp_segmentIntersectsGri_fu_236_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1170_ap_start = grp_lineIntersectGrid_fu_1170_ap_start_reg;
+assign grp_segmentIntersectsGri_fu_82_ap_start = grp_segmentIntersectsGri_fu_82_ap_start_reg;
 
-assign grp_lineIntersectGrid_fu_1192_ap_start = grp_lineIntersectGrid_fu_1192_ap_start_reg;
+assign or_ln159_1_fu_302_p3 = {{1'd1}, {select_ln158_1_fu_290_p3}};
 
-assign grp_lineIntersectGrid_fu_1214_ap_start = grp_lineIntersectGrid_fu_1214_ap_start_reg;
+assign or_ln159_2_fu_322_p3 = {{1'd1}, {select_ln158_2_fu_310_p3}};
 
-assign grp_lineIntersectGrid_fu_1236_ap_start = grp_lineIntersectGrid_fu_1236_ap_start_reg;
+assign or_ln159_3_fu_342_p3 = {{1'd1}, {select_ln158_3_fu_330_p3}};
 
-assign grp_lineIntersectGrid_fu_1258_ap_start = grp_lineIntersectGrid_fu_1258_ap_start_reg;
+assign or_ln159_4_fu_362_p3 = {{1'd1}, {select_ln158_4_fu_350_p3}};
 
-assign grp_lineIntersectGrid_fu_1280_ap_start = grp_lineIntersectGrid_fu_1280_ap_start_reg;
+assign or_ln159_5_fu_382_p3 = {{1'd1}, {select_ln158_5_fu_370_p3}};
 
-assign grp_lineIntersectGrid_fu_1302_ap_start = grp_lineIntersectGrid_fu_1302_ap_start_reg;
+assign or_ln_fu_282_p3 = {{1'd1}, {select_ln158_fu_270_p3}};
 
-assign grp_lineIntersectGrid_fu_1324_ap_start = grp_lineIntersectGrid_fu_1324_ap_start_reg;
+assign select_ln158_1_fu_290_p3 = ((grp_segmentIntersectsGri_fu_126_ap_return[0:0] === 1'b1) ? or_ln_fu_282_p3 : zext_ln158_1_fu_278_p1);
 
-assign grp_lineIntersectGrid_fu_1346_ap_start = grp_lineIntersectGrid_fu_1346_ap_start_reg;
+assign select_ln158_2_fu_310_p3 = ((grp_segmentIntersectsGri_fu_148_ap_return[0:0] === 1'b1) ? or_ln159_1_fu_302_p3 : zext_ln158_2_fu_298_p1);
 
-assign grp_lineIntersectGrid_fu_1368_ap_start = grp_lineIntersectGrid_fu_1368_ap_start_reg;
+assign select_ln158_3_fu_330_p3 = ((grp_segmentIntersectsGri_fu_170_ap_return[0:0] === 1'b1) ? or_ln159_2_fu_322_p3 : zext_ln158_3_fu_318_p1);
 
-assign grp_lineIntersectGrid_fu_136_ap_start = grp_lineIntersectGrid_fu_136_ap_start_reg;
+assign select_ln158_4_fu_350_p3 = ((grp_segmentIntersectsGri_fu_192_ap_return[0:0] === 1'b1) ? or_ln159_3_fu_342_p3 : zext_ln158_4_fu_338_p1);
 
-assign grp_lineIntersectGrid_fu_1390_ap_start = grp_lineIntersectGrid_fu_1390_ap_start_reg;
+assign select_ln158_5_fu_370_p3 = ((grp_segmentIntersectsGri_fu_214_ap_return[0:0] === 1'b1) ? or_ln159_4_fu_362_p3 : zext_ln158_5_fu_358_p1);
 
-assign grp_lineIntersectGrid_fu_1412_ap_start = grp_lineIntersectGrid_fu_1412_ap_start_reg;
+assign select_ln158_fu_270_p3 = ((grp_segmentIntersectsGri_fu_104_ap_return[0:0] === 1'b1) ? select_ln159_fu_262_p3 : zext_ln158_fu_258_p1);
 
-assign grp_lineIntersectGrid_fu_1434_ap_start = grp_lineIntersectGrid_fu_1434_ap_start_reg;
+assign select_ln159_fu_262_p3 = ((grp_segmentIntersectsGri_fu_82_ap_return[0:0] === 1'b1) ? 2'd3 : 2'd2);
 
-assign grp_lineIntersectGrid_fu_1456_ap_start = grp_lineIntersectGrid_fu_1456_ap_start_reg;
+assign zext_ln158_1_fu_278_p1 = select_ln158_fu_270_p3;
 
-assign grp_lineIntersectGrid_fu_1478_ap_start = grp_lineIntersectGrid_fu_1478_ap_start_reg;
+assign zext_ln158_2_fu_298_p1 = select_ln158_1_fu_290_p3;
 
-assign grp_lineIntersectGrid_fu_1500_ap_start = grp_lineIntersectGrid_fu_1500_ap_start_reg;
+assign zext_ln158_3_fu_318_p1 = select_ln158_2_fu_310_p3;
 
-assign grp_lineIntersectGrid_fu_1522_ap_start = grp_lineIntersectGrid_fu_1522_ap_start_reg;
+assign zext_ln158_4_fu_338_p1 = select_ln158_3_fu_330_p3;
 
-assign grp_lineIntersectGrid_fu_158_ap_start = grp_lineIntersectGrid_fu_158_ap_start_reg;
+assign zext_ln158_5_fu_358_p1 = select_ln158_4_fu_350_p3;
 
-assign grp_lineIntersectGrid_fu_180_ap_start = grp_lineIntersectGrid_fu_180_ap_start_reg;
+assign zext_ln158_6_fu_378_p1 = select_ln158_5_fu_370_p3;
 
-assign grp_lineIntersectGrid_fu_202_ap_start = grp_lineIntersectGrid_fu_202_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_224_ap_start = grp_lineIntersectGrid_fu_224_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_246_ap_start = grp_lineIntersectGrid_fu_246_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_268_ap_start = grp_lineIntersectGrid_fu_268_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_290_ap_start = grp_lineIntersectGrid_fu_290_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_312_ap_start = grp_lineIntersectGrid_fu_312_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_334_ap_start = grp_lineIntersectGrid_fu_334_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_356_ap_start = grp_lineIntersectGrid_fu_356_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_378_ap_start = grp_lineIntersectGrid_fu_378_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_400_ap_start = grp_lineIntersectGrid_fu_400_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_422_ap_start = grp_lineIntersectGrid_fu_422_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_444_ap_start = grp_lineIntersectGrid_fu_444_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_466_ap_start = grp_lineIntersectGrid_fu_466_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_488_ap_start = grp_lineIntersectGrid_fu_488_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_510_ap_start = grp_lineIntersectGrid_fu_510_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_532_ap_start = grp_lineIntersectGrid_fu_532_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_554_ap_start = grp_lineIntersectGrid_fu_554_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_576_ap_start = grp_lineIntersectGrid_fu_576_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_598_ap_start = grp_lineIntersectGrid_fu_598_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_620_ap_start = grp_lineIntersectGrid_fu_620_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_642_ap_start = grp_lineIntersectGrid_fu_642_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_664_ap_start = grp_lineIntersectGrid_fu_664_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_686_ap_start = grp_lineIntersectGrid_fu_686_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_708_ap_start = grp_lineIntersectGrid_fu_708_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_730_ap_start = grp_lineIntersectGrid_fu_730_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_752_ap_start = grp_lineIntersectGrid_fu_752_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_774_ap_start = grp_lineIntersectGrid_fu_774_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_796_ap_start = grp_lineIntersectGrid_fu_796_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_818_ap_start = grp_lineIntersectGrid_fu_818_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_840_ap_start = grp_lineIntersectGrid_fu_840_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_862_ap_start = grp_lineIntersectGrid_fu_862_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_884_ap_start = grp_lineIntersectGrid_fu_884_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_906_ap_start = grp_lineIntersectGrid_fu_906_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_928_ap_start = grp_lineIntersectGrid_fu_928_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_950_ap_start = grp_lineIntersectGrid_fu_950_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_972_ap_start = grp_lineIntersectGrid_fu_972_ap_start_reg;
-
-assign grp_lineIntersectGrid_fu_994_ap_start = grp_lineIntersectGrid_fu_994_ap_start_reg;
-
-assign or_ln79_10_fu_1814_p2 = (tmp_4_2_2_reg_2885 | tmp_4_2_2_1_reg_2890);
-
-assign or_ln79_11_fu_1818_p2 = (tmp_4_2_2_3_reg_2900 | tmp_4_2_2_2_reg_2895);
-
-assign or_ln79_12_fu_1822_p2 = (or_ln79_11_fu_1818_p2 | or_ln79_10_fu_1814_p2);
-
-assign or_ln79_13_fu_1828_p2 = (or_ln79_9_reg_2905 | or_ln79_12_fu_1822_p2);
-
-assign or_ln79_14_fu_1833_p2 = (or_ln79_6_reg_2880 | or_ln79_13_fu_1828_p2);
-
-assign or_ln79_15_fu_1604_p2 = (grp_lineIntersectGrid_fu_1346_ap_return | grp_lineIntersectGrid_fu_1324_ap_return);
-
-assign or_ln79_16_fu_1610_p2 = (grp_lineIntersectGrid_fu_1302_ap_return | grp_lineIntersectGrid_fu_1280_ap_return);
-
-assign or_ln79_17_fu_1616_p2 = (or_ln79_16_fu_1610_p2 | or_ln79_15_fu_1604_p2);
-
-assign or_ln79_18_fu_1622_p2 = (grp_lineIntersectGrid_fu_1214_ap_return | grp_lineIntersectGrid_fu_1192_ap_return);
-
-assign or_ln79_19_fu_1628_p2 = (grp_lineIntersectGrid_fu_1258_ap_return | grp_lineIntersectGrid_fu_1236_ap_return);
-
-assign or_ln79_1_fu_1550_p2 = (grp_lineIntersectGrid_fu_950_ap_return | grp_lineIntersectGrid_fu_928_ap_return);
-
-assign or_ln79_20_fu_1634_p2 = (or_ln79_19_fu_1628_p2 | or_ln79_18_fu_1622_p2);
-
-assign or_ln79_21_fu_1640_p2 = (or_ln79_20_fu_1634_p2 | or_ln79_17_fu_1616_p2);
-
-assign or_ln79_22_fu_1646_p2 = (grp_lineIntersectGrid_fu_1522_ap_return | grp_lineIntersectGrid_fu_1500_ap_return);
-
-assign or_ln79_23_fu_1652_p2 = (grp_lineIntersectGrid_fu_1478_ap_return | grp_lineIntersectGrid_fu_1456_ap_return);
-
-assign or_ln79_24_fu_1658_p2 = (or_ln79_23_fu_1652_p2 | or_ln79_22_fu_1646_p2);
-
-assign or_ln79_25_fu_1838_p2 = (tmp_4_3_2_reg_2915 | tmp_4_3_2_1_reg_2920);
-
-assign or_ln79_26_fu_1842_p2 = (tmp_4_3_2_3_reg_2930 | tmp_4_3_2_2_reg_2925);
-
-assign or_ln79_27_fu_1846_p2 = (or_ln79_26_fu_1842_p2 | or_ln79_25_fu_1838_p2);
-
-assign or_ln79_28_fu_1852_p2 = (or_ln79_27_fu_1846_p2 | or_ln79_24_reg_2935);
-
-assign or_ln79_29_fu_1857_p2 = (or_ln79_28_fu_1852_p2 | or_ln79_21_reg_2910);
-
-assign or_ln79_2_fu_1556_p2 = (or_ln79_fu_1544_p2 | or_ln79_1_fu_1550_p2);
-
-assign or_ln79_30_fu_2295_p2 = (or_ln79_29_reg_2951 | or_ln79_14_reg_2946);
-
-assign or_ln79_3_fu_1562_p2 = (grp_lineIntersectGrid_fu_862_ap_return | grp_lineIntersectGrid_fu_840_ap_return);
-
-assign or_ln79_4_fu_1568_p2 = (grp_lineIntersectGrid_fu_906_ap_return | grp_lineIntersectGrid_fu_884_ap_return);
-
-assign or_ln79_5_fu_1574_p2 = (or_ln79_4_fu_1568_p2 | or_ln79_3_fu_1562_p2);
-
-assign or_ln79_6_fu_1580_p2 = (or_ln79_5_fu_1574_p2 | or_ln79_2_fu_1556_p2);
-
-assign or_ln79_7_fu_1586_p2 = (grp_lineIntersectGrid_fu_1170_ap_return | grp_lineIntersectGrid_fu_1148_ap_return);
-
-assign or_ln79_8_fu_1592_p2 = (grp_lineIntersectGrid_fu_1126_ap_return | grp_lineIntersectGrid_fu_1104_ap_return);
-
-assign or_ln79_9_fu_1598_p2 = (or_ln79_8_fu_1592_p2 | or_ln79_7_fu_1586_p2);
-
-assign or_ln79_fu_1544_p2 = (grp_lineIntersectGrid_fu_994_ap_return | grp_lineIntersectGrid_fu_972_ap_return);
-
-assign or_ln80_10_fu_1940_p3 = {{1'd1}, {select_ln79_11_fu_1929_p3}};
-
-assign or_ln80_11_fu_1959_p3 = {{1'd1}, {select_ln79_12_fu_1948_p3}};
-
-assign or_ln80_12_fu_1978_p3 = {{1'd1}, {select_ln79_13_fu_1967_p3}};
-
-assign or_ln80_13_fu_1997_p3 = {{1'd1}, {select_ln79_14_fu_1986_p3}};
-
-assign or_ln80_14_fu_2016_p3 = {{1'd1}, {select_ln79_15_fu_2005_p3}};
-
-assign or_ln80_15_fu_2035_p3 = {{1'd1}, {select_ln79_16_fu_2024_p3}};
-
-assign or_ln80_16_fu_2054_p3 = {{1'd1}, {select_ln79_17_fu_2043_p3}};
-
-assign or_ln80_17_fu_2073_p3 = {{1'd1}, {select_ln79_18_fu_2062_p3}};
-
-assign or_ln80_18_fu_2091_p3 = {{1'd1}, {select_ln79_19_reg_2956}};
-
-assign or_ln80_19_fu_2109_p3 = {{1'd1}, {select_ln79_20_fu_2098_p3}};
-
-assign or_ln80_1_fu_1704_p3 = {{1'd1}, {select_ln79_1_fu_1693_p3}};
-
-assign or_ln80_20_fu_2128_p3 = {{1'd1}, {select_ln79_21_fu_2117_p3}};
-
-assign or_ln80_21_fu_2147_p3 = {{1'd1}, {select_ln79_22_fu_2136_p3}};
-
-assign or_ln80_22_fu_2166_p3 = {{1'd1}, {select_ln79_23_fu_2155_p3}};
-
-assign or_ln80_23_fu_2185_p3 = {{1'd1}, {select_ln79_24_fu_2174_p3}};
-
-assign or_ln80_24_fu_2204_p3 = {{1'd1}, {select_ln79_25_fu_2193_p3}};
-
-assign or_ln80_25_fu_2223_p3 = {{1'd1}, {select_ln79_26_fu_2212_p3}};
-
-assign or_ln80_26_fu_2242_p3 = {{1'd1}, {select_ln79_27_fu_2231_p3}};
-
-assign or_ln80_27_fu_2261_p3 = {{1'd1}, {select_ln79_28_fu_2250_p3}};
-
-assign or_ln80_28_fu_2280_p3 = {{1'd1}, {select_ln79_29_fu_2269_p3}};
-
-assign or_ln80_2_fu_1723_p3 = {{1'd1}, {select_ln79_2_fu_1712_p3}};
-
-assign or_ln80_3_fu_1742_p3 = {{1'd1}, {select_ln79_3_fu_1731_p3}};
-
-assign or_ln80_4_fu_1761_p3 = {{1'd1}, {select_ln79_4_fu_1750_p3}};
-
-assign or_ln80_5_fu_1780_p3 = {{1'd1}, {select_ln79_5_fu_1769_p3}};
-
-assign or_ln80_6_fu_1799_p3 = {{1'd1}, {select_ln79_6_fu_1788_p3}};
-
-assign or_ln80_7_fu_1865_p3 = {{1'd1}, {select_ln79_7_reg_2940}};
-
-assign or_ln80_8_fu_1883_p3 = {{1'd1}, {select_ln79_8_fu_1872_p3}};
-
-assign or_ln80_9_fu_1902_p3 = {{1'd1}, {select_ln79_9_fu_1891_p3}};
-
-assign or_ln80_s_fu_1921_p3 = {{1'd1}, {select_ln79_10_fu_1910_p3}};
-
-assign or_ln_fu_1685_p3 = {{1'd1}, {select_ln79_fu_1674_p3}};
-
-assign select_ln79_10_fu_1910_p3 = ((tmp_4_0_2_3_reg_2775[0:0] === 1'b1) ? or_ln80_9_fu_1902_p3 : zext_ln79_10_fu_1898_p1);
-
-assign select_ln79_11_fu_1929_p3 = ((tmp_4_0_3_reg_2780[0:0] === 1'b1) ? or_ln80_s_fu_1921_p3 : zext_ln79_11_fu_1917_p1);
-
-assign select_ln79_12_fu_1948_p3 = ((tmp_4_0_3_1_reg_2785[0:0] === 1'b1) ? or_ln80_10_fu_1940_p3 : zext_ln79_12_fu_1936_p1);
-
-assign select_ln79_13_fu_1967_p3 = ((tmp_4_0_3_2_reg_2790[0:0] === 1'b1) ? or_ln80_11_fu_1959_p3 : zext_ln79_13_fu_1955_p1);
-
-assign select_ln79_14_fu_1986_p3 = ((tmp_4_0_3_3_reg_2795[0:0] === 1'b1) ? or_ln80_12_fu_1978_p3 : zext_ln79_14_fu_1974_p1);
-
-assign select_ln79_15_fu_2005_p3 = ((tmp_4_1_reg_2800[0:0] === 1'b1) ? or_ln80_13_fu_1997_p3 : zext_ln79_15_fu_1993_p1);
-
-assign select_ln79_16_fu_2024_p3 = ((tmp_4_1_0_1_reg_2805[0:0] === 1'b1) ? or_ln80_14_fu_2016_p3 : zext_ln79_16_fu_2012_p1);
-
-assign select_ln79_17_fu_2043_p3 = ((tmp_4_1_0_2_reg_2810[0:0] === 1'b1) ? or_ln80_15_fu_2035_p3 : zext_ln79_17_fu_2031_p1);
-
-assign select_ln79_18_fu_2062_p3 = ((tmp_4_1_0_3_reg_2815[0:0] === 1'b1) ? or_ln80_16_fu_2054_p3 : zext_ln79_18_fu_2050_p1);
-
-assign select_ln79_19_fu_2081_p3 = ((tmp_4_1_1_reg_2820[0:0] === 1'b1) ? or_ln80_17_fu_2073_p3 : zext_ln79_19_fu_2069_p1);
-
-assign select_ln79_1_fu_1693_p3 = ((tmp_4_0_0_2_reg_2730[0:0] === 1'b1) ? or_ln_fu_1685_p3 : zext_ln79_1_fu_1681_p1);
-
-assign select_ln79_20_fu_2098_p3 = ((tmp_4_1_1_1_reg_2825[0:0] === 1'b1) ? or_ln80_18_fu_2091_p3 : zext_ln79_20_fu_2088_p1);
-
-assign select_ln79_21_fu_2117_p3 = ((tmp_4_1_1_2_reg_2830[0:0] === 1'b1) ? or_ln80_19_fu_2109_p3 : zext_ln79_21_fu_2105_p1);
-
-assign select_ln79_22_fu_2136_p3 = ((tmp_4_1_1_3_reg_2835[0:0] === 1'b1) ? or_ln80_20_fu_2128_p3 : zext_ln79_22_fu_2124_p1);
-
-assign select_ln79_23_fu_2155_p3 = ((tmp_4_1_2_reg_2840[0:0] === 1'b1) ? or_ln80_21_fu_2147_p3 : zext_ln79_23_fu_2143_p1);
-
-assign select_ln79_24_fu_2174_p3 = ((tmp_4_1_2_1_reg_2845[0:0] === 1'b1) ? or_ln80_22_fu_2166_p3 : zext_ln79_24_fu_2162_p1);
-
-assign select_ln79_25_fu_2193_p3 = ((tmp_4_1_2_2_reg_2850[0:0] === 1'b1) ? or_ln80_23_fu_2185_p3 : zext_ln79_25_fu_2181_p1);
-
-assign select_ln79_26_fu_2212_p3 = ((tmp_4_1_2_3_reg_2855[0:0] === 1'b1) ? or_ln80_24_fu_2204_p3 : zext_ln79_26_fu_2200_p1);
-
-assign select_ln79_27_fu_2231_p3 = ((tmp_4_1_3_reg_2860[0:0] === 1'b1) ? or_ln80_25_fu_2223_p3 : zext_ln79_27_fu_2219_p1);
-
-assign select_ln79_28_fu_2250_p3 = ((tmp_4_1_3_1_reg_2865[0:0] === 1'b1) ? or_ln80_26_fu_2242_p3 : zext_ln79_28_fu_2238_p1);
-
-assign select_ln79_29_fu_2269_p3 = ((tmp_4_1_3_2_reg_2870[0:0] === 1'b1) ? or_ln80_27_fu_2261_p3 : zext_ln79_29_fu_2257_p1);
-
-assign select_ln79_2_fu_1712_p3 = ((tmp_4_0_0_3_reg_2735[0:0] === 1'b1) ? or_ln80_1_fu_1704_p3 : zext_ln79_2_fu_1700_p1);
-
-assign select_ln79_30_fu_2288_p3 = ((tmp_4_1_3_3_reg_2875[0:0] === 1'b1) ? or_ln80_28_fu_2280_p3 : zext_ln79_30_fu_2276_p1);
-
-assign select_ln79_31_fu_2299_p3 = ((or_ln79_30_fu_2295_p2[0:0] === 1'b1) ? 32'd4294967295 : select_ln79_30_fu_2288_p3);
-
-assign select_ln79_3_fu_1731_p3 = ((tmp_4_0_1_reg_2740[0:0] === 1'b1) ? or_ln80_2_fu_1723_p3 : zext_ln79_3_fu_1719_p1);
-
-assign select_ln79_4_fu_1750_p3 = ((tmp_4_0_1_1_reg_2745[0:0] === 1'b1) ? or_ln80_3_fu_1742_p3 : zext_ln79_4_fu_1738_p1);
-
-assign select_ln79_5_fu_1769_p3 = ((tmp_4_0_1_2_reg_2750[0:0] === 1'b1) ? or_ln80_4_fu_1761_p3 : zext_ln79_5_fu_1757_p1);
-
-assign select_ln79_6_fu_1788_p3 = ((tmp_4_0_1_3_reg_2755[0:0] === 1'b1) ? or_ln80_5_fu_1780_p3 : zext_ln79_6_fu_1776_p1);
-
-assign select_ln79_7_fu_1807_p3 = ((tmp_4_0_2_reg_2760[0:0] === 1'b1) ? or_ln80_6_fu_1799_p3 : zext_ln79_7_fu_1795_p1);
-
-assign select_ln79_8_fu_1872_p3 = ((tmp_4_0_2_1_reg_2765[0:0] === 1'b1) ? or_ln80_7_fu_1865_p3 : zext_ln79_8_fu_1862_p1);
-
-assign select_ln79_9_fu_1891_p3 = ((tmp_4_0_2_2_reg_2770[0:0] === 1'b1) ? or_ln80_8_fu_1883_p3 : zext_ln79_9_fu_1879_p1);
-
-assign select_ln79_fu_1674_p3 = ((tmp_4_0_0_1_reg_2725[0:0] === 1'b1) ? select_ln80_fu_1667_p3 : zext_ln79_fu_1664_p1);
-
-assign select_ln80_fu_1667_p3 = ((tmp_4_reg_2719[0:0] === 1'b1) ? 2'd3 : 2'd2);
-
-assign zext_ln79_10_fu_1898_p1 = select_ln79_9_fu_1891_p3;
-
-assign zext_ln79_11_fu_1917_p1 = select_ln79_10_fu_1910_p3;
-
-assign zext_ln79_12_fu_1936_p1 = select_ln79_11_fu_1929_p3;
-
-assign zext_ln79_13_fu_1955_p1 = select_ln79_12_fu_1948_p3;
-
-assign zext_ln79_14_fu_1974_p1 = select_ln79_13_fu_1967_p3;
-
-assign zext_ln79_15_fu_1993_p1 = select_ln79_14_fu_1986_p3;
-
-assign zext_ln79_16_fu_2012_p1 = select_ln79_15_fu_2005_p3;
-
-assign zext_ln79_17_fu_2031_p1 = select_ln79_16_fu_2024_p3;
-
-assign zext_ln79_18_fu_2050_p1 = select_ln79_17_fu_2043_p3;
-
-assign zext_ln79_19_fu_2069_p1 = select_ln79_18_fu_2062_p3;
-
-assign zext_ln79_1_fu_1681_p1 = select_ln79_fu_1674_p3;
-
-assign zext_ln79_20_fu_2088_p1 = select_ln79_19_reg_2956;
-
-assign zext_ln79_21_fu_2105_p1 = select_ln79_20_fu_2098_p3;
-
-assign zext_ln79_22_fu_2124_p1 = select_ln79_21_fu_2117_p3;
-
-assign zext_ln79_23_fu_2143_p1 = select_ln79_22_fu_2136_p3;
-
-assign zext_ln79_24_fu_2162_p1 = select_ln79_23_fu_2155_p3;
-
-assign zext_ln79_25_fu_2181_p1 = select_ln79_24_fu_2174_p3;
-
-assign zext_ln79_26_fu_2200_p1 = select_ln79_25_fu_2193_p3;
-
-assign zext_ln79_27_fu_2219_p1 = select_ln79_26_fu_2212_p3;
-
-assign zext_ln79_28_fu_2238_p1 = select_ln79_27_fu_2231_p3;
-
-assign zext_ln79_29_fu_2257_p1 = select_ln79_28_fu_2250_p3;
-
-assign zext_ln79_2_fu_1700_p1 = select_ln79_1_fu_1693_p3;
-
-assign zext_ln79_30_fu_2276_p1 = select_ln79_29_fu_2269_p3;
-
-assign zext_ln79_3_fu_1719_p1 = select_ln79_2_fu_1712_p3;
-
-assign zext_ln79_4_fu_1738_p1 = select_ln79_3_fu_1731_p3;
-
-assign zext_ln79_5_fu_1757_p1 = select_ln79_4_fu_1750_p3;
-
-assign zext_ln79_6_fu_1776_p1 = select_ln79_5_fu_1769_p3;
-
-assign zext_ln79_7_fu_1795_p1 = select_ln79_6_fu_1788_p3;
-
-assign zext_ln79_8_fu_1862_p1 = select_ln79_7_reg_2940;
-
-assign zext_ln79_9_fu_1879_p1 = select_ln79_8_fu_1872_p3;
-
-assign zext_ln79_fu_1664_p1 = tmp_4_reg_2719;
+assign zext_ln158_fu_258_p1 = grp_segmentIntersectsGri_fu_82_ap_return;
 
 endmodule //honeybee

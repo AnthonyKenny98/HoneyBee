@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'honeybee'" level="0">
-<item name = "Date">Thu Mar 19 15:55:22 2020
+<item name = "Date">Wed Mar 25 00:31:39 2020
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">HoneyBee-B</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
+<column name="ap_clk">10.00 ns, 9.921 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,77 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">33, 33, 0.330 us, 0.330 us, 33, 33, none</column>
+<column name="">76, 425, 0.760 us, 4.250 us, 76, 425, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_lineIntersectGrid_fu_136">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_158">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_180">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_202">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_224">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_246">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_268">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_290">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_312">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_334">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_356">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_378">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_400">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_422">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_444">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_466">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_488">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_510">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_532">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_554">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_576">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_598">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_620">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_642">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_664">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_686">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_708">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_730">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_752">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_774">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_796">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_818">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_840">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_862">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_884">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_906">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_928">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_950">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_972">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_994">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1016">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1038">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1060">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1082">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1104">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1126">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1148">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1170">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1192">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1214">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1236">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1258">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1280">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1302">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1324">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1346">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1368">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1390">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1412">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1434">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1456">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1478">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1500">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
-<column name="grp_lineIntersectGrid_fu_1522">lineIntersectGrid, 29, 29, 0.290 us, 0.290 us, 29, 29, none</column>
+<column name="grp_segmentIntersectsGri_fu_82">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_104">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_126">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_148">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_170">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_192">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_214">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
+<column name="grp_segmentIntersectsGri_fu_236">segmentIntersectsGri, 75, 424, 0.750 us, 4.240 us, 75, 424, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

@@ -2,11 +2,9 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-25 16:31:00
+* @Last Modified time: 2020-03-25 17:41:44
 */
 #include "honeybee.h"
-#include <stdio.h>
-#include <math.h>
 
 // Return true if point lies within grid, else false
 bool pointInGrid(point_t point, point_t grid) {
@@ -91,16 +89,12 @@ bool segmentIntersectsFace(edge_t edge, point_t face) {
 
     // Point of intersection
     point_t POI = pointOfIntersection(T, edge);
-    // printf("        POI = (%f,%f, %f)\n", POI.x, POI.y, POI.z);
 
     // Check if point is within bounds of edge
     bool pointOnEdge = pointOnSegment(POI, edge);
-    // printf("        Point on segment = %d\n", pointOnEdge);
 
     // Check if point is within bounds of face
     bool pointOnface = pointOnFace(POI, P);
-    // printf("        point on face = %d\n", pointOnface);
-    // printf("    segmentIntersectsFace= %d\n", (pointOnEdge && pointOnface));
 
     return pointOnEdge && pointOnface;
 }
@@ -155,15 +149,13 @@ Dout_t honeybee(edge_t edge) {
 
     int b = 0;
     // Iterate through potential swept area
-    for (int k=0; k<DIM*RESOLUTION; k+=RESOLUTION) {
-        for (int j=0; j<DIM*RESOLUTION; j+=RESOLUTION) {
-              for (int i=0; i<DIM*RESOLUTION; i+=RESOLUTION) {
+    honeybee_label2:for (int k=0; k<DIM*RESOLUTION; k+=RESOLUTION) {
+        honeybee_label1:for (int j=0; j<DIM*RESOLUTION; j+=RESOLUTION) {
+              honeybee_label0:for (int i=0; i<DIM*RESOLUTION; i+=RESOLUTION) {
                 
                 // Check collision with grid
                 point_t grid = {.x = (base_t) i, .y = (base_t) j, .z = (base_t) k};
-                printf("(%d, %d, %d)\n", i, j, k);
                 if (segmentIntersectsGrid(edge, grid)) {
-                    printf("    COLLISION\n");
                     collisions = collisions | (0b1 << b);
                 }
             b++;

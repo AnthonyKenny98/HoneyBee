@@ -17,38 +17,58 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.750</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.921</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>637</Best-caseLatency>
-<Average-caseLatency>637</Average-caseLatency>
-<Worst-caseLatency>637</Worst-caseLatency>
-<Best-caseRealTimeLatency>6.370 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>6.370 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>6.370 us</Worst-caseRealTimeLatency>
-<Interval-min>638</Interval-min>
-<Interval-max>638</Interval-max>
+<Best-caseLatency>347</Best-caseLatency>
+<Average-caseLatency>1047</Average-caseLatency>
+<Worst-caseLatency>1743</Worst-caseLatency>
+<Best-caseRealTimeLatency>3.470 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>10.470 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>17.430 us</Worst-caseRealTimeLatency>
+<Interval-min>348</Interval-min>
+<Interval-max>1744</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<honeybee_upper_loop>
-<TripCount>4</TripCount>
-<Latency>636</Latency>
-<IterationLatency>159</IterationLatency>
-<honeybee_mid_loop>
-<TripCount>4</TripCount>
-<Latency>152</Latency>
-<IterationLatency>38</IterationLatency>
-</honeybee_mid_loop>
-</honeybee_upper_loop>
+<Loop1>
+<TripCount>2</TripCount>
+<Latency>
+<range>
+<min>346</min>
+<max>1742</max>
+</range>
+</Latency>
+<IterationLatency>
+<range>
+<min>173</min>
+<max>871</max>
+</range>
+</IterationLatency>
+<Loop1.1>
+<TripCount>2</TripCount>
+<Latency>
+<range>
+<min>166</min>
+<max>864</max>
+</range>
+</Latency>
+<IterationLatency>
+<range>
+<min>83</min>
+<max>432</max>
+</range>
+</IterationLatency>
+</Loop1.1>
+</Loop1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<DSP48E>48</DSP48E>
-<FF>17318</FF>
-<LUT>29140</LUT>
+<DSP48E>68</DSP48E>
+<FF>11625</FF>
+<LUT>26278</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -136,7 +156,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

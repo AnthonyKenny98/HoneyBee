@@ -14,14 +14,14 @@
   },
   "HlsSolution": {
     "DirectiveTcl": [
-      "set_directive_unroll honeybee\/honeybee_lower_loop ",
-      "set_directive_unroll honeybee\/honeybee_mid_loop ",
-      "set_directive_unroll honeybee\/honeybee_upper_loop "
+      "set_directive_unroll honeybee\/honeybee_label0 ",
+      "set_directive_unroll honeybee\/honeybee_label1 ",
+      "set_directive_unroll honeybee\/honeybee_label2 "
     ],
     "DirectiveInfo": [
-      "unroll honeybee\/honeybee_lower_loop {} {}",
-      "unroll honeybee\/honeybee_mid_loop {} {}",
-      "unroll honeybee\/honeybee_upper_loop {} {}"
+      "unroll honeybee\/honeybee_label0 {} {}",
+      "unroll honeybee\/honeybee_label1 {} {}",
+      "unroll honeybee\/honeybee_label2 {} {}"
     ]
   },
   "Args": {"edge": {
@@ -93,8 +93,8 @@
       }
     }},
   "Return": {
-    "dataType": "long",
-    "dataWidth": "64",
+    "dataType": "unsigned",
+    "dataWidth": "8",
     "interfaceRef": "ap_return"
   },
   "ClockInfo": {
@@ -102,7 +102,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "33",
+    "Latency": "76",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -120,26 +120,34 @@
   "Files": {
     "CSource": ["..\/..\/src\/honeybee.c"],
     "Vhdl": [
+      "impl\/vhdl\/honeybee_fadd_32ng8j.vhd",
       "impl\/vhdl\/honeybee_faddfsubbkb.vhd",
-      "impl\/vhdl\/honeybee_fcmp_32neOg.vhd",
-      "impl\/vhdl\/honeybee_fdiv_32ndEe.vhd",
+      "impl\/vhdl\/honeybee_fcmp_32nfYi.vhd",
+      "impl\/vhdl\/honeybee_fdiv_32neOg.vhd",
+      "impl\/vhdl\/honeybee_fmul_32ndEe.vhd",
       "impl\/vhdl\/honeybee_fsub_32ncud.vhd",
-      "impl\/vhdl\/lineIntersectGrid.vhd",
+      "impl\/vhdl\/segmentIntersectsFac.vhd",
+      "impl\/vhdl\/segmentIntersectsGri.vhd",
       "impl\/vhdl\/honeybee.vhd"
     ],
     "Verilog": [
+      "impl\/verilog\/honeybee_fadd_32ng8j.v",
       "impl\/verilog\/honeybee_faddfsubbkb.v",
-      "impl\/verilog\/honeybee_fcmp_32neOg.v",
-      "impl\/verilog\/honeybee_fdiv_32ndEe.v",
+      "impl\/verilog\/honeybee_fcmp_32nfYi.v",
+      "impl\/verilog\/honeybee_fdiv_32neOg.v",
+      "impl\/verilog\/honeybee_fmul_32ndEe.v",
       "impl\/verilog\/honeybee_fsub_32ncud.v",
-      "impl\/verilog\/lineIntersectGrid.v",
+      "impl\/verilog\/segmentIntersectsFac.v",
+      "impl\/verilog\/segmentIntersectsGri.v",
       "impl\/verilog\/honeybee.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
     "Subcore": [
+      "impl\/misc\/honeybee_ap_fadd_3_full_dsp_32_ip.tcl",
       "impl\/misc\/honeybee_ap_faddfsub_3_full_dsp_32_ip.tcl",
       "impl\/misc\/honeybee_ap_fcmp_0_no_dsp_32_ip.tcl",
       "impl\/misc\/honeybee_ap_fdiv_14_no_dsp_32_ip.tcl",
+      "impl\/misc\/honeybee_ap_fmul_2_max_dsp_32_ip.tcl",
       "impl\/misc\/honeybee_ap_fsub_3_full_dsp_32_ip.tcl"
     ],
     "DesignXml": "\/mnt\/hgfs\/Thesis\/HoneyBee\/HoneyBee-B\/solution4\/.autopilot\/db\/honeybee.design.xml",
@@ -150,6 +158,11 @@
     "HasXpmMemory": false,
     "HasClockedDsp": false,
     "IP": [
+      {
+        "name": "honeybee_ap_fadd_3_full_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name honeybee_ap_fadd_3_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
       {
         "name": "honeybee_ap_faddfsub_3_full_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
@@ -164,6 +177,11 @@
         "name": "honeybee_ap_fdiv_14_no_dsp_32",
         "vlnv": "xilinx.com:ip:floating_point:7.1",
         "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 14 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name honeybee_ap_fdiv_14_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "honeybee_ap_fmul_2_max_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name honeybee_ap_fmul_2_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
       },
       {
         "name": "honeybee_ap_fsub_3_full_dsp_32",
@@ -193,10 +211,10 @@
     "ap_return": {
       "type": "data",
       "dir": "out",
-      "width": "64",
+      "width": "8",
       "ctype": {"DATA": {
-          "Type": "integer signed",
-          "Width": "64"
+          "Type": "integer unsigned",
+          "Width": "8"
         }},
       "bundle_name": "ap_return",
       "bundle_role": "default"
@@ -302,7 +320,7 @@
     },
     "ap_return": {
       "dir": "out",
-      "width": "64"
+      "width": "8"
     },
     "edge_p1_x": {
       "dir": "in",
@@ -334,265 +352,80 @@
       "ModuleName": "honeybee",
       "Instances": [
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_136"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_82",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_158"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_104",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_180"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_126",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_202"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_148",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_224"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_170",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_246"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_192",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_268"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_214",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         },
         {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_290"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_312"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_334"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_356"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_378"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_400"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_422"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_444"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_466"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_488"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_510"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_532"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_554"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_576"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_598"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_620"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_642"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_664"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_686"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_708"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_730"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_752"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_774"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_796"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_818"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_840"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_862"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_884"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_906"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_928"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_950"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_972"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_994"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1016"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1038"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1060"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1082"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1104"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1126"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1148"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1170"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1192"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1214"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1236"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1258"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1280"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1302"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1324"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1346"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1368"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1390"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1412"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1434"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1456"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1478"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1500"
-        },
-        {
-          "ModuleName": "lineIntersectGrid",
-          "InstanceName": "grp_lineIntersectGrid_fu_1522"
+          "ModuleName": "segmentIntersectsGri",
+          "InstanceName": "grp_segmentIntersectsGri_fu_236",
+          "Instances": [{
+              "ModuleName": "segmentIntersectsFac",
+              "InstanceName": "grp_segmentIntersectsFac_fu_113"
+            }]
         }
       ]
     },
     "Info": {
-      "lineIntersectGrid": {
+      "segmentIntersectsFac": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "1",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "segmentIntersectsGri": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "0",
@@ -608,46 +441,72 @@
       }
     },
     "Metrics": {
-      "lineIntersectGrid": {
+      "segmentIntersectsFac": {
         "Latency": {
-          "LatencyBest": "29",
-          "LatencyAvg": "29",
-          "LatencyWorst": "29",
-          "PipelineII": "29",
+          "LatencyBest": "66",
+          "LatencyAvg": "66",
+          "LatencyWorst": "66",
+          "PipelineII": "66",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "7.387"
+          "Estimate": "8.365"
         },
         "Area": {
-          "DSP48E": "12",
-          "FF": "4194",
-          "LUT": "6912",
+          "DSP48E": "28",
+          "FF": "4424",
+          "LUT": "9165",
+          "BRAM_18K": "0",
+          "URAM": "0"
+        }
+      },
+      "segmentIntersectsGri": {
+        "Latency": {
+          "LatencyBest": "75",
+          "LatencyAvg": "250",
+          "LatencyWorst": "424",
+          "PipelineIIMin": "75",
+          "PipelineIIMax": "424",
+          "PipelineII": "75 ~ 424",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.921"
+        },
+        "Area": {
+          "DSP48E": "34",
+          "FF": "5588",
+          "LUT": "12732",
           "BRAM_18K": "0",
           "URAM": "0"
         }
       },
       "honeybee": {
         "Latency": {
-          "LatencyBest": "33",
-          "LatencyAvg": "33",
-          "LatencyWorst": "33",
-          "PipelineII": "34",
+          "LatencyBest": "76",
+          "LatencyAvg": "251",
+          "LatencyWorst": "425",
+          "PipelineIIMin": "77",
+          "PipelineIIMax": "426",
+          "PipelineII": "77 ~ 426",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.750"
+          "Estimate": "9.921"
         },
         "Area": {
-          "DSP48E": "768",
-          "FF": "268561",
-          "LUT": "443027",
+          "DSP48E": "272",
+          "FF": "44714",
+          "LUT": "101911",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -664,7 +523,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2020-03-19 15:55:52 PDT",
+    "Time": "2020-03-25 00:32:01 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

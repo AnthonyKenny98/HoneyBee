@@ -2290,25 +2290,19 @@ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
 
 extern int timer_getoverrun (timer_t __timerid) __attribute__ ((__nothrow__ ));
 # 8 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee.h" 2
-
-
-
-
-
-
-
+# 20 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee.h"
     typedef unsigned char Dout_t;
-
-
-
-
+# 43 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee.h"
+typedef float base_t;
 
 
 typedef struct point {
-    float x;
-    float y;
-    float z;
+    base_t x;
+    base_t y;
+    base_t z;
 } point_t;
+
+typedef point_t vector_t;
 
 typedef struct edge {
     point_t p1 ;
@@ -2970,51 +2964,63 @@ void printBinary(Dout_t bus) {
         printf("%d", !!((bus << i) & 0x80));
         if ((i+1) % 4 == 0) printf(" ");
     }
-    printf("\n");
 }
 
 #ifndef HLS_FASTSIM
 #ifndef HLS_FASTSIM
 #include "apatb_honeybee.h"
 #endif
-# 32 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 31 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 int main(int argc, char* argv[]) {
-
-
     int errors = 0;
 
+    edge_t edges[2] = {
+        (edge_t) {
+            .p1 = (point_t) {.x=0., .y=1.5, .z=1.5},
+            .p2 = (point_t) {.x=1.5, .y=1.5, .z=1.5}
+        },
+        (edge_t) {
+            .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
+            .p2 = (point_t) {.x=0.5, .y=0.5, .z=1.5}
+        },
+    };
+    int expected[2] = {
+        0b11000000,
+        0b00010001,
 
-    srand ((unsigned int) time(((void*)0))*10000000);
+    };
 
     Dout_t result;
 
 
-    clock_t start, finish, total;
-     start = clock() / (((__clock_t) 1000000) / 1000000);
+    int i = 0;
         result = 
 #ifndef HLS_FASTSIM
 #define honeybee AESL_WRAP_honeybee
 #endif
-# 45 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
-honeybee(
-            (edge_t) {
-                .p1 = (point_t) {.x=0., .y=0., .z=0.},
-                .p2 = (point_t) {.x=1.5, .y=1.25, .z=1.5}
-            }
-        );
+# 54 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+honeybee(edges[i]);
 #undef honeybee
-# 45 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 54 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 
-        finish = clock() / (((__clock_t) 1000000) / 1000000);
-        total = (finish - start);
+        if (result != expected[i]) {
+            errors++;
+            printf("Edge {(%f,%f,%f)=>(%f,%f,%f)}  |  Result = ",
+                edges[i].p1.x, edges[i].p1.y, edges[i].p1.z,
+                edges[i].p2.x, edges[i].p2.y, edges[i].p2.z);
+            printBinary(result);
+            printf("  |  Expected = ");
+            printBinary(expected[i]);
+            printf("\n");
+        }
+
 
 
     printf("********************************************\n");
-    printf("HoneyBee Test completed with %d errors in %ld us\n", errors, total);
-    printBinary(result);
+    printf("HoneyBee Test completed with %d errors\n", errors);
     printf("************************************************\n");
     return 0;
 }
 #endif
-# 60 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
+# 72 "/mnt/hgfs/Thesis/HoneyBee/src/honeybee_test.c"
 

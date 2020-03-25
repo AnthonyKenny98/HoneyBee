@@ -57,6 +57,11 @@
 			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution4/.tcls</location>
 		</link>
 		<link>
+			<name>solution5/constraints</name>
+			<type>2</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution5/.tcls</location>
+		</link>
+		<link>
 			<name>source/honeybee.c</name>
 			<type>1</type>
 			<location>/mnt/hgfs/Thesis/HoneyBee/src/honeybee.c</location>
@@ -130,6 +135,21 @@
 			<name>solution4/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution4/script.tcl</location>
+		</link>
+		<link>
+			<name>solution5/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution5/solution5.directive</location>
+		</link>
+		<link>
+			<name>solution5/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution5/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution5/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution5/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

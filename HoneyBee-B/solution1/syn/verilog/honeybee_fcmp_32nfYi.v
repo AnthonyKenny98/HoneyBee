@@ -7,7 +7,7 @@
 
 module honeybee_fcmp_32nfYi
 #(parameter
-    ID         = 7,
+    ID         = 13,
     NUM_STAGE  = 2,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

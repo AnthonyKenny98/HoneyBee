@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 26
-set name honeybee_sitofp_3fYi
+set id 56
+set name honeybee_sitofp_3hbi
 set corename simcore_sitofp
 set op sitofp
 set stage_num 6
@@ -93,7 +93,7 @@ set axilite_register_dict [dict create]
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 28 \
+    id 58 \
     name edge_p1_x \
     type other \
     dir I \
@@ -108,7 +108,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 29 \
+    id 59 \
     name edge_p1_y \
     type other \
     dir I \
@@ -123,7 +123,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 30 \
+    id 60 \
     name edge_p1_z \
     type other \
     dir I \
@@ -138,7 +138,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 31 \
+    id 61 \
     name edge_p2_x \
     type other \
     dir I \
@@ -153,7 +153,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 32 \
+    id 62 \
     name edge_p2_y \
     type other \
     dir I \
@@ -168,7 +168,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 33 \
+    id 63 \
     name edge_p2_z \
     type other \
     dir I \
@@ -204,7 +204,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 64 vector } } \
+    ports { ap_return { O 8 vector } } \
 } "
 }
 

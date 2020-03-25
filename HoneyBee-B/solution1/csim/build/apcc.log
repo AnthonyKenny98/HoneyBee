@@ -1,6 +1,6 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Thu Mar 19 15:51:30 PDT 2020
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Wed Mar 25 00:00:39 PDT 2020
 INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
 INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/239221584658290237070
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/780011585119639300406
 INFO: [APCC 202-1] APCC is done.

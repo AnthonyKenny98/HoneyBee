@@ -14,362 +14,119 @@ namespace ap_rtl {
 
 const sc_logic honeybee::ap_const_logic_1 = sc_dt::Log_1;
 const sc_logic honeybee::ap_const_logic_0 = sc_dt::Log_0;
-const sc_lv<11> honeybee::ap_ST_fsm_state1 = "1";
-const sc_lv<11> honeybee::ap_ST_fsm_state2 = "10";
-const sc_lv<11> honeybee::ap_ST_fsm_state3 = "100";
-const sc_lv<11> honeybee::ap_ST_fsm_state4 = "1000";
-const sc_lv<11> honeybee::ap_ST_fsm_state5 = "10000";
-const sc_lv<11> honeybee::ap_ST_fsm_state6 = "100000";
-const sc_lv<11> honeybee::ap_ST_fsm_state7 = "1000000";
-const sc_lv<11> honeybee::ap_ST_fsm_state8 = "10000000";
-const sc_lv<11> honeybee::ap_ST_fsm_state9 = "100000000";
-const sc_lv<11> honeybee::ap_ST_fsm_state10 = "1000000000";
-const sc_lv<11> honeybee::ap_ST_fsm_state11 = "10000000000";
+const sc_lv<9> honeybee::ap_ST_fsm_state1 = "1";
+const sc_lv<9> honeybee::ap_ST_fsm_state2 = "10";
+const sc_lv<9> honeybee::ap_ST_fsm_state3 = "100";
+const sc_lv<9> honeybee::ap_ST_fsm_state4 = "1000";
+const sc_lv<9> honeybee::ap_ST_fsm_state5 = "10000";
+const sc_lv<9> honeybee::ap_ST_fsm_state6 = "100000";
+const sc_lv<9> honeybee::ap_ST_fsm_state7 = "1000000";
+const sc_lv<9> honeybee::ap_ST_fsm_state8 = "10000000";
+const sc_lv<9> honeybee::ap_ST_fsm_state9 = "100000000";
 const sc_lv<32> honeybee::ap_const_lv32_0 = "00000000000000000000000000000000";
 const sc_lv<32> honeybee::ap_const_lv32_1 = "1";
 const sc_lv<32> honeybee::ap_const_lv32_6 = "110";
 const sc_lv<32> honeybee::ap_const_lv32_8 = "1000";
 const bool honeybee::ap_const_boolean_0 = false;
-const sc_lv<32> honeybee::ap_const_lv32_9 = "1001";
-const sc_lv<1> honeybee::ap_const_lv1_1 = "1";
-const sc_lv<32> honeybee::ap_const_lv32_A = "1010";
-const sc_lv<3> honeybee::ap_const_lv3_0 = "000";
-const sc_lv<7> honeybee::ap_const_lv7_0 = "0000000";
-const sc_lv<64> honeybee::ap_const_lv64_0 = "0000000000000000000000000000000000000000000000000000000000000000";
+const sc_lv<2> honeybee::ap_const_lv2_0 = "00";
+const sc_lv<4> honeybee::ap_const_lv4_0 = "0000";
+const sc_lv<8> honeybee::ap_const_lv8_0 = "00000000";
 const sc_lv<32> honeybee::ap_const_lv32_7 = "111";
 const sc_lv<32> honeybee::ap_const_lv32_3F800000 = "111111100000000000000000000000";
-const sc_lv<32> honeybee::ap_const_lv32_40000000 = "1000000000000000000000000000000";
-const sc_lv<32> honeybee::ap_const_lv32_40400000 = "1000000010000000000000000000000";
-const sc_lv<3> honeybee::ap_const_lv3_4 = "100";
+const sc_lv<2> honeybee::ap_const_lv2_2 = "10";
+const sc_lv<2> honeybee::ap_const_lv2_1 = "1";
+const sc_lv<4> honeybee::ap_const_lv4_4 = "100";
+const sc_lv<3> honeybee::ap_const_lv3_2 = "10";
+const sc_lv<5> honeybee::ap_const_lv5_1 = "1";
+const sc_lv<5> honeybee::ap_const_lv5_0 = "00000";
 const sc_lv<3> honeybee::ap_const_lv3_1 = "1";
-const sc_lv<7> honeybee::ap_const_lv7_10 = "10000";
-const sc_lv<6> honeybee::ap_const_lv6_4 = "100";
-const sc_lv<6> honeybee::ap_const_lv6_1 = "1";
-const sc_lv<7> honeybee::ap_const_lv7_1 = "1";
-const sc_lv<6> honeybee::ap_const_lv6_3 = "11";
-const sc_lv<7> honeybee::ap_const_lv7_4 = "100";
-const sc_lv<6> honeybee::ap_const_lv6_5 = "101";
-const sc_lv<6> honeybee::ap_const_lv6_C = "1100";
-const sc_lv<7> honeybee::ap_const_lv7_5 = "101";
-const sc_lv<6> honeybee::ap_const_lv6_D = "1101";
-const sc_lv<6> honeybee::ap_const_lv6_F = "1111";
-const sc_lv<6> honeybee::ap_const_lv6_7 = "111";
-const sc_lv<7> honeybee::ap_const_lv7_6 = "110";
-const sc_lv<7> honeybee::ap_const_lv7_7 = "111";
+const sc_lv<8> honeybee::ap_const_lv8_1 = "1";
+const sc_lv<3> honeybee::ap_const_lv3_3 = "11";
+const sc_lv<32> honeybee::ap_const_lv32_5 = "101";
+const sc_lv<1> honeybee::ap_const_lv1_1 = "1";
 const bool honeybee::ap_const_boolean_1 = true;
 
 honeybee::honeybee(sc_module_name name) : sc_module(name), mVcdFile(0) {
-    grp_lineIntersectGrid_fu_151 = new lineIntersectGrid("grp_lineIntersectGrid_fu_151");
-    grp_lineIntersectGrid_fu_151->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_151->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_151->ap_start(grp_lineIntersectGrid_fu_151_ap_start);
-    grp_lineIntersectGrid_fu_151->ap_done(grp_lineIntersectGrid_fu_151_ap_done);
-    grp_lineIntersectGrid_fu_151->ap_idle(grp_lineIntersectGrid_fu_151_ap_idle);
-    grp_lineIntersectGrid_fu_151->ap_ready(grp_lineIntersectGrid_fu_151_ap_ready);
-    grp_lineIntersectGrid_fu_151->grid_x(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_151->grid_y(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_151->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_151->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_151->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_151->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_151->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_151->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_151->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_151->ap_return(grp_lineIntersectGrid_fu_151_ap_return);
-    grp_lineIntersectGrid_fu_166 = new lineIntersectGrid("grp_lineIntersectGrid_fu_166");
-    grp_lineIntersectGrid_fu_166->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_166->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_166->ap_start(grp_lineIntersectGrid_fu_166_ap_start);
-    grp_lineIntersectGrid_fu_166->ap_done(grp_lineIntersectGrid_fu_166_ap_done);
-    grp_lineIntersectGrid_fu_166->ap_idle(grp_lineIntersectGrid_fu_166_ap_idle);
-    grp_lineIntersectGrid_fu_166->ap_ready(grp_lineIntersectGrid_fu_166_ap_ready);
-    grp_lineIntersectGrid_fu_166->grid_x(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_166->grid_y(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_166->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_166->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_166->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_166->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_166->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_166->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_166->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_166->ap_return(grp_lineIntersectGrid_fu_166_ap_return);
-    grp_lineIntersectGrid_fu_181 = new lineIntersectGrid("grp_lineIntersectGrid_fu_181");
-    grp_lineIntersectGrid_fu_181->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_181->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_181->ap_start(grp_lineIntersectGrid_fu_181_ap_start);
-    grp_lineIntersectGrid_fu_181->ap_done(grp_lineIntersectGrid_fu_181_ap_done);
-    grp_lineIntersectGrid_fu_181->ap_idle(grp_lineIntersectGrid_fu_181_ap_idle);
-    grp_lineIntersectGrid_fu_181->ap_ready(grp_lineIntersectGrid_fu_181_ap_ready);
-    grp_lineIntersectGrid_fu_181->grid_x(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_181->grid_y(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_181->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_181->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_181->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_181->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_181->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_181->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_181->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_181->ap_return(grp_lineIntersectGrid_fu_181_ap_return);
-    grp_lineIntersectGrid_fu_196 = new lineIntersectGrid("grp_lineIntersectGrid_fu_196");
-    grp_lineIntersectGrid_fu_196->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_196->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_196->ap_start(grp_lineIntersectGrid_fu_196_ap_start);
-    grp_lineIntersectGrid_fu_196->ap_done(grp_lineIntersectGrid_fu_196_ap_done);
-    grp_lineIntersectGrid_fu_196->ap_idle(grp_lineIntersectGrid_fu_196_ap_idle);
-    grp_lineIntersectGrid_fu_196->ap_ready(grp_lineIntersectGrid_fu_196_ap_ready);
-    grp_lineIntersectGrid_fu_196->grid_x(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_196->grid_y(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_196->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_196->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_196->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_196->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_196->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_196->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_196->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_196->ap_return(grp_lineIntersectGrid_fu_196_ap_return);
-    grp_lineIntersectGrid_fu_211 = new lineIntersectGrid("grp_lineIntersectGrid_fu_211");
-    grp_lineIntersectGrid_fu_211->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_211->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_211->ap_start(grp_lineIntersectGrid_fu_211_ap_start);
-    grp_lineIntersectGrid_fu_211->ap_done(grp_lineIntersectGrid_fu_211_ap_done);
-    grp_lineIntersectGrid_fu_211->ap_idle(grp_lineIntersectGrid_fu_211_ap_idle);
-    grp_lineIntersectGrid_fu_211->ap_ready(grp_lineIntersectGrid_fu_211_ap_ready);
-    grp_lineIntersectGrid_fu_211->grid_x(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_211->grid_y(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_211->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_211->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_211->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_211->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_211->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_211->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_211->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_211->ap_return(grp_lineIntersectGrid_fu_211_ap_return);
-    grp_lineIntersectGrid_fu_226 = new lineIntersectGrid("grp_lineIntersectGrid_fu_226");
-    grp_lineIntersectGrid_fu_226->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_226->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_226->ap_start(grp_lineIntersectGrid_fu_226_ap_start);
-    grp_lineIntersectGrid_fu_226->ap_done(grp_lineIntersectGrid_fu_226_ap_done);
-    grp_lineIntersectGrid_fu_226->ap_idle(grp_lineIntersectGrid_fu_226_ap_idle);
-    grp_lineIntersectGrid_fu_226->ap_ready(grp_lineIntersectGrid_fu_226_ap_ready);
-    grp_lineIntersectGrid_fu_226->grid_x(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_226->grid_y(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_226->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_226->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_226->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_226->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_226->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_226->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_226->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_226->ap_return(grp_lineIntersectGrid_fu_226_ap_return);
-    grp_lineIntersectGrid_fu_241 = new lineIntersectGrid("grp_lineIntersectGrid_fu_241");
-    grp_lineIntersectGrid_fu_241->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_241->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_241->ap_start(grp_lineIntersectGrid_fu_241_ap_start);
-    grp_lineIntersectGrid_fu_241->ap_done(grp_lineIntersectGrid_fu_241_ap_done);
-    grp_lineIntersectGrid_fu_241->ap_idle(grp_lineIntersectGrid_fu_241_ap_idle);
-    grp_lineIntersectGrid_fu_241->ap_ready(grp_lineIntersectGrid_fu_241_ap_ready);
-    grp_lineIntersectGrid_fu_241->grid_x(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_241->grid_y(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_241->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_241->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_241->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_241->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_241->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_241->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_241->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_241->ap_return(grp_lineIntersectGrid_fu_241_ap_return);
-    grp_lineIntersectGrid_fu_256 = new lineIntersectGrid("grp_lineIntersectGrid_fu_256");
-    grp_lineIntersectGrid_fu_256->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_256->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_256->ap_start(grp_lineIntersectGrid_fu_256_ap_start);
-    grp_lineIntersectGrid_fu_256->ap_done(grp_lineIntersectGrid_fu_256_ap_done);
-    grp_lineIntersectGrid_fu_256->ap_idle(grp_lineIntersectGrid_fu_256_ap_idle);
-    grp_lineIntersectGrid_fu_256->ap_ready(grp_lineIntersectGrid_fu_256_ap_ready);
-    grp_lineIntersectGrid_fu_256->grid_x(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_256->grid_y(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_256->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_256->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_256->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_256->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_256->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_256->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_256->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_256->ap_return(grp_lineIntersectGrid_fu_256_ap_return);
-    grp_lineIntersectGrid_fu_271 = new lineIntersectGrid("grp_lineIntersectGrid_fu_271");
-    grp_lineIntersectGrid_fu_271->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_271->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_271->ap_start(grp_lineIntersectGrid_fu_271_ap_start);
-    grp_lineIntersectGrid_fu_271->ap_done(grp_lineIntersectGrid_fu_271_ap_done);
-    grp_lineIntersectGrid_fu_271->ap_idle(grp_lineIntersectGrid_fu_271_ap_idle);
-    grp_lineIntersectGrid_fu_271->ap_ready(grp_lineIntersectGrid_fu_271_ap_ready);
-    grp_lineIntersectGrid_fu_271->grid_x(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_271->grid_y(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_271->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_271->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_271->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_271->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_271->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_271->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_271->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_271->ap_return(grp_lineIntersectGrid_fu_271_ap_return);
-    grp_lineIntersectGrid_fu_286 = new lineIntersectGrid("grp_lineIntersectGrid_fu_286");
-    grp_lineIntersectGrid_fu_286->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_286->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_286->ap_start(grp_lineIntersectGrid_fu_286_ap_start);
-    grp_lineIntersectGrid_fu_286->ap_done(grp_lineIntersectGrid_fu_286_ap_done);
-    grp_lineIntersectGrid_fu_286->ap_idle(grp_lineIntersectGrid_fu_286_ap_idle);
-    grp_lineIntersectGrid_fu_286->ap_ready(grp_lineIntersectGrid_fu_286_ap_ready);
-    grp_lineIntersectGrid_fu_286->grid_x(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_286->grid_y(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_286->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_286->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_286->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_286->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_286->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_286->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_286->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_286->ap_return(grp_lineIntersectGrid_fu_286_ap_return);
-    grp_lineIntersectGrid_fu_301 = new lineIntersectGrid("grp_lineIntersectGrid_fu_301");
-    grp_lineIntersectGrid_fu_301->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_301->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_301->ap_start(grp_lineIntersectGrid_fu_301_ap_start);
-    grp_lineIntersectGrid_fu_301->ap_done(grp_lineIntersectGrid_fu_301_ap_done);
-    grp_lineIntersectGrid_fu_301->ap_idle(grp_lineIntersectGrid_fu_301_ap_idle);
-    grp_lineIntersectGrid_fu_301->ap_ready(grp_lineIntersectGrid_fu_301_ap_ready);
-    grp_lineIntersectGrid_fu_301->grid_x(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_301->grid_y(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_301->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_301->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_301->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_301->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_301->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_301->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_301->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_301->ap_return(grp_lineIntersectGrid_fu_301_ap_return);
-    grp_lineIntersectGrid_fu_316 = new lineIntersectGrid("grp_lineIntersectGrid_fu_316");
-    grp_lineIntersectGrid_fu_316->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_316->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_316->ap_start(grp_lineIntersectGrid_fu_316_ap_start);
-    grp_lineIntersectGrid_fu_316->ap_done(grp_lineIntersectGrid_fu_316_ap_done);
-    grp_lineIntersectGrid_fu_316->ap_idle(grp_lineIntersectGrid_fu_316_ap_idle);
-    grp_lineIntersectGrid_fu_316->ap_ready(grp_lineIntersectGrid_fu_316_ap_ready);
-    grp_lineIntersectGrid_fu_316->grid_x(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_316->grid_y(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_316->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_316->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_316->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_316->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_316->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_316->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_316->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_316->ap_return(grp_lineIntersectGrid_fu_316_ap_return);
-    grp_lineIntersectGrid_fu_331 = new lineIntersectGrid("grp_lineIntersectGrid_fu_331");
-    grp_lineIntersectGrid_fu_331->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_331->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_331->ap_start(grp_lineIntersectGrid_fu_331_ap_start);
-    grp_lineIntersectGrid_fu_331->ap_done(grp_lineIntersectGrid_fu_331_ap_done);
-    grp_lineIntersectGrid_fu_331->ap_idle(grp_lineIntersectGrid_fu_331_ap_idle);
-    grp_lineIntersectGrid_fu_331->ap_ready(grp_lineIntersectGrid_fu_331_ap_ready);
-    grp_lineIntersectGrid_fu_331->grid_x(ap_var_for_const0);
-    grp_lineIntersectGrid_fu_331->grid_y(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_331->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_331->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_331->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_331->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_331->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_331->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_331->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_331->ap_return(grp_lineIntersectGrid_fu_331_ap_return);
-    grp_lineIntersectGrid_fu_346 = new lineIntersectGrid("grp_lineIntersectGrid_fu_346");
-    grp_lineIntersectGrid_fu_346->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_346->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_346->ap_start(grp_lineIntersectGrid_fu_346_ap_start);
-    grp_lineIntersectGrid_fu_346->ap_done(grp_lineIntersectGrid_fu_346_ap_done);
-    grp_lineIntersectGrid_fu_346->ap_idle(grp_lineIntersectGrid_fu_346_ap_idle);
-    grp_lineIntersectGrid_fu_346->ap_ready(grp_lineIntersectGrid_fu_346_ap_ready);
-    grp_lineIntersectGrid_fu_346->grid_x(ap_var_for_const1);
-    grp_lineIntersectGrid_fu_346->grid_y(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_346->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_346->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_346->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_346->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_346->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_346->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_346->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_346->ap_return(grp_lineIntersectGrid_fu_346_ap_return);
-    grp_lineIntersectGrid_fu_361 = new lineIntersectGrid("grp_lineIntersectGrid_fu_361");
-    grp_lineIntersectGrid_fu_361->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_361->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_361->ap_start(grp_lineIntersectGrid_fu_361_ap_start);
-    grp_lineIntersectGrid_fu_361->ap_done(grp_lineIntersectGrid_fu_361_ap_done);
-    grp_lineIntersectGrid_fu_361->ap_idle(grp_lineIntersectGrid_fu_361_ap_idle);
-    grp_lineIntersectGrid_fu_361->ap_ready(grp_lineIntersectGrid_fu_361_ap_ready);
-    grp_lineIntersectGrid_fu_361->grid_x(ap_var_for_const2);
-    grp_lineIntersectGrid_fu_361->grid_y(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_361->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_361->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_361->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_361->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_361->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_361->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_361->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_361->ap_return(grp_lineIntersectGrid_fu_361_ap_return);
-    grp_lineIntersectGrid_fu_376 = new lineIntersectGrid("grp_lineIntersectGrid_fu_376");
-    grp_lineIntersectGrid_fu_376->ap_clk(ap_clk);
-    grp_lineIntersectGrid_fu_376->ap_rst(ap_rst);
-    grp_lineIntersectGrid_fu_376->ap_start(grp_lineIntersectGrid_fu_376_ap_start);
-    grp_lineIntersectGrid_fu_376->ap_done(grp_lineIntersectGrid_fu_376_ap_done);
-    grp_lineIntersectGrid_fu_376->ap_idle(grp_lineIntersectGrid_fu_376_ap_idle);
-    grp_lineIntersectGrid_fu_376->ap_ready(grp_lineIntersectGrid_fu_376_ap_ready);
-    grp_lineIntersectGrid_fu_376->grid_x(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_376->grid_y(ap_var_for_const3);
-    grp_lineIntersectGrid_fu_376->grid_z(grid_z_reg_1022);
-    grp_lineIntersectGrid_fu_376->edge_p1_x(edge_p1_x);
-    grp_lineIntersectGrid_fu_376->edge_p1_y(edge_p1_y);
-    grp_lineIntersectGrid_fu_376->edge_p1_z(edge_p1_z);
-    grp_lineIntersectGrid_fu_376->edge_p2_x(edge_p2_x);
-    grp_lineIntersectGrid_fu_376->edge_p2_y(edge_p2_y);
-    grp_lineIntersectGrid_fu_376->edge_p2_z(edge_p2_z);
-    grp_lineIntersectGrid_fu_376->ap_return(grp_lineIntersectGrid_fu_376_ap_return);
-    honeybee_sitofp_3fYi_U26 = new honeybee_sitofp_3fYi<1,6,32,32>("honeybee_sitofp_3fYi_U26");
-    honeybee_sitofp_3fYi_U26->clk(ap_clk);
-    honeybee_sitofp_3fYi_U26->reset(ap_rst);
-    honeybee_sitofp_3fYi_U26->din0(grp_fu_391_p0);
-    honeybee_sitofp_3fYi_U26->ce(ap_var_for_const4);
-    honeybee_sitofp_3fYi_U26->dout(grp_fu_391_p1);
+    grp_segmentIntersectsGri_fu_133 = new segmentIntersectsGri("grp_segmentIntersectsGri_fu_133");
+    grp_segmentIntersectsGri_fu_133->ap_clk(ap_clk);
+    grp_segmentIntersectsGri_fu_133->ap_rst(ap_rst);
+    grp_segmentIntersectsGri_fu_133->ap_start(grp_segmentIntersectsGri_fu_133_ap_start);
+    grp_segmentIntersectsGri_fu_133->ap_done(grp_segmentIntersectsGri_fu_133_ap_done);
+    grp_segmentIntersectsGri_fu_133->ap_idle(grp_segmentIntersectsGri_fu_133_ap_idle);
+    grp_segmentIntersectsGri_fu_133->ap_ready(grp_segmentIntersectsGri_fu_133_ap_ready);
+    grp_segmentIntersectsGri_fu_133->edge_p1_x(edge_p1_x);
+    grp_segmentIntersectsGri_fu_133->edge_p1_y(edge_p1_y);
+    grp_segmentIntersectsGri_fu_133->edge_p1_z(edge_p1_z);
+    grp_segmentIntersectsGri_fu_133->edge_p2_x(edge_p2_x);
+    grp_segmentIntersectsGri_fu_133->edge_p2_y(edge_p2_y);
+    grp_segmentIntersectsGri_fu_133->edge_p2_z(edge_p2_z);
+    grp_segmentIntersectsGri_fu_133->grid_x(ap_var_for_const0);
+    grp_segmentIntersectsGri_fu_133->grid_y(ap_var_for_const0);
+    grp_segmentIntersectsGri_fu_133->grid_z(grid_z_reg_420);
+    grp_segmentIntersectsGri_fu_133->ap_return(grp_segmentIntersectsGri_fu_133_ap_return);
+    grp_segmentIntersectsGri_fu_148 = new segmentIntersectsGri("grp_segmentIntersectsGri_fu_148");
+    grp_segmentIntersectsGri_fu_148->ap_clk(ap_clk);
+    grp_segmentIntersectsGri_fu_148->ap_rst(ap_rst);
+    grp_segmentIntersectsGri_fu_148->ap_start(grp_segmentIntersectsGri_fu_148_ap_start);
+    grp_segmentIntersectsGri_fu_148->ap_done(grp_segmentIntersectsGri_fu_148_ap_done);
+    grp_segmentIntersectsGri_fu_148->ap_idle(grp_segmentIntersectsGri_fu_148_ap_idle);
+    grp_segmentIntersectsGri_fu_148->ap_ready(grp_segmentIntersectsGri_fu_148_ap_ready);
+    grp_segmentIntersectsGri_fu_148->edge_p1_x(edge_p1_x);
+    grp_segmentIntersectsGri_fu_148->edge_p1_y(edge_p1_y);
+    grp_segmentIntersectsGri_fu_148->edge_p1_z(edge_p1_z);
+    grp_segmentIntersectsGri_fu_148->edge_p2_x(edge_p2_x);
+    grp_segmentIntersectsGri_fu_148->edge_p2_y(edge_p2_y);
+    grp_segmentIntersectsGri_fu_148->edge_p2_z(edge_p2_z);
+    grp_segmentIntersectsGri_fu_148->grid_x(ap_var_for_const1);
+    grp_segmentIntersectsGri_fu_148->grid_y(ap_var_for_const0);
+    grp_segmentIntersectsGri_fu_148->grid_z(grid_z_reg_420);
+    grp_segmentIntersectsGri_fu_148->ap_return(grp_segmentIntersectsGri_fu_148_ap_return);
+    grp_segmentIntersectsGri_fu_163 = new segmentIntersectsGri("grp_segmentIntersectsGri_fu_163");
+    grp_segmentIntersectsGri_fu_163->ap_clk(ap_clk);
+    grp_segmentIntersectsGri_fu_163->ap_rst(ap_rst);
+    grp_segmentIntersectsGri_fu_163->ap_start(grp_segmentIntersectsGri_fu_163_ap_start);
+    grp_segmentIntersectsGri_fu_163->ap_done(grp_segmentIntersectsGri_fu_163_ap_done);
+    grp_segmentIntersectsGri_fu_163->ap_idle(grp_segmentIntersectsGri_fu_163_ap_idle);
+    grp_segmentIntersectsGri_fu_163->ap_ready(grp_segmentIntersectsGri_fu_163_ap_ready);
+    grp_segmentIntersectsGri_fu_163->edge_p1_x(edge_p1_x);
+    grp_segmentIntersectsGri_fu_163->edge_p1_y(edge_p1_y);
+    grp_segmentIntersectsGri_fu_163->edge_p1_z(edge_p1_z);
+    grp_segmentIntersectsGri_fu_163->edge_p2_x(edge_p2_x);
+    grp_segmentIntersectsGri_fu_163->edge_p2_y(edge_p2_y);
+    grp_segmentIntersectsGri_fu_163->edge_p2_z(edge_p2_z);
+    grp_segmentIntersectsGri_fu_163->grid_x(ap_var_for_const0);
+    grp_segmentIntersectsGri_fu_163->grid_y(ap_var_for_const1);
+    grp_segmentIntersectsGri_fu_163->grid_z(grid_z_reg_420);
+    grp_segmentIntersectsGri_fu_163->ap_return(grp_segmentIntersectsGri_fu_163_ap_return);
+    grp_segmentIntersectsGri_fu_178 = new segmentIntersectsGri("grp_segmentIntersectsGri_fu_178");
+    grp_segmentIntersectsGri_fu_178->ap_clk(ap_clk);
+    grp_segmentIntersectsGri_fu_178->ap_rst(ap_rst);
+    grp_segmentIntersectsGri_fu_178->ap_start(grp_segmentIntersectsGri_fu_178_ap_start);
+    grp_segmentIntersectsGri_fu_178->ap_done(grp_segmentIntersectsGri_fu_178_ap_done);
+    grp_segmentIntersectsGri_fu_178->ap_idle(grp_segmentIntersectsGri_fu_178_ap_idle);
+    grp_segmentIntersectsGri_fu_178->ap_ready(grp_segmentIntersectsGri_fu_178_ap_ready);
+    grp_segmentIntersectsGri_fu_178->edge_p1_x(edge_p1_x);
+    grp_segmentIntersectsGri_fu_178->edge_p1_y(edge_p1_y);
+    grp_segmentIntersectsGri_fu_178->edge_p1_z(edge_p1_z);
+    grp_segmentIntersectsGri_fu_178->edge_p2_x(edge_p2_x);
+    grp_segmentIntersectsGri_fu_178->edge_p2_y(edge_p2_y);
+    grp_segmentIntersectsGri_fu_178->edge_p2_z(edge_p2_z);
+    grp_segmentIntersectsGri_fu_178->grid_x(ap_var_for_const1);
+    grp_segmentIntersectsGri_fu_178->grid_y(ap_var_for_const1);
+    grp_segmentIntersectsGri_fu_178->grid_z(grid_z_reg_420);
+    grp_segmentIntersectsGri_fu_178->ap_return(grp_segmentIntersectsGri_fu_178_ap_return);
+    honeybee_sitofp_3hbi_U56 = new honeybee_sitofp_3hbi<1,6,32,32>("honeybee_sitofp_3hbi_U56");
+    honeybee_sitofp_3hbi_U56->clk(ap_clk);
+    honeybee_sitofp_3hbi_U56->reset(ap_rst);
+    honeybee_sitofp_3hbi_U56->din0(grp_fu_193_p0);
+    honeybee_sitofp_3hbi_U56->ce(ap_var_for_const2);
+    honeybee_sitofp_3hbi_U56->dout(grp_fu_193_p1);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
     sensitive << ( ap_clk.pos() );
 
-    SC_METHOD(thread_add_ln82_1_fu_521_p2);
-    sensitive << ( zext_ln82_fu_427_p1 );
-
-    SC_METHOD(thread_add_ln82_2_fu_537_p2);
-    sensitive << ( zext_ln82_7_fu_533_p1 );
-
-    SC_METHOD(thread_add_ln82_3_fu_553_p2);
-    sensitive << ( zext_ln82_fu_427_p1 );
-
-    SC_METHOD(thread_add_ln82_4_fu_783_p2);
-    sensitive << ( zext_ln82_reg_1137 );
-
-    SC_METHOD(thread_add_ln82_5_fu_805_p2);
-    sensitive << ( zext_ln82_reg_1137 );
-
-    SC_METHOD(thread_add_ln82_6_fu_599_p2);
-    sensitive << ( zext_ln82_15_fu_578_p1 );
-
-    SC_METHOD(thread_add_ln82_fu_475_p2);
-    sensitive << ( zext_ln82_2_fu_454_p1 );
-
     SC_METHOD(thread_ap_CS_fsm_state1);
-    sensitive << ( ap_CS_fsm );
-
-    SC_METHOD(thread_ap_CS_fsm_state10);
-    sensitive << ( ap_CS_fsm );
-
-    SC_METHOD(thread_ap_CS_fsm_state11);
     sensitive << ( ap_CS_fsm );
 
     SC_METHOD(thread_ap_CS_fsm_state2);
@@ -385,26 +142,14 @@ honeybee::honeybee(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_CS_fsm );
 
     SC_METHOD(thread_ap_block_state9_on_subcall_done);
-    sensitive << ( grp_lineIntersectGrid_fu_151_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_166_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_181_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_196_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_211_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_226_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_241_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_256_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_271_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_286_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_301_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_316_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_331_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_346_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_361_ap_done );
-    sensitive << ( grp_lineIntersectGrid_fu_376_ap_done );
+    sensitive << ( grp_segmentIntersectsGri_fu_133_ap_done );
+    sensitive << ( grp_segmentIntersectsGri_fu_148_ap_done );
+    sensitive << ( grp_segmentIntersectsGri_fu_163_ap_done );
+    sensitive << ( grp_segmentIntersectsGri_fu_178_ap_done );
 
     SC_METHOD(thread_ap_done);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( icmp_ln73_fu_399_p2 );
+    sensitive << ( icmp_ln152_fu_201_p2 );
 
     SC_METHOD(thread_ap_idle);
     sensitive << ( ap_start );
@@ -412,340 +157,116 @@ honeybee::honeybee(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
     SC_METHOD(thread_ap_ready);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( icmp_ln73_fu_399_p2 );
+    sensitive << ( icmp_ln152_fu_201_p2 );
 
     SC_METHOD(thread_ap_return);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( collisions_0_reg_139 );
-    sensitive << ( icmp_ln73_fu_399_p2 );
+    sensitive << ( collisions_0_reg_121 );
+    sensitive << ( icmp_ln152_fu_201_p2 );
 
-    SC_METHOD(thread_b_fu_411_p2);
-    sensitive << ( b_0_reg_127 );
+    SC_METHOD(thread_b_fu_213_p2);
+    sensitive << ( b_0_reg_109 );
 
-    SC_METHOD(thread_grp_fu_391_p0);
+    SC_METHOD(thread_grp_fu_193_p0);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( k_0_reg_116 );
+    sensitive << ( k_0_reg_98 );
 
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_151_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_151_ap_start_reg );
+    SC_METHOD(thread_grp_segmentIntersectsGri_fu_133_ap_start);
+    sensitive << ( grp_segmentIntersectsGri_fu_133_ap_start_reg );
 
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_166_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_166_ap_start_reg );
+    SC_METHOD(thread_grp_segmentIntersectsGri_fu_148_ap_start);
+    sensitive << ( grp_segmentIntersectsGri_fu_148_ap_start_reg );
 
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_181_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_181_ap_start_reg );
+    SC_METHOD(thread_grp_segmentIntersectsGri_fu_163_ap_start);
+    sensitive << ( grp_segmentIntersectsGri_fu_163_ap_start_reg );
 
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_196_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_196_ap_start_reg );
+    SC_METHOD(thread_grp_segmentIntersectsGri_fu_178_ap_start);
+    sensitive << ( grp_segmentIntersectsGri_fu_178_ap_start_reg );
 
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_211_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_211_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_226_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_226_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_241_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_241_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_256_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_256_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_271_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_271_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_286_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_286_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_301_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_301_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_316_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_316_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_331_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_331_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_346_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_346_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_361_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_361_ap_start_reg );
-
-    SC_METHOD(thread_grp_lineIntersectGrid_fu_376_ap_start);
-    sensitive << ( grp_lineIntersectGrid_fu_376_ap_start_reg );
-
-    SC_METHOD(thread_icmp_ln73_fu_399_p2);
+    SC_METHOD(thread_icmp_ln152_fu_201_p2);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( k_0_reg_116 );
+    sensitive << ( k_0_reg_98 );
 
-    SC_METHOD(thread_k_fu_405_p2);
-    sensitive << ( k_0_reg_116 );
+    SC_METHOD(thread_k_fu_207_p2);
+    sensitive << ( k_0_reg_98 );
 
-    SC_METHOD(thread_or_ln79_10_fu_663_p2);
-    sensitive << ( select_ln79_12_fu_565_p3 );
-    sensitive << ( select_ln79_13_fu_592_p3 );
+    SC_METHOD(thread_or_ln158_1_fu_341_p2);
+    sensitive << ( select_ln158_2_fu_281_p3 );
+    sensitive << ( select_ln158_3_fu_305_p3 );
 
-    SC_METHOD(thread_or_ln79_11_fu_669_p2);
-    sensitive << ( select_ln79_14_fu_615_p3 );
-    sensitive << ( select_ln79_15_fu_638_p3 );
+    SC_METHOD(thread_or_ln158_2_fu_347_p2);
+    sensitive << ( or_ln158_1_fu_341_p2 );
+    sensitive << ( tmp_fu_333_p3 );
 
-    SC_METHOD(thread_or_ln79_12_fu_675_p2);
-    sensitive << ( or_ln79_11_fu_669_p2 );
-    sensitive << ( or_ln79_10_fu_663_p2 );
+    SC_METHOD(thread_or_ln158_3_fu_353_p2);
+    sensitive << ( collisions_0_reg_121 );
+    sensitive << ( or_ln158_2_fu_347_p2 );
 
-    SC_METHOD(thread_or_ln79_13_fu_868_p2);
-    sensitive << ( or_ln79_12_reg_1168 );
-    sensitive << ( or_ln79_9_fu_862_p2 );
+    SC_METHOD(thread_or_ln158_fu_317_p2);
+    sensitive << ( trunc_ln158_fu_313_p1 );
+    sensitive << ( select_ln158_fu_243_p3 );
 
-    SC_METHOD(thread_or_ln79_14_fu_873_p2);
-    sensitive << ( or_ln79_13_fu_868_p2 );
-    sensitive << ( or_ln79_6_fu_845_p2 );
+    SC_METHOD(thread_or_ln161_1_fu_251_p2);
+    sensitive << ( trunc_ln152_fu_219_p1 );
 
-    SC_METHOD(thread_or_ln79_15_fu_883_p2);
-    sensitive << ( collisions_0_reg_139 );
-    sensitive << ( sext_ln79_fu_879_p1 );
+    SC_METHOD(thread_or_ln161_2_fu_289_p2);
+    sensitive << ( trunc_ln152_fu_219_p1 );
 
-    SC_METHOD(thread_or_ln79_1_fu_651_p2);
-    sensitive << ( select_ln79_2_fu_491_p3 );
-    sensitive << ( select_ln79_3_fu_514_p3 );
+    SC_METHOD(thread_or_ln161_fu_223_p2);
+    sensitive << ( trunc_ln152_fu_219_p1 );
 
-    SC_METHOD(thread_or_ln79_2_fu_657_p2);
-    sensitive << ( or_ln79_1_fu_651_p2 );
-    sensitive << ( or_ln79_fu_645_p2 );
+    SC_METHOD(thread_select_ln158_1_fu_267_p3);
+    sensitive << ( grp_segmentIntersectsGri_fu_148_ap_return );
+    sensitive << ( shl_ln159_1_fu_261_p2 );
 
-    SC_METHOD(thread_or_ln79_3_fu_827_p2);
-    sensitive << ( select_ln79_4_fu_693_p3 );
-    sensitive << ( select_ln79_5_fu_709_p3 );
+    SC_METHOD(thread_select_ln158_2_fu_281_p3);
+    sensitive << ( grp_segmentIntersectsGri_fu_163_ap_return );
+    sensitive << ( shl_ln159_2_fu_275_p2 );
 
-    SC_METHOD(thread_or_ln79_4_fu_833_p2);
-    sensitive << ( select_ln79_6_fu_725_p3 );
-    sensitive << ( select_ln79_7_fu_747_p3 );
+    SC_METHOD(thread_select_ln158_3_fu_305_p3);
+    sensitive << ( grp_segmentIntersectsGri_fu_178_ap_return );
+    sensitive << ( shl_ln159_3_fu_299_p2 );
 
-    SC_METHOD(thread_or_ln79_5_fu_839_p2);
-    sensitive << ( or_ln79_4_fu_833_p2 );
-    sensitive << ( or_ln79_3_fu_827_p2 );
+    SC_METHOD(thread_select_ln158_fu_243_p3);
+    sensitive << ( grp_segmentIntersectsGri_fu_133_ap_return );
+    sensitive << ( shl_ln159_fu_237_p2 );
 
-    SC_METHOD(thread_or_ln79_6_fu_845_p2);
-    sensitive << ( or_ln79_2_reg_1163 );
-    sensitive << ( or_ln79_5_fu_839_p2 );
+    SC_METHOD(thread_shl_ln159_1_fu_261_p2);
+    sensitive << ( zext_ln161_1_fu_257_p1 );
 
-    SC_METHOD(thread_or_ln79_7_fu_850_p2);
-    sensitive << ( select_ln79_8_fu_760_p3 );
-    sensitive << ( select_ln79_9_fu_776_p3 );
+    SC_METHOD(thread_shl_ln159_2_fu_275_p2);
+    sensitive << ( zext_ln161_fu_229_p1 );
 
-    SC_METHOD(thread_or_ln79_8_fu_856_p2);
-    sensitive << ( select_ln79_10_fu_798_p3 );
-    sensitive << ( select_ln79_11_fu_820_p3 );
+    SC_METHOD(thread_shl_ln159_3_fu_299_p2);
+    sensitive << ( zext_ln161_2_fu_295_p1 );
 
-    SC_METHOD(thread_or_ln79_9_fu_862_p2);
-    sensitive << ( or_ln79_8_fu_856_p2 );
-    sensitive << ( or_ln79_7_fu_850_p2 );
+    SC_METHOD(thread_shl_ln159_fu_237_p2);
+    sensitive << ( zext_ln152_1_fu_233_p1 );
 
-    SC_METHOD(thread_or_ln79_fu_645_p2);
-    sensitive << ( select_ln79_fu_441_p3 );
-    sensitive << ( select_ln79_1_fu_468_p3 );
+    SC_METHOD(thread_tmp_62_fu_323_p4);
+    sensitive << ( select_ln158_1_fu_267_p3 );
 
-    SC_METHOD(thread_or_ln82_1_fu_448_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
+    SC_METHOD(thread_tmp_fu_333_p3);
+    sensitive << ( tmp_62_fu_323_p4 );
+    sensitive << ( or_ln158_fu_317_p2 );
 
-    SC_METHOD(thread_or_ln82_2_fu_498_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
+    SC_METHOD(thread_trunc_ln152_fu_219_p1);
+    sensitive << ( b_0_reg_109 );
 
-    SC_METHOD(thread_or_ln82_3_fu_527_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
+    SC_METHOD(thread_trunc_ln158_fu_313_p1);
+    sensitive << ( select_ln158_1_fu_267_p3 );
 
-    SC_METHOD(thread_or_ln82_4_fu_732_p2);
-    sensitive << ( trunc_ln73_reg_1127 );
+    SC_METHOD(thread_zext_ln152_1_fu_233_p1);
+    sensitive << ( b_0_reg_109 );
 
-    SC_METHOD(thread_or_ln82_5_fu_543_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
+    SC_METHOD(thread_zext_ln161_1_fu_257_p1);
+    sensitive << ( or_ln161_1_fu_251_p2 );
 
-    SC_METHOD(thread_or_ln82_6_fu_572_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
+    SC_METHOD(thread_zext_ln161_2_fu_295_p1);
+    sensitive << ( or_ln161_2_fu_289_p2 );
 
-    SC_METHOD(thread_or_ln82_7_fu_622_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
-
-    SC_METHOD(thread_or_ln82_fu_421_p2);
-    sensitive << ( trunc_ln73_fu_417_p1 );
-
-    SC_METHOD(thread_select_ln79_10_fu_798_p3);
-    sensitive << ( tmp_4_2_2_reg_1092 );
-    sensitive << ( shl_ln80_10_fu_792_p2 );
-
-    SC_METHOD(thread_select_ln79_11_fu_820_p3);
-    sensitive << ( tmp_4_2_3_reg_1097 );
-    sensitive << ( shl_ln80_11_fu_814_p2 );
-
-    SC_METHOD(thread_select_ln79_12_fu_565_p3);
-    sensitive << ( tmp_4_3_reg_1102 );
-    sensitive << ( shl_ln80_12_fu_559_p2 );
-
-    SC_METHOD(thread_select_ln79_13_fu_592_p3);
-    sensitive << ( tmp_4_3_1_reg_1107 );
-    sensitive << ( shl_ln80_13_fu_586_p2 );
-
-    SC_METHOD(thread_select_ln79_14_fu_615_p3);
-    sensitive << ( tmp_4_3_2_reg_1112 );
-    sensitive << ( shl_ln80_14_fu_609_p2 );
-
-    SC_METHOD(thread_select_ln79_15_fu_638_p3);
-    sensitive << ( tmp_4_3_3_reg_1117 );
-    sensitive << ( shl_ln80_15_fu_632_p2 );
-
-    SC_METHOD(thread_select_ln79_1_fu_468_p3);
-    sensitive << ( tmp_4_0_1_reg_1047 );
-    sensitive << ( shl_ln80_1_fu_462_p2 );
-
-    SC_METHOD(thread_select_ln79_2_fu_491_p3);
-    sensitive << ( tmp_4_0_2_reg_1052 );
-    sensitive << ( shl_ln80_2_fu_485_p2 );
-
-    SC_METHOD(thread_select_ln79_3_fu_514_p3);
-    sensitive << ( tmp_4_0_3_reg_1057 );
-    sensitive << ( shl_ln80_3_fu_508_p2 );
-
-    SC_METHOD(thread_select_ln79_4_fu_693_p3);
-    sensitive << ( tmp_4_1_reg_1062 );
-    sensitive << ( shl_ln80_4_fu_687_p2 );
-
-    SC_METHOD(thread_select_ln79_5_fu_709_p3);
-    sensitive << ( tmp_4_1_1_reg_1067 );
-    sensitive << ( shl_ln80_5_fu_703_p2 );
-
-    SC_METHOD(thread_select_ln79_6_fu_725_p3);
-    sensitive << ( tmp_4_1_2_reg_1072 );
-    sensitive << ( shl_ln80_6_fu_719_p2 );
-
-    SC_METHOD(thread_select_ln79_7_fu_747_p3);
-    sensitive << ( tmp_4_1_3_reg_1077 );
-    sensitive << ( shl_ln80_7_fu_741_p2 );
-
-    SC_METHOD(thread_select_ln79_8_fu_760_p3);
-    sensitive << ( tmp_4_2_reg_1082 );
-    sensitive << ( shl_ln80_8_fu_754_p2 );
-
-    SC_METHOD(thread_select_ln79_9_fu_776_p3);
-    sensitive << ( tmp_4_2_1_reg_1087 );
-    sensitive << ( shl_ln80_9_fu_770_p2 );
-
-    SC_METHOD(thread_select_ln79_fu_441_p3);
-    sensitive << ( tmp_4_reg_1042 );
-    sensitive << ( shl_ln80_fu_435_p2 );
-
-    SC_METHOD(thread_sext_ln79_fu_879_p1);
-    sensitive << ( or_ln79_14_fu_873_p2 );
-
-    SC_METHOD(thread_shl_ln80_10_fu_792_p2);
-    sensitive << ( zext_ln82_13_fu_788_p1 );
-
-    SC_METHOD(thread_shl_ln80_11_fu_814_p2);
-    sensitive << ( zext_ln82_14_fu_810_p1 );
-
-    SC_METHOD(thread_shl_ln80_12_fu_559_p2);
-    sensitive << ( zext_ln82_11_fu_549_p1 );
-
-    SC_METHOD(thread_shl_ln80_13_fu_586_p2);
-    sensitive << ( zext_ln82_16_fu_582_p1 );
-
-    SC_METHOD(thread_shl_ln80_14_fu_609_p2);
-    sensitive << ( zext_ln82_17_fu_605_p1 );
-
-    SC_METHOD(thread_shl_ln80_15_fu_632_p2);
-    sensitive << ( zext_ln82_18_fu_628_p1 );
-
-    SC_METHOD(thread_shl_ln80_1_fu_462_p2);
-    sensitive << ( zext_ln82_3_fu_458_p1 );
-
-    SC_METHOD(thread_shl_ln80_2_fu_485_p2);
-    sensitive << ( zext_ln82_4_fu_481_p1 );
-
-    SC_METHOD(thread_shl_ln80_3_fu_508_p2);
-    sensitive << ( zext_ln82_5_fu_504_p1 );
-
-    SC_METHOD(thread_shl_ln80_4_fu_687_p2);
-    sensitive << ( zext_ln82_1_fu_681_p1 );
-
-    SC_METHOD(thread_shl_ln80_5_fu_703_p2);
-    sensitive << ( zext_ln82_8_fu_700_p1 );
-
-    SC_METHOD(thread_shl_ln80_6_fu_719_p2);
-    sensitive << ( zext_ln82_9_fu_716_p1 );
-
-    SC_METHOD(thread_shl_ln80_7_fu_741_p2);
-    sensitive << ( zext_ln82_10_fu_737_p1 );
-
-    SC_METHOD(thread_shl_ln80_8_fu_754_p2);
-    sensitive << ( zext_ln82_6_fu_684_p1 );
-
-    SC_METHOD(thread_shl_ln80_9_fu_770_p2);
-    sensitive << ( zext_ln82_12_fu_767_p1 );
-
-    SC_METHOD(thread_shl_ln80_fu_435_p2);
-    sensitive << ( zext_ln73_1_fu_431_p1 );
-
-    SC_METHOD(thread_trunc_ln73_fu_417_p1);
-    sensitive << ( b_0_reg_127 );
-
-    SC_METHOD(thread_zext_ln73_1_fu_431_p1);
-    sensitive << ( b_0_reg_127 );
-
-    SC_METHOD(thread_zext_ln82_10_fu_737_p1);
-    sensitive << ( or_ln82_4_fu_732_p2 );
-
-    SC_METHOD(thread_zext_ln82_11_fu_549_p1);
-    sensitive << ( or_ln82_5_fu_543_p2 );
-
-    SC_METHOD(thread_zext_ln82_12_fu_767_p1);
-    sensitive << ( add_ln82_3_reg_1158 );
-
-    SC_METHOD(thread_zext_ln82_13_fu_788_p1);
-    sensitive << ( add_ln82_4_fu_783_p2 );
-
-    SC_METHOD(thread_zext_ln82_14_fu_810_p1);
-    sensitive << ( add_ln82_5_fu_805_p2 );
-
-    SC_METHOD(thread_zext_ln82_15_fu_578_p1);
-    sensitive << ( or_ln82_6_fu_572_p2 );
-
-    SC_METHOD(thread_zext_ln82_16_fu_582_p1);
-    sensitive << ( or_ln82_6_fu_572_p2 );
-
-    SC_METHOD(thread_zext_ln82_17_fu_605_p1);
-    sensitive << ( add_ln82_6_fu_599_p2 );
-
-    SC_METHOD(thread_zext_ln82_18_fu_628_p1);
-    sensitive << ( or_ln82_7_fu_622_p2 );
-
-    SC_METHOD(thread_zext_ln82_1_fu_681_p1);
-    sensitive << ( or_ln82_reg_1132 );
-
-    SC_METHOD(thread_zext_ln82_2_fu_454_p1);
-    sensitive << ( or_ln82_1_fu_448_p2 );
-
-    SC_METHOD(thread_zext_ln82_3_fu_458_p1);
-    sensitive << ( or_ln82_1_fu_448_p2 );
-
-    SC_METHOD(thread_zext_ln82_4_fu_481_p1);
-    sensitive << ( add_ln82_fu_475_p2 );
-
-    SC_METHOD(thread_zext_ln82_5_fu_504_p1);
-    sensitive << ( or_ln82_2_fu_498_p2 );
-
-    SC_METHOD(thread_zext_ln82_6_fu_684_p1);
-    sensitive << ( add_ln82_1_reg_1143 );
-
-    SC_METHOD(thread_zext_ln82_7_fu_533_p1);
-    sensitive << ( or_ln82_3_fu_527_p2 );
-
-    SC_METHOD(thread_zext_ln82_8_fu_700_p1);
-    sensitive << ( or_ln82_3_reg_1148 );
-
-    SC_METHOD(thread_zext_ln82_9_fu_716_p1);
-    sensitive << ( add_ln82_2_reg_1153 );
-
-    SC_METHOD(thread_zext_ln82_fu_427_p1);
-    sensitive << ( or_ln82_fu_421_p2 );
+    SC_METHOD(thread_zext_ln161_fu_229_p1);
+    sensitive << ( or_ln161_fu_223_p2 );
 
     SC_METHOD(thread_ap_NS_fsm);
     sensitive << ( ap_start );
@@ -754,38 +275,22 @@ honeybee::honeybee(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_CS_fsm_state2 );
     sensitive << ( ap_CS_fsm_state9 );
     sensitive << ( ap_block_state9_on_subcall_done );
-    sensitive << ( icmp_ln73_fu_399_p2 );
+    sensitive << ( icmp_ln152_fu_201_p2 );
 
     SC_THREAD(thread_hdltv_gen);
     sensitive << ( ap_clk.pos() );
 
-    SC_THREAD(thread_ap_var_for_const4);
+    SC_THREAD(thread_ap_var_for_const2);
 
     SC_THREAD(thread_ap_var_for_const0);
 
     SC_THREAD(thread_ap_var_for_const1);
 
-    SC_THREAD(thread_ap_var_for_const2);
-
-    SC_THREAD(thread_ap_var_for_const3);
-
-    ap_CS_fsm = "00000000001";
-    grp_lineIntersectGrid_fu_151_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_166_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_181_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_196_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_211_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_226_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_241_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_256_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_271_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_286_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_301_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_316_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_331_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_346_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_361_ap_start_reg = SC_LOGIC_0;
-    grp_lineIntersectGrid_fu_376_ap_start_reg = SC_LOGIC_0;
+    ap_CS_fsm = "000000001";
+    grp_segmentIntersectsGri_fu_133_ap_start_reg = SC_LOGIC_0;
+    grp_segmentIntersectsGri_fu_148_ap_start_reg = SC_LOGIC_0;
+    grp_segmentIntersectsGri_fu_163_ap_start_reg = SC_LOGIC_0;
+    grp_segmentIntersectsGri_fu_178_ap_start_reg = SC_LOGIC_0;
     static int apTFileNum = 0;
     stringstream apTFilenSS;
     apTFilenSS << "honeybee_sc_trace_" << apTFileNum ++;
@@ -812,229 +317,67 @@ honeybee::honeybee(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
     sc_trace(mVcdFile, ap_CS_fsm_state1, "ap_CS_fsm_state1");
     sc_trace(mVcdFile, ap_CS_fsm_state2, "ap_CS_fsm_state2");
-    sc_trace(mVcdFile, k_fu_405_p2, "k_fu_405_p2");
-    sc_trace(mVcdFile, k_reg_1017, "k_reg_1017");
-    sc_trace(mVcdFile, grp_fu_391_p1, "grp_fu_391_p1");
-    sc_trace(mVcdFile, grid_z_reg_1022, "grid_z_reg_1022");
+    sc_trace(mVcdFile, k_fu_207_p2, "k_fu_207_p2");
+    sc_trace(mVcdFile, k_reg_415, "k_reg_415");
+    sc_trace(mVcdFile, grp_fu_193_p1, "grp_fu_193_p1");
+    sc_trace(mVcdFile, grid_z_reg_420, "grid_z_reg_420");
     sc_trace(mVcdFile, ap_CS_fsm_state7, "ap_CS_fsm_state7");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_return, "grp_lineIntersectGrid_fu_151_ap_return");
-    sc_trace(mVcdFile, tmp_4_reg_1042, "tmp_4_reg_1042");
+    sc_trace(mVcdFile, b_fu_213_p2, "b_fu_213_p2");
     sc_trace(mVcdFile, ap_CS_fsm_state9, "ap_CS_fsm_state9");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_ready, "grp_lineIntersectGrid_fu_151_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_done, "grp_lineIntersectGrid_fu_151_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_ready, "grp_lineIntersectGrid_fu_166_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_done, "grp_lineIntersectGrid_fu_166_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_ready, "grp_lineIntersectGrid_fu_181_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_done, "grp_lineIntersectGrid_fu_181_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_ready, "grp_lineIntersectGrid_fu_196_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_done, "grp_lineIntersectGrid_fu_196_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_ready, "grp_lineIntersectGrid_fu_211_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_done, "grp_lineIntersectGrid_fu_211_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_ready, "grp_lineIntersectGrid_fu_226_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_done, "grp_lineIntersectGrid_fu_226_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_ready, "grp_lineIntersectGrid_fu_241_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_done, "grp_lineIntersectGrid_fu_241_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_ready, "grp_lineIntersectGrid_fu_256_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_done, "grp_lineIntersectGrid_fu_256_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_ready, "grp_lineIntersectGrid_fu_271_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_done, "grp_lineIntersectGrid_fu_271_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_ready, "grp_lineIntersectGrid_fu_286_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_done, "grp_lineIntersectGrid_fu_286_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_ready, "grp_lineIntersectGrid_fu_301_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_done, "grp_lineIntersectGrid_fu_301_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_ready, "grp_lineIntersectGrid_fu_316_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_done, "grp_lineIntersectGrid_fu_316_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_ready, "grp_lineIntersectGrid_fu_331_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_done, "grp_lineIntersectGrid_fu_331_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_ready, "grp_lineIntersectGrid_fu_346_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_done, "grp_lineIntersectGrid_fu_346_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_ready, "grp_lineIntersectGrid_fu_361_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_done, "grp_lineIntersectGrid_fu_361_ap_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_ready, "grp_lineIntersectGrid_fu_376_ap_ready");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_done, "grp_lineIntersectGrid_fu_376_ap_done");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_ready, "grp_segmentIntersectsGri_fu_133_ap_ready");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_done, "grp_segmentIntersectsGri_fu_133_ap_done");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_ready, "grp_segmentIntersectsGri_fu_148_ap_ready");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_done, "grp_segmentIntersectsGri_fu_148_ap_done");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_ready, "grp_segmentIntersectsGri_fu_163_ap_ready");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_done, "grp_segmentIntersectsGri_fu_163_ap_done");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_ready, "grp_segmentIntersectsGri_fu_178_ap_ready");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_done, "grp_segmentIntersectsGri_fu_178_ap_done");
     sc_trace(mVcdFile, ap_block_state9_on_subcall_done, "ap_block_state9_on_subcall_done");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_return, "grp_lineIntersectGrid_fu_166_ap_return");
-    sc_trace(mVcdFile, tmp_4_0_1_reg_1047, "tmp_4_0_1_reg_1047");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_return, "grp_lineIntersectGrid_fu_181_ap_return");
-    sc_trace(mVcdFile, tmp_4_0_2_reg_1052, "tmp_4_0_2_reg_1052");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_return, "grp_lineIntersectGrid_fu_196_ap_return");
-    sc_trace(mVcdFile, tmp_4_0_3_reg_1057, "tmp_4_0_3_reg_1057");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_return, "grp_lineIntersectGrid_fu_211_ap_return");
-    sc_trace(mVcdFile, tmp_4_1_reg_1062, "tmp_4_1_reg_1062");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_return, "grp_lineIntersectGrid_fu_226_ap_return");
-    sc_trace(mVcdFile, tmp_4_1_1_reg_1067, "tmp_4_1_1_reg_1067");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_return, "grp_lineIntersectGrid_fu_241_ap_return");
-    sc_trace(mVcdFile, tmp_4_1_2_reg_1072, "tmp_4_1_2_reg_1072");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_return, "grp_lineIntersectGrid_fu_256_ap_return");
-    sc_trace(mVcdFile, tmp_4_1_3_reg_1077, "tmp_4_1_3_reg_1077");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_return, "grp_lineIntersectGrid_fu_271_ap_return");
-    sc_trace(mVcdFile, tmp_4_2_reg_1082, "tmp_4_2_reg_1082");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_return, "grp_lineIntersectGrid_fu_286_ap_return");
-    sc_trace(mVcdFile, tmp_4_2_1_reg_1087, "tmp_4_2_1_reg_1087");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_return, "grp_lineIntersectGrid_fu_301_ap_return");
-    sc_trace(mVcdFile, tmp_4_2_2_reg_1092, "tmp_4_2_2_reg_1092");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_return, "grp_lineIntersectGrid_fu_316_ap_return");
-    sc_trace(mVcdFile, tmp_4_2_3_reg_1097, "tmp_4_2_3_reg_1097");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_return, "grp_lineIntersectGrid_fu_331_ap_return");
-    sc_trace(mVcdFile, tmp_4_3_reg_1102, "tmp_4_3_reg_1102");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_return, "grp_lineIntersectGrid_fu_346_ap_return");
-    sc_trace(mVcdFile, tmp_4_3_1_reg_1107, "tmp_4_3_1_reg_1107");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_return, "grp_lineIntersectGrid_fu_361_ap_return");
-    sc_trace(mVcdFile, tmp_4_3_2_reg_1112, "tmp_4_3_2_reg_1112");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_return, "grp_lineIntersectGrid_fu_376_ap_return");
-    sc_trace(mVcdFile, tmp_4_3_3_reg_1117, "tmp_4_3_3_reg_1117");
-    sc_trace(mVcdFile, b_fu_411_p2, "b_fu_411_p2");
-    sc_trace(mVcdFile, b_reg_1122, "b_reg_1122");
-    sc_trace(mVcdFile, ap_CS_fsm_state10, "ap_CS_fsm_state10");
-    sc_trace(mVcdFile, trunc_ln73_fu_417_p1, "trunc_ln73_fu_417_p1");
-    sc_trace(mVcdFile, trunc_ln73_reg_1127, "trunc_ln73_reg_1127");
-    sc_trace(mVcdFile, or_ln82_fu_421_p2, "or_ln82_fu_421_p2");
-    sc_trace(mVcdFile, or_ln82_reg_1132, "or_ln82_reg_1132");
-    sc_trace(mVcdFile, zext_ln82_fu_427_p1, "zext_ln82_fu_427_p1");
-    sc_trace(mVcdFile, zext_ln82_reg_1137, "zext_ln82_reg_1137");
-    sc_trace(mVcdFile, add_ln82_1_fu_521_p2, "add_ln82_1_fu_521_p2");
-    sc_trace(mVcdFile, add_ln82_1_reg_1143, "add_ln82_1_reg_1143");
-    sc_trace(mVcdFile, or_ln82_3_fu_527_p2, "or_ln82_3_fu_527_p2");
-    sc_trace(mVcdFile, or_ln82_3_reg_1148, "or_ln82_3_reg_1148");
-    sc_trace(mVcdFile, add_ln82_2_fu_537_p2, "add_ln82_2_fu_537_p2");
-    sc_trace(mVcdFile, add_ln82_2_reg_1153, "add_ln82_2_reg_1153");
-    sc_trace(mVcdFile, add_ln82_3_fu_553_p2, "add_ln82_3_fu_553_p2");
-    sc_trace(mVcdFile, add_ln82_3_reg_1158, "add_ln82_3_reg_1158");
-    sc_trace(mVcdFile, or_ln79_2_fu_657_p2, "or_ln79_2_fu_657_p2");
-    sc_trace(mVcdFile, or_ln79_2_reg_1163, "or_ln79_2_reg_1163");
-    sc_trace(mVcdFile, or_ln79_12_fu_675_p2, "or_ln79_12_fu_675_p2");
-    sc_trace(mVcdFile, or_ln79_12_reg_1168, "or_ln79_12_reg_1168");
-    sc_trace(mVcdFile, or_ln79_15_fu_883_p2, "or_ln79_15_fu_883_p2");
-    sc_trace(mVcdFile, ap_CS_fsm_state11, "ap_CS_fsm_state11");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_start, "grp_lineIntersectGrid_fu_151_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_idle, "grp_lineIntersectGrid_fu_151_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_start, "grp_lineIntersectGrid_fu_166_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_idle, "grp_lineIntersectGrid_fu_166_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_start, "grp_lineIntersectGrid_fu_181_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_idle, "grp_lineIntersectGrid_fu_181_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_start, "grp_lineIntersectGrid_fu_196_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_idle, "grp_lineIntersectGrid_fu_196_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_start, "grp_lineIntersectGrid_fu_211_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_idle, "grp_lineIntersectGrid_fu_211_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_start, "grp_lineIntersectGrid_fu_226_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_idle, "grp_lineIntersectGrid_fu_226_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_start, "grp_lineIntersectGrid_fu_241_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_idle, "grp_lineIntersectGrid_fu_241_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_start, "grp_lineIntersectGrid_fu_256_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_idle, "grp_lineIntersectGrid_fu_256_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_start, "grp_lineIntersectGrid_fu_271_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_idle, "grp_lineIntersectGrid_fu_271_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_start, "grp_lineIntersectGrid_fu_286_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_idle, "grp_lineIntersectGrid_fu_286_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_start, "grp_lineIntersectGrid_fu_301_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_idle, "grp_lineIntersectGrid_fu_301_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_start, "grp_lineIntersectGrid_fu_316_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_idle, "grp_lineIntersectGrid_fu_316_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_start, "grp_lineIntersectGrid_fu_331_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_idle, "grp_lineIntersectGrid_fu_331_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_start, "grp_lineIntersectGrid_fu_346_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_idle, "grp_lineIntersectGrid_fu_346_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_start, "grp_lineIntersectGrid_fu_361_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_idle, "grp_lineIntersectGrid_fu_361_ap_idle");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_start, "grp_lineIntersectGrid_fu_376_ap_start");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_idle, "grp_lineIntersectGrid_fu_376_ap_idle");
-    sc_trace(mVcdFile, k_0_reg_116, "k_0_reg_116");
-    sc_trace(mVcdFile, b_0_reg_127, "b_0_reg_127");
-    sc_trace(mVcdFile, collisions_0_reg_139, "collisions_0_reg_139");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_151_ap_start_reg, "grp_lineIntersectGrid_fu_151_ap_start_reg");
+    sc_trace(mVcdFile, or_ln158_3_fu_353_p2, "or_ln158_3_fu_353_p2");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_start, "grp_segmentIntersectsGri_fu_133_ap_start");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_idle, "grp_segmentIntersectsGri_fu_133_ap_idle");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_return, "grp_segmentIntersectsGri_fu_133_ap_return");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_start, "grp_segmentIntersectsGri_fu_148_ap_start");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_idle, "grp_segmentIntersectsGri_fu_148_ap_idle");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_return, "grp_segmentIntersectsGri_fu_148_ap_return");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_start, "grp_segmentIntersectsGri_fu_163_ap_start");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_idle, "grp_segmentIntersectsGri_fu_163_ap_idle");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_return, "grp_segmentIntersectsGri_fu_163_ap_return");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_start, "grp_segmentIntersectsGri_fu_178_ap_start");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_idle, "grp_segmentIntersectsGri_fu_178_ap_idle");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_return, "grp_segmentIntersectsGri_fu_178_ap_return");
+    sc_trace(mVcdFile, k_0_reg_98, "k_0_reg_98");
+    sc_trace(mVcdFile, b_0_reg_109, "b_0_reg_109");
+    sc_trace(mVcdFile, collisions_0_reg_121, "collisions_0_reg_121");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_133_ap_start_reg, "grp_segmentIntersectsGri_fu_133_ap_start_reg");
     sc_trace(mVcdFile, ap_CS_fsm_state8, "ap_CS_fsm_state8");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_166_ap_start_reg, "grp_lineIntersectGrid_fu_166_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_181_ap_start_reg, "grp_lineIntersectGrid_fu_181_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_196_ap_start_reg, "grp_lineIntersectGrid_fu_196_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_211_ap_start_reg, "grp_lineIntersectGrid_fu_211_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_226_ap_start_reg, "grp_lineIntersectGrid_fu_226_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_241_ap_start_reg, "grp_lineIntersectGrid_fu_241_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_256_ap_start_reg, "grp_lineIntersectGrid_fu_256_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_271_ap_start_reg, "grp_lineIntersectGrid_fu_271_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_286_ap_start_reg, "grp_lineIntersectGrid_fu_286_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_301_ap_start_reg, "grp_lineIntersectGrid_fu_301_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_316_ap_start_reg, "grp_lineIntersectGrid_fu_316_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_331_ap_start_reg, "grp_lineIntersectGrid_fu_331_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_346_ap_start_reg, "grp_lineIntersectGrid_fu_346_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_361_ap_start_reg, "grp_lineIntersectGrid_fu_361_ap_start_reg");
-    sc_trace(mVcdFile, grp_lineIntersectGrid_fu_376_ap_start_reg, "grp_lineIntersectGrid_fu_376_ap_start_reg");
-    sc_trace(mVcdFile, grp_fu_391_p0, "grp_fu_391_p0");
-    sc_trace(mVcdFile, zext_ln73_1_fu_431_p1, "zext_ln73_1_fu_431_p1");
-    sc_trace(mVcdFile, shl_ln80_fu_435_p2, "shl_ln80_fu_435_p2");
-    sc_trace(mVcdFile, or_ln82_1_fu_448_p2, "or_ln82_1_fu_448_p2");
-    sc_trace(mVcdFile, zext_ln82_3_fu_458_p1, "zext_ln82_3_fu_458_p1");
-    sc_trace(mVcdFile, shl_ln80_1_fu_462_p2, "shl_ln80_1_fu_462_p2");
-    sc_trace(mVcdFile, zext_ln82_2_fu_454_p1, "zext_ln82_2_fu_454_p1");
-    sc_trace(mVcdFile, add_ln82_fu_475_p2, "add_ln82_fu_475_p2");
-    sc_trace(mVcdFile, zext_ln82_4_fu_481_p1, "zext_ln82_4_fu_481_p1");
-    sc_trace(mVcdFile, shl_ln80_2_fu_485_p2, "shl_ln80_2_fu_485_p2");
-    sc_trace(mVcdFile, or_ln82_2_fu_498_p2, "or_ln82_2_fu_498_p2");
-    sc_trace(mVcdFile, zext_ln82_5_fu_504_p1, "zext_ln82_5_fu_504_p1");
-    sc_trace(mVcdFile, shl_ln80_3_fu_508_p2, "shl_ln80_3_fu_508_p2");
-    sc_trace(mVcdFile, zext_ln82_7_fu_533_p1, "zext_ln82_7_fu_533_p1");
-    sc_trace(mVcdFile, or_ln82_5_fu_543_p2, "or_ln82_5_fu_543_p2");
-    sc_trace(mVcdFile, zext_ln82_11_fu_549_p1, "zext_ln82_11_fu_549_p1");
-    sc_trace(mVcdFile, shl_ln80_12_fu_559_p2, "shl_ln80_12_fu_559_p2");
-    sc_trace(mVcdFile, or_ln82_6_fu_572_p2, "or_ln82_6_fu_572_p2");
-    sc_trace(mVcdFile, zext_ln82_16_fu_582_p1, "zext_ln82_16_fu_582_p1");
-    sc_trace(mVcdFile, shl_ln80_13_fu_586_p2, "shl_ln80_13_fu_586_p2");
-    sc_trace(mVcdFile, zext_ln82_15_fu_578_p1, "zext_ln82_15_fu_578_p1");
-    sc_trace(mVcdFile, add_ln82_6_fu_599_p2, "add_ln82_6_fu_599_p2");
-    sc_trace(mVcdFile, zext_ln82_17_fu_605_p1, "zext_ln82_17_fu_605_p1");
-    sc_trace(mVcdFile, shl_ln80_14_fu_609_p2, "shl_ln80_14_fu_609_p2");
-    sc_trace(mVcdFile, or_ln82_7_fu_622_p2, "or_ln82_7_fu_622_p2");
-    sc_trace(mVcdFile, zext_ln82_18_fu_628_p1, "zext_ln82_18_fu_628_p1");
-    sc_trace(mVcdFile, shl_ln80_15_fu_632_p2, "shl_ln80_15_fu_632_p2");
-    sc_trace(mVcdFile, select_ln79_fu_441_p3, "select_ln79_fu_441_p3");
-    sc_trace(mVcdFile, select_ln79_1_fu_468_p3, "select_ln79_1_fu_468_p3");
-    sc_trace(mVcdFile, select_ln79_2_fu_491_p3, "select_ln79_2_fu_491_p3");
-    sc_trace(mVcdFile, select_ln79_3_fu_514_p3, "select_ln79_3_fu_514_p3");
-    sc_trace(mVcdFile, or_ln79_1_fu_651_p2, "or_ln79_1_fu_651_p2");
-    sc_trace(mVcdFile, or_ln79_fu_645_p2, "or_ln79_fu_645_p2");
-    sc_trace(mVcdFile, select_ln79_12_fu_565_p3, "select_ln79_12_fu_565_p3");
-    sc_trace(mVcdFile, select_ln79_13_fu_592_p3, "select_ln79_13_fu_592_p3");
-    sc_trace(mVcdFile, select_ln79_14_fu_615_p3, "select_ln79_14_fu_615_p3");
-    sc_trace(mVcdFile, select_ln79_15_fu_638_p3, "select_ln79_15_fu_638_p3");
-    sc_trace(mVcdFile, or_ln79_11_fu_669_p2, "or_ln79_11_fu_669_p2");
-    sc_trace(mVcdFile, or_ln79_10_fu_663_p2, "or_ln79_10_fu_663_p2");
-    sc_trace(mVcdFile, zext_ln82_1_fu_681_p1, "zext_ln82_1_fu_681_p1");
-    sc_trace(mVcdFile, shl_ln80_4_fu_687_p2, "shl_ln80_4_fu_687_p2");
-    sc_trace(mVcdFile, zext_ln82_8_fu_700_p1, "zext_ln82_8_fu_700_p1");
-    sc_trace(mVcdFile, shl_ln80_5_fu_703_p2, "shl_ln80_5_fu_703_p2");
-    sc_trace(mVcdFile, zext_ln82_9_fu_716_p1, "zext_ln82_9_fu_716_p1");
-    sc_trace(mVcdFile, shl_ln80_6_fu_719_p2, "shl_ln80_6_fu_719_p2");
-    sc_trace(mVcdFile, or_ln82_4_fu_732_p2, "or_ln82_4_fu_732_p2");
-    sc_trace(mVcdFile, zext_ln82_10_fu_737_p1, "zext_ln82_10_fu_737_p1");
-    sc_trace(mVcdFile, shl_ln80_7_fu_741_p2, "shl_ln80_7_fu_741_p2");
-    sc_trace(mVcdFile, zext_ln82_6_fu_684_p1, "zext_ln82_6_fu_684_p1");
-    sc_trace(mVcdFile, shl_ln80_8_fu_754_p2, "shl_ln80_8_fu_754_p2");
-    sc_trace(mVcdFile, zext_ln82_12_fu_767_p1, "zext_ln82_12_fu_767_p1");
-    sc_trace(mVcdFile, shl_ln80_9_fu_770_p2, "shl_ln80_9_fu_770_p2");
-    sc_trace(mVcdFile, add_ln82_4_fu_783_p2, "add_ln82_4_fu_783_p2");
-    sc_trace(mVcdFile, zext_ln82_13_fu_788_p1, "zext_ln82_13_fu_788_p1");
-    sc_trace(mVcdFile, shl_ln80_10_fu_792_p2, "shl_ln80_10_fu_792_p2");
-    sc_trace(mVcdFile, add_ln82_5_fu_805_p2, "add_ln82_5_fu_805_p2");
-    sc_trace(mVcdFile, zext_ln82_14_fu_810_p1, "zext_ln82_14_fu_810_p1");
-    sc_trace(mVcdFile, shl_ln80_11_fu_814_p2, "shl_ln80_11_fu_814_p2");
-    sc_trace(mVcdFile, select_ln79_4_fu_693_p3, "select_ln79_4_fu_693_p3");
-    sc_trace(mVcdFile, select_ln79_5_fu_709_p3, "select_ln79_5_fu_709_p3");
-    sc_trace(mVcdFile, select_ln79_6_fu_725_p3, "select_ln79_6_fu_725_p3");
-    sc_trace(mVcdFile, select_ln79_7_fu_747_p3, "select_ln79_7_fu_747_p3");
-    sc_trace(mVcdFile, or_ln79_4_fu_833_p2, "or_ln79_4_fu_833_p2");
-    sc_trace(mVcdFile, or_ln79_3_fu_827_p2, "or_ln79_3_fu_827_p2");
-    sc_trace(mVcdFile, or_ln79_5_fu_839_p2, "or_ln79_5_fu_839_p2");
-    sc_trace(mVcdFile, select_ln79_8_fu_760_p3, "select_ln79_8_fu_760_p3");
-    sc_trace(mVcdFile, select_ln79_9_fu_776_p3, "select_ln79_9_fu_776_p3");
-    sc_trace(mVcdFile, select_ln79_10_fu_798_p3, "select_ln79_10_fu_798_p3");
-    sc_trace(mVcdFile, select_ln79_11_fu_820_p3, "select_ln79_11_fu_820_p3");
-    sc_trace(mVcdFile, or_ln79_8_fu_856_p2, "or_ln79_8_fu_856_p2");
-    sc_trace(mVcdFile, or_ln79_7_fu_850_p2, "or_ln79_7_fu_850_p2");
-    sc_trace(mVcdFile, or_ln79_9_fu_862_p2, "or_ln79_9_fu_862_p2");
-    sc_trace(mVcdFile, or_ln79_13_fu_868_p2, "or_ln79_13_fu_868_p2");
-    sc_trace(mVcdFile, or_ln79_6_fu_845_p2, "or_ln79_6_fu_845_p2");
-    sc_trace(mVcdFile, or_ln79_14_fu_873_p2, "or_ln79_14_fu_873_p2");
-    sc_trace(mVcdFile, sext_ln79_fu_879_p1, "sext_ln79_fu_879_p1");
-    sc_trace(mVcdFile, icmp_ln73_fu_399_p2, "icmp_ln73_fu_399_p2");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_148_ap_start_reg, "grp_segmentIntersectsGri_fu_148_ap_start_reg");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_163_ap_start_reg, "grp_segmentIntersectsGri_fu_163_ap_start_reg");
+    sc_trace(mVcdFile, grp_segmentIntersectsGri_fu_178_ap_start_reg, "grp_segmentIntersectsGri_fu_178_ap_start_reg");
+    sc_trace(mVcdFile, grp_fu_193_p0, "grp_fu_193_p0");
+    sc_trace(mVcdFile, trunc_ln152_fu_219_p1, "trunc_ln152_fu_219_p1");
+    sc_trace(mVcdFile, or_ln161_fu_223_p2, "or_ln161_fu_223_p2");
+    sc_trace(mVcdFile, zext_ln152_1_fu_233_p1, "zext_ln152_1_fu_233_p1");
+    sc_trace(mVcdFile, shl_ln159_fu_237_p2, "shl_ln159_fu_237_p2");
+    sc_trace(mVcdFile, or_ln161_1_fu_251_p2, "or_ln161_1_fu_251_p2");
+    sc_trace(mVcdFile, zext_ln161_1_fu_257_p1, "zext_ln161_1_fu_257_p1");
+    sc_trace(mVcdFile, shl_ln159_1_fu_261_p2, "shl_ln159_1_fu_261_p2");
+    sc_trace(mVcdFile, zext_ln161_fu_229_p1, "zext_ln161_fu_229_p1");
+    sc_trace(mVcdFile, shl_ln159_2_fu_275_p2, "shl_ln159_2_fu_275_p2");
+    sc_trace(mVcdFile, or_ln161_2_fu_289_p2, "or_ln161_2_fu_289_p2");
+    sc_trace(mVcdFile, zext_ln161_2_fu_295_p1, "zext_ln161_2_fu_295_p1");
+    sc_trace(mVcdFile, shl_ln159_3_fu_299_p2, "shl_ln159_3_fu_299_p2");
+    sc_trace(mVcdFile, select_ln158_1_fu_267_p3, "select_ln158_1_fu_267_p3");
+    sc_trace(mVcdFile, trunc_ln158_fu_313_p1, "trunc_ln158_fu_313_p1");
+    sc_trace(mVcdFile, select_ln158_fu_243_p3, "select_ln158_fu_243_p3");
+    sc_trace(mVcdFile, tmp_62_fu_323_p4, "tmp_62_fu_323_p4");
+    sc_trace(mVcdFile, or_ln158_fu_317_p2, "or_ln158_fu_317_p2");
+    sc_trace(mVcdFile, select_ln158_2_fu_281_p3, "select_ln158_2_fu_281_p3");
+    sc_trace(mVcdFile, select_ln158_3_fu_305_p3, "select_ln158_3_fu_305_p3");
+    sc_trace(mVcdFile, or_ln158_1_fu_341_p2, "or_ln158_1_fu_341_p2");
+    sc_trace(mVcdFile, tmp_fu_333_p3, "tmp_fu_333_p3");
+    sc_trace(mVcdFile, or_ln158_2_fu_347_p2, "or_ln158_2_fu_347_p2");
+    sc_trace(mVcdFile, icmp_ln152_fu_201_p2, "icmp_ln152_fu_201_p2");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
 #endif
 
@@ -1051,27 +394,15 @@ honeybee::~honeybee() {
     mHdltvoutHandle << "] " << endl;
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
-    delete grp_lineIntersectGrid_fu_151;
-    delete grp_lineIntersectGrid_fu_166;
-    delete grp_lineIntersectGrid_fu_181;
-    delete grp_lineIntersectGrid_fu_196;
-    delete grp_lineIntersectGrid_fu_211;
-    delete grp_lineIntersectGrid_fu_226;
-    delete grp_lineIntersectGrid_fu_241;
-    delete grp_lineIntersectGrid_fu_256;
-    delete grp_lineIntersectGrid_fu_271;
-    delete grp_lineIntersectGrid_fu_286;
-    delete grp_lineIntersectGrid_fu_301;
-    delete grp_lineIntersectGrid_fu_316;
-    delete grp_lineIntersectGrid_fu_331;
-    delete grp_lineIntersectGrid_fu_346;
-    delete grp_lineIntersectGrid_fu_361;
-    delete grp_lineIntersectGrid_fu_376;
-    delete honeybee_sitofp_3fYi_U26;
+    delete grp_segmentIntersectsGri_fu_133;
+    delete grp_segmentIntersectsGri_fu_148;
+    delete grp_segmentIntersectsGri_fu_163;
+    delete grp_segmentIntersectsGri_fu_178;
+    delete honeybee_sitofp_3hbi_U56;
 }
 
-void honeybee::thread_ap_var_for_const4() {
-    ap_var_for_const4 = ap_const_logic_1;
+void honeybee::thread_ap_var_for_const2() {
+    ap_var_for_const2 = ap_const_logic_1;
 }
 
 void honeybee::thread_ap_var_for_const0() {
@@ -1082,264 +413,79 @@ void honeybee::thread_ap_var_for_const1() {
     ap_var_for_const1 = ap_const_lv32_3F800000;
 }
 
-void honeybee::thread_ap_var_for_const2() {
-    ap_var_for_const2 = ap_const_lv32_40000000;
-}
-
-void honeybee::thread_ap_var_for_const3() {
-    ap_var_for_const3 = ap_const_lv32_40400000;
-}
-
 void honeybee::thread_ap_clk_no_reset_() {
     if ( ap_rst.read() == ap_const_logic_1) {
         ap_CS_fsm = ap_ST_fsm_state1;
     } else {
         ap_CS_fsm = ap_NS_fsm.read();
     }
-    if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state11.read())) {
-        b_0_reg_127 = b_reg_1122.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && 
+         esl_seteq<1,1,1>(ap_block_state9_on_subcall_done.read(), ap_const_boolean_0))) {
+        b_0_reg_109 = b_fu_213_p2.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
                 esl_seteq<1,1,1>(ap_start.read(), ap_const_logic_1))) {
-        b_0_reg_127 = ap_const_lv7_0;
+        b_0_reg_109 = ap_const_lv4_0;
     }
-    if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state11.read())) {
-        collisions_0_reg_139 = or_ln79_15_fu_883_p2.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && 
+         esl_seteq<1,1,1>(ap_block_state9_on_subcall_done.read(), ap_const_boolean_0))) {
+        collisions_0_reg_121 = or_ln158_3_fu_353_p2.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
                 esl_seteq<1,1,1>(ap_start.read(), ap_const_logic_1))) {
-        collisions_0_reg_139 = ap_const_lv64_0;
+        collisions_0_reg_121 = ap_const_lv8_0;
     }
     if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_151_ap_start_reg = ap_const_logic_0;
+        grp_segmentIntersectsGri_fu_133_ap_start_reg = ap_const_logic_0;
     } else {
         if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_151_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_151_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_151_ap_start_reg = ap_const_logic_0;
+            grp_segmentIntersectsGri_fu_133_ap_start_reg = ap_const_logic_1;
+        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_segmentIntersectsGri_fu_133_ap_ready.read())) {
+            grp_segmentIntersectsGri_fu_133_ap_start_reg = ap_const_logic_0;
         }
     }
     if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_166_ap_start_reg = ap_const_logic_0;
+        grp_segmentIntersectsGri_fu_148_ap_start_reg = ap_const_logic_0;
     } else {
         if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_166_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_166_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_166_ap_start_reg = ap_const_logic_0;
+            grp_segmentIntersectsGri_fu_148_ap_start_reg = ap_const_logic_1;
+        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_segmentIntersectsGri_fu_148_ap_ready.read())) {
+            grp_segmentIntersectsGri_fu_148_ap_start_reg = ap_const_logic_0;
         }
     }
     if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_181_ap_start_reg = ap_const_logic_0;
+        grp_segmentIntersectsGri_fu_163_ap_start_reg = ap_const_logic_0;
     } else {
         if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_181_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_181_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_181_ap_start_reg = ap_const_logic_0;
+            grp_segmentIntersectsGri_fu_163_ap_start_reg = ap_const_logic_1;
+        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_segmentIntersectsGri_fu_163_ap_ready.read())) {
+            grp_segmentIntersectsGri_fu_163_ap_start_reg = ap_const_logic_0;
         }
     }
     if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_196_ap_start_reg = ap_const_logic_0;
+        grp_segmentIntersectsGri_fu_178_ap_start_reg = ap_const_logic_0;
     } else {
         if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_196_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_196_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_196_ap_start_reg = ap_const_logic_0;
+            grp_segmentIntersectsGri_fu_178_ap_start_reg = ap_const_logic_1;
+        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_segmentIntersectsGri_fu_178_ap_ready.read())) {
+            grp_segmentIntersectsGri_fu_178_ap_start_reg = ap_const_logic_0;
         }
     }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_211_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_211_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_211_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_211_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_226_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_226_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_226_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_226_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_241_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_241_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_241_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_241_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_256_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_256_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_256_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_256_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_271_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_271_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_271_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_271_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_286_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_286_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_286_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_286_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_301_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_301_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_301_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_301_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_316_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_316_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_316_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_316_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_331_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_331_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_331_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_331_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_346_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_346_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_346_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_346_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_361_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_361_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_361_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_361_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if ( ap_rst.read() == ap_const_logic_1) {
-        grp_lineIntersectGrid_fu_376_ap_start_reg = ap_const_logic_0;
-    } else {
-        if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read())) {
-            grp_lineIntersectGrid_fu_376_ap_start_reg = ap_const_logic_1;
-        } else if (esl_seteq<1,1,1>(ap_const_logic_1, grp_lineIntersectGrid_fu_376_ap_ready.read())) {
-            grp_lineIntersectGrid_fu_376_ap_start_reg = ap_const_logic_0;
-        }
-    }
-    if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state11.read())) {
-        k_0_reg_116 = k_reg_1017.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && 
+         esl_seteq<1,1,1>(ap_block_state9_on_subcall_done.read(), ap_const_boolean_0))) {
+        k_0_reg_98 = k_reg_415.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
                 esl_seteq<1,1,1>(ap_start.read(), ap_const_logic_1))) {
-        k_0_reg_116 = ap_const_lv3_0;
-    }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state10.read()) && esl_seteq<1,1,1>(tmp_4_2_reg_1082.read(), ap_const_lv1_1))) {
-        add_ln82_1_reg_1143 = add_ln82_1_fu_521_p2.read();
-    }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state10.read()) && esl_seteq<1,1,1>(tmp_4_1_2_reg_1072.read(), ap_const_lv1_1))) {
-        add_ln82_2_reg_1153 = add_ln82_2_fu_537_p2.read();
-    }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state10.read()) && esl_seteq<1,1,1>(tmp_4_2_1_reg_1087.read(), ap_const_lv1_1))) {
-        add_ln82_3_reg_1158 = add_ln82_3_fu_553_p2.read();
-    }
-    if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state10.read())) {
-        b_reg_1122 = b_fu_411_p2.read();
-        or_ln79_12_reg_1168 = or_ln79_12_fu_675_p2.read();
-        or_ln79_2_reg_1163 = or_ln79_2_fu_657_p2.read();
-        or_ln82_3_reg_1148 = or_ln82_3_fu_527_p2.read();
-        or_ln82_reg_1132 = or_ln82_fu_421_p2.read();
-        trunc_ln73_reg_1127 = trunc_ln73_fu_417_p1.read();
-        zext_ln82_reg_1137 = zext_ln82_fu_427_p1.read();
+        k_0_reg_98 = ap_const_lv2_0;
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state7.read())) {
-        grid_z_reg_1022 = grp_fu_391_p1.read();
+        grid_z_reg_420 = grp_fu_193_p1.read();
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read())) {
-        k_reg_1017 = k_fu_405_p2.read();
+        k_reg_415 = k_fu_207_p2.read();
     }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && esl_seteq<1,1,1>(ap_block_state9_on_subcall_done.read(), ap_const_boolean_0))) {
-        tmp_4_0_1_reg_1047 = grp_lineIntersectGrid_fu_166_ap_return.read();
-        tmp_4_0_2_reg_1052 = grp_lineIntersectGrid_fu_181_ap_return.read();
-        tmp_4_0_3_reg_1057 = grp_lineIntersectGrid_fu_196_ap_return.read();
-        tmp_4_1_1_reg_1067 = grp_lineIntersectGrid_fu_226_ap_return.read();
-        tmp_4_1_2_reg_1072 = grp_lineIntersectGrid_fu_241_ap_return.read();
-        tmp_4_1_3_reg_1077 = grp_lineIntersectGrid_fu_256_ap_return.read();
-        tmp_4_1_reg_1062 = grp_lineIntersectGrid_fu_211_ap_return.read();
-        tmp_4_2_1_reg_1087 = grp_lineIntersectGrid_fu_286_ap_return.read();
-        tmp_4_2_2_reg_1092 = grp_lineIntersectGrid_fu_301_ap_return.read();
-        tmp_4_2_3_reg_1097 = grp_lineIntersectGrid_fu_316_ap_return.read();
-        tmp_4_2_reg_1082 = grp_lineIntersectGrid_fu_271_ap_return.read();
-        tmp_4_3_1_reg_1107 = grp_lineIntersectGrid_fu_346_ap_return.read();
-        tmp_4_3_2_reg_1112 = grp_lineIntersectGrid_fu_361_ap_return.read();
-        tmp_4_3_3_reg_1117 = grp_lineIntersectGrid_fu_376_ap_return.read();
-        tmp_4_3_reg_1102 = grp_lineIntersectGrid_fu_331_ap_return.read();
-        tmp_4_reg_1042 = grp_lineIntersectGrid_fu_151_ap_return.read();
-    }
-}
-
-void honeybee::thread_add_ln82_1_fu_521_p2() {
-    add_ln82_1_fu_521_p2 = (!ap_const_lv7_4.is_01() || !zext_ln82_fu_427_p1.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_4) + sc_biguint<7>(zext_ln82_fu_427_p1.read()));
-}
-
-void honeybee::thread_add_ln82_2_fu_537_p2() {
-    add_ln82_2_fu_537_p2 = (!ap_const_lv7_1.is_01() || !zext_ln82_7_fu_533_p1.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_1) + sc_biguint<7>(zext_ln82_7_fu_533_p1.read()));
-}
-
-void honeybee::thread_add_ln82_3_fu_553_p2() {
-    add_ln82_3_fu_553_p2 = (!ap_const_lv7_5.is_01() || !zext_ln82_fu_427_p1.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_5) + sc_biguint<7>(zext_ln82_fu_427_p1.read()));
-}
-
-void honeybee::thread_add_ln82_4_fu_783_p2() {
-    add_ln82_4_fu_783_p2 = (!ap_const_lv7_6.is_01() || !zext_ln82_reg_1137.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_6) + sc_biguint<7>(zext_ln82_reg_1137.read()));
-}
-
-void honeybee::thread_add_ln82_5_fu_805_p2() {
-    add_ln82_5_fu_805_p2 = (!ap_const_lv7_7.is_01() || !zext_ln82_reg_1137.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_7) + sc_biguint<7>(zext_ln82_reg_1137.read()));
-}
-
-void honeybee::thread_add_ln82_6_fu_599_p2() {
-    add_ln82_6_fu_599_p2 = (!ap_const_lv7_1.is_01() || !zext_ln82_15_fu_578_p1.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_1) + sc_biguint<7>(zext_ln82_15_fu_578_p1.read()));
-}
-
-void honeybee::thread_add_ln82_fu_475_p2() {
-    add_ln82_fu_475_p2 = (!ap_const_lv7_1.is_01() || !zext_ln82_2_fu_454_p1.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_1) + sc_biguint<7>(zext_ln82_2_fu_454_p1.read()));
 }
 
 void honeybee::thread_ap_CS_fsm_state1() {
     ap_CS_fsm_state1 = ap_CS_fsm.read()[0];
-}
-
-void honeybee::thread_ap_CS_fsm_state10() {
-    ap_CS_fsm_state10 = ap_CS_fsm.read()[9];
-}
-
-void honeybee::thread_ap_CS_fsm_state11() {
-    ap_CS_fsm_state11 = ap_CS_fsm.read()[10];
 }
 
 void honeybee::thread_ap_CS_fsm_state2() {
@@ -1359,12 +505,12 @@ void honeybee::thread_ap_CS_fsm_state9() {
 }
 
 void honeybee::thread_ap_block_state9_on_subcall_done() {
-    ap_block_state9_on_subcall_done = (esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_151_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_166_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_181_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_196_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_211_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_226_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_241_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_256_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_271_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_286_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_301_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_316_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_331_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_346_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_361_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_lineIntersectGrid_fu_376_ap_done.read()));
+    ap_block_state9_on_subcall_done = (esl_seteq<1,1,1>(ap_const_logic_0, grp_segmentIntersectsGri_fu_133_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_segmentIntersectsGri_fu_148_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_segmentIntersectsGri_fu_163_ap_done.read()) || esl_seteq<1,1,1>(ap_const_logic_0, grp_segmentIntersectsGri_fu_178_ap_done.read()));
 }
 
 void honeybee::thread_ap_done() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
-         esl_seteq<1,1,1>(ap_const_lv1_1, icmp_ln73_fu_399_p2.read()))) {
+         esl_seteq<1,1,1>(icmp_ln152_fu_201_p2.read(), ap_const_lv1_1))) {
         ap_done = ap_const_logic_1;
     } else {
         ap_done = ap_const_logic_0;
@@ -1382,7 +528,7 @@ void honeybee::thread_ap_idle() {
 
 void honeybee::thread_ap_ready() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
-         esl_seteq<1,1,1>(ap_const_lv1_1, icmp_ln73_fu_399_p2.read()))) {
+         esl_seteq<1,1,1>(icmp_ln152_fu_201_p2.read(), ap_const_lv1_1))) {
         ap_ready = ap_const_logic_1;
     } else {
         ap_ready = ap_const_logic_0;
@@ -1390,399 +536,131 @@ void honeybee::thread_ap_ready() {
 }
 
 void honeybee::thread_ap_return() {
-    ap_return = collisions_0_reg_139.read();
+    ap_return = collisions_0_reg_121.read();
 }
 
-void honeybee::thread_b_fu_411_p2() {
-    b_fu_411_p2 = (!ap_const_lv7_10.is_01() || !b_0_reg_127.read().is_01())? sc_lv<7>(): (sc_biguint<7>(ap_const_lv7_10) + sc_biguint<7>(b_0_reg_127.read()));
+void honeybee::thread_b_fu_213_p2() {
+    b_fu_213_p2 = (!ap_const_lv4_4.is_01() || !b_0_reg_109.read().is_01())? sc_lv<4>(): (sc_biguint<4>(ap_const_lv4_4) + sc_biguint<4>(b_0_reg_109.read()));
 }
 
-void honeybee::thread_grp_fu_391_p0() {
-    grp_fu_391_p0 = esl_zext<32,3>(k_0_reg_116.read());
+void honeybee::thread_grp_fu_193_p0() {
+    grp_fu_193_p0 = esl_zext<32,2>(k_0_reg_98.read());
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_151_ap_start() {
-    grp_lineIntersectGrid_fu_151_ap_start = grp_lineIntersectGrid_fu_151_ap_start_reg.read();
+void honeybee::thread_grp_segmentIntersectsGri_fu_133_ap_start() {
+    grp_segmentIntersectsGri_fu_133_ap_start = grp_segmentIntersectsGri_fu_133_ap_start_reg.read();
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_166_ap_start() {
-    grp_lineIntersectGrid_fu_166_ap_start = grp_lineIntersectGrid_fu_166_ap_start_reg.read();
+void honeybee::thread_grp_segmentIntersectsGri_fu_148_ap_start() {
+    grp_segmentIntersectsGri_fu_148_ap_start = grp_segmentIntersectsGri_fu_148_ap_start_reg.read();
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_181_ap_start() {
-    grp_lineIntersectGrid_fu_181_ap_start = grp_lineIntersectGrid_fu_181_ap_start_reg.read();
+void honeybee::thread_grp_segmentIntersectsGri_fu_163_ap_start() {
+    grp_segmentIntersectsGri_fu_163_ap_start = grp_segmentIntersectsGri_fu_163_ap_start_reg.read();
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_196_ap_start() {
-    grp_lineIntersectGrid_fu_196_ap_start = grp_lineIntersectGrid_fu_196_ap_start_reg.read();
+void honeybee::thread_grp_segmentIntersectsGri_fu_178_ap_start() {
+    grp_segmentIntersectsGri_fu_178_ap_start = grp_segmentIntersectsGri_fu_178_ap_start_reg.read();
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_211_ap_start() {
-    grp_lineIntersectGrid_fu_211_ap_start = grp_lineIntersectGrid_fu_211_ap_start_reg.read();
+void honeybee::thread_icmp_ln152_fu_201_p2() {
+    icmp_ln152_fu_201_p2 = (!k_0_reg_98.read().is_01() || !ap_const_lv2_2.is_01())? sc_lv<1>(): sc_lv<1>(k_0_reg_98.read() == ap_const_lv2_2);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_226_ap_start() {
-    grp_lineIntersectGrid_fu_226_ap_start = grp_lineIntersectGrid_fu_226_ap_start_reg.read();
+void honeybee::thread_k_fu_207_p2() {
+    k_fu_207_p2 = (!k_0_reg_98.read().is_01() || !ap_const_lv2_1.is_01())? sc_lv<2>(): (sc_biguint<2>(k_0_reg_98.read()) + sc_biguint<2>(ap_const_lv2_1));
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_241_ap_start() {
-    grp_lineIntersectGrid_fu_241_ap_start = grp_lineIntersectGrid_fu_241_ap_start_reg.read();
+void honeybee::thread_or_ln158_1_fu_341_p2() {
+    or_ln158_1_fu_341_p2 = (select_ln158_2_fu_281_p3.read() | select_ln158_3_fu_305_p3.read());
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_256_ap_start() {
-    grp_lineIntersectGrid_fu_256_ap_start = grp_lineIntersectGrid_fu_256_ap_start_reg.read();
+void honeybee::thread_or_ln158_2_fu_347_p2() {
+    or_ln158_2_fu_347_p2 = (or_ln158_1_fu_341_p2.read() | tmp_fu_333_p3.read());
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_271_ap_start() {
-    grp_lineIntersectGrid_fu_271_ap_start = grp_lineIntersectGrid_fu_271_ap_start_reg.read();
+void honeybee::thread_or_ln158_3_fu_353_p2() {
+    or_ln158_3_fu_353_p2 = (collisions_0_reg_121.read() | or_ln158_2_fu_347_p2.read());
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_286_ap_start() {
-    grp_lineIntersectGrid_fu_286_ap_start = grp_lineIntersectGrid_fu_286_ap_start_reg.read();
+void honeybee::thread_or_ln158_fu_317_p2() {
+    or_ln158_fu_317_p2 = (trunc_ln158_fu_313_p1.read() | select_ln158_fu_243_p3.read());
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_301_ap_start() {
-    grp_lineIntersectGrid_fu_301_ap_start = grp_lineIntersectGrid_fu_301_ap_start_reg.read();
+void honeybee::thread_or_ln161_1_fu_251_p2() {
+    or_ln161_1_fu_251_p2 = (trunc_ln152_fu_219_p1.read() | ap_const_lv3_1);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_316_ap_start() {
-    grp_lineIntersectGrid_fu_316_ap_start = grp_lineIntersectGrid_fu_316_ap_start_reg.read();
+void honeybee::thread_or_ln161_2_fu_289_p2() {
+    or_ln161_2_fu_289_p2 = (trunc_ln152_fu_219_p1.read() | ap_const_lv3_3);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_331_ap_start() {
-    grp_lineIntersectGrid_fu_331_ap_start = grp_lineIntersectGrid_fu_331_ap_start_reg.read();
+void honeybee::thread_or_ln161_fu_223_p2() {
+    or_ln161_fu_223_p2 = (trunc_ln152_fu_219_p1.read() | ap_const_lv3_2);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_346_ap_start() {
-    grp_lineIntersectGrid_fu_346_ap_start = grp_lineIntersectGrid_fu_346_ap_start_reg.read();
+void honeybee::thread_select_ln158_1_fu_267_p3() {
+    select_ln158_1_fu_267_p3 = (!grp_segmentIntersectsGri_fu_148_ap_return.read()[0].is_01())? sc_lv<8>(): ((grp_segmentIntersectsGri_fu_148_ap_return.read()[0].to_bool())? shl_ln159_1_fu_261_p2.read(): ap_const_lv8_0);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_361_ap_start() {
-    grp_lineIntersectGrid_fu_361_ap_start = grp_lineIntersectGrid_fu_361_ap_start_reg.read();
+void honeybee::thread_select_ln158_2_fu_281_p3() {
+    select_ln158_2_fu_281_p3 = (!grp_segmentIntersectsGri_fu_163_ap_return.read()[0].is_01())? sc_lv<8>(): ((grp_segmentIntersectsGri_fu_163_ap_return.read()[0].to_bool())? shl_ln159_2_fu_275_p2.read(): ap_const_lv8_0);
 }
 
-void honeybee::thread_grp_lineIntersectGrid_fu_376_ap_start() {
-    grp_lineIntersectGrid_fu_376_ap_start = grp_lineIntersectGrid_fu_376_ap_start_reg.read();
+void honeybee::thread_select_ln158_3_fu_305_p3() {
+    select_ln158_3_fu_305_p3 = (!grp_segmentIntersectsGri_fu_178_ap_return.read()[0].is_01())? sc_lv<8>(): ((grp_segmentIntersectsGri_fu_178_ap_return.read()[0].to_bool())? shl_ln159_3_fu_299_p2.read(): ap_const_lv8_0);
 }
 
-void honeybee::thread_icmp_ln73_fu_399_p2() {
-    icmp_ln73_fu_399_p2 = (!k_0_reg_116.read().is_01() || !ap_const_lv3_4.is_01())? sc_lv<1>(): sc_lv<1>(k_0_reg_116.read() == ap_const_lv3_4);
+void honeybee::thread_select_ln158_fu_243_p3() {
+    select_ln158_fu_243_p3 = (!grp_segmentIntersectsGri_fu_133_ap_return.read()[0].is_01())? sc_lv<5>(): ((grp_segmentIntersectsGri_fu_133_ap_return.read()[0].to_bool())? shl_ln159_fu_237_p2.read(): ap_const_lv5_0);
 }
 
-void honeybee::thread_k_fu_405_p2() {
-    k_fu_405_p2 = (!k_0_reg_116.read().is_01() || !ap_const_lv3_1.is_01())? sc_lv<3>(): (sc_biguint<3>(k_0_reg_116.read()) + sc_biguint<3>(ap_const_lv3_1));
+void honeybee::thread_shl_ln159_1_fu_261_p2() {
+    shl_ln159_1_fu_261_p2 = (!zext_ln161_1_fu_257_p1.read().is_01())? sc_lv<8>(): ap_const_lv8_1 << (unsigned short)zext_ln161_1_fu_257_p1.read().to_uint();
 }
 
-void honeybee::thread_or_ln79_10_fu_663_p2() {
-    or_ln79_10_fu_663_p2 = (select_ln79_12_fu_565_p3.read() | select_ln79_13_fu_592_p3.read());
+void honeybee::thread_shl_ln159_2_fu_275_p2() {
+    shl_ln159_2_fu_275_p2 = (!zext_ln161_fu_229_p1.read().is_01())? sc_lv<8>(): ap_const_lv8_1 << (unsigned short)zext_ln161_fu_229_p1.read().to_uint();
 }
 
-void honeybee::thread_or_ln79_11_fu_669_p2() {
-    or_ln79_11_fu_669_p2 = (select_ln79_14_fu_615_p3.read() | select_ln79_15_fu_638_p3.read());
+void honeybee::thread_shl_ln159_3_fu_299_p2() {
+    shl_ln159_3_fu_299_p2 = (!zext_ln161_2_fu_295_p1.read().is_01())? sc_lv<8>(): ap_const_lv8_1 << (unsigned short)zext_ln161_2_fu_295_p1.read().to_uint();
 }
 
-void honeybee::thread_or_ln79_12_fu_675_p2() {
-    or_ln79_12_fu_675_p2 = (or_ln79_11_fu_669_p2.read() | or_ln79_10_fu_663_p2.read());
+void honeybee::thread_shl_ln159_fu_237_p2() {
+    shl_ln159_fu_237_p2 = (!zext_ln152_1_fu_233_p1.read().is_01())? sc_lv<5>(): ap_const_lv5_1 << (unsigned short)zext_ln152_1_fu_233_p1.read().to_uint();
 }
 
-void honeybee::thread_or_ln79_13_fu_868_p2() {
-    or_ln79_13_fu_868_p2 = (or_ln79_12_reg_1168.read() | or_ln79_9_fu_862_p2.read());
+void honeybee::thread_tmp_62_fu_323_p4() {
+    tmp_62_fu_323_p4 = select_ln158_1_fu_267_p3.read().range(7, 5);
 }
 
-void honeybee::thread_or_ln79_14_fu_873_p2() {
-    or_ln79_14_fu_873_p2 = (or_ln79_13_fu_868_p2.read() | or_ln79_6_fu_845_p2.read());
+void honeybee::thread_tmp_fu_333_p3() {
+    tmp_fu_333_p3 = esl_concat<3,5>(tmp_62_fu_323_p4.read(), or_ln158_fu_317_p2.read());
 }
 
-void honeybee::thread_or_ln79_15_fu_883_p2() {
-    or_ln79_15_fu_883_p2 = (collisions_0_reg_139.read() | sext_ln79_fu_879_p1.read());
+void honeybee::thread_trunc_ln152_fu_219_p1() {
+    trunc_ln152_fu_219_p1 = b_0_reg_109.read().range(3-1, 0);
 }
 
-void honeybee::thread_or_ln79_1_fu_651_p2() {
-    or_ln79_1_fu_651_p2 = (select_ln79_2_fu_491_p3.read() | select_ln79_3_fu_514_p3.read());
+void honeybee::thread_trunc_ln158_fu_313_p1() {
+    trunc_ln158_fu_313_p1 = select_ln158_1_fu_267_p3.read().range(5-1, 0);
 }
 
-void honeybee::thread_or_ln79_2_fu_657_p2() {
-    or_ln79_2_fu_657_p2 = (or_ln79_1_fu_651_p2.read() | or_ln79_fu_645_p2.read());
+void honeybee::thread_zext_ln152_1_fu_233_p1() {
+    zext_ln152_1_fu_233_p1 = esl_zext<5,4>(b_0_reg_109.read());
 }
 
-void honeybee::thread_or_ln79_3_fu_827_p2() {
-    or_ln79_3_fu_827_p2 = (select_ln79_4_fu_693_p3.read() | select_ln79_5_fu_709_p3.read());
+void honeybee::thread_zext_ln161_1_fu_257_p1() {
+    zext_ln161_1_fu_257_p1 = esl_zext<8,3>(or_ln161_1_fu_251_p2.read());
 }
 
-void honeybee::thread_or_ln79_4_fu_833_p2() {
-    or_ln79_4_fu_833_p2 = (select_ln79_6_fu_725_p3.read() | select_ln79_7_fu_747_p3.read());
+void honeybee::thread_zext_ln161_2_fu_295_p1() {
+    zext_ln161_2_fu_295_p1 = esl_zext<8,3>(or_ln161_2_fu_289_p2.read());
 }
 
-void honeybee::thread_or_ln79_5_fu_839_p2() {
-    or_ln79_5_fu_839_p2 = (or_ln79_4_fu_833_p2.read() | or_ln79_3_fu_827_p2.read());
-}
-
-void honeybee::thread_or_ln79_6_fu_845_p2() {
-    or_ln79_6_fu_845_p2 = (or_ln79_5_fu_839_p2.read() | or_ln79_2_reg_1163.read());
-}
-
-void honeybee::thread_or_ln79_7_fu_850_p2() {
-    or_ln79_7_fu_850_p2 = (select_ln79_8_fu_760_p3.read() | select_ln79_9_fu_776_p3.read());
-}
-
-void honeybee::thread_or_ln79_8_fu_856_p2() {
-    or_ln79_8_fu_856_p2 = (select_ln79_10_fu_798_p3.read() | select_ln79_11_fu_820_p3.read());
-}
-
-void honeybee::thread_or_ln79_9_fu_862_p2() {
-    or_ln79_9_fu_862_p2 = (or_ln79_8_fu_856_p2.read() | or_ln79_7_fu_850_p2.read());
-}
-
-void honeybee::thread_or_ln79_fu_645_p2() {
-    or_ln79_fu_645_p2 = (select_ln79_fu_441_p3.read() | select_ln79_1_fu_468_p3.read());
-}
-
-void honeybee::thread_or_ln82_1_fu_448_p2() {
-    or_ln82_1_fu_448_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_1);
-}
-
-void honeybee::thread_or_ln82_2_fu_498_p2() {
-    or_ln82_2_fu_498_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_3);
-}
-
-void honeybee::thread_or_ln82_3_fu_527_p2() {
-    or_ln82_3_fu_527_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_5);
-}
-
-void honeybee::thread_or_ln82_4_fu_732_p2() {
-    or_ln82_4_fu_732_p2 = (trunc_ln73_reg_1127.read() | ap_const_lv6_7);
-}
-
-void honeybee::thread_or_ln82_5_fu_543_p2() {
-    or_ln82_5_fu_543_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_C);
-}
-
-void honeybee::thread_or_ln82_6_fu_572_p2() {
-    or_ln82_6_fu_572_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_D);
-}
-
-void honeybee::thread_or_ln82_7_fu_622_p2() {
-    or_ln82_7_fu_622_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_F);
-}
-
-void honeybee::thread_or_ln82_fu_421_p2() {
-    or_ln82_fu_421_p2 = (trunc_ln73_fu_417_p1.read() | ap_const_lv6_4);
-}
-
-void honeybee::thread_select_ln79_10_fu_798_p3() {
-    select_ln79_10_fu_798_p3 = (!tmp_4_2_2_reg_1092.read()[0].is_01())? sc_lv<32>(): ((tmp_4_2_2_reg_1092.read()[0].to_bool())? shl_ln80_10_fu_792_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_11_fu_820_p3() {
-    select_ln79_11_fu_820_p3 = (!tmp_4_2_3_reg_1097.read()[0].is_01())? sc_lv<32>(): ((tmp_4_2_3_reg_1097.read()[0].to_bool())? shl_ln80_11_fu_814_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_12_fu_565_p3() {
-    select_ln79_12_fu_565_p3 = (!tmp_4_3_reg_1102.read()[0].is_01())? sc_lv<32>(): ((tmp_4_3_reg_1102.read()[0].to_bool())? shl_ln80_12_fu_559_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_13_fu_592_p3() {
-    select_ln79_13_fu_592_p3 = (!tmp_4_3_1_reg_1107.read()[0].is_01())? sc_lv<32>(): ((tmp_4_3_1_reg_1107.read()[0].to_bool())? shl_ln80_13_fu_586_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_14_fu_615_p3() {
-    select_ln79_14_fu_615_p3 = (!tmp_4_3_2_reg_1112.read()[0].is_01())? sc_lv<32>(): ((tmp_4_3_2_reg_1112.read()[0].to_bool())? shl_ln80_14_fu_609_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_15_fu_638_p3() {
-    select_ln79_15_fu_638_p3 = (!tmp_4_3_3_reg_1117.read()[0].is_01())? sc_lv<32>(): ((tmp_4_3_3_reg_1117.read()[0].to_bool())? shl_ln80_15_fu_632_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_1_fu_468_p3() {
-    select_ln79_1_fu_468_p3 = (!tmp_4_0_1_reg_1047.read()[0].is_01())? sc_lv<32>(): ((tmp_4_0_1_reg_1047.read()[0].to_bool())? shl_ln80_1_fu_462_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_2_fu_491_p3() {
-    select_ln79_2_fu_491_p3 = (!tmp_4_0_2_reg_1052.read()[0].is_01())? sc_lv<32>(): ((tmp_4_0_2_reg_1052.read()[0].to_bool())? shl_ln80_2_fu_485_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_3_fu_514_p3() {
-    select_ln79_3_fu_514_p3 = (!tmp_4_0_3_reg_1057.read()[0].is_01())? sc_lv<32>(): ((tmp_4_0_3_reg_1057.read()[0].to_bool())? shl_ln80_3_fu_508_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_4_fu_693_p3() {
-    select_ln79_4_fu_693_p3 = (!tmp_4_1_reg_1062.read()[0].is_01())? sc_lv<32>(): ((tmp_4_1_reg_1062.read()[0].to_bool())? shl_ln80_4_fu_687_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_5_fu_709_p3() {
-    select_ln79_5_fu_709_p3 = (!tmp_4_1_1_reg_1067.read()[0].is_01())? sc_lv<32>(): ((tmp_4_1_1_reg_1067.read()[0].to_bool())? shl_ln80_5_fu_703_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_6_fu_725_p3() {
-    select_ln79_6_fu_725_p3 = (!tmp_4_1_2_reg_1072.read()[0].is_01())? sc_lv<32>(): ((tmp_4_1_2_reg_1072.read()[0].to_bool())? shl_ln80_6_fu_719_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_7_fu_747_p3() {
-    select_ln79_7_fu_747_p3 = (!tmp_4_1_3_reg_1077.read()[0].is_01())? sc_lv<32>(): ((tmp_4_1_3_reg_1077.read()[0].to_bool())? shl_ln80_7_fu_741_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_8_fu_760_p3() {
-    select_ln79_8_fu_760_p3 = (!tmp_4_2_reg_1082.read()[0].is_01())? sc_lv<32>(): ((tmp_4_2_reg_1082.read()[0].to_bool())? shl_ln80_8_fu_754_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_9_fu_776_p3() {
-    select_ln79_9_fu_776_p3 = (!tmp_4_2_1_reg_1087.read()[0].is_01())? sc_lv<32>(): ((tmp_4_2_1_reg_1087.read()[0].to_bool())? shl_ln80_9_fu_770_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_select_ln79_fu_441_p3() {
-    select_ln79_fu_441_p3 = (!tmp_4_reg_1042.read()[0].is_01())? sc_lv<32>(): ((tmp_4_reg_1042.read()[0].to_bool())? shl_ln80_fu_435_p2.read(): ap_const_lv32_0);
-}
-
-void honeybee::thread_sext_ln79_fu_879_p1() {
-    sext_ln79_fu_879_p1 = esl_sext<64,32>(or_ln79_14_fu_873_p2.read());
-}
-
-void honeybee::thread_shl_ln80_10_fu_792_p2() {
-    shl_ln80_10_fu_792_p2 = (!zext_ln82_13_fu_788_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_13_fu_788_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_11_fu_814_p2() {
-    shl_ln80_11_fu_814_p2 = (!zext_ln82_14_fu_810_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_14_fu_810_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_12_fu_559_p2() {
-    shl_ln80_12_fu_559_p2 = (!zext_ln82_11_fu_549_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_11_fu_549_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_13_fu_586_p2() {
-    shl_ln80_13_fu_586_p2 = (!zext_ln82_16_fu_582_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_16_fu_582_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_14_fu_609_p2() {
-    shl_ln80_14_fu_609_p2 = (!zext_ln82_17_fu_605_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_17_fu_605_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_15_fu_632_p2() {
-    shl_ln80_15_fu_632_p2 = (!zext_ln82_18_fu_628_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_18_fu_628_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_1_fu_462_p2() {
-    shl_ln80_1_fu_462_p2 = (!zext_ln82_3_fu_458_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_3_fu_458_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_2_fu_485_p2() {
-    shl_ln80_2_fu_485_p2 = (!zext_ln82_4_fu_481_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_4_fu_481_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_3_fu_508_p2() {
-    shl_ln80_3_fu_508_p2 = (!zext_ln82_5_fu_504_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_5_fu_504_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_4_fu_687_p2() {
-    shl_ln80_4_fu_687_p2 = (!zext_ln82_1_fu_681_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_1_fu_681_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_5_fu_703_p2() {
-    shl_ln80_5_fu_703_p2 = (!zext_ln82_8_fu_700_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_8_fu_700_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_6_fu_719_p2() {
-    shl_ln80_6_fu_719_p2 = (!zext_ln82_9_fu_716_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_9_fu_716_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_7_fu_741_p2() {
-    shl_ln80_7_fu_741_p2 = (!zext_ln82_10_fu_737_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_10_fu_737_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_8_fu_754_p2() {
-    shl_ln80_8_fu_754_p2 = (!zext_ln82_6_fu_684_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_6_fu_684_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_9_fu_770_p2() {
-    shl_ln80_9_fu_770_p2 = (!zext_ln82_12_fu_767_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln82_12_fu_767_p1.read().to_uint();
-}
-
-void honeybee::thread_shl_ln80_fu_435_p2() {
-    shl_ln80_fu_435_p2 = (!zext_ln73_1_fu_431_p1.read().is_01())? sc_lv<32>(): ap_const_lv32_1 << (unsigned short)zext_ln73_1_fu_431_p1.read().to_uint();
-}
-
-void honeybee::thread_trunc_ln73_fu_417_p1() {
-    trunc_ln73_fu_417_p1 = b_0_reg_127.read().range(6-1, 0);
-}
-
-void honeybee::thread_zext_ln73_1_fu_431_p1() {
-    zext_ln73_1_fu_431_p1 = esl_zext<32,7>(b_0_reg_127.read());
-}
-
-void honeybee::thread_zext_ln82_10_fu_737_p1() {
-    zext_ln82_10_fu_737_p1 = esl_zext<32,6>(or_ln82_4_fu_732_p2.read());
-}
-
-void honeybee::thread_zext_ln82_11_fu_549_p1() {
-    zext_ln82_11_fu_549_p1 = esl_zext<32,6>(or_ln82_5_fu_543_p2.read());
-}
-
-void honeybee::thread_zext_ln82_12_fu_767_p1() {
-    zext_ln82_12_fu_767_p1 = esl_zext<32,7>(add_ln82_3_reg_1158.read());
-}
-
-void honeybee::thread_zext_ln82_13_fu_788_p1() {
-    zext_ln82_13_fu_788_p1 = esl_zext<32,7>(add_ln82_4_fu_783_p2.read());
-}
-
-void honeybee::thread_zext_ln82_14_fu_810_p1() {
-    zext_ln82_14_fu_810_p1 = esl_zext<32,7>(add_ln82_5_fu_805_p2.read());
-}
-
-void honeybee::thread_zext_ln82_15_fu_578_p1() {
-    zext_ln82_15_fu_578_p1 = esl_zext<7,6>(or_ln82_6_fu_572_p2.read());
-}
-
-void honeybee::thread_zext_ln82_16_fu_582_p1() {
-    zext_ln82_16_fu_582_p1 = esl_zext<32,6>(or_ln82_6_fu_572_p2.read());
-}
-
-void honeybee::thread_zext_ln82_17_fu_605_p1() {
-    zext_ln82_17_fu_605_p1 = esl_zext<32,7>(add_ln82_6_fu_599_p2.read());
-}
-
-void honeybee::thread_zext_ln82_18_fu_628_p1() {
-    zext_ln82_18_fu_628_p1 = esl_zext<32,6>(or_ln82_7_fu_622_p2.read());
-}
-
-void honeybee::thread_zext_ln82_1_fu_681_p1() {
-    zext_ln82_1_fu_681_p1 = esl_zext<32,6>(or_ln82_reg_1132.read());
-}
-
-void honeybee::thread_zext_ln82_2_fu_454_p1() {
-    zext_ln82_2_fu_454_p1 = esl_zext<7,6>(or_ln82_1_fu_448_p2.read());
-}
-
-void honeybee::thread_zext_ln82_3_fu_458_p1() {
-    zext_ln82_3_fu_458_p1 = esl_zext<32,6>(or_ln82_1_fu_448_p2.read());
-}
-
-void honeybee::thread_zext_ln82_4_fu_481_p1() {
-    zext_ln82_4_fu_481_p1 = esl_zext<32,7>(add_ln82_fu_475_p2.read());
-}
-
-void honeybee::thread_zext_ln82_5_fu_504_p1() {
-    zext_ln82_5_fu_504_p1 = esl_zext<32,6>(or_ln82_2_fu_498_p2.read());
-}
-
-void honeybee::thread_zext_ln82_6_fu_684_p1() {
-    zext_ln82_6_fu_684_p1 = esl_zext<32,7>(add_ln82_1_reg_1143.read());
-}
-
-void honeybee::thread_zext_ln82_7_fu_533_p1() {
-    zext_ln82_7_fu_533_p1 = esl_zext<7,6>(or_ln82_3_fu_527_p2.read());
-}
-
-void honeybee::thread_zext_ln82_8_fu_700_p1() {
-    zext_ln82_8_fu_700_p1 = esl_zext<32,6>(or_ln82_3_reg_1148.read());
-}
-
-void honeybee::thread_zext_ln82_9_fu_716_p1() {
-    zext_ln82_9_fu_716_p1 = esl_zext<32,7>(add_ln82_2_reg_1153.read());
-}
-
-void honeybee::thread_zext_ln82_fu_427_p1() {
-    zext_ln82_fu_427_p1 = esl_zext<7,6>(or_ln82_fu_421_p2.read());
+void honeybee::thread_zext_ln161_fu_229_p1() {
+    zext_ln161_fu_229_p1 = esl_zext<8,3>(or_ln161_fu_223_p2.read());
 }
 
 void honeybee::thread_ap_NS_fsm() {
@@ -1795,7 +673,7 @@ void honeybee::thread_ap_NS_fsm() {
             }
             break;
         case 2 : 
-            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(ap_const_lv1_1, icmp_ln73_fu_399_p2.read()))) {
+            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(icmp_ln152_fu_201_p2.read(), ap_const_lv1_1))) {
                 ap_NS_fsm = ap_ST_fsm_state1;
             } else {
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -1821,19 +699,13 @@ void honeybee::thread_ap_NS_fsm() {
             break;
         case 256 : 
             if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && esl_seteq<1,1,1>(ap_block_state9_on_subcall_done.read(), ap_const_boolean_0))) {
-                ap_NS_fsm = ap_ST_fsm_state10;
+                ap_NS_fsm = ap_ST_fsm_state2;
             } else {
                 ap_NS_fsm = ap_ST_fsm_state9;
             }
             break;
-        case 512 : 
-            ap_NS_fsm = ap_ST_fsm_state11;
-            break;
-        case 1024 : 
-            ap_NS_fsm = ap_ST_fsm_state2;
-            break;
         default : 
-            ap_NS_fsm = "XXXXXXXXXXX";
+            ap_NS_fsm = "XXXXXXXXX";
             break;
     }
 }

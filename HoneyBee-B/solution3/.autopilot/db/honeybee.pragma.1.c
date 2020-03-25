@@ -2415,16 +2415,19 @@ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
 
 extern int timer_getoverrun (timer_t __timerid) __attribute__ ((__nothrow__ ));
 # 8 "src/honeybee.h" 2
-# 18 "src/honeybee.h"
-    typedef int64_t Dout_t;
-
+# 20 "src/honeybee.h"
+    typedef unsigned char Dout_t;
+# 43 "src/honeybee.h"
+typedef float base_t;
 
 
 typedef struct point {
-    float x;
-    float y;
-    float z;
+    base_t x;
+    base_t y;
+    base_t z;
 } point_t;
+
+typedef point_t vector_t;
 
 typedef struct edge {
     point_t p1 ;
@@ -2435,60 +2438,139 @@ Dout_t honeybee(edge_t edge);
 # 8 "src/honeybee.c" 2
 
 
-Dout_t bit_vals[64] = {
-    1, 2, 4, 8, 16, 32, 64, 128,
-    256, 512, 1024, 2048, 4096, 8192, 16348, 32768,
-    65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388208,
-    16776416, 33552832, 67105664, 134211328, 268422656, 536845312, 1073690624, 2147381248
-};
-
-float greaterThan(float x1, float x2, float x0) {
-    return (x0-x1)/(x2-x1);
-}
-
-float lessThan(float x1, float x2, float x0, float X) {
-    return (x0-x1+X)/(x2-x1);
-}
-
-float maxOf3(float x, float y, float z) {
-    float max;
-    if (x > y) {
-        max = x;
-        if (z > x) max = z;
-    } else {
-        max = y;
-        if (z > y) max = z;
-    }
-    return max;
-}
-
-float minOf3(float x, float y, float z) {
-    float min;
-    if (x < y) {
-        min = x;
-        if (z < x) min = z;
-    } else {
-        min = y;
-        if (z < y) min = z;
-    }
-    return min;
-}
-
-_Bool lineIntersectGrid(point_t grid, edge_t edge) {
-
-    float max = minOf3(
-        lessThan(edge.p1.x, edge.p2.x, grid.x, 1),
-        lessThan(edge.p1.y, edge.p2.y, grid.y, 1),
-        lessThan(edge.p1.z, edge.p2.z, grid.z, 1)
+_Bool pointInGrid(point_t point, point_t grid) {
+    return (
+        (grid.x <= point.x && point.x <= grid.x + 1) &&
+        (grid.y <= point.y && point.y <= grid.y + 1) &&
+        (grid.z <= point.z && point.z <= grid.z + 1)
     );
-    float min = maxOf3(
-        greaterThan(edge.p1.x, edge.p2.x, grid.x),
-        greaterThan(edge.p1.y, edge.p2.y, grid.y),
-        greaterThan(edge.p1.z, edge.p2.z, grid.z)
-    );
-
-    return min < max;
 }
+
+vector_t vector(point_t p1, point_t p2) {
+    return (vector_t) {
+        .x = p1.x - p2.x,
+        .y = p1.y - p2.y,
+        .z = p1.z - p2.z,
+    };
+}
+
+vector_t crossProduct(vector_t v1, vector_t v2) {
+    return (vector_t) {
+        .x = (v1.y * v2.z - v1.z * v2.y),
+        .y = (v1.z * v2.x - v1.x * v2.z),
+        .z = (v1.x * v2.y - v1.y * v2.x)
+    };
+}
+
+base_t dotProduct(vector_t v1, point_t v2) {
+    return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z);
+}
+
+base_t paramT(vector_t norm, base_t plane_d, edge_t e) {
+    return ((plane_d - (norm.x*e.p1.x + norm.y*e.p1.y + norm.z*e.p1.z)) /
+        (norm.x*(e.p2.x - e.p1.x) + norm.y*(e.p2.y - e.p1.y) + norm.z*(e.p2.z - e.p1.z))
+    );
+}
+
+point_t pointOfIntersection(base_t T, edge_t edge) {
+    return ( (point_t) {
+        .x = edge.p1.x + T*(edge.p2.x - edge.p1.x),
+        .y = edge.p1.y + T*(edge.p2.y - edge.p1.y),
+        .z = edge.p1.z + T*(edge.p2.z - edge.p1.z),
+    });
+}
+
+_Bool pointOnSegment(point_t p, edge_t e) {
+    return (
+        ((({ __typeof__ (e.p1.x) _a = (e.p1.x); __typeof__ (e.p2.x) _b = (e.p2.x); _a < _b ? _a : _b; }) <= p.x) && (p.x <= ({ __typeof__ (e.p1.x) _a = (e.p1.x); __typeof__ (e.p2.x) _b = (e.p2.x); _a > _b ? _a : _b; }))) &&
+        ((({ __typeof__ (e.p1.y) _a = (e.p1.y); __typeof__ (e.p2.y) _b = (e.p2.y); _a < _b ? _a : _b; }) <= p.y) && (p.y <= ({ __typeof__ (e.p1.y) _a = (e.p1.y); __typeof__ (e.p2.y) _b = (e.p2.y); _a > _b ? _a : _b; }))) &&
+        ((({ __typeof__ (e.p1.z) _a = (e.p1.z); __typeof__ (e.p2.z) _b = (e.p2.z); _a < _b ? _a : _b; }) <= p.z) && (p.z <= ({ __typeof__ (e.p1.z) _a = (e.p1.z); __typeof__ (e.p2.z) _b = (e.p2.z); _a > _b ? _a : _b; })))
+    );
+}
+
+_Bool pointOnFace(point_t p, point_t grid) {
+    return (
+        ((grid.x <= p.x) && (p.x <= grid.x + 1)) &&
+        ((grid.y <= p.y) && (p.y <= grid.y + 1)) &&
+        ((grid.y <= p.y) && (p.y <= grid.y + 1))
+    );
+}
+
+_Bool segmentIntersectsFace(edge_t edge, point_t face) {
+
+    point_t P, Q, R;
+    P = face;
+    Q = face;
+    Q.x+=1;
+    R = face;
+    R.y+=1;
+
+
+    vector_t PQ = vector(P, Q);
+    vector_t PR = vector(P, R);
+
+
+    vector_t norm = crossProduct(PQ, PR);
+
+
+    base_t dot = dotProduct(norm, P);
+
+
+    base_t T = paramT(norm, dot, edge);
+
+
+    point_t POI = pointOfIntersection(T, edge);
+
+
+    _Bool pointOnEdge = pointOnSegment(POI, edge);
+
+
+    _Bool pointOnface = pointOnFace(POI, P);
+
+    return pointOnEdge && pointOnface;
+}
+
+_Bool segmentIntersectsGrid(edge_t edge, point_t grid) {
+    _Bool segmentIntersectsAnyFace = (
+
+        segmentIntersectsFace(edge, grid) ||
+        segmentIntersectsFace(edge,
+            (point_t) {.x=grid.x, .y=grid.y, .z=grid.z+1}) ||
+
+
+        segmentIntersectsFace(
+            (edge_t) {
+                .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+                .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
+            },
+            (point_t) {.x=grid.x, .y=grid.z, .z=grid.y}) ||
+        segmentIntersectsFace(
+            (edge_t) {
+                .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+                .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
+            },
+            (point_t) {.x=grid.x, .y=grid.z, .z=grid.y+1}) ||
+
+
+        segmentIntersectsFace(
+            (edge_t) {
+                .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+                .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
+            },
+            (point_t) {.x=grid.z, .y=grid.y, .z=grid.x}) ||
+        segmentIntersectsFace(
+            (edge_t) {
+                .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+                .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
+            },
+            (point_t) {.x=grid.z, .y=grid.y, .z=grid.x+1})
+    );
+    _Bool bothEndPointsInGrid = (
+        pointInGrid(edge.p1, grid) && pointInGrid(edge.p2, grid)
+    );
+    return segmentIntersectsAnyFace || bothEndPointsInGrid;
+}
+
 
 
 Dout_t honeybee(edge_t edge) {
@@ -2498,19 +2580,19 @@ Dout_t honeybee(edge_t edge) {
 
     int b = 0;
 
- honeybee_upper_loop:for (int k=0; k<4; k++) {
-        honeybee_mid_loop:for (int j=0; j<4; j++) {
+    for (int k=0; k<2*1; k+=1) {
+        honeybee_label1:for (int j=0; j<2*1; j+=1) {
 _ssdm_Unroll(0,0,0, "");
-# 74 "src/honeybee.c"
+# 153 "src/honeybee.c"
 
-            honeybee_lower_loop:for (int i=0; i<4; i++) {
+              honeybee_label0:for (int i=0; i<2*1; i+=1) {
 _ssdm_Unroll(0,0,0, "");
-# 75 "src/honeybee.c"
+# 154 "src/honeybee.c"
 
 
 
-                point_t grid = {.x = (float) i, .y = (float) j, .z = (float) k};
-                if (lineIntersectGrid(grid, edge)) {
+                point_t grid = {.x = (base_t) i, .y = (base_t) j, .z = (base_t) k};
+                if (segmentIntersectsGrid(edge, grid)) {
                     collisions = collisions | (0b1 << b);
                 }
             b++;

@@ -124,3 +124,201 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 142 ; free virtual = 1823
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 142 ; free virtual = 1823
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 137 ; free virtual = 1823
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'vector' into 'segmentIntersectsFace' (src/honeybee.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'segmentIntersectsFace' (src/honeybee.c:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'segmentIntersectsFace' (src/honeybee.c:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'segmentIntersectsFace' (src/honeybee.c:88) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'segmentIntersectsFace' (src/honeybee.c:91) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'segmentIntersectsFace' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnFace' into 'segmentIntersectsFace' (src/honeybee.c:97) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 136 ; free virtual = 1822
+INFO: [XFORM 203-602] Inlining function 'vector' into 'segmentIntersectsFace' (src/honeybee.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'segmentIntersectsFace' (src/honeybee.c:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'segmentIntersectsFace' (src/honeybee.c:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'segmentIntersectsFace' (src/honeybee.c:88) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'segmentIntersectsFace' (src/honeybee.c:91) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'segmentIntersectsFace' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnFace' into 'segmentIntersectsFace' (src/honeybee.c:97) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointInGrid' into 'segmentIntersectsGrid' (src/honeybee.c:138) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:130:9) to (src/honeybee.c:140:5) in function 'segmentIntersectsGrid'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:71:5) to (src/honeybee.c:100:1) in function 'segmentIntersectsFace'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:157:83) to (src/honeybee.c:154:36) in function 'honeybee'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'segmentIntersectsGrid' (src/honeybee.c:11:9)...8 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'segmentIntersectsFace' (src/honeybee.c:19:1)...10 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 119 ; free virtual = 1806
+WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsGrid' to 'segmentIntersectsGri' (src/honeybee.c:11:9)
+WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsFace' to 'segmentIntersectsFac' (src/honeybee.c:19:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 107 ; free virtual = 1795
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'honeybee' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'segmentIntersectsFac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 21.06 seconds; current allocated memory: 125.846 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.95 seconds; current allocated memory: 127.107 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'segmentIntersectsGri' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.09 seconds; current allocated memory: 127.841 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.61 seconds; current allocated memory: 128.549 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.82 seconds; current allocated memory: 129.026 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 129.369 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'segmentIntersectsFac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'honeybee_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'honeybee_faddfsubbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fsub_32ns_32ns_32_5_full_dsp_1' to 'honeybee_fsub_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fmul_32ns_32ns_32_4_max_dsp_1' to 'honeybee_fmul_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fdiv_32ns_32ns_32_16_1' to 'honeybee_fdiv_32neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fcmp_32ns_32ns_1_2_1' to 'honeybee_fcmp_32nfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_faddfsubbkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fcmp_32nfYi': 10 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32ndEe': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fsub_32ncud': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'segmentIntersectsFac'.
+INFO: [HLS 200-111]  Elapsed time: 0.89 seconds; current allocated memory: 131.790 MB.
+INFO: [HLS 200-10]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 364 ; free virtual = 1840
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 364 ; free virtual = 1840
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 363 ; free virtual = 1839
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'vector' into 'segmentIntersectsFace' (src/honeybee.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'segmentIntersectsFace' (src/honeybee.c:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'segmentIntersectsFace' (src/honeybee.c:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'segmentIntersectsFace' (src/honeybee.c:88) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'segmentIntersectsFace' (src/honeybee.c:91) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'segmentIntersectsFace' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnFace' into 'segmentIntersectsFace' (src/honeybee.c:97) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 363 ; free virtual = 1838
+INFO: [XFORM 203-602] Inlining function 'vector' into 'segmentIntersectsFace' (src/honeybee.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'segmentIntersectsFace' (src/honeybee.c:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'segmentIntersectsFace' (src/honeybee.c:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'segmentIntersectsFace' (src/honeybee.c:88) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'segmentIntersectsFace' (src/honeybee.c:91) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'segmentIntersectsFace' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnFace' into 'segmentIntersectsFace' (src/honeybee.c:97) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointInGrid' into 'segmentIntersectsGrid' (src/honeybee.c:138) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:130:9) to (src/honeybee.c:140:5) in function 'segmentIntersectsGrid'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:71:5) to (src/honeybee.c:100:1) in function 'segmentIntersectsFace'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:157:83) to (src/honeybee.c:154:36) in function 'honeybee'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'segmentIntersectsGrid' (src/honeybee.c:11:9)...8 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'segmentIntersectsFace' (src/honeybee.c:19:1)...10 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 346 ; free virtual = 1822
+WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsGrid' to 'segmentIntersectsGri' (src/honeybee.c:11:9)
+WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsFace' to 'segmentIntersectsFac' (src/honeybee.c:19:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 335 ; free virtual = 1811
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'honeybee' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'segmentIntersectsFac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 16.93 seconds; current allocated memory: 125.851 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 127.114 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'segmentIntersectsGri' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.12 seconds; current allocated memory: 127.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 128.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.76 seconds; current allocated memory: 129.048 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 129.375 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'segmentIntersectsFac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'honeybee_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'honeybee_faddfsubbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fsub_32ns_32ns_32_5_full_dsp_1' to 'honeybee_fsub_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fmul_32ns_32ns_32_4_max_dsp_1' to 'honeybee_fmul_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fdiv_32ns_32ns_32_16_1' to 'honeybee_fdiv_32neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fcmp_32ns_32ns_1_2_1' to 'honeybee_fcmp_32nfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_faddfsubbkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fcmp_32nfYi': 10 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32ndEe': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fsub_32ncud': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'segmentIntersectsFac'.
+INFO: [HLS 200-111]  Elapsed time: 0.91 seconds; current allocated memory: 131.825 MB.
+INFO: [HLS 200-10]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================

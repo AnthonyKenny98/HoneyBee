@@ -3,19 +3,19 @@
       "directive": [
         {
           "functionName": "honeybee",
-          "label": "honeybee_lower_loop",
+          "label": "honeybee_label0",
           "functionLabel": "",
           "pragma": {"name": "UNROLL"}
         },
         {
           "functionName": "honeybee",
-          "label": "honeybee_mid_loop",
+          "label": "honeybee_label1",
           "functionLabel": "",
           "pragma": {"name": "UNROLL"}
         },
         {
           "functionName": "honeybee",
-          "label": "honeybee_upper_loop",
+          "label": "honeybee_label2",
           "functionLabel": "",
           "pragma": {"name": "UNROLL"}
         }

@@ -1,9 +1,3 @@
-{"sourceFile": [{
-      "name": "",
-      "directive": [{
-          "functionName": "honeybee",
-          "label": "honeybee_lower_loop",
-          "functionLabel": "",
-          "pragma": {"name": "UNROLL"}
-        }]
-    }]}
+{
+  
+}
