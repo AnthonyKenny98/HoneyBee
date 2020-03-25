@@ -1,0 +1,53 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from src/honeybee.c:1:
+In file included from src/honeybee.c:7:
+src/honeybee.h:18:22: error: typedef redefinition with different types ('unsigned int' vs '__int64_t' (aka 'long'))
+    typedef unsigned int64_t Dout_t;
+                     ^
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:27:19: note: previous definition is here
+typedef __int64_t int64_t;
+                  ^
+In file included from src/honeybee.c:1:
+In file included from src/honeybee.c:7:
+src/honeybee.h:18:29: error: expected ';' after top level declarator
+    typedef unsigned int64_t Dout_t;
+                            ^
+                            ;
+src/honeybee.h:33:1: error: unknown type name 'Dout_t'
+Dout_t honeybee(edge_t edge);
+^
+In file included from src/honeybee.c:1:
+src/honeybee.c:10:1: error: unknown type name 'Dout_t'
+Dout_t bit_vals[64] = {
+^
+src/honeybee.c:66:1: error: unknown type name 'Dout_t'
+Dout_t honeybee(edge_t edge) {
+^
+src/honeybee.c:69:5: error: use of undeclared identifier 'Dout_t'
+    Dout_t collisions = 0;
+    ^
+src/honeybee.c:80:21: error: use of undeclared identifier 'collisions'
+                    collisions = collisions | (0b1 << b);
+                    ^
+src/honeybee.c:80:34: error: use of undeclared identifier 'collisions'
+                    collisions = collisions | (0b1 << b);
+                                 ^
+src/honeybee.c:86:12: error: use of undeclared identifier 'collisions'
+    return collisions;
+           ^
+9 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================

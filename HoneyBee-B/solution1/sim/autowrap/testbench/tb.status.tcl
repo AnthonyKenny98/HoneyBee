@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution1/./sim/autowrap/testbench/honeybee.c_pre.c.tb.c

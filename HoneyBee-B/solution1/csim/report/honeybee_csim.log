@@ -1,0 +1,23 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../src/honeybee_test.c in debug mode
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Thu Mar 19 15:51:19 PDT 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/238531584658279667972
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../src/honeybee.c in debug mode
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Thu Mar 19 15:51:30 PDT 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee/HoneyBee-B/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_anthony/239221584658290237070
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+********************************************
+HoneyBee Test completed with 0 errors in 56 us
+1111 1111 1111 1111 1111 1111 1111 1111 1000 1000 0010 0010 0000 0100 0100 0001 
+************************************************
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
