@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-25 18:28:57
+* @Last Modified time: 2020-03-27 10:51:13
 */
 
 #include "honeybee.h"
@@ -34,8 +34,8 @@ int main(int argc, char* argv[]) {
 
     edge_t edges[NUM_EDGES] = {
         (edge_t) {
-            .p1 = (point_t) {.x=0., .y=1.5, .z=1.5},
-            .p2 = (point_t) {.x=1.5, .y=1.5, .z=1.5}
+            .p1 = (point_t) {.x=5., .y=5., .z=5.},
+            .p2 = (point_t) {.x=5., .y=5., .z=5.}
         },
         (edge_t) {
             .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
@@ -71,6 +71,7 @@ int main(int argc, char* argv[]) {
     // Print Results
     printf("********************************************\n");
     printf("HoneyBee Test completed with %d errors in %lu us\n", errors, total);
-    printf("************************************************\n");
+    printBinary(result);
+    printf("\n************************************************\n");
     return 0;
 }

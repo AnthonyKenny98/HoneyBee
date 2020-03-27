@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-25 17:41:44
+* @Last Modified time: 2020-03-27 10:50:21
 */
 #include "honeybee.h"
 
@@ -100,40 +100,43 @@ bool segmentIntersectsFace(edge_t edge, point_t face) {
 }
 
 bool segmentIntersectsGrid(edge_t edge, point_t grid) {
-    bool segmentIntersectsAnyFace = (
-        // Z Plane
-        segmentIntersectsFace(edge, grid) ||
-        segmentIntersectsFace(edge, 
-            (point_t) {.x=grid.x, .y=grid.y, .z=grid.z+RESOLUTION}) ||
-        
-        // Y Plane
-        segmentIntersectsFace(//edge,
-            (edge_t) {
-                .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-                .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-            }, 
-            (point_t) {.x=grid.x, .y=grid.z, .z=grid.y}) ||
-        segmentIntersectsFace(//edge,
-            (edge_t) {
-                .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-                .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-            }, 
-            (point_t) {.x=grid.x, .y=grid.z, .z=grid.y+RESOLUTION}) ||
+    bool f1, f2, f3, f4, f5, f6;
 
-        // X Plane
-        segmentIntersectsFace(//edge,
-            (edge_t) {
-                .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-                .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-            }, 
-            (point_t) {.x=grid.z, .y=grid.y, .z=grid.x}) ||
-        segmentIntersectsFace(//edge,
-            (edge_t) {
-                .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-                .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-            }, 
-            (point_t) {.x=grid.z, .y=grid.y, .z=grid.x+RESOLUTION})
-    );
+    // Z Plane
+    f1 = segmentIntersectsFace(edge, grid);
+    f2 = segmentIntersectsFace(edge, 
+        (point_t) {.x=grid.x, .y=grid.y, .z=grid.z+RESOLUTION});
+    
+    // Y Plane
+    f3 = segmentIntersectsFace(//edge,
+        (edge_t) {
+            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
+        }, 
+        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y});
+    f4 = segmentIntersectsFace(//edge,
+        (edge_t) {
+            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
+        }, 
+        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y+RESOLUTION});
+
+    // X Plane
+    f5 = segmentIntersectsFace(//edge,
+        (edge_t) {
+            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
+        }, 
+        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x});
+    f6 = segmentIntersectsFace(//edge,
+        (edge_t) {
+            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
+        }, 
+        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x+RESOLUTION});
+
+    bool segmentIntersectsAnyFace = (f1 || f2 || f3 || f4 || f5 || f6);
+        
     bool bothEndPointsInGrid = (
         pointInGrid(edge.p1, grid) && pointInGrid(edge.p2, grid)
     );

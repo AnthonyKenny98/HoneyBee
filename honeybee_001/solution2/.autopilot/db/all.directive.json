@@ -1,9 +1,0 @@
-{"sourceFile": [{
-      "name": "",
-      "directive": [{
-          "functionName": "honeybee",
-          "label": "honeybee_label3",
-          "functionLabel": "",
-          "pragma": {"name": "PIPELINE"}
-        }]
-    }]}

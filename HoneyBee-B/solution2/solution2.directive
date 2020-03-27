@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-  <sourceFile name="src/honeybee.c">
-    <directive functionName="honeybee" label="honeybee_label0" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-  </sourceFile>
-</AutoPilot:ProjectResources>

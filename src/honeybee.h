@@ -5,9 +5,9 @@
 #include <stdbool.h>
 
 // Define Epsilon, the max length of an edge
-#define EPSILON 1
-// #define EPSILON 2
-// #define EPSILON 4
+// #define EPSILON 1
+//#define EPSILON 2
+ #define EPSILON 4
 
 // Define Resolution, the size of each grid
 #define RESOLUTION 1

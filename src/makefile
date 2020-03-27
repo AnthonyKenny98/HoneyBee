@@ -1,3 +1,4 @@
+# CC=riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32
 CC=gcc
 CFLAGS=-Wno-constant-conversion
 
@@ -13,3 +14,6 @@ honeybee.o: honeybee.c honeybee.h
 
 clean:
 	rm honeybee_test *.o
+
+# honeybee:
+# 	$(CC) $(CFLAGS) -S -o honeybee honeybee.c
