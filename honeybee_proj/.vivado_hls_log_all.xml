@@ -12,9 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:29.119-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:28.986-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:28.945-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:59.037-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:58.750-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:58.663-0700" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] In file included from src/honeybee.c:1:&#xA;src/honeybee.c:158:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;Z = %lld\n&quot;, collisions_z);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;src/honeybee.c:160:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;y = %lld\n&quot;, collisions_y);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;src/honeybee.c:162:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;x = %lld\n&quot;, collisions_x);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;3 warnings generated." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:48.537-0700" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 14:03:39
+* @Last Modified time: 2020-03-30 14:18:10
 */
 #include "honeybee.h"
 
@@ -86,6 +86,7 @@ Dout_t checkAxis(int num, edge_t edge) {
     Dout_t collisions = 0;
     Dout_t or = 1;
     point_t POI;
+    edge_t _edge;
 
     // Check z Plane
     if (num==0) {
@@ -102,11 +103,11 @@ Dout_t checkAxis(int num, edge_t edge) {
         for (int y=0; y<DIM; y++) {
             POI = lineIntersectsPlane(edge, y);
             POI = (point_t) {.x=POI.x, .y=POI.z, .z=POI.y};
-            edge = (edge_t) {
+            _edge = (edge_t) {
                 .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
                 .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
             };
-            if (pointOnSegment(POI, edge)) {
+            if (pointOnSegment(POI, _edge)) {
                 collisions = (collisions | (or << shiftAmount((int) POI.x, y, (int) POI.z)));
                 collisions = (collisions | (or << shiftAmount((int) POI.x, y-1, (int) POI.z)));
             }
@@ -117,11 +118,11 @@ Dout_t checkAxis(int num, edge_t edge) {
         for (int x=0; x<DIM; x++) {
             POI = lineIntersectsPlane(edge, x);
             POI = (point_t) {.x=POI.z, .y=POI.y, .z=POI.x};
-            edge = (edge_t) {
+            _edge = (edge_t) {
                 .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
                 .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
             };
-            if (pointOnSegment(POI, edge)) {
+            if (pointOnSegment(POI, _edge)) {
                 collisions = (collisions | (or << shiftAmount(x, (int) POI.y, (int) POI.z)));
                 collisions = (collisions | (or << shiftAmount(x - 1, (int) POI.y, (int) POI.z)));
             }
@@ -143,7 +144,6 @@ Dout_t honeybee(edge_t edge) {
     Dout_t collisions_x = 0;
 
     // Seperate edges
-    // edge_t edge_z = edge;
     edge_t edge_y = (edge_t) {
         .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
         .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
@@ -155,8 +155,11 @@ Dout_t honeybee(edge_t edge) {
 
 
     collisions_z = checkAxis(0, edge);
+    printf("Z = %lld\n", collisions_z);
     collisions_y = checkAxis(1, edge_y);
+    printf("y = %lld\n", collisions_y);
     collisions_x = checkAxis(2, edge_x);
+    printf("x = %lld\n", collisions_x);
 
     collisions = (collisions_z | collisions_y) | collisions_x;
     return collisions;

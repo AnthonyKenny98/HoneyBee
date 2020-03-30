@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Sun Mar 29 19:58:05 PDT 2020
+INFO: [HLS 200-10] For user 'anthony' on host 'ubuntu' (Linux_x86_64 version 5.3.0-42-generic) on Sun Mar 29 20:18:33 PDT 2020
 INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
 INFO: [HLS 200-10] In directory '/mnt/hgfs/Thesis/HoneyBee'
 Sourcing Tcl script '/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBD/csynth.tcl'
@@ -12,10 +12,24 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z030i-fbg484-2L'
 INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
 INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 286 ; free virtual = 1950
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 286 ; free virtual = 1950
+WARNING: [HLS 200-40] In file included from src/honeybee.c:1:
+src/honeybee.c:158:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("Z = %lld\n", collisions_z);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:160:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("y = %lld\n", collisions_y);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:162:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("x = %lld\n", collisions_x);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+3 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 340 ; free virtual = 1959
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 340 ; free virtual = 1959
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 244 ; free virtual = 1913
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 300 ; free virtual = 1923
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
 INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
@@ -27,8 +41,8 @@ INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_c
 INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
-INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:95) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 210 ; free virtual = 1882
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 266 ; free virtual = 1893
 INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
 INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
 INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
@@ -39,26 +53,26 @@ INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_c
 INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'checkAxis' (src/honeybee.c:95) automatically.
-INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:95) automatically.
-INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.0' at call site (src/honeybee.c:150) by setting 'num' to '1'.
-INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.1' at call site (src/honeybee.c:151) by setting 'num' to '2'.
-INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.2' at call site (src/honeybee.c:149) by setting 'num' to '0'.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.0' at call site (src/honeybee.c:159) by setting 'num' to '1'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.1' at call site (src/honeybee.c:161) by setting 'num' to '2'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.2' at call site (src/honeybee.c:157) by setting 'num' to '0'.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:49:47) to (src/honeybee.c:53:1) in function 'pointOnSegment'... converting 7 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:93:19) to (src/honeybee.c:92:28) in function 'checkAxis.2'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:114:19) to (src/honeybee.c:113:28) in function 'checkAxis.1'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:103:19) to (src/honeybee.c:102:28) in function 'checkAxis.0'... converting 3 basic blocks.
-INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.2' (src/honeybee.c:93) automatically.
-INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.2' (src/honeybee.c:94) automatically.
-INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.0' (src/honeybee.c:103) automatically.
-INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.0' (src/honeybee.c:105) automatically.
-INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.1' (src/honeybee.c:114) automatically.
-INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.1' (src/honeybee.c:116) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:94:19) to (src/honeybee.c:93:28) in function 'checkAxis.2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:119:19) to (src/honeybee.c:118:28) in function 'checkAxis.1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:104:19) to (src/honeybee.c:103:28) in function 'checkAxis.0'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.2' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.2' (src/honeybee.c:95) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.0' (src/honeybee.c:104) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.0' (src/honeybee.c:110) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.1' (src/honeybee.c:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.1' (src/honeybee.c:125) automatically.
 INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.2' (src/honeybee.c:14:28)...5 expression(s) balanced.
 INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.1' (src/honeybee.c:14:28)...8 expression(s) balanced.
 INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.0' (src/honeybee.c:14:28)...5 expression(s) balanced.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 143 ; free virtual = 1821
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 105 ; free virtual = 1786
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 967.676 ; gain = 527.965 ; free physical = 198 ; free virtual = 1831
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 161 ; free virtual = 1796
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'honeybee' ...
 WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'.
@@ -69,49 +83,49 @@ INFO: [HLS 200-42] -- Implementing module 'checkAxis_2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 24.32 seconds; current allocated memory: 256.698 MB.
+INFO: [HLS 200-111]  Elapsed time: 26.62 seconds; current allocated memory: 256.759 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 257.871 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.08 seconds; current allocated memory: 257.933 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'checkAxis_0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 1.3 seconds; current allocated memory: 258.955 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.24 seconds; current allocated memory: 259.016 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.8 seconds; current allocated memory: 260.036 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.77 seconds; current allocated memory: 260.098 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'checkAxis_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 1.32 seconds; current allocated memory: 261.084 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.69 seconds; current allocated memory: 261.160 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 262.178 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.97 seconds; current allocated memory: 262.254 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'honeybee' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.92 seconds; current allocated memory: 262.517 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.13 seconds; current allocated memory: 262.576 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 1.12 seconds; current allocated memory: 263.056 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.19 seconds; current allocated memory: 263.130 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -126,7 +140,7 @@ INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32ndEe': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32ncud': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'honeybee_sitofp_3eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_2'.
-INFO: [HLS 200-111]  Elapsed time: 1.28 seconds; current allocated memory: 265.536 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.61 seconds; current allocated memory: 265.548 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -136,7 +150,7 @@ INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32ndEe': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32ncud': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'honeybee_sitofp_3eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_0'.
-INFO: [HLS 200-111]  Elapsed time: 2.11 seconds; current allocated memory: 272.200 MB.
+INFO: [HLS 200-111]  Elapsed time: 2.39 seconds; current allocated memory: 272.260 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -146,7 +160,7 @@ INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32ndEe': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32ncud': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'honeybee_sitofp_3eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_1'.
-INFO: [HLS 200-111]  Elapsed time: 2.15 seconds; current allocated memory: 278.757 MB.
+INFO: [HLS 200-111]  Elapsed time: 3.35 seconds; current allocated memory: 278.818 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'honeybee' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -158,10 +172,10 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_y' to 'ap
 INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_z' to 'ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'honeybee' to 'ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'honeybee'.
-INFO: [HLS 200-111]  Elapsed time: 2.17 seconds; current allocated memory: 283.615 MB.
+INFO: [HLS 200-111]  Elapsed time: 3.52 seconds; current allocated memory: 283.690 MB.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 105.50 MHz
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 112 ; free virtual = 1759
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:31 ; elapsed = 00:00:57 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 111 ; free virtual = 1759
 INFO: [VHDL 208-304] Generating VHDL RTL for honeybee.
 INFO: [VLOG 209-307] Generating Verilog RTL for honeybee.
-INFO: [HLS 200-112] Total elapsed time: 49.18 seconds; peak allocated memory: 283.615 MB.
+INFO: [HLS 200-112] Total elapsed time: 57.36 seconds; peak allocated memory: 283.690 MB.
