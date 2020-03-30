@@ -1,0 +1,126 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'honeybee'" level="0">
+<item name = "Date">Mon Mar 30 02:48:16 2020
+</item>
+<item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
+<item name = "Project">honeybee_proj</item>
+<item name = "Solution">HBH</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z030i-fbg484-2L</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 8.588 ns, 1.25 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">53, 53, 0.530 us, 0.530 us, 53, 53, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_checkAxis_2_fu_64">checkAxis_2, 51, 51, 0.510 us, 0.510 us, 1, 1, function</column>
+<column name="grp_checkAxis_1_fu_80">checkAxis_1, 51, 51, 0.510 us, 0.510 us, 1, 1, function</column>
+<column name="grp_checkAxis_0_fu_96">checkAxis_0, 51, 51, 0.510 us, 0.510 us, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 128, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">0, 684, 152196, 185524, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 11, -</column>
+<column name="Register">-, -, 246, -, -</column>
+<specialColumn name="Available">530, 400, 157200, 78600, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 171, 96, 236, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="grp_checkAxis_0_fu_96">checkAxis_0, 0, 228, 50732, 61884, 0</column>
+<column name="grp_checkAxis_1_fu_80">checkAxis_1, 0, 228, 50732, 61884, 0</column>
+<column name="grp_checkAxis_2_fu_64">checkAxis_2, 0, 228, 50732, 61756, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_return">or, 0, 0, 64, 64, 64</column>
+<column name="or_ln170_fu_112_p2">or, 0, 0, 64, 64, 64</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">11, 55, 1, 55</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">54, 0, 54, 0</column>
+<column name="collisions_x_reg_173">64, 0, 64, 0</column>
+<column name="collisions_y_reg_168">64, 0, 64, 0</column>
+<column name="collisions_z_reg_163">64, 0, 64, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, honeybee, return value</column>
+<column name="ap_return">out, 64, ap_ctrl_hs, honeybee, return value</column>
+<column name="edge_p1_x">in, 32, ap_none, edge_p1_x, scalar</column>
+<column name="edge_p1_y">in, 32, ap_none, edge_p1_y, scalar</column>
+<column name="edge_p1_z">in, 32, ap_none, edge_p1_z, scalar</column>
+<column name="edge_p2_x">in, 32, ap_none, edge_p2_x, scalar</column>
+<column name="edge_p2_y">in, 32, ap_none, edge_p2_y, scalar</column>
+<column name="edge_p2_z">in, 32, ap_none, edge_p2_z, scalar</column>
+</table>
+</item>
+</section>
+</profile>

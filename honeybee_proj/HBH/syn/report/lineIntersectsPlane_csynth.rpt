@@ -1,0 +1,213 @@
+
+
+================================================================
+== Vivado HLS Report for 'lineIntersectsPlane'
+================================================================
+* Date:           Mon Mar 30 02:48:03 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        honeybee_proj
+* Solution:       HBH
+* Product family: zynq
+* Target device:  xc7z030i-fbg484-2L
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.588 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       44|       44| 0.440 us | 0.440 us |    1|    1| function |
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     33|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     57|    5120|   9931|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|      9|    -|
+|Register         |        0|      -|    2049|    480|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|     57|    7169|  10453|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      530|    400|  157200|  78600|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|     14|       4|     13|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |honeybee_fadd_32ncud_U5   |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U6   |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U7   |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U8   |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U9   |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U12  |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U13  |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U14  |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fadd_32ncud_U15  |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_fdiv_32neOg_U25  |honeybee_fdiv_32neOg  |        0|      0|  563|  991|    0|
+    |honeybee_fmul_32ndEe_U16  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U17  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U18  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U19  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U20  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U21  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U22  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U23  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32ndEe_U24  |honeybee_fmul_32ndEe  |        0|      3|  128|  320|    0|
+    |honeybee_fsub_32nbkb_U1   |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fsub_32nbkb_U2   |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fsub_32nbkb_U3   |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fsub_32nbkb_U4   |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fsub_32nbkb_U10  |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fsub_32nbkb_U11  |honeybee_fsub_32nbkb  |        0|      2|  227|  404|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                     |                      |        0|     57| 5120| 9931|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |xor_ln20_fu_171_p2  |    xor   |      0|  0|  33|          32|          33|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0|  33|          32|          33|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------+----+-----------+-----+-----------+
+    |     Name    | LUT| Input Size| Bits| Total Bits|
+    +-------------+----+-----------+-----+-----------+
+    |ap_return_0  |   3|          2|   32|         64|
+    |ap_return_1  |   3|          2|   32|         64|
+    |ap_return_2  |   3|          2|   32|         64|
+    +-------------+----+-----------+-----+-----------+
+    |Total        |   9|          6|   96|        192|
+    +-------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------+----+----+-----+-----------+
+    |          Name          | FF | LUT| Bits| Const Bits|
+    +------------------------+----+----+-----+-----------+
+    |PR_z_reg_242            |  32|   0|   32|          0|
+    |T_reg_351               |  32|   0|   32|          0|
+    |ap_ce_reg               |   1|   0|    1|          0|
+    |ap_return_0_int_reg     |  32|   0|   32|          0|
+    |ap_return_1_int_reg     |  32|   0|   32|          0|
+    |ap_return_2_int_reg     |  32|   0|   32|          0|
+    |dot_reg_320             |  32|   0|   32|          0|
+    |edge_p1_x_int_reg       |  32|   0|   32|          0|
+    |edge_p1_x_read_reg_235  |  32|   0|   32|          0|
+    |edge_p1_y_int_reg       |  32|   0|   32|          0|
+    |edge_p1_y_read_reg_228  |  32|   0|   32|          0|
+    |edge_p1_z_int_reg       |  32|   0|   32|          0|
+    |edge_p1_z_read_reg_221  |  32|   0|   32|          0|
+    |edge_p2_x_int_reg       |  32|   0|   32|          0|
+    |edge_p2_x_read_reg_216  |  32|   0|   32|          0|
+    |edge_p2_y_int_reg       |  32|   0|   32|          0|
+    |edge_p2_y_read_reg_211  |  32|   0|   32|          0|
+    |edge_p2_z_int_reg       |  32|   0|   32|          0|
+    |edge_p2_z_read_reg_206  |  32|   0|   32|          0|
+    |norm_y_reg_263          |  32|   0|   32|          0|
+    |plane_int_reg           |  32|   0|   32|          0|
+    |plane_read_reg_199      |  32|   0|   32|          0|
+    |tmp_12_i_reg_363        |  32|   0|   32|          0|
+    |tmp_14_i_reg_368        |  32|   0|   32|          0|
+    |tmp_15_i_reg_305        |  32|   0|   32|          0|
+    |tmp_17_i_reg_325        |  32|   0|   32|          0|
+    |tmp_18_i_reg_341        |  32|   0|   32|          0|
+    |tmp_19_i_reg_288        |  32|   0|   32|          0|
+    |tmp_20_i_reg_310        |  32|   0|   32|          0|
+    |tmp_21_i_reg_294        |  32|   0|   32|          0|
+    |tmp_22_i_reg_315        |  32|   0|   32|          0|
+    |tmp_23_i_reg_330        |  32|   0|   32|          0|
+    |tmp_24_i_reg_335        |  32|   0|   32|          0|
+    |tmp_26_i_reg_346        |  32|   0|   32|          0|
+    |tmp_28_i_reg_300        |  32|   0|   32|          0|
+    |tmp_i1_6_reg_283        |  32|   0|   32|          0|
+    |tmp_i1_reg_278          |  32|   0|   32|          0|
+    |tmp_i2_reg_358          |  32|   0|   32|          0|
+    |tmp_i9_reg_272          |  32|   0|   32|          0|
+    |tmp_i_reg_248           |  32|   0|   32|          0|
+    |xor_ln20_reg_253        |  32|   0|   32|          0|
+    |PR_z_reg_242            |  64|  32|   32|          0|
+    |edge_p1_x_read_reg_235  |  64|  64|   32|          0|
+    |edge_p1_y_read_reg_228  |  64|  64|   32|          0|
+    |edge_p1_z_read_reg_221  |  64|  64|   32|          0|
+    |edge_p2_x_read_reg_216  |  64|  32|   32|          0|
+    |edge_p2_y_read_reg_211  |  64|  32|   32|          0|
+    |edge_p2_z_read_reg_206  |  64|  32|   32|          0|
+    |norm_y_reg_263          |  64|  32|   32|          0|
+    |plane_read_reg_199      |  64|  32|   32|          0|
+    |tmp_19_i_reg_288        |  64|  32|   32|          0|
+    |tmp_21_i_reg_294        |  64|  32|   32|          0|
+    |tmp_24_i_reg_335        |  64|  32|   32|          0|
+    +------------------------+----+----+-----+-----------+
+    |Total                   |2049| 480| 1665|          0|
+    +------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+---------------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-------------+-----+-----+------------+---------------------+--------------+
+|ap_clk       |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_rst       |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_0  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_1  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_2  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_ce        |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|edge_p1_x    |  in |   32|   ap_none  |      edge_p1_x      |    scalar    |
+|edge_p1_y    |  in |   32|   ap_none  |      edge_p1_y      |    scalar    |
+|edge_p1_z    |  in |   32|   ap_none  |      edge_p1_z      |    scalar    |
+|edge_p2_x    |  in |   32|   ap_none  |      edge_p2_x      |    scalar    |
+|edge_p2_y    |  in |   32|   ap_none  |      edge_p2_y      |    scalar    |
+|edge_p2_z    |  in |   32|   ap_none  |      edge_p2_z      |    scalar    |
+|plane        |  in |   32|   ap_none  |        plane        |    scalar    |
++-------------+-----+-----+------------+---------------------+--------------+
+

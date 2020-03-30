@@ -1,5 +1,0 @@
-dimension,c_sim_mac_host,c_sim_ubuntu_client,sol1_max_latency,sol2_max_latency,sol3_max_latency,sol4_max_latency
-4,2,2,21.6,1.5,0.44,0.47
-8,23,19,151,5.53,2.2,1.79
-16,166,180,1133,41.37,13.08,12.11
-32,1317,1424,8783,328,103,104

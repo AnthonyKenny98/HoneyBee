@@ -1,0 +1,1118 @@
+
+
+================================================================
+== Vivado HLS Report for 'honeybee'
+================================================================
+* Date:           Mon Mar 30 02:47:57 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        honeybee_proj
+* Solution:       HBH
+* Product family: zynq
+* Target device:  xc7z030i-fbg484-2L
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.588 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       53|       53| 0.530 us | 0.530 us |   53|   53|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------+-------------+---------+---------+----------+----------+-----+-----+----------+
+        |                       |             |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |        Instance       |    Module   |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +-----------------------+-------------+---------+---------+----------+----------+-----+-----+----------+
+        |grp_checkAxis_2_fu_64  |checkAxis_2  |       51|       51| 0.510 us | 0.510 us |    1|    1| function |
+        |grp_checkAxis_1_fu_80  |checkAxis_1  |       51|       51| 0.510 us | 0.510 us |    1|    1| function |
+        |grp_checkAxis_0_fu_96  |checkAxis_0  |       51|       51| 0.510 us | 0.510 us |    1|    1| function |
+        +-----------------------+-------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 54
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.58>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%edge_p2_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_z)" [src/honeybee.c:159]   --->   Operation 55 'read' 'edge_p2_z_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%edge_p2_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_y)" [src/honeybee.c:159]   --->   Operation 56 'read' 'edge_p2_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%edge_p2_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_x)" [src/honeybee.c:159]   --->   Operation 57 'read' 'edge_p2_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%edge_p1_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_z)" [src/honeybee.c:159]   --->   Operation 58 'read' 'edge_p1_z_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%edge_p1_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_y)" [src/honeybee.c:159]   --->   Operation 59 'read' 'edge_p1_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%edge_p1_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_x)" [src/honeybee.c:159]   --->   Operation 60 'read' 'edge_p1_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [53/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 61 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 62 [53/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 62 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 63 [53/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 63 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 8.58>
+ST_2 : Operation 64 [52/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 64 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 65 [52/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 65 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 66 [52/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 66 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 8.58>
+ST_3 : Operation 67 [51/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 67 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 68 [51/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 68 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 69 [51/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 69 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 8.58>
+ST_4 : Operation 70 [50/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 70 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 71 [50/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 71 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 72 [50/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 72 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 8.58>
+ST_5 : Operation 73 [49/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 73 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 74 [49/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 74 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 75 [49/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 75 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 8.58>
+ST_6 : Operation 76 [48/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 76 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 77 [48/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 77 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 78 [48/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 78 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 8.58>
+ST_7 : Operation 79 [47/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 79 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 80 [47/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 80 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 81 [47/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 81 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 8.58>
+ST_8 : Operation 82 [46/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 82 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 83 [46/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 83 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 84 [46/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 84 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 8.58>
+ST_9 : Operation 85 [45/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 85 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 86 [45/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 86 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 87 [45/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 87 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 8.58>
+ST_10 : Operation 88 [44/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 88 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 89 [44/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 89 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 90 [44/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 90 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 8.58>
+ST_11 : Operation 91 [43/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 91 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 92 [43/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 92 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 93 [43/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 93 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 8.58>
+ST_12 : Operation 94 [42/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 94 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 95 [42/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 95 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 96 [42/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 96 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 8.58>
+ST_13 : Operation 97 [41/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 97 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 98 [41/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 98 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 99 [41/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 99 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 8.58>
+ST_14 : Operation 100 [40/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 100 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 101 [40/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 101 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 102 [40/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 102 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 8.58>
+ST_15 : Operation 103 [39/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 103 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 104 [39/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 104 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 105 [39/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 105 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 8.58>
+ST_16 : Operation 106 [38/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 106 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 107 [38/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 107 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 108 [38/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 108 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 8.58>
+ST_17 : Operation 109 [37/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 109 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 110 [37/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 110 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 111 [37/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 111 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 8.58>
+ST_18 : Operation 112 [36/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 112 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 113 [36/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 113 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 114 [36/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 114 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 8.58>
+ST_19 : Operation 115 [35/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 115 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 116 [35/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 116 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 117 [35/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 117 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 8.58>
+ST_20 : Operation 118 [34/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 118 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 119 [34/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 119 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 120 [34/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 120 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 8.58>
+ST_21 : Operation 121 [33/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 121 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 122 [33/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 122 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 123 [33/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 123 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 8.58>
+ST_22 : Operation 124 [32/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 124 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 125 [32/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 125 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 126 [32/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 126 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 8.58>
+ST_23 : Operation 127 [31/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 127 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 128 [31/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 128 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 129 [31/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 129 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 8.58>
+ST_24 : Operation 130 [30/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 130 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 131 [30/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 131 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 132 [30/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 132 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 8.58>
+ST_25 : Operation 133 [29/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 133 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_25 : Operation 134 [29/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 134 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_25 : Operation 135 [29/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 135 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 8.58>
+ST_26 : Operation 136 [28/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 136 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 137 [28/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 137 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_26 : Operation 138 [28/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 138 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 8.58>
+ST_27 : Operation 139 [27/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 139 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 140 [27/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 140 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_27 : Operation 141 [27/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 141 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 8.58>
+ST_28 : Operation 142 [26/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 142 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_28 : Operation 143 [26/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 143 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_28 : Operation 144 [26/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 144 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 8.58>
+ST_29 : Operation 145 [25/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 145 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_29 : Operation 146 [25/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 146 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_29 : Operation 147 [25/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 147 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 8.58>
+ST_30 : Operation 148 [24/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 148 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_30 : Operation 149 [24/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 149 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_30 : Operation 150 [24/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 150 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 8.58>
+ST_31 : Operation 151 [23/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 151 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_31 : Operation 152 [23/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 152 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_31 : Operation 153 [23/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 153 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 8.58>
+ST_32 : Operation 154 [22/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 154 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 155 [22/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 155 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 156 [22/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 156 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 8.58>
+ST_33 : Operation 157 [21/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 157 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_33 : Operation 158 [21/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 158 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_33 : Operation 159 [21/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 159 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 8.58>
+ST_34 : Operation 160 [20/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 160 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_34 : Operation 161 [20/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 161 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_34 : Operation 162 [20/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 162 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 8.58>
+ST_35 : Operation 163 [19/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 163 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 164 [19/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 164 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 165 [19/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 165 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 8.58>
+ST_36 : Operation 166 [18/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 166 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_36 : Operation 167 [18/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 167 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_36 : Operation 168 [18/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 168 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 8.58>
+ST_37 : Operation 169 [17/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 169 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_37 : Operation 170 [17/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 170 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_37 : Operation 171 [17/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 171 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 37> <Delay = 8.58>
+ST_38 : Operation 172 [16/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 172 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_38 : Operation 173 [16/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 173 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_38 : Operation 174 [16/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 174 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 38> <Delay = 8.58>
+ST_39 : Operation 175 [15/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 175 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_39 : Operation 176 [15/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 176 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_39 : Operation 177 [15/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 177 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 39> <Delay = 8.58>
+ST_40 : Operation 178 [14/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 178 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_40 : Operation 179 [14/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 179 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_40 : Operation 180 [14/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 180 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 40> <Delay = 8.58>
+ST_41 : Operation 181 [13/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 181 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_41 : Operation 182 [13/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 182 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_41 : Operation 183 [13/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 183 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 41> <Delay = 8.58>
+ST_42 : Operation 184 [12/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 184 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_42 : Operation 185 [12/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 185 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_42 : Operation 186 [12/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 186 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 42> <Delay = 8.58>
+ST_43 : Operation 187 [11/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 187 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_43 : Operation 188 [11/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 188 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_43 : Operation 189 [11/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 189 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 43> <Delay = 8.58>
+ST_44 : Operation 190 [10/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 190 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 191 [10/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 191 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_44 : Operation 192 [10/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 192 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 44> <Delay = 8.58>
+ST_45 : Operation 193 [9/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 193 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_45 : Operation 194 [9/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 194 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_45 : Operation 195 [9/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 195 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 45> <Delay = 8.58>
+ST_46 : Operation 196 [8/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 196 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_46 : Operation 197 [8/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 197 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_46 : Operation 198 [8/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 198 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 47 <SV = 46> <Delay = 8.58>
+ST_47 : Operation 199 [7/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 199 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_47 : Operation 200 [7/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 200 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_47 : Operation 201 [7/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 201 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 48 <SV = 47> <Delay = 8.58>
+ST_48 : Operation 202 [6/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 202 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_48 : Operation 203 [6/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 203 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_48 : Operation 204 [6/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 204 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 49 <SV = 48> <Delay = 8.58>
+ST_49 : Operation 205 [5/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 205 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_49 : Operation 206 [5/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 206 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_49 : Operation 207 [5/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 207 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 50 <SV = 49> <Delay = 8.58>
+ST_50 : Operation 208 [4/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 208 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_50 : Operation 209 [4/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 209 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_50 : Operation 210 [4/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 210 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 51 <SV = 50> <Delay = 8.58>
+ST_51 : Operation 211 [3/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 211 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_51 : Operation 212 [3/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 212 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_51 : Operation 213 [3/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 213 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 52 <SV = 51> <Delay = 8.58>
+ST_52 : Operation 214 [2/53] (8.58ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 214 'call' 'collisions_z' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_52 : Operation 215 [2/53] (8.58ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 215 'call' 'collisions_y' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_52 : Operation 216 [2/53] (8.58ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 216 'call' 'collisions_x' <Predicate = true> <Delay = 8.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 53 <SV = 52> <Delay = 8.00>
+ST_53 : Operation 217 [1/53] (8.00ns)   --->   "%collisions_z = call fastcc i64 @checkAxis.2(float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)" [src/honeybee.c:166]   --->   Operation 217 'call' 'collisions_z' <Predicate = true> <Delay = 8.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_53 : Operation 218 [1/53] (7.79ns)   --->   "%collisions_y = call fastcc i64 @checkAxis.0(float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)" [src/honeybee.c:167]   --->   Operation 218 'call' 'collisions_y' <Predicate = true> <Delay = 7.79> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_53 : Operation 219 [1/53] (7.79ns)   --->   "%collisions_x = call fastcc i64 @checkAxis.1(float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)" [src/honeybee.c:168]   --->   Operation 219 'call' 'collisions_x' <Predicate = true> <Delay = 7.79> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 54 <SV = 53> <Delay = 0.80>
+ST_54 : Operation 220 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_x), !map !39"   --->   Operation 220 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 221 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_y), !map !45"   --->   Operation 221 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 222 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_z), !map !49"   --->   Operation 222 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 223 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_x), !map !53"   --->   Operation 223 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 224 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_y), !map !57"   --->   Operation 224 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 225 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_z), !map !61"   --->   Operation 225 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 226 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64 0) nounwind, !map !65"   --->   Operation 226 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 227 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @honeybee_str) nounwind"   --->   Operation 227 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 228 [1/1] (0.00ns) (grouped into LUT with out node collisions)   --->   "%or_ln170 = or i64 %collisions_z, %collisions_x" [src/honeybee.c:170]   --->   Operation 228 'or' 'or_ln170' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 229 [1/1] (0.80ns) (out node of the LUT)   --->   "%collisions = or i64 %or_ln170, %collisions_y" [src/honeybee.c:170]   --->   Operation 229 'or' 'collisions' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 230 [1/1] (0.00ns)   --->   "ret i64 %collisions" [src/honeybee.c:171]   --->   Operation 230 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ edge_p1_x]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_p1_y]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_p1_z]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_p2_x]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_p2_y]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_p2_z]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+edge_p2_z_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+edge_p2_y_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+edge_p2_x_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+edge_p1_z_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+edge_p1_y_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+edge_p1_x_read    (read         ) [ 0011111111111111111111111111111111111111111111111111110]
+collisions_z      (call         ) [ 0000000000000000000000000000000000000000000000000000001]
+collisions_y      (call         ) [ 0000000000000000000000000000000000000000000000000000001]
+collisions_x      (call         ) [ 0000000000000000000000000000000000000000000000000000001]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+specbitsmap_ln0   (specbitsmap  ) [ 0000000000000000000000000000000000000000000000000000000]
+spectopmodule_ln0 (spectopmodule) [ 0000000000000000000000000000000000000000000000000000000]
+or_ln170          (or           ) [ 0000000000000000000000000000000000000000000000000000000]
+collisions        (or           ) [ 0000000000000000000000000000000000000000000000000000000]
+ret_ln171         (ret          ) [ 0000000000000000000000000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="edge_p1_x">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p1_x"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="edge_p1_y">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p1_y"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="edge_p1_z">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p1_z"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="edge_p2_x">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p2_x"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="edge_p2_y">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p2_y"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="edge_p2_z">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_p2_z"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.float"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="checkAxis.2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="checkAxis.0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="checkAxis.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="honeybee_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1004" name="edge_p2_z_read_read_fu_28">
+<pin_list>
+<pin id="29" dir="0" index="0" bw="32" slack="0"/>
+<pin id="30" dir="0" index="1" bw="32" slack="0"/>
+<pin id="31" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p2_z_read/1 "/>
+</bind>
+</comp>
+
+<comp id="34" class="1004" name="edge_p2_y_read_read_fu_34">
+<pin_list>
+<pin id="35" dir="0" index="0" bw="32" slack="0"/>
+<pin id="36" dir="0" index="1" bw="32" slack="0"/>
+<pin id="37" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p2_y_read/1 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="edge_p2_x_read_read_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="32" slack="0"/>
+<pin id="42" dir="0" index="1" bw="32" slack="0"/>
+<pin id="43" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p2_x_read/1 "/>
+</bind>
+</comp>
+
+<comp id="46" class="1004" name="edge_p1_z_read_read_fu_46">
+<pin_list>
+<pin id="47" dir="0" index="0" bw="32" slack="0"/>
+<pin id="48" dir="0" index="1" bw="32" slack="0"/>
+<pin id="49" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p1_z_read/1 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="edge_p1_y_read_read_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="32" slack="0"/>
+<pin id="54" dir="0" index="1" bw="32" slack="0"/>
+<pin id="55" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p1_y_read/1 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="edge_p1_x_read_read_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="32" slack="0"/>
+<pin id="60" dir="0" index="1" bw="32" slack="0"/>
+<pin id="61" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="edge_p1_x_read/1 "/>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="grp_checkAxis_2_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="64" slack="0"/>
+<pin id="66" dir="0" index="1" bw="32" slack="0"/>
+<pin id="67" dir="0" index="2" bw="32" slack="0"/>
+<pin id="68" dir="0" index="3" bw="32" slack="0"/>
+<pin id="69" dir="0" index="4" bw="32" slack="0"/>
+<pin id="70" dir="0" index="5" bw="32" slack="0"/>
+<pin id="71" dir="0" index="6" bw="32" slack="0"/>
+<pin id="72" dir="1" index="7" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="collisions_z/1 "/>
+</bind>
+</comp>
+
+<comp id="80" class="1004" name="grp_checkAxis_1_fu_80">
+<pin_list>
+<pin id="81" dir="0" index="0" bw="64" slack="0"/>
+<pin id="82" dir="0" index="1" bw="32" slack="0"/>
+<pin id="83" dir="0" index="2" bw="32" slack="0"/>
+<pin id="84" dir="0" index="3" bw="32" slack="0"/>
+<pin id="85" dir="0" index="4" bw="32" slack="0"/>
+<pin id="86" dir="0" index="5" bw="32" slack="0"/>
+<pin id="87" dir="0" index="6" bw="32" slack="0"/>
+<pin id="88" dir="1" index="7" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="collisions_x/1 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="grp_checkAxis_0_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="64" slack="0"/>
+<pin id="98" dir="0" index="1" bw="32" slack="0"/>
+<pin id="99" dir="0" index="2" bw="32" slack="0"/>
+<pin id="100" dir="0" index="3" bw="32" slack="0"/>
+<pin id="101" dir="0" index="4" bw="32" slack="0"/>
+<pin id="102" dir="0" index="5" bw="32" slack="0"/>
+<pin id="103" dir="0" index="6" bw="32" slack="0"/>
+<pin id="104" dir="1" index="7" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="collisions_y/1 "/>
+</bind>
+</comp>
+
+<comp id="112" class="1004" name="or_ln170_fu_112">
+<pin_list>
+<pin id="113" dir="0" index="0" bw="64" slack="1"/>
+<pin id="114" dir="0" index="1" bw="64" slack="1"/>
+<pin id="115" dir="1" index="2" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="or_ln170/54 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="collisions_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="64" slack="0"/>
+<pin id="118" dir="0" index="1" bw="64" slack="1"/>
+<pin id="119" dir="1" index="2" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="collisions/54 "/>
+</bind>
+</comp>
+
+<comp id="121" class="1005" name="edge_p2_z_read_reg_121">
+<pin_list>
+<pin id="122" dir="0" index="0" bw="32" slack="1"/>
+<pin id="123" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p2_z_read "/>
+</bind>
+</comp>
+
+<comp id="128" class="1005" name="edge_p2_y_read_reg_128">
+<pin_list>
+<pin id="129" dir="0" index="0" bw="32" slack="1"/>
+<pin id="130" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p2_y_read "/>
+</bind>
+</comp>
+
+<comp id="135" class="1005" name="edge_p2_x_read_reg_135">
+<pin_list>
+<pin id="136" dir="0" index="0" bw="32" slack="1"/>
+<pin id="137" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p2_x_read "/>
+</bind>
+</comp>
+
+<comp id="142" class="1005" name="edge_p1_z_read_reg_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="32" slack="1"/>
+<pin id="144" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p1_z_read "/>
+</bind>
+</comp>
+
+<comp id="149" class="1005" name="edge_p1_y_read_reg_149">
+<pin_list>
+<pin id="150" dir="0" index="0" bw="32" slack="1"/>
+<pin id="151" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p1_y_read "/>
+</bind>
+</comp>
+
+<comp id="156" class="1005" name="edge_p1_x_read_reg_156">
+<pin_list>
+<pin id="157" dir="0" index="0" bw="32" slack="1"/>
+<pin id="158" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="edge_p1_x_read "/>
+</bind>
+</comp>
+
+<comp id="163" class="1005" name="collisions_z_reg_163">
+<pin_list>
+<pin id="164" dir="0" index="0" bw="64" slack="1"/>
+<pin id="165" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="collisions_z "/>
+</bind>
+</comp>
+
+<comp id="168" class="1005" name="collisions_y_reg_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="64" slack="1"/>
+<pin id="170" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="collisions_y "/>
+</bind>
+</comp>
+
+<comp id="173" class="1005" name="collisions_x_reg_173">
+<pin_list>
+<pin id="174" dir="0" index="0" bw="64" slack="1"/>
+<pin id="175" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="collisions_x "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="32"><net_src comp="12" pin="0"/><net_sink comp="28" pin=0"/></net>
+
+<net id="33"><net_src comp="10" pin="0"/><net_sink comp="28" pin=1"/></net>
+
+<net id="38"><net_src comp="12" pin="0"/><net_sink comp="34" pin=0"/></net>
+
+<net id="39"><net_src comp="8" pin="0"/><net_sink comp="34" pin=1"/></net>
+
+<net id="44"><net_src comp="12" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="45"><net_src comp="6" pin="0"/><net_sink comp="40" pin=1"/></net>
+
+<net id="50"><net_src comp="12" pin="0"/><net_sink comp="46" pin=0"/></net>
+
+<net id="51"><net_src comp="4" pin="0"/><net_sink comp="46" pin=1"/></net>
+
+<net id="56"><net_src comp="12" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="57"><net_src comp="2" pin="0"/><net_sink comp="52" pin=1"/></net>
+
+<net id="62"><net_src comp="12" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="63"><net_src comp="0" pin="0"/><net_sink comp="58" pin=1"/></net>
+
+<net id="73"><net_src comp="14" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="74"><net_src comp="58" pin="2"/><net_sink comp="64" pin=1"/></net>
+
+<net id="75"><net_src comp="52" pin="2"/><net_sink comp="64" pin=2"/></net>
+
+<net id="76"><net_src comp="46" pin="2"/><net_sink comp="64" pin=3"/></net>
+
+<net id="77"><net_src comp="40" pin="2"/><net_sink comp="64" pin=4"/></net>
+
+<net id="78"><net_src comp="34" pin="2"/><net_sink comp="64" pin=5"/></net>
+
+<net id="79"><net_src comp="28" pin="2"/><net_sink comp="64" pin=6"/></net>
+
+<net id="89"><net_src comp="18" pin="0"/><net_sink comp="80" pin=0"/></net>
+
+<net id="90"><net_src comp="46" pin="2"/><net_sink comp="80" pin=1"/></net>
+
+<net id="91"><net_src comp="52" pin="2"/><net_sink comp="80" pin=2"/></net>
+
+<net id="92"><net_src comp="58" pin="2"/><net_sink comp="80" pin=3"/></net>
+
+<net id="93"><net_src comp="28" pin="2"/><net_sink comp="80" pin=4"/></net>
+
+<net id="94"><net_src comp="34" pin="2"/><net_sink comp="80" pin=5"/></net>
+
+<net id="95"><net_src comp="40" pin="2"/><net_sink comp="80" pin=6"/></net>
+
+<net id="105"><net_src comp="16" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="106"><net_src comp="58" pin="2"/><net_sink comp="96" pin=1"/></net>
+
+<net id="107"><net_src comp="46" pin="2"/><net_sink comp="96" pin=2"/></net>
+
+<net id="108"><net_src comp="52" pin="2"/><net_sink comp="96" pin=3"/></net>
+
+<net id="109"><net_src comp="40" pin="2"/><net_sink comp="96" pin=4"/></net>
+
+<net id="110"><net_src comp="28" pin="2"/><net_sink comp="96" pin=5"/></net>
+
+<net id="111"><net_src comp="34" pin="2"/><net_sink comp="96" pin=6"/></net>
+
+<net id="120"><net_src comp="112" pin="2"/><net_sink comp="116" pin=0"/></net>
+
+<net id="124"><net_src comp="28" pin="2"/><net_sink comp="121" pin=0"/></net>
+
+<net id="125"><net_src comp="121" pin="1"/><net_sink comp="64" pin=6"/></net>
+
+<net id="126"><net_src comp="121" pin="1"/><net_sink comp="96" pin=5"/></net>
+
+<net id="127"><net_src comp="121" pin="1"/><net_sink comp="80" pin=4"/></net>
+
+<net id="131"><net_src comp="34" pin="2"/><net_sink comp="128" pin=0"/></net>
+
+<net id="132"><net_src comp="128" pin="1"/><net_sink comp="64" pin=5"/></net>
+
+<net id="133"><net_src comp="128" pin="1"/><net_sink comp="96" pin=6"/></net>
+
+<net id="134"><net_src comp="128" pin="1"/><net_sink comp="80" pin=5"/></net>
+
+<net id="138"><net_src comp="40" pin="2"/><net_sink comp="135" pin=0"/></net>
+
+<net id="139"><net_src comp="135" pin="1"/><net_sink comp="64" pin=4"/></net>
+
+<net id="140"><net_src comp="135" pin="1"/><net_sink comp="96" pin=4"/></net>
+
+<net id="141"><net_src comp="135" pin="1"/><net_sink comp="80" pin=6"/></net>
+
+<net id="145"><net_src comp="46" pin="2"/><net_sink comp="142" pin=0"/></net>
+
+<net id="146"><net_src comp="142" pin="1"/><net_sink comp="64" pin=3"/></net>
+
+<net id="147"><net_src comp="142" pin="1"/><net_sink comp="96" pin=2"/></net>
+
+<net id="148"><net_src comp="142" pin="1"/><net_sink comp="80" pin=1"/></net>
+
+<net id="152"><net_src comp="52" pin="2"/><net_sink comp="149" pin=0"/></net>
+
+<net id="153"><net_src comp="149" pin="1"/><net_sink comp="64" pin=2"/></net>
+
+<net id="154"><net_src comp="149" pin="1"/><net_sink comp="96" pin=3"/></net>
+
+<net id="155"><net_src comp="149" pin="1"/><net_sink comp="80" pin=2"/></net>
+
+<net id="159"><net_src comp="58" pin="2"/><net_sink comp="156" pin=0"/></net>
+
+<net id="160"><net_src comp="156" pin="1"/><net_sink comp="64" pin=1"/></net>
+
+<net id="161"><net_src comp="156" pin="1"/><net_sink comp="96" pin=1"/></net>
+
+<net id="162"><net_src comp="156" pin="1"/><net_sink comp="80" pin=3"/></net>
+
+<net id="166"><net_src comp="64" pin="7"/><net_sink comp="163" pin=0"/></net>
+
+<net id="167"><net_src comp="163" pin="1"/><net_sink comp="112" pin=0"/></net>
+
+<net id="171"><net_src comp="96" pin="7"/><net_sink comp="168" pin=0"/></net>
+
+<net id="172"><net_src comp="168" pin="1"/><net_sink comp="116" pin=1"/></net>
+
+<net id="176"><net_src comp="80" pin="7"/><net_sink comp="173" pin=0"/></net>
+
+<net id="177"><net_src comp="173" pin="1"/><net_sink comp="112" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: honeybee : edge_p1_x | {1 }
+	Port: honeybee : edge_p1_y | {1 }
+	Port: honeybee : edge_p1_z | {1 }
+	Port: honeybee : edge_p2_x | {1 }
+	Port: honeybee : edge_p2_y | {1 }
+	Port: honeybee : edge_p2_z | {1 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------------|---------|---------|---------|---------|
+| Operation|      Functional Unit      |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|---------------------------|---------|---------|---------|---------|
+|          |   grp_checkAxis_2_fu_64   |   228   |  39.144 |  30688  |  56932  |
+|   call   |   grp_checkAxis_1_fu_80   |   228   |  39.144 |  30688  |  56900  |
+|          |   grp_checkAxis_0_fu_96   |   228   |  39.144 |  30688  |  56900  |
+|----------|---------------------------|---------|---------|---------|---------|
+|    or    |      or_ln170_fu_112      |    0    |    0    |    0    |    64   |
+|          |     collisions_fu_116     |    0    |    0    |    0    |    64   |
+|----------|---------------------------|---------|---------|---------|---------|
+|          | edge_p2_z_read_read_fu_28 |    0    |    0    |    0    |    0    |
+|          | edge_p2_y_read_read_fu_34 |    0    |    0    |    0    |    0    |
+|   read   | edge_p2_x_read_read_fu_40 |    0    |    0    |    0    |    0    |
+|          | edge_p1_z_read_read_fu_46 |    0    |    0    |    0    |    0    |
+|          | edge_p1_y_read_read_fu_52 |    0    |    0    |    0    |    0    |
+|          | edge_p1_x_read_read_fu_58 |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|
+|   Total  |                           |   684   | 117.432 |  92064  |  170860 |
+|----------|---------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++----------------------+--------+
+|                      |   FF   |
++----------------------+--------+
+| collisions_x_reg_173 |   64   |
+| collisions_y_reg_168 |   64   |
+| collisions_z_reg_163 |   64   |
+|edge_p1_x_read_reg_156|   32   |
+|edge_p1_y_read_reg_149|   32   |
+|edge_p1_z_read_reg_142|   32   |
+|edge_p2_x_read_reg_135|   32   |
+|edge_p2_y_read_reg_128|   32   |
+|edge_p2_z_read_reg_121|   32   |
++----------------------+--------+
+|         Total        |   384  |
++----------------------+--------+
+
+* Multiplexer (MUX) list: 
+|-----------------------|------|------|------|--------||---------||---------|
+|          Comp         |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-----------------------|------|------|------|--------||---------||---------|
+| grp_checkAxis_2_fu_64 |  p1  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_2_fu_64 |  p2  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_2_fu_64 |  p3  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_2_fu_64 |  p4  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_2_fu_64 |  p5  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_2_fu_64 |  p6  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p1  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p2  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p3  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p4  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p5  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_1_fu_80 |  p6  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p1  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p2  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p3  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p4  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p5  |   2  |  32  |   64   ||    3    |
+| grp_checkAxis_0_fu_96 |  p6  |   2  |  32  |   64   ||    3    |
+|-----------------------|------|------|------|--------||---------||---------|
+|         Total         |      |      |      |  1152  ||  8.388  ||    54   |
+|-----------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |   684  |   117  |  92064 | 170860 |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    8   |    -   |   54   |
+|  Register |    -   |    -   |   384  |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |   684  |   125  |  92448 | 170914 |
++-----------+--------+--------+--------+--------+
