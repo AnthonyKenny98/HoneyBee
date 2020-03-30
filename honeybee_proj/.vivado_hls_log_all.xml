@@ -12,14 +12,11 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.534-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.422-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.383-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name '__hls_fptosi_float_i' to 'p_hls_fptosi_float_i'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.327-0700" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.529-0700" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.366-0700" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.320-0700" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-631] Renaming function '__hls_fptosi_float_i32' to '__hls_fptosi_float_i' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:15:54)" projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.279-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBH" date="2020-03-30T02:47:36.397-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBH" date="2020-03-30T02:47:36.271-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBH" date="2020-03-30T02:47:36.243-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name '__hls_fptosi_float_i' to 'p_hls_fptosi_float_i'." projectName="honeybee_proj" solutionName="HBH" date="2020-03-30T02:47:36.218-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function '__hls_fptosi_float_i32' to '__hls_fptosi_float_i' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:15:54)" projectName="honeybee_proj" solutionName="HBH" date="2020-03-30T02:47:36.133-0700" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

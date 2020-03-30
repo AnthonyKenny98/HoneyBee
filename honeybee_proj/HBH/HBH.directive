@@ -11,9 +11,6 @@
                 <option name="variable" value="num" positionalBoolean="4"/>
             </pragma>
         </directive>
-        <directive functionName="checkAxis" label="checkAxis_loop" functionLabel="">
-            <pragma name="UNROLL"/>
-        </directive>
         <directive functionName="checkAxis" label="checkAxis_label0" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
@@ -24,12 +21,7 @@
             <pragma name="UNROLL"/>
         </directive>
         <directive functionName="checkAxis" label="" functionLabel="">
-            <pragma name="DEPENDENCE">
-                <option name="variable" value="collisions"/>
-                <option name="array" value="" positionalBoolean="class"/>
-                <option name="inter" value="" positionalBoolean="type"/>
-                <option name="false" value="" positionalBoolean="dependent"/>
-            </pragma>
+            <pragma name="PIPELINE"/>
         </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>

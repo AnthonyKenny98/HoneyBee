@@ -2,14 +2,14 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 14:48:06
+* @Last Modified time: 2020-03-30 21:09:32
 */
 
 #include "honeybee.h"
 #include <stdio.h>
 #include <time.h>
 
-#define NUM_EDGES 1
+#define NUM_EDGES 10000
 
 #if DIM == 2
     #define MSB 0x80
@@ -41,24 +41,23 @@ int main(int argc, char* argv[]) {
     int i;
     for (i=0; i<NUM_EDGES; i++) {
         edges[i] = (edge_t) {
-            // .p1=randomPoint(),
-            // .p2=randomPoint()
-            .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
-            .p2 = (point_t) {.x=1.5, .y=0.5, .z=0.5},
+            .p1=randomPoint(),
+            .p2=randomPoint()
+            // .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
+            // .p2 = (point_t) {.x=1.5, .y=0.5, .z=0.5},
         };
     }
     
     clock_t start, finish;
-    float total;
-    start = clock();
+    float total = 0;
+    
     for (i=0; i<NUM_EDGES; i++) { 
         // Call HoneyBee
+        start = clock();
         result = honeybee(edges[i]);
+        finish = clock();
+        total += (float)(finish - start) / (CLOCKS_PER_SEC / 1000000);
     }
-    finish = clock();
-
-
-    total = (float)(finish - start) / (CLOCKS_PER_SEC / 1000000);
     
     // Print Results
     printf("********************************************\n");
