@@ -193,7 +193,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="HBA|HBB|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="HBA|HBB|HBD|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -375,7 +375,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="HBA|HBB|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="HBA|HBB|HBD|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

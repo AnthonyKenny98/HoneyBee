@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 13:54:03
+* @Last Modified time: 2020-03-30 14:03:39
 */
 #include "honeybee.h"
 
@@ -89,11 +89,11 @@ Dout_t checkAxis(int num, edge_t edge) {
 
     // Check z Plane
     if (num==0) {
-        for (int z=0; z<DIM; z++) {
-            POI = lineIntersectsPlane(edge, z);
+        for (int i=0; i<DIM; i++) {
+            POI = lineIntersectsPlane(edge, i);
             if (pointOnSegment(POI, edge)) {
-                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, z)));
-                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, z-1)));
+                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, i)));
+                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, i-1)));
             }
         }
     }
@@ -102,6 +102,10 @@ Dout_t checkAxis(int num, edge_t edge) {
         for (int y=0; y<DIM; y++) {
             POI = lineIntersectsPlane(edge, y);
             POI = (point_t) {.x=POI.x, .y=POI.z, .z=POI.y};
+            edge = (edge_t) {
+                .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+                .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
+            };
             if (pointOnSegment(POI, edge)) {
                 collisions = (collisions | (or << shiftAmount((int) POI.x, y, (int) POI.z)));
                 collisions = (collisions | (or << shiftAmount((int) POI.x, y-1, (int) POI.z)));
@@ -113,6 +117,10 @@ Dout_t checkAxis(int num, edge_t edge) {
         for (int x=0; x<DIM; x++) {
             POI = lineIntersectsPlane(edge, x);
             POI = (point_t) {.x=POI.z, .y=POI.y, .z=POI.x};
+            edge = (edge_t) {
+                .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+                .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
+            };
             if (pointOnSegment(POI, edge)) {
                 collisions = (collisions | (or << shiftAmount(x, (int) POI.y, (int) POI.z)));
                 collisions = (collisions | (or << shiftAmount(x - 1, (int) POI.y, (int) POI.z)));

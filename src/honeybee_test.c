@@ -2,14 +2,14 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 13:31:47
+* @Last Modified time: 2020-03-30 14:02:15
 */
 
 #include "honeybee.h"
 #include <stdio.h>
 #include <time.h>
 
-#define NUM_EDGES 100000
+#define NUM_EDGES 1
 
 #if DIM == 2
     #define MSB 0x80
@@ -35,13 +35,16 @@ void printBinary(Dout_t bus) {
 
 int main(int argc, char* argv[]) {
     int errors = 0;
+    Dout_t result;
 
     edge_t edges[NUM_EDGES];
     int i;
     for (i=0; i<NUM_EDGES; i++) {
         edges[i] = (edge_t) {
-            .p1=randomPoint(),
-            .p2=randomPoint()
+            // .p1=randomPoint(),
+            // .p2=randomPoint()
+            .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
+            .p2 = (point_t) {.x=1.5, .y=0.5, .z=0.5},
         };
     }
     
@@ -50,7 +53,7 @@ int main(int argc, char* argv[]) {
     start = clock();
     for (i=0; i<NUM_EDGES; i++) { 
         // Call HoneyBee
-        honeybee(edges[i]);
+        result = honeybee(edges[i]);
     }
     finish = clock();
 
@@ -60,6 +63,7 @@ int main(int argc, char* argv[]) {
     // Print Results
     printf("********************************************\n");
     printf("HoneyBee Test completed with in %f us (avg = %f us)\n", total, total/NUM_EDGES);
+    printBinary(result);
     printf("\n************************************************\n");
     return 0;
 }

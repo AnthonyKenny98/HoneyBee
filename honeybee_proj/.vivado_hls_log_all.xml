@@ -11,7 +11,11 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:29.119-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:28.986-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T19:58:28.945-0700" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>
