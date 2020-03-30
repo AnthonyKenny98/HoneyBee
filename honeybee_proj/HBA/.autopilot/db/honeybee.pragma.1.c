@@ -1332,9 +1332,9 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 5 "src/honeybee.h" 2
 # 1 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdbool.h" 1 3
 # 6 "src/honeybee.h" 2
-# 24 "src/honeybee.h"
+# 26 "src/honeybee.h"
     typedef int64_t Dout_t;
-# 41 "src/honeybee.h"
+# 44 "src/honeybee.h"
 typedef float base_t;
 
 
@@ -1354,14 +1354,650 @@ typedef struct edge {
 Dout_t honeybee(edge_t edge);
 # 8 "src/honeybee.c" 2
 
+# 1 "/usr/include/stdio.h" 1 3 4
+# 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 28 "/usr/include/stdio.h" 2 3 4
 
-_Bool pointInGrid(point_t point, point_t grid) {
-    return (
-        (grid.x <= point.x && point.x <= grid.x + 1) &&
-        (grid.y <= point.y && point.y <= grid.y + 1) &&
-        (grid.z <= point.z && point.z <= grid.z + 1)
-    );
-}
+
+
+
+
+# 1 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+# 34 "/usr/include/stdio.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+typedef struct _IO_FILE __FILE;
+# 37 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+
+
+typedef struct _IO_FILE FILE;
+# 38 "/usr/include/stdio.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/libio.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 3 4
+# 1 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+# 13 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+# 22 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+
+
+
+
+typedef struct
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} _G_fpos_t;
+typedef struct
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} _G_fpos64_t;
+# 36 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 53 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdarg.h" 1 3 4
+# 30 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdarg.h" 3 4
+typedef __builtin_va_list va_list;
+# 48 "/tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 54 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 149 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+struct _IO_jump_t; struct _IO_FILE;
+
+
+
+
+typedef void _IO_lock_t;
+
+
+
+
+
+struct _IO_marker {
+  struct _IO_marker *_next;
+  struct _IO_FILE *_sbuf;
+
+
+
+  int _pos;
+# 177 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+};
+
+
+enum __codecvt_result
+{
+  __codecvt_ok,
+  __codecvt_partial,
+  __codecvt_error,
+  __codecvt_noconv
+};
+# 245 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+struct _IO_FILE {
+  int _flags;
+
+
+
+
+  char* _IO_read_ptr;
+  char* _IO_read_end;
+  char* _IO_read_base;
+  char* _IO_write_base;
+  char* _IO_write_ptr;
+  char* _IO_write_end;
+  char* _IO_buf_base;
+  char* _IO_buf_end;
+
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+
+  struct _IO_marker *_markers;
+
+  struct _IO_FILE *_chain;
+
+  int _fileno;
+
+
+
+  int _flags2;
+
+  __off_t _old_offset;
+
+
+
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+
+
+
+  _IO_lock_t *_lock;
+# 293 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+  __off64_t _offset;
+
+
+
+
+
+
+
+  void *__pad1;
+  void *__pad2;
+  void *__pad3;
+  void *__pad4;
+
+  size_t __pad5;
+  int _mode;
+
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+
+};
+
+
+typedef struct _IO_FILE _IO_FILE;
+
+
+struct _IO_FILE_plus;
+
+extern struct _IO_FILE_plus _IO_2_1_stdin_;
+extern struct _IO_FILE_plus _IO_2_1_stdout_;
+extern struct _IO_FILE_plus _IO_2_1_stderr_;
+# 337 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+
+
+
+
+
+
+
+typedef __ssize_t __io_write_fn (void *__cookie, const char *__buf,
+     size_t __n);
+
+
+
+
+
+
+
+typedef int __io_seek_fn (void *__cookie, __off64_t *__pos, int __w);
+
+
+typedef int __io_close_fn (void *__cookie);
+# 389 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int __underflow (_IO_FILE *);
+extern int __uflow (_IO_FILE *);
+extern int __overflow (_IO_FILE *, int);
+# 433 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int _IO_getc (_IO_FILE *__fp);
+extern int _IO_putc (int __c, _IO_FILE *__fp);
+extern int _IO_feof (_IO_FILE *__fp) __attribute__ ((__nothrow__ ));
+extern int _IO_ferror (_IO_FILE *__fp) __attribute__ ((__nothrow__ ));
+
+extern int _IO_peekc_locked (_IO_FILE *__fp);
+
+
+
+
+
+extern void _IO_flockfile (_IO_FILE *) __attribute__ ((__nothrow__ ));
+extern void _IO_funlockfile (_IO_FILE *) __attribute__ ((__nothrow__ ));
+extern int _IO_ftrylockfile (_IO_FILE *) __attribute__ ((__nothrow__ ));
+# 462 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
+   __gnuc_va_list, int *__restrict);
+extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
+    __gnuc_va_list);
+extern __ssize_t _IO_padn (_IO_FILE *, int, __ssize_t);
+extern size_t _IO_sgetn (_IO_FILE *, void *, size_t);
+
+extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
+extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
+
+extern void _IO_free_backup_area (_IO_FILE *) __attribute__ ((__nothrow__ ));
+# 42 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+typedef __gnuc_va_list va_list;
+# 78 "/usr/include/stdio.h" 3 4
+typedef _G_fpos_t fpos_t;
+# 131 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
+# 132 "/usr/include/stdio.h" 2 3 4
+
+
+
+extern struct _IO_FILE *stdin;
+extern struct _IO_FILE *stdout;
+extern struct _IO_FILE *stderr;
+
+
+
+
+
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ ));
+
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ ));
+
+
+
+extern int renameat (int __oldfd, const char *__old, int __newfd,
+       const char *__new) __attribute__ ((__nothrow__ ));
+
+
+
+
+
+
+
+extern FILE *tmpfile (void) ;
+# 173 "/usr/include/stdio.h" 3 4
+extern char *tmpnam (char *__s) __attribute__ ((__nothrow__ )) ;
+
+
+
+
+extern char *tmpnam_r (char *__s) __attribute__ ((__nothrow__ )) ;
+# 190 "/usr/include/stdio.h" 3 4
+extern char *tempnam (const char *__dir, const char *__pfx)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) ;
+
+
+
+
+
+
+
+extern int fclose (FILE *__stream);
+
+
+
+
+extern int fflush (FILE *__stream);
+# 213 "/usr/include/stdio.h" 3 4
+extern int fflush_unlocked (FILE *__stream);
+# 232 "/usr/include/stdio.h" 3 4
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes) ;
+
+
+
+
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+# 265 "/usr/include/stdio.h" 3 4
+extern FILE *fdopen (int __fd, const char *__modes) __attribute__ ((__nothrow__ )) ;
+# 278 "/usr/include/stdio.h" 3 4
+extern FILE *fmemopen (void *__s, size_t __len, const char *__modes)
+  __attribute__ ((__nothrow__ )) ;
+
+
+
+
+extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) __attribute__ ((__nothrow__ )) ;
+
+
+
+
+
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ ));
+
+
+
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ ));
+
+
+
+
+extern void setbuffer (FILE *__restrict __stream, char *__restrict __buf,
+         size_t __size) __attribute__ ((__nothrow__ ));
+
+
+extern void setlinebuf (FILE *__stream) __attribute__ ((__nothrow__ ));
+
+
+
+
+
+
+
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...);
+
+
+
+
+extern int printf (const char *__restrict __format, ...);
+
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+
+
+
+
+
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg);
+
+
+
+
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+# 365 "/usr/include/stdio.h" 3 4
+extern int vdprintf (int __fd, const char *__restrict __fmt,
+       __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__printf__, 2, 0)));
+extern int dprintf (int __fd, const char *__restrict __fmt, ...)
+     __attribute__ ((__format__ (__printf__, 2, 3)));
+
+
+
+
+
+
+
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) ;
+
+
+
+
+extern int scanf (const char *__restrict __format, ...) ;
+
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ ));
+# 395 "/usr/include/stdio.h" 3 4
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf") ;
+
+
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf") ;
+
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ ));
+# 420 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+
+
+
+
+
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+
+
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 443 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ ))
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 477 "/usr/include/stdio.h" 3 4
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+
+
+
+
+
+extern int getchar (void);
+# 495 "/usr/include/stdio.h" 3 4
+extern int getc_unlocked (FILE *__stream);
+extern int getchar_unlocked (void);
+# 506 "/usr/include/stdio.h" 3 4
+extern int fgetc_unlocked (FILE *__stream);
+# 517 "/usr/include/stdio.h" 3 4
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+
+
+
+
+
+extern int putchar (int __c);
+# 537 "/usr/include/stdio.h" 3 4
+extern int fputc_unlocked (int __c, FILE *__stream);
+
+
+
+
+
+
+
+extern int putc_unlocked (int __c, FILE *__stream);
+extern int putchar_unlocked (int __c);
+
+
+
+
+
+
+extern int getw (FILE *__stream);
+
+
+extern int putw (int __w, FILE *__stream);
+
+
+
+
+
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+          ;
+# 577 "/usr/include/stdio.h" 3 4
+extern char *gets (char *__s) __attribute__ ((__deprecated__));
+# 603 "/usr/include/stdio.h" 3 4
+extern __ssize_t __getdelim (char **__restrict __lineptr,
+          size_t *__restrict __n, int __delimiter,
+          FILE *__restrict __stream) ;
+extern __ssize_t getdelim (char **__restrict __lineptr,
+        size_t *__restrict __n, int __delimiter,
+        FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern __ssize_t getline (char **__restrict __lineptr,
+       size_t *__restrict __n,
+       FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream);
+
+
+
+
+
+extern int puts (const char *__s);
+
+
+
+
+
+
+extern int ungetc (int __c, FILE *__stream);
+
+
+
+
+
+
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+
+
+
+
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+# 673 "/usr/include/stdio.h" 3 4
+extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
+         size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite_unlocked (const void *__restrict __ptr, size_t __size,
+          size_t __n, FILE *__restrict __stream);
+
+
+
+
+
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+
+
+
+
+extern long int ftell (FILE *__stream) ;
+
+
+
+
+extern void rewind (FILE *__stream);
+# 707 "/usr/include/stdio.h" 3 4
+extern int fseeko (FILE *__stream, __off_t __off, int __whence);
+
+
+
+
+extern __off_t ftello (FILE *__stream) ;
+# 731 "/usr/include/stdio.h" 3 4
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+
+
+
+
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+# 757 "/usr/include/stdio.h" 3 4
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ ));
+
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+
+
+
+extern void clearerr_unlocked (FILE *__stream) __attribute__ ((__nothrow__ ));
+extern int feof_unlocked (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+extern int ferror_unlocked (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+
+
+
+
+
+
+
+extern void perror (const char *__s);
+
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 3 4
+extern int sys_nerr;
+extern const char *const sys_errlist[];
+# 782 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+extern int fileno (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+
+
+
+
+extern int fileno_unlocked (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+# 800 "/usr/include/stdio.h" 3 4
+extern FILE *popen (const char *__command, const char *__modes) ;
+
+
+
+
+
+extern int pclose (FILE *__stream);
+
+
+
+
+
+extern char *ctermid (char *__s) __attribute__ ((__nothrow__ ));
+# 840 "/usr/include/stdio.h" 3 4
+extern void flockfile (FILE *__stream) __attribute__ ((__nothrow__ ));
+
+
+
+extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ )) ;
+
+
+extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ ));
+# 10 "src/honeybee.c" 2
+
+
 
 vector_t vector(point_t p1, point_t p2) {
     return (vector_t) {
@@ -1405,22 +2041,12 @@ _Bool pointOnSegment(point_t p, edge_t e) {
     );
 }
 
-_Bool pointOnFace(point_t p, point_t grid) {
-    return (
-        ((grid.x <= p.x) && (p.x <= grid.x + 1)) &&
-        ((grid.y <= p.y) && (p.y <= grid.y + 1)) &&
-        ((grid.y <= p.y) && (p.y <= grid.y + 1))
-    );
-}
-
-_Bool segmentIntersectsFace(edge_t edge, point_t face) {
+point_t lineIntersectsPlane(edge_t edge, float plane) {
 
     point_t P, Q, R;
-    P = face;
-    Q = face;
-    Q.x+=1;
-    R = face;
-    R.y+=1;
+    P = (point_t) {.x=0, .y=0, .z=plane};
+    Q = (point_t) {.x=1, .y=0, .z=plane};
+    R = (point_t) {.x=0, .y=1, .z=plane};
 
 
     vector_t PQ = vector(P, Q);
@@ -1438,59 +2064,12 @@ _Bool segmentIntersectsFace(edge_t edge, point_t face) {
 
     point_t POI = pointOfIntersection(T, edge);
 
-
-    _Bool pointOnEdge = pointOnSegment(POI, edge);
-
-
-    _Bool pointOnface = pointOnFace(POI, P);
-
-    return pointOnEdge && pointOnface;
+    return POI;
 }
 
-_Bool segmentIntersectsGrid(edge_t edge, point_t grid) {
-    _Bool f1, f2, f3, f4, f5, f6;
-
-
-    f1 = segmentIntersectsFace(edge, grid);
-    f2 = segmentIntersectsFace(edge,
-        (point_t) {.x=grid.x, .y=grid.y, .z=grid.z+1});
-
-
-    f3 = segmentIntersectsFace(
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-        },
-        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y});
-    f4 = segmentIntersectsFace(
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-        },
-        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y+1});
-
-
-    f5 = segmentIntersectsFace(
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-        },
-        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x});
-    f6 = segmentIntersectsFace(
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-        },
-        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x+1});
-
-    _Bool segmentIntersectsAnyFace = (f1 || f2 || f3 || f4 || f5 || f6);
-
-    _Bool bothEndPointsInGrid = (
-        pointInGrid(edge.p1, grid) && pointInGrid(edge.p2, grid)
-    );
-    return segmentIntersectsAnyFace || bothEndPointsInGrid;
+int shiftAmount(int i, int j, int k) {
+    return i + (j << 2) + ((k << 2) << 2);
 }
-
 
 
 Dout_t honeybee(edge_t edge) {
@@ -1498,26 +2077,61 @@ Dout_t honeybee(edge_t edge) {
 
     Dout_t collisions = 0;
 
-    int b = 0;
 
-    honeybee_label2:for (int k=0; k<4*1; k+=1) {
-        honeybee_label1:for (int j=0; j<4*1; j+=1) {
-_ssdm_Unroll(0,0,0, "");
-# 156 "src/honeybee.c"
-
-              honeybee_label0:for (int i=0; i<4*1; i+=1) {
-_ssdm_Unroll(0,0,0, "");
-# 157 "src/honeybee.c"
+    Dout_t collisions_z = 0;
+    Dout_t collisions_y = 0;
+    Dout_t collisions_x = 0;
 
 
 
-                point_t grid = {.x = (base_t) i, .y = (base_t) j, .z = (base_t) k};
-                if (segmentIntersectsGrid(edge, grid)) {
-                    collisions = collisions | (0b1 << b);
-                }
-            b++;
-            }
+    edge_t edge_y = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+        .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
+    };
+    edge_t edge_x = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+        .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
+    };
+
+    point_t POI_z, POI_x, POI_y;
+    Dout_t or_z = 1;
+    Dout_t or_y = 1;
+    Dout_t or_x = 1;
+
+    for (int z=0; z<4; z++) {
+        POI_z = lineIntersectsPlane(edge, z);
+        if (pointOnSegment(POI_z, edge)) {
+            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z)));
+            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z-1)));
         }
     }
+
+    edge_t newedge = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+        .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
+    };
+    for (int y=0; y<4; y++) {
+        POI_y = lineIntersectsPlane(edge_y, y);
+        POI_y = (point_t) {.x=POI_y.x, .y=POI_y.z, .z=POI_y.y};
+        if (pointOnSegment(POI_y, edge)) {
+            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y, (int) POI_y.z)));
+            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y-1, (int) POI_y.z)));
+        }
+    }
+
+    newedge = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+        .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
+    };
+    for (int x=0; x<4; x++) {
+        POI_x = lineIntersectsPlane(edge_x, x);
+        POI_x = (point_t) {.x=POI_x.z, .y=POI_x.y, .z=POI_x.x};
+        if (pointOnSegment(POI_x, edge)) {
+            collisions_x = (collisions_x | (or_x << shiftAmount(x, (int) POI_x.y, (int) POI_x.z)));
+            collisions_x = (collisions_x | (or_x << shiftAmount(x - 1, (int) POI_x.y, (int) POI_x.z)));
+        }
+    }
+
+    collisions = (collisions_z | collisions_y) | collisions_x;
     return collisions;
 }

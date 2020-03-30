@@ -2,18 +2,13 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-27 10:50:21
+* @Last Modified time: 2020-03-30 13:51:29
 */
 #include "honeybee.h"
 
+#include <stdio.h>
+
 // Return true if point lies within grid, else false
-bool pointInGrid(point_t point, point_t grid) {
-    return (
-        (grid.x <= point.x && point.x <= grid.x + RESOLUTION) &&
-        (grid.y <= point.y && point.y <= grid.y + RESOLUTION) &&
-        (grid.z <= point.z && point.z <= grid.z + RESOLUTION)
-    );
-}
 
 vector_t vector(point_t p1, point_t p2) {
     return (vector_t) {
@@ -57,24 +52,14 @@ bool pointOnSegment(point_t p, edge_t e) {
     );
 }
 
-bool pointOnFace(point_t p, point_t grid) {
-    return (
-        ((grid.x <= p.x) && (p.x <= grid.x + RESOLUTION)) &&
-        ((grid.y <= p.y) && (p.y <= grid.y + RESOLUTION)) &&
-        ((grid.y <= p.y) && (p.y <= grid.y + RESOLUTION))
-    );
-}
-
-bool segmentIntersectsFace(edge_t edge, point_t face) {
-    // Setup 3 points on the associated plane
+point_t lineIntersectsPlane(edge_t edge, float plane) {
+    // Setup 3 points on the plane
     point_t P, Q, R;
-    P = face;
-    Q = face;
-    Q.x+=RESOLUTION;
-    R = face;
-    R.y+=RESOLUTION;
+    P = (point_t) {.x=0, .y=0, .z=plane};
+    Q = (point_t) {.x=RESOLUTION, .y=0, .z=plane};
+    R = (point_t) {.x=0, .y=RESOLUTION, .z=plane};
 
-    // Get vectors defining plane
+     // Get vectors defining plane
     vector_t PQ = vector(P, Q);
     vector_t PR = vector(P, R);
 
@@ -90,59 +75,12 @@ bool segmentIntersectsFace(edge_t edge, point_t face) {
     // Point of intersection
     point_t POI = pointOfIntersection(T, edge);
 
-    // Check if point is within bounds of edge
-    bool pointOnEdge = pointOnSegment(POI, edge);
-
-    // Check if point is within bounds of face
-    bool pointOnface = pointOnFace(POI, P);
-
-    return pointOnEdge && pointOnface;
+    return POI;
 }
 
-bool segmentIntersectsGrid(edge_t edge, point_t grid) {
-    bool f1, f2, f3, f4, f5, f6;
-
-    // Z Plane
-    f1 = segmentIntersectsFace(edge, grid);
-    f2 = segmentIntersectsFace(edge, 
-        (point_t) {.x=grid.x, .y=grid.y, .z=grid.z+RESOLUTION});
-    
-    // Y Plane
-    f3 = segmentIntersectsFace(//edge,
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-        }, 
-        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y});
-    f4 = segmentIntersectsFace(//edge,
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-            .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y},
-        }, 
-        (point_t) {.x=grid.x, .y=grid.z, .z=grid.y+RESOLUTION});
-
-    // X Plane
-    f5 = segmentIntersectsFace(//edge,
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-        }, 
-        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x});
-    f6 = segmentIntersectsFace(//edge,
-        (edge_t) {
-            .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-            .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x},
-        }, 
-        (point_t) {.x=grid.z, .y=grid.y, .z=grid.x+RESOLUTION});
-
-    bool segmentIntersectsAnyFace = (f1 || f2 || f3 || f4 || f5 || f6);
-        
-    bool bothEndPointsInGrid = (
-        pointInGrid(edge.p1, grid) && pointInGrid(edge.p2, grid)
-    );
-    return segmentIntersectsAnyFace || bothEndPointsInGrid;
+int shiftAmount(int i, int j, int k) {
+    return i + (j << SHAMT) + ((k << SHAMT) << SHAMT);
 }
-
 
 // HoneyBee Function
 Dout_t honeybee(edge_t edge) {
@@ -150,20 +88,61 @@ Dout_t honeybee(edge_t edge) {
     // Collision Bus: Set for a datatype that represents correct bus width
     Dout_t collisions = 0;
 
-    int b = 0;
-    // Iterate through potential swept area
-    honeybee_label2:for (int k=0; k<DIM*RESOLUTION; k+=RESOLUTION) {
-        honeybee_label1:for (int j=0; j<DIM*RESOLUTION; j+=RESOLUTION) {
-              honeybee_label0:for (int i=0; i<DIM*RESOLUTION; i+=RESOLUTION) {
-                
-                // Check collision with grid
-                point_t grid = {.x = (base_t) i, .y = (base_t) j, .z = (base_t) k};
-                if (segmentIntersectsGrid(edge, grid)) {
-                    collisions = collisions | (0b1 << b);
-                }
-            b++;
-            }
+    // Seperate internal collision busses
+    Dout_t collisions_z = 0;
+    Dout_t collisions_y = 0;
+    Dout_t collisions_x = 0;
+
+    // Seperate edges
+    // edge_t edge_z = edge;
+    edge_t edge_y = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+        .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
+    };
+    edge_t edge_x = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+        .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
+    };
+
+    point_t POI_z, POI_x, POI_y;
+    Dout_t or_z = 1;
+    Dout_t or_y = 1;
+    Dout_t or_x = 1;
+
+    for (int z=0; z<DIM; z++) {
+        POI_z = lineIntersectsPlane(edge, z);
+        if (pointOnSegment(POI_z, edge)) {
+            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z)));
+            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z-1)));
         }
     }
+
+    edge_t newedge = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
+        .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
+    };
+    for (int y=0; y<DIM; y++) {
+        POI_y = lineIntersectsPlane(edge_y, y);
+        POI_y = (point_t) {.x=POI_y.x, .y=POI_y.z, .z=POI_y.y};
+        if (pointOnSegment(POI_y, edge)) {
+            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y, (int) POI_y.z)));
+            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y-1, (int) POI_y.z)));
+        }
+    }
+
+    newedge = (edge_t) {
+        .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
+        .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
+    };
+    for (int x=0; x<DIM; x++) {
+        POI_x = lineIntersectsPlane(edge_x, x);
+        POI_x = (point_t) {.x=POI_x.z, .y=POI_x.y, .z=POI_x.x};
+        if (pointOnSegment(POI_x, edge)) {
+            collisions_x = (collisions_x | (or_x << shiftAmount(x, (int) POI_x.y, (int) POI_x.z)));
+            collisions_x = (collisions_x | (or_x << shiftAmount(x - 1, (int) POI_x.y, (int) POI_x.z)));
+        }
+    }
+
+    collisions = (collisions_z | collisions_y) | collisions_x;
     return collisions;
 }

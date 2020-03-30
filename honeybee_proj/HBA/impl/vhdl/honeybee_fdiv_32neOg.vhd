@@ -7,7 +7,7 @@ use ieee.std_logic_1164.all;
 
 entity honeybee_fdiv_32neOg is
     generic (
-        ID         : integer := 12;
+        ID         : integer := 23;
         NUM_STAGE  : integer := 12;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

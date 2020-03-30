@@ -6,7 +6,7 @@
 
 // Define Epsilon, the max length of an edge
 // #define EPSILON 1
-//#define EPSILON 2
+// #define EPSILON 2
  #define EPSILON 4
 
 // Define Resolution, the size of each grid
@@ -17,12 +17,15 @@
 #if EPSILON == 1
     typedef unsigned char Dout_t;
     #define DIM 2
+    #define SHAMT 1
 #elif EPSILON == 2
     typedef unsigned char Dout_t;
     #define DIM 2
+    #define SHAMT 1
 #elif EPSILON == 4
     typedef int64_t Dout_t;
     #define DIM 4
+    #define SHAMT 2
 #endif
 
 // Minimum for any type

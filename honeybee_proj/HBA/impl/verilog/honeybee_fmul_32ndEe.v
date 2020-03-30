@@ -7,7 +7,7 @@
 
 module honeybee_fmul_32ndEe
 #(parameter
-    ID         = 6,
+    ID         = 20,
     NUM_STAGE  = 3,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

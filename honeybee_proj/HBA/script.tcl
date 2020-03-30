@@ -11,8 +11,9 @@ add_files -tb src/honeybee_test.c -cflags "-Wno-unknown-pragmas" -csimflags "-Wn
 open_solution "HBA"
 set_part {xc7z030i-fbg484-2L}
 create_clock -period 10 -name default
+config_export -format ip_catalog -rtl verilog
 source "./honeybee_proj/HBA/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog

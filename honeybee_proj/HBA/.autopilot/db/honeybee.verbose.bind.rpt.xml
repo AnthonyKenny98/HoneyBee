@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'honeybee'" level="0">
-<item name = "Date">Thu Mar 26 19:25:45 2020
+<item name = "Date">Sun Mar 29 19:52:19 2020
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">honeybee_proj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 9.321 ns, 1.25 ns</column>
+<column name="ap_clk">10.00 ns, 9.478 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,34 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">253, 253, 2.530 us, 2.530 us, 253, 253, none</column>
+<column name="">666, 666, 6.660 us, 6.660 us, 666, 666, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_segmentIntersectsGri_fu_151">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_166">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_181">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_196">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_211">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_226">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_241">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_256">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_271">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_286">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_301">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_316">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_331">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_346">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_361">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
-<column name="grp_segmentIntersectsGri_fu_376">segmentIntersectsGri, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
+<column name="grp_pointOnSegment_fu_212">pointOnSegment, 3, 3, 30.000 ns, 30.000 ns, 3, 3, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- honeybee_label2">252, 252, 63, -, -, 4, no</column>
+<column name="- Loop 1">220, 220, 55, -, -, 4, no</column>
+<column name="- Loop 2">220, 220, 55, -, -, 4, no</column>
+<column name="- Loop 3">220, 220, 55, -, -, 4, no</column>
 </table>
 </item>
 </section>

@@ -7,7 +7,7 @@
 
 module honeybee_fdiv_32neOg
 #(parameter
-    ID         = 12,
+    ID         = 23,
     NUM_STAGE  = 12,
     din0_WIDTH = 32,
     din1_WIDTH = 32,

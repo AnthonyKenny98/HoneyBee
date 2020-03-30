@@ -42,9 +42,9 @@
 			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBA/.tcls</location>
 		</link>
 		<link>
-			<name>solution1/constraints</name>
+			<name>HBB/constraints</name>
 			<type>2</type>
-			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/solution1/.tcls</location>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBB/.tcls</location>
 		</link>
 		<link>
 			<name>source/honeybee.c</name>
@@ -77,19 +77,19 @@
 			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBA/script.tcl</location>
 		</link>
 		<link>
-			<name>solution1/constraints/.xml.directive</name>
+			<name>HBB/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/solution1/solution1.directive</location>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBB/HBB.directive</location>
 		</link>
 		<link>
-			<name>solution1/constraints/directives.tcl</name>
+			<name>HBB/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/solution1/directives.tcl</location>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBB/directives.tcl</location>
 		</link>
 		<link>
-			<name>solution1/constraints/script.tcl</name>
+			<name>HBB/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/solution1/script.tcl</location>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBB/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

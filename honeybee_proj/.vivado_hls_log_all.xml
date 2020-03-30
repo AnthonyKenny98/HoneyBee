@@ -11,11 +11,7 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsFace' to 'segmentIntersectsFac' (src/honeybee.c:19:1)" projectName="honeybee_proj" solutionName="HBA" date="2020-03-26T19:25:24.750-0700" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsGrid' to 'segmentIntersectsGri' (src/honeybee.c:11:5)" projectName="honeybee_proj" solutionName="HBA" date="2020-03-26T19:25:23.879-0700" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-631] Renaming function 'segmentIntersectsFace' to 'segmentIntersectsFac' (src/honeybee.c:19:1)" projectName="honeybee_proj" solutionName="solution1" date="2020-03-26T19:18:01.965-0700" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>
