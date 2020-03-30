@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 13:51:29
+* @Last Modified time: 2020-03-30 13:54:03
 */
 #include "honeybee.h"
 
@@ -82,6 +82,47 @@ int shiftAmount(int i, int j, int k) {
     return i + (j << SHAMT) + ((k << SHAMT) << SHAMT);
 }
 
+Dout_t checkAxis(int num, edge_t edge) {
+    Dout_t collisions = 0;
+    Dout_t or = 1;
+    point_t POI;
+
+    // Check z Plane
+    if (num==0) {
+        for (int z=0; z<DIM; z++) {
+            POI = lineIntersectsPlane(edge, z);
+            if (pointOnSegment(POI, edge)) {
+                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, z)));
+                collisions = (collisions | (or << shiftAmount((int) POI.x, (int) POI.y, z-1)));
+            }
+        }
+    }
+
+    else if (num == 1) {
+        for (int y=0; y<DIM; y++) {
+            POI = lineIntersectsPlane(edge, y);
+            POI = (point_t) {.x=POI.x, .y=POI.z, .z=POI.y};
+            if (pointOnSegment(POI, edge)) {
+                collisions = (collisions | (or << shiftAmount((int) POI.x, y, (int) POI.z)));
+                collisions = (collisions | (or << shiftAmount((int) POI.x, y-1, (int) POI.z)));
+            }
+        }
+    }
+
+    else {
+        for (int x=0; x<DIM; x++) {
+            POI = lineIntersectsPlane(edge, x);
+            POI = (point_t) {.x=POI.z, .y=POI.y, .z=POI.x};
+            if (pointOnSegment(POI, edge)) {
+                collisions = (collisions | (or << shiftAmount(x, (int) POI.y, (int) POI.z)));
+                collisions = (collisions | (or << shiftAmount(x - 1, (int) POI.y, (int) POI.z)));
+            }
+        }
+    }
+
+    return collisions;
+}
+
 // HoneyBee Function
 Dout_t honeybee(edge_t edge) {
     
@@ -104,44 +145,10 @@ Dout_t honeybee(edge_t edge) {
         .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
     };
 
-    point_t POI_z, POI_x, POI_y;
-    Dout_t or_z = 1;
-    Dout_t or_y = 1;
-    Dout_t or_x = 1;
 
-    for (int z=0; z<DIM; z++) {
-        POI_z = lineIntersectsPlane(edge, z);
-        if (pointOnSegment(POI_z, edge)) {
-            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z)));
-            collisions_z = (collisions_z | (or_z << shiftAmount((int) POI_z.x, (int) POI_z.y, z-1)));
-        }
-    }
-
-    edge_t newedge = (edge_t) {
-        .p1=(point_t) {.x=edge.p1.x, .y=edge.p1.z, .z=edge.p1.y},
-        .p2=(point_t) {.x=edge.p2.x, .y=edge.p2.z, .z=edge.p2.y}
-    };
-    for (int y=0; y<DIM; y++) {
-        POI_y = lineIntersectsPlane(edge_y, y);
-        POI_y = (point_t) {.x=POI_y.x, .y=POI_y.z, .z=POI_y.y};
-        if (pointOnSegment(POI_y, edge)) {
-            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y, (int) POI_y.z)));
-            collisions_y = (collisions_y | (or_y << shiftAmount((int) POI_y.x, y-1, (int) POI_y.z)));
-        }
-    }
-
-    newedge = (edge_t) {
-        .p1=(point_t) {.x=edge.p1.z, .y=edge.p1.y, .z=edge.p1.x},
-        .p2=(point_t) {.x=edge.p2.z, .y=edge.p2.y, .z=edge.p2.x}
-    };
-    for (int x=0; x<DIM; x++) {
-        POI_x = lineIntersectsPlane(edge_x, x);
-        POI_x = (point_t) {.x=POI_x.z, .y=POI_x.y, .z=POI_x.x};
-        if (pointOnSegment(POI_x, edge)) {
-            collisions_x = (collisions_x | (or_x << shiftAmount(x, (int) POI_x.y, (int) POI_x.z)));
-            collisions_x = (collisions_x | (or_x << shiftAmount(x - 1, (int) POI_x.y, (int) POI_x.z)));
-        }
-    }
+    collisions_z = checkAxis(0, edge);
+    collisions_y = checkAxis(1, edge_y);
+    collisions_x = checkAxis(2, edge_x);
 
     collisions = (collisions_z | collisions_y) | collisions_x;
     return collisions;
