@@ -1,0 +1,158 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'lineIntersectsPlane'" level="0">
+<item name = "Date">Mon Mar 30 02:26:39 2020
+</item>
+<item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
+<item name = "Project">honeybee_proj</item>
+<item name = "Solution">HBG</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z030i-fbg484-2L</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 9.478 ns, 1.25 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">44, 44, 0.440 us, 0.440 us, 44, 44, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 33, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 17, 1855, 3567, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 66, -</column>
+<column name="Register">-, -, 493, -, -</column>
+<specialColumn name="Available">530, 400, 157200, 78600, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 4, 1, 4, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="honeybee_fadd_32ncud_U3">honeybee_fadd_32ncud, 0, 2, 227, 404, 0</column>
+<column name="honeybee_faddfsubbkb_U1">honeybee_faddfsubbkb, 0, 2, 227, 404, 0</column>
+<column name="honeybee_faddfsubbkb_U2">honeybee_faddfsubbkb, 0, 2, 227, 404, 0</column>
+<column name="honeybee_fdiv_32nfYi_U8">honeybee_fdiv_32nfYi, 0, 0, 563, 991, 0</column>
+<column name="honeybee_fmul_32neOg_U5">honeybee_fmul_32neOg, 0, 3, 128, 320, 0</column>
+<column name="honeybee_fmul_32neOg_U6">honeybee_fmul_32neOg, 0, 3, 128, 320, 0</column>
+<column name="honeybee_fmul_32neOg_U7">honeybee_fmul_32neOg, 0, 3, 128, 320, 0</column>
+<column name="honeybee_fsub_32ndEe_U4">honeybee_fsub_32ndEe, 0, 2, 227, 404, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="xor_ln20_fu_149_p2">xor, 0, 0, 33, 32, 33</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">11, 46, 1, 46</column>
+<column name="ap_return_0">3, 2, 32, 64</column>
+<column name="ap_return_1">3, 2, 32, 64</column>
+<column name="ap_return_2">3, 2, 32, 64</column>
+<column name="grp_fu_64_opcode">3, 3, 2, 6</column>
+<column name="grp_fu_64_p0">4, 5, 32, 160</column>
+<column name="grp_fu_64_p1">4, 6, 32, 192</column>
+<column name="grp_fu_72_opcode">3, 3, 2, 6</column>
+<column name="grp_fu_72_p0">4, 5, 32, 160</column>
+<column name="grp_fu_72_p1">4, 5, 32, 160</column>
+<column name="grp_fu_79_p0">3, 3, 32, 96</column>
+<column name="grp_fu_79_p1">3, 3, 32, 96</column>
+<column name="grp_fu_89_p0">3, 3, 32, 96</column>
+<column name="grp_fu_89_p1">3, 4, 32, 128</column>
+<column name="grp_fu_94_p0">3, 3, 32, 96</column>
+<column name="grp_fu_94_p1">3, 4, 32, 128</column>
+<column name="grp_fu_99_p0">3, 3, 32, 96</column>
+<column name="grp_fu_99_p1">3, 3, 32, 96</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="T_reg_248">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">45, 0, 45, 0</column>
+<column name="ap_return_0_preg">32, 0, 32, 0</column>
+<column name="ap_return_1_preg">32, 0, 32, 0</column>
+<column name="ap_return_2_preg">32, 0, 32, 0</column>
+<column name="reg_108">32, 0, 32, 0</column>
+<column name="reg_119">32, 0, 32, 0</column>
+<column name="reg_126">32, 0, 32, 0</column>
+<column name="reg_132">32, 0, 32, 0</column>
+<column name="reg_138">32, 0, 32, 0</column>
+<column name="tmp_19_i_reg_215">32, 0, 32, 0</column>
+<column name="tmp_21_i_reg_220">32, 0, 32, 0</column>
+<column name="tmp_23_i_reg_237">32, 0, 32, 0</column>
+<column name="tmp_24_i_reg_242">32, 0, 32, 0</column>
+<column name="xor_ln20_reg_183">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_return_0">out, 32, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_return_1">out, 32, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="ap_return_2">out, 32, ap_ctrl_hs, lineIntersectsPlane, return value</column>
+<column name="edge_p1_x">in, 32, ap_none, edge_p1_x, scalar</column>
+<column name="edge_p1_y">in, 32, ap_none, edge_p1_y, scalar</column>
+<column name="edge_p1_z">in, 32, ap_none, edge_p1_z, scalar</column>
+<column name="edge_p2_x">in, 32, ap_none, edge_p2_x, scalar</column>
+<column name="edge_p2_y">in, 32, ap_none, edge_p2_y, scalar</column>
+<column name="edge_p2_z">in, 32, ap_none, edge_p2_z, scalar</column>
+<column name="plane">in, 32, ap_none, plane, scalar</column>
+</table>
+</item>
+</section>
+</profile>

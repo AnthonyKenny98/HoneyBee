@@ -1,0 +1,176 @@
+
+
+================================================================
+== Vivado HLS Report for 'lineIntersectsPlane'
+================================================================
+* Date:           Mon Mar 30 02:26:39 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        honeybee_proj
+* Solution:       HBG
+* Product family: zynq
+* Target device:  xc7z030i-fbg484-2L
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 9.478 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       44|       44| 0.440 us | 0.440 us |   44|   44|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     33|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     17|    1855|   3567|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     66|    -|
+|Register         |        -|      -|     493|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|     17|    2348|   3666|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      530|    400|  157200|  78600|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      4|       1|      4|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +-------------------------+----------------------+---------+-------+-----+-----+-----+
+    |honeybee_fadd_32ncud_U3  |honeybee_fadd_32ncud  |        0|      2|  227|  404|    0|
+    |honeybee_faddfsubbkb_U1  |honeybee_faddfsubbkb  |        0|      2|  227|  404|    0|
+    |honeybee_faddfsubbkb_U2  |honeybee_faddfsubbkb  |        0|      2|  227|  404|    0|
+    |honeybee_fdiv_32nfYi_U8  |honeybee_fdiv_32nfYi  |        0|      0|  563|  991|    0|
+    |honeybee_fmul_32neOg_U5  |honeybee_fmul_32neOg  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32neOg_U6  |honeybee_fmul_32neOg  |        0|      3|  128|  320|    0|
+    |honeybee_fmul_32neOg_U7  |honeybee_fmul_32neOg  |        0|      3|  128|  320|    0|
+    |honeybee_fsub_32ndEe_U4  |honeybee_fsub_32ndEe  |        0|      2|  227|  404|    0|
+    +-------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                    |                      |        0|     17| 1855| 3567|    0|
+    +-------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |xor_ln20_fu_149_p2  |    xor   |      0|  0|  33|          32|          33|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0|  33|          32|          33|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  11|         46|    1|         46|
+    |ap_return_0       |   3|          2|   32|         64|
+    |ap_return_1       |   3|          2|   32|         64|
+    |ap_return_2       |   3|          2|   32|         64|
+    |grp_fu_64_opcode  |   3|          3|    2|          6|
+    |grp_fu_64_p0      |   4|          5|   32|        160|
+    |grp_fu_64_p1      |   4|          6|   32|        192|
+    |grp_fu_72_opcode  |   3|          3|    2|          6|
+    |grp_fu_72_p0      |   4|          5|   32|        160|
+    |grp_fu_72_p1      |   4|          5|   32|        160|
+    |grp_fu_79_p0      |   3|          3|   32|         96|
+    |grp_fu_79_p1      |   3|          3|   32|         96|
+    |grp_fu_89_p0      |   3|          3|   32|         96|
+    |grp_fu_89_p1      |   3|          4|   32|        128|
+    |grp_fu_94_p0      |   3|          3|   32|         96|
+    |grp_fu_94_p1      |   3|          4|   32|        128|
+    |grp_fu_99_p0      |   3|          3|   32|         96|
+    |grp_fu_99_p1      |   3|          3|   32|         96|
+    +------------------+----+-----------+-----+-----------+
+    |Total             |  66|        105|  485|       1754|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------+----+----+-----+-----------+
+    |       Name       | FF | LUT| Bits| Const Bits|
+    +------------------+----+----+-----+-----------+
+    |T_reg_248         |  32|   0|   32|          0|
+    |ap_CS_fsm         |  45|   0|   45|          0|
+    |ap_return_0_preg  |  32|   0|   32|          0|
+    |ap_return_1_preg  |  32|   0|   32|          0|
+    |ap_return_2_preg  |  32|   0|   32|          0|
+    |reg_108           |  32|   0|   32|          0|
+    |reg_119           |  32|   0|   32|          0|
+    |reg_126           |  32|   0|   32|          0|
+    |reg_132           |  32|   0|   32|          0|
+    |reg_138           |  32|   0|   32|          0|
+    |tmp_19_i_reg_215  |  32|   0|   32|          0|
+    |tmp_21_i_reg_220  |  32|   0|   32|          0|
+    |tmp_23_i_reg_237  |  32|   0|   32|          0|
+    |tmp_24_i_reg_242  |  32|   0|   32|          0|
+    |xor_ln20_reg_183  |  32|   0|   32|          0|
+    +------------------+----+----+-----+-----------+
+    |Total             | 493|   0|  493|          0|
+    +------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+---------------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-------------+-----+-----+------------+---------------------+--------------+
+|ap_clk       |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_rst       |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_start     |  in |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_done      | out |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_idle      | out |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_ready     | out |    1| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_0  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_1  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|ap_return_2  | out |   32| ap_ctrl_hs | lineIntersectsPlane | return value |
+|edge_p1_x    |  in |   32|   ap_none  |      edge_p1_x      |    scalar    |
+|edge_p1_y    |  in |   32|   ap_none  |      edge_p1_y      |    scalar    |
+|edge_p1_z    |  in |   32|   ap_none  |      edge_p1_z      |    scalar    |
+|edge_p2_x    |  in |   32|   ap_none  |      edge_p2_x      |    scalar    |
+|edge_p2_y    |  in |   32|   ap_none  |      edge_p2_y      |    scalar    |
+|edge_p2_z    |  in |   32|   ap_none  |      edge_p2_z      |    scalar    |
+|plane        |  in |   32|   ap_none  |        plane        |    scalar    |
++-------------+-----+-----+------------+---------------------+--------------+
+

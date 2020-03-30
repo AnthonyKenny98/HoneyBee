@@ -1,0 +1,558 @@
+<stg><name>honeybee</name>
+
+
+<trans_list>
+
+<trans id="26" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:8  %edge_p2_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_z)
+
+]]></Node>
+<StgValue><ssdm name="edge_p2_z_read"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:9  %edge_p2_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_y)
+
+]]></Node>
+<StgValue><ssdm name="edge_p2_y_read"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:10  %edge_p2_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_x)
+
+]]></Node>
+<StgValue><ssdm name="edge_p2_x_read"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:11  %edge_p1_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_z)
+
+]]></Node>
+<StgValue><ssdm name="edge_p1_z_read"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:12  %edge_p1_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_y)
+
+]]></Node>
+<StgValue><ssdm name="edge_p1_y_read"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:13  %edge_p1_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_x)
+
+]]></Node>
+<StgValue><ssdm name="edge_p1_x_read"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:14  %collisions_z = call fastcc i64 @checkAxis(i4 0, float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_z"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:15  %collisions_y = call fastcc i64 @checkAxis(i4 1, float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_y"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:16  %collisions_x = call fastcc i64 @checkAxis(i4 2, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_x"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="12" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:0  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_x), !map !39
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="13" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:1  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_y), !map !45
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="14" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:2  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p1_z), !map !49
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="15" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:3  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_x), !map !53
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="16" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:4  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_y), !map !57
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="17" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:5  call void (...)* @_ssdm_op_SpecBitsMap(float %edge_p2_z), !map !61
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="18" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="64">
+<![CDATA[
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i64 0) nounwind, !map !65
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="19" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+:7  call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @honeybee_str) nounwind
+
+]]></Node>
+<StgValue><ssdm name="spectopmodule_ln0"/></StgValue>
+</operation>
+
+<operation id="20" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:14  %collisions_z = call fastcc i64 @checkAxis(i4 0, float %edge_p1_x_read, float %edge_p1_y_read, float %edge_p1_z_read, float %edge_p2_x_read, float %edge_p2_y_read, float %edge_p2_z_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_z"/></StgValue>
+</operation>
+
+<operation id="21" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:15  %collisions_y = call fastcc i64 @checkAxis(i4 1, float %edge_p1_x_read, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p2_x_read, float %edge_p2_z_read, float %edge_p2_y_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_y"/></StgValue>
+</operation>
+
+<operation id="22" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="64" op_0_bw="64" op_1_bw="4" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32">
+<![CDATA[
+:16  %collisions_x = call fastcc i64 @checkAxis(i4 2, float %edge_p1_z_read, float %edge_p1_y_read, float %edge_p1_x_read, float %edge_p2_z_read, float %edge_p2_y_read, float %edge_p2_x_read)
+
+]]></Node>
+<StgValue><ssdm name="collisions_x"/></StgValue>
+</operation>
+
+<operation id="23" st_id="2" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+:17  %or_ln153 = or i64 %collisions_z, %collisions_x
+
+]]></Node>
+<StgValue><ssdm name="or_ln153"/></StgValue>
+</operation>
+
+<operation id="24" st_id="2" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+:18  %collisions = or i64 %or_ln153, %collisions_y
+
+]]></Node>
+<StgValue><ssdm name="collisions"/></StgValue>
+</operation>
+
+<operation id="25" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="0" op_0_bw="64">
+<![CDATA[
+:19  ret i64 %collisions
+
+]]></Node>
+<StgValue><ssdm name="ret_ln154"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="27" name="edge_p1_x" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p1_x"/></StgValue>
+</port>
+<port id="28" name="edge_p1_y" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p1_y"/></StgValue>
+</port>
+<port id="29" name="edge_p1_z" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p1_z"/></StgValue>
+</port>
+<port id="30" name="edge_p2_x" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p2_x"/></StgValue>
+</port>
+<port id="31" name="edge_p2_y" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p2_y"/></StgValue>
+</port>
+<port id="32" name="edge_p2_z" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_p2_z"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="34" from="_ssdm_op_Read.ap_auto.float" to="edge_p2_z_read" fromId="33" toId="3">
+</dataflow>
+<dataflow id="35" from="edge_p2_z" to="edge_p2_z_read" fromId="32" toId="3">
+</dataflow>
+<dataflow id="36" from="_ssdm_op_Read.ap_auto.float" to="edge_p2_y_read" fromId="33" toId="4">
+</dataflow>
+<dataflow id="37" from="edge_p2_y" to="edge_p2_y_read" fromId="31" toId="4">
+</dataflow>
+<dataflow id="38" from="_ssdm_op_Read.ap_auto.float" to="edge_p2_x_read" fromId="33" toId="5">
+</dataflow>
+<dataflow id="39" from="edge_p2_x" to="edge_p2_x_read" fromId="30" toId="5">
+</dataflow>
+<dataflow id="40" from="_ssdm_op_Read.ap_auto.float" to="edge_p1_z_read" fromId="33" toId="6">
+</dataflow>
+<dataflow id="41" from="edge_p1_z" to="edge_p1_z_read" fromId="29" toId="6">
+</dataflow>
+<dataflow id="42" from="_ssdm_op_Read.ap_auto.float" to="edge_p1_y_read" fromId="33" toId="7">
+</dataflow>
+<dataflow id="43" from="edge_p1_y" to="edge_p1_y_read" fromId="28" toId="7">
+</dataflow>
+<dataflow id="44" from="_ssdm_op_Read.ap_auto.float" to="edge_p1_x_read" fromId="33" toId="8">
+</dataflow>
+<dataflow id="45" from="edge_p1_x" to="edge_p1_x_read" fromId="27" toId="8">
+</dataflow>
+<dataflow id="47" from="checkAxis" to="collisions_z" fromId="46" toId="9">
+</dataflow>
+<dataflow id="49" from="StgValue_48" to="collisions_z" fromId="48" toId="9">
+</dataflow>
+<dataflow id="50" from="edge_p1_x_read" to="collisions_z" fromId="8" toId="9">
+</dataflow>
+<dataflow id="51" from="edge_p1_y_read" to="collisions_z" fromId="7" toId="9">
+</dataflow>
+<dataflow id="52" from="edge_p1_z_read" to="collisions_z" fromId="6" toId="9">
+</dataflow>
+<dataflow id="53" from="edge_p2_x_read" to="collisions_z" fromId="5" toId="9">
+</dataflow>
+<dataflow id="54" from="edge_p2_y_read" to="collisions_z" fromId="4" toId="9">
+</dataflow>
+<dataflow id="55" from="edge_p2_z_read" to="collisions_z" fromId="3" toId="9">
+</dataflow>
+<dataflow id="56" from="checkAxis" to="collisions_y" fromId="46" toId="10">
+</dataflow>
+<dataflow id="58" from="StgValue_57" to="collisions_y" fromId="57" toId="10">
+</dataflow>
+<dataflow id="59" from="edge_p1_x_read" to="collisions_y" fromId="8" toId="10">
+</dataflow>
+<dataflow id="60" from="edge_p1_z_read" to="collisions_y" fromId="6" toId="10">
+</dataflow>
+<dataflow id="61" from="edge_p1_y_read" to="collisions_y" fromId="7" toId="10">
+</dataflow>
+<dataflow id="62" from="edge_p2_x_read" to="collisions_y" fromId="5" toId="10">
+</dataflow>
+<dataflow id="63" from="edge_p2_z_read" to="collisions_y" fromId="3" toId="10">
+</dataflow>
+<dataflow id="64" from="edge_p2_y_read" to="collisions_y" fromId="4" toId="10">
+</dataflow>
+<dataflow id="65" from="checkAxis" to="collisions_x" fromId="46" toId="11">
+</dataflow>
+<dataflow id="67" from="StgValue_66" to="collisions_x" fromId="66" toId="11">
+</dataflow>
+<dataflow id="68" from="edge_p1_z_read" to="collisions_x" fromId="6" toId="11">
+</dataflow>
+<dataflow id="69" from="edge_p1_y_read" to="collisions_x" fromId="7" toId="11">
+</dataflow>
+<dataflow id="70" from="edge_p1_x_read" to="collisions_x" fromId="8" toId="11">
+</dataflow>
+<dataflow id="71" from="edge_p2_z_read" to="collisions_x" fromId="3" toId="11">
+</dataflow>
+<dataflow id="72" from="edge_p2_y_read" to="collisions_x" fromId="4" toId="11">
+</dataflow>
+<dataflow id="73" from="edge_p2_x_read" to="collisions_x" fromId="5" toId="11">
+</dataflow>
+<dataflow id="75" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="12">
+</dataflow>
+<dataflow id="76" from="edge_p1_x" to="specbitsmap_ln0" fromId="27" toId="12">
+</dataflow>
+<dataflow id="77" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="13">
+</dataflow>
+<dataflow id="78" from="edge_p1_y" to="specbitsmap_ln0" fromId="28" toId="13">
+</dataflow>
+<dataflow id="79" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="14">
+</dataflow>
+<dataflow id="80" from="edge_p1_z" to="specbitsmap_ln0" fromId="29" toId="14">
+</dataflow>
+<dataflow id="81" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="15">
+</dataflow>
+<dataflow id="82" from="edge_p2_x" to="specbitsmap_ln0" fromId="30" toId="15">
+</dataflow>
+<dataflow id="83" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="16">
+</dataflow>
+<dataflow id="84" from="edge_p2_y" to="specbitsmap_ln0" fromId="31" toId="16">
+</dataflow>
+<dataflow id="85" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="17">
+</dataflow>
+<dataflow id="86" from="edge_p2_z" to="specbitsmap_ln0" fromId="32" toId="17">
+</dataflow>
+<dataflow id="87" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="74" toId="18">
+</dataflow>
+<dataflow id="89" from="StgValue_88" to="specbitsmap_ln0" fromId="88" toId="18">
+</dataflow>
+<dataflow id="91" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln0" fromId="90" toId="19">
+</dataflow>
+<dataflow id="93" from="honeybee_str" to="spectopmodule_ln0" fromId="92" toId="19">
+</dataflow>
+<dataflow id="94" from="checkAxis" to="collisions_z" fromId="46" toId="20">
+</dataflow>
+<dataflow id="95" from="StgValue_48" to="collisions_z" fromId="48" toId="20">
+</dataflow>
+<dataflow id="96" from="edge_p1_x_read" to="collisions_z" fromId="8" toId="20">
+</dataflow>
+<dataflow id="97" from="edge_p1_y_read" to="collisions_z" fromId="7" toId="20">
+</dataflow>
+<dataflow id="98" from="edge_p1_z_read" to="collisions_z" fromId="6" toId="20">
+</dataflow>
+<dataflow id="99" from="edge_p2_x_read" to="collisions_z" fromId="5" toId="20">
+</dataflow>
+<dataflow id="100" from="edge_p2_y_read" to="collisions_z" fromId="4" toId="20">
+</dataflow>
+<dataflow id="101" from="edge_p2_z_read" to="collisions_z" fromId="3" toId="20">
+</dataflow>
+<dataflow id="102" from="checkAxis" to="collisions_y" fromId="46" toId="21">
+</dataflow>
+<dataflow id="103" from="StgValue_57" to="collisions_y" fromId="57" toId="21">
+</dataflow>
+<dataflow id="104" from="edge_p1_x_read" to="collisions_y" fromId="8" toId="21">
+</dataflow>
+<dataflow id="105" from="edge_p1_z_read" to="collisions_y" fromId="6" toId="21">
+</dataflow>
+<dataflow id="106" from="edge_p1_y_read" to="collisions_y" fromId="7" toId="21">
+</dataflow>
+<dataflow id="107" from="edge_p2_x_read" to="collisions_y" fromId="5" toId="21">
+</dataflow>
+<dataflow id="108" from="edge_p2_z_read" to="collisions_y" fromId="3" toId="21">
+</dataflow>
+<dataflow id="109" from="edge_p2_y_read" to="collisions_y" fromId="4" toId="21">
+</dataflow>
+<dataflow id="110" from="checkAxis" to="collisions_x" fromId="46" toId="22">
+</dataflow>
+<dataflow id="111" from="StgValue_66" to="collisions_x" fromId="66" toId="22">
+</dataflow>
+<dataflow id="112" from="edge_p1_z_read" to="collisions_x" fromId="6" toId="22">
+</dataflow>
+<dataflow id="113" from="edge_p1_y_read" to="collisions_x" fromId="7" toId="22">
+</dataflow>
+<dataflow id="114" from="edge_p1_x_read" to="collisions_x" fromId="8" toId="22">
+</dataflow>
+<dataflow id="115" from="edge_p2_z_read" to="collisions_x" fromId="3" toId="22">
+</dataflow>
+<dataflow id="116" from="edge_p2_y_read" to="collisions_x" fromId="4" toId="22">
+</dataflow>
+<dataflow id="117" from="edge_p2_x_read" to="collisions_x" fromId="5" toId="22">
+</dataflow>
+<dataflow id="118" from="collisions_z" to="or_ln153" fromId="20" toId="23">
+</dataflow>
+<dataflow id="119" from="collisions_x" to="or_ln153" fromId="22" toId="23">
+</dataflow>
+<dataflow id="120" from="or_ln153" to="collisions" fromId="23" toId="24">
+</dataflow>
+<dataflow id="121" from="collisions_y" to="collisions" fromId="21" toId="24">
+</dataflow>
+<dataflow id="122" from="collisions" to="ret_ln154" fromId="24" toId="25">
+</dataflow>
+</dataflows>
+
+
+</stg>

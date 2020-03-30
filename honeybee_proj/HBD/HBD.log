@@ -1,0 +1,197 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z030i-fbg484-2L'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 286 ; free virtual = 1950
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 286 ; free virtual = 1950
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 244 ; free virtual = 1913
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:95) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 210 ; free virtual = 1882
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'checkAxis' (src/honeybee.c:95) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:95) automatically.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.0' at call site (src/honeybee.c:150) by setting 'num' to '1'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.1' at call site (src/honeybee.c:151) by setting 'num' to '2'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.2' at call site (src/honeybee.c:149) by setting 'num' to '0'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:49:47) to (src/honeybee.c:53:1) in function 'pointOnSegment'... converting 7 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:93:19) to (src/honeybee.c:92:28) in function 'checkAxis.2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:114:19) to (src/honeybee.c:113:28) in function 'checkAxis.1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:103:19) to (src/honeybee.c:102:28) in function 'checkAxis.0'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.2' (src/honeybee.c:93) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.2' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.0' (src/honeybee.c:103) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.0' (src/honeybee.c:105) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.1' (src/honeybee.c:114) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.1' (src/honeybee.c:116) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.2' (src/honeybee.c:14:28)...5 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.1' (src/honeybee.c:14:28)...8 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.0' (src/honeybee.c:14:28)...5 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 143 ; free virtual = 1821
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 105 ; free virtual = 1786
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'honeybee' ...
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'.
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'.
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'checkAxis_2' 
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z030i-fbg484-2L'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+WARNING: [HLS 200-40] In file included from src/honeybee.c:1:
+src/honeybee.c:158:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("Z = %lld\n", collisions_z);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:160:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("y = %lld\n", collisions_y);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:162:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("x = %lld\n", collisions_x);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+3 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 340 ; free virtual = 1959
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 340 ; free virtual = 1959
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 300 ; free virtual = 1923
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 266 ; free virtual = 1893
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:96) automatically.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.0' at call site (src/honeybee.c:159) by setting 'num' to '1'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.1' at call site (src/honeybee.c:161) by setting 'num' to '2'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.2' at call site (src/honeybee.c:157) by setting 'num' to '0'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:49:47) to (src/honeybee.c:53:1) in function 'pointOnSegment'... converting 7 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:94:19) to (src/honeybee.c:93:28) in function 'checkAxis.2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:119:19) to (src/honeybee.c:118:28) in function 'checkAxis.1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:104:19) to (src/honeybee.c:103:28) in function 'checkAxis.0'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.2' (src/honeybee.c:94) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.2' (src/honeybee.c:95) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.0' (src/honeybee.c:104) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.0' (src/honeybee.c:110) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis.1' (src/honeybee.c:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.1' (src/honeybee.c:125) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.2' (src/honeybee.c:14:28)...5 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.1' (src/honeybee.c:14:28)...8 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.0' (src/honeybee.c:14:28)...5 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 967.676 ; gain = 527.965 ; free physical = 198 ; free virtual = 1831
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z030i-fbg484-2L'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+WARNING: [HLS 200-40] In file included from src/honeybee.c:1:
+src/honeybee.c:153:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("Z = %lld\n", collisions_z);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:155:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("y = %lld\n", collisions_y);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+src/honeybee.c:157:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]
+    printf("x = %lld\n", collisions_x);
+                ~~~^     ~~~~~~~~~~~~
+                %ld
+3 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 331 ; free virtual = 1950
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 331 ; free virtual = 1950
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 290 ; free virtual = 1913
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:97) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 256 ; free virtual = 1884
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:76) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'lineIntersectsPlane' into 'checkAxis' (src/honeybee.c:93) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'checkAxis' (src/honeybee.c:97) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:97) automatically.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.0' at call site (src/honeybee.c:154) by setting 'num' to '1'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.1' at call site (src/honeybee.c:156) by setting 'num' to '2'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:85) to 'checkAxis.2' at call site (src/honeybee.c:152) by setting 'num' to '0'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:49:47) to (src/honeybee.c:53:1) in function 'pointOnSegment'... converting 7 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:93:15) to (src/honeybee.c:92:24) in function 'checkAxis.2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:93:15) to (src/honeybee.c:92:24) in function 'checkAxis.1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:93:15) to (src/honeybee.c:92:24) in function 'checkAxis.0'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.2' (src/honeybee.c:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.0' (src/honeybee.c:108) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOnSegment' into 'checkAxis.1' (src/honeybee.c:120) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.2' (src/honeybee.c:14:24)...5 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.1' (src/honeybee.c:14:24)...8 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'checkAxis.0' (src/honeybee.c:14:24)...5 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 967.676 ; gain = 527.965 ; free physical = 189 ; free virtual = 1822
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1093.715 ; gain = 654.004 ; free physical = 151 ; free virtual = 1787

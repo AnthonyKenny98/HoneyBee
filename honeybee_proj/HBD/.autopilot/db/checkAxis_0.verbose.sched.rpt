@@ -1,0 +1,894 @@
+
+
+================================================================
+== Vivado HLS Report for 'checkAxis_0'
+================================================================
+* Date:           Sun Mar 29 20:26:51 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        honeybee_proj
+* Solution:       HBD
+* Product family: zynq
+* Target device:  xc7z030i-fbg484-2L
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.689 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      212|      212| 2.120 us | 2.120 us |  212|  212|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |      208|      208|        52|          -|          -|     4|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 56
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 5 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.58>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%edge_p2_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_z)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 57 'read' 'edge_p2_z_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%edge_p2_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_y)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 58 'read' 'edge_p2_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%edge_p2_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p2_x)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 59 'read' 'edge_p2_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%edge_p1_z_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_z)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 60 'read' 'edge_p1_z_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%edge_p1_y_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_y)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 61 'read' 'edge_p1_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%edge_p1_x_read = call float @_ssdm_op_Read.ap_auto.float(float %edge_p1_x)" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 62 'read' 'edge_p1_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [4/4] (8.58ns)   --->   "%tmp_19_i_i = fsub float %edge_p2_x_read, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 63 'fsub' 'tmp_19_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 64 [4/4] (8.58ns)   --->   "%tmp_21_i_i = fsub float %edge_p2_y_read, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 64 'fsub' 'tmp_21_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 65 [4/4] (8.58ns)   --->   "%tmp_24_i_i = fsub float %edge_p2_z_read, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 65 'fsub' 'tmp_24_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.58>
+ST_2 : Operation 66 [3/4] (8.58ns)   --->   "%tmp_19_i_i = fsub float %edge_p2_x_read, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 66 'fsub' 'tmp_19_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 67 [3/4] (8.58ns)   --->   "%tmp_21_i_i = fsub float %edge_p2_y_read, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 67 'fsub' 'tmp_21_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 68 [3/4] (8.58ns)   --->   "%tmp_24_i_i = fsub float %edge_p2_z_read, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 68 'fsub' 'tmp_24_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 8.58>
+ST_3 : Operation 69 [2/4] (8.58ns)   --->   "%tmp_19_i_i = fsub float %edge_p2_x_read, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 69 'fsub' 'tmp_19_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [2/4] (8.58ns)   --->   "%tmp_21_i_i = fsub float %edge_p2_y_read, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 70 'fsub' 'tmp_21_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 71 [2/4] (8.58ns)   --->   "%tmp_24_i_i = fsub float %edge_p2_z_read, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 71 'fsub' 'tmp_24_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [2/2] (4.19ns)   --->   "%tmp_s = fcmp olt float %edge_p1_x_read, %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 72 'fcmp' 'tmp_s' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 73 [2/2] (4.19ns)   --->   "%tmp_51 = fcmp ogt float %edge_p1_x_read, %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 73 'fcmp' 'tmp_51' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [2/2] (4.19ns)   --->   "%tmp_52 = fcmp olt float %edge_p1_z_read, %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 74 'fcmp' 'tmp_52' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 75 [2/2] (4.19ns)   --->   "%tmp_53 = fcmp ogt float %edge_p1_z_read, %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 75 'fcmp' 'tmp_53' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 76 [2/2] (4.19ns)   --->   "%tmp_54 = fcmp olt float %edge_p1_y_read, %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 76 'fcmp' 'tmp_54' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 77 [2/2] (4.19ns)   --->   "%tmp_55 = fcmp ogt float %edge_p1_y_read, %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 77 'fcmp' 'tmp_55' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 8.58>
+ST_4 : Operation 78 [1/4] (8.58ns)   --->   "%tmp_19_i_i = fsub float %edge_p2_x_read, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 78 'fsub' 'tmp_19_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 79 [1/4] (8.58ns)   --->   "%tmp_21_i_i = fsub float %edge_p2_y_read, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 79 'fsub' 'tmp_21_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 80 [1/4] (8.58ns)   --->   "%tmp_24_i_i = fsub float %edge_p2_z_read, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 80 'fsub' 'tmp_24_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 81 [1/1] (0.00ns)   --->   "%bitcast_ln49 = bitcast float %edge_p1_x_read to i32" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 81 'bitcast' 'bitcast_ln49' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%trunc_ln49 = trunc i32 %bitcast_ln49 to i23" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 82 'trunc' 'trunc_ln49' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%bitcast_ln49_9 = bitcast float %edge_p2_x_read to i32" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 83 'bitcast' 'bitcast_ln49_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 84 [1/1] (0.00ns)   --->   "%trunc_ln49_9 = trunc i32 %bitcast_ln49_9 to i23" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 84 'trunc' 'trunc_ln49_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 85 [1/1] (2.02ns)   --->   "%icmp_ln49_19 = icmp eq i23 %trunc_ln49, 0" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 85 'icmp' 'icmp_ln49_19' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 86 [1/1] (2.02ns)   --->   "%icmp_ln49_20 = icmp eq i23 %trunc_ln49_9, 0" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 86 'icmp' 'icmp_ln49_20' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 87 [1/2] (4.19ns)   --->   "%tmp_s = fcmp olt float %edge_p1_x_read, %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 87 'fcmp' 'tmp_s' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 88 [1/2] (4.19ns)   --->   "%tmp_51 = fcmp ogt float %edge_p1_x_read, %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 88 'fcmp' 'tmp_51' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%bitcast_ln50 = bitcast float %edge_p1_z_read to i32" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 89 'bitcast' 'bitcast_ln50' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%trunc_ln50 = trunc i32 %bitcast_ln50 to i23" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 90 'trunc' 'trunc_ln50' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%bitcast_ln50_7 = bitcast float %edge_p2_z_read to i32" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 91 'bitcast' 'bitcast_ln50_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%trunc_ln50_7 = trunc i32 %bitcast_ln50_7 to i23" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 92 'trunc' 'trunc_ln50_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (2.02ns)   --->   "%icmp_ln50_15 = icmp eq i23 %trunc_ln50, 0" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 93 'icmp' 'icmp_ln50_15' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 94 [1/1] (2.02ns)   --->   "%icmp_ln50_16 = icmp eq i23 %trunc_ln50_7, 0" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 94 'icmp' 'icmp_ln50_16' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 95 [1/2] (4.19ns)   --->   "%tmp_52 = fcmp olt float %edge_p1_z_read, %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 95 'fcmp' 'tmp_52' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 96 [1/2] (4.19ns)   --->   "%tmp_53 = fcmp ogt float %edge_p1_z_read, %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 96 'fcmp' 'tmp_53' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 97 [1/1] (0.00ns)   --->   "%bitcast_ln51 = bitcast float %edge_p1_y_read to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 97 'bitcast' 'bitcast_ln51' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln51 = trunc i32 %bitcast_ln51 to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 98 'trunc' 'trunc_ln51' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%bitcast_ln51_11 = bitcast float %edge_p2_y_read to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 99 'bitcast' 'bitcast_ln51_11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%trunc_ln51_11 = trunc i32 %bitcast_ln51_11 to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 100 'trunc' 'trunc_ln51_11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (2.02ns)   --->   "%icmp_ln51_23 = icmp eq i23 %trunc_ln51, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 101 'icmp' 'icmp_ln51_23' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 102 [1/1] (2.02ns)   --->   "%icmp_ln51_24 = icmp eq i23 %trunc_ln51_11, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 102 'icmp' 'icmp_ln51_24' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 103 [1/2] (4.19ns)   --->   "%tmp_54 = fcmp olt float %edge_p1_y_read, %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 103 'fcmp' 'tmp_54' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 104 [1/2] (4.19ns)   --->   "%tmp_55 = fcmp ogt float %edge_p1_y_read, %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 104 'fcmp' 'tmp_55' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 105 [1/1] (0.46ns)   --->   "br label %1" [src/honeybee.c:92]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.46>
+
+State 5 <SV = 4> <Delay = 8.08>
+ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%collisions_0 = phi i64 [ 0, %0 ], [ %collisions_3, %_ifconv ]"   --->   Operation 106 'phi' 'collisions_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 107 [1/1] (0.00ns)   --->   "%j_assign = phi i3 [ 0, %0 ], [ %i, %_ifconv ]"   --->   Operation 107 'phi' 'j_assign' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln92 = zext i3 %j_assign to i32" [src/honeybee.c:92]   --->   Operation 108 'zext' 'zext_ln92' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 109 [1/1] (0.98ns)   --->   "%icmp_ln92 = icmp eq i3 %j_assign, -4" [src/honeybee.c:92]   --->   Operation 109 'icmp' 'icmp_ln92' <Predicate = true> <Delay = 0.98> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 110 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 110 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 111 [1/1] (0.76ns)   --->   "%i = add i3 %j_assign, 1" [src/honeybee.c:92]   --->   Operation 111 'add' 'i' <Predicate = true> <Delay = 0.76> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 112 [1/1] (0.00ns)   --->   "br i1 %icmp_ln92, label %2, label %_ifconv" [src/honeybee.c:92]   --->   Operation 112 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 113 [4/4] (8.08ns)   --->   "%R_z = sitofp i32 %zext_ln92 to float" [src/honeybee.c:93]   --->   Operation 113 'sitofp' 'R_z' <Predicate = (!icmp_ln92)> <Delay = 8.08> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 8.08> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 114 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln49, i32 23, i32 30)" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 114 'partselect' 'tmp' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_56 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln49_9, i32 23, i32 30)" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 115 'partselect' 'tmp_56' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 116 [1/1] (1.31ns)   --->   "%icmp_ln49 = icmp ne i8 %tmp, -1" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 116 'icmp' 'icmp_ln49' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node and_ln49)   --->   "%or_ln49 = or i1 %icmp_ln49_19, %icmp_ln49" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 117 'or' 'or_ln49' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 118 [1/1] (1.31ns)   --->   "%icmp_ln49_21 = icmp ne i8 %tmp_56, -1" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 118 'icmp' 'icmp_ln49_21' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node and_ln49)   --->   "%or_ln49_9 = or i1 %icmp_ln49_20, %icmp_ln49_21" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 119 'or' 'or_ln49_9' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 120 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln49 = and i1 %or_ln49, %or_ln49_9" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 120 'and' 'and_ln49' <Predicate = (!icmp_ln92)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_61 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln50, i32 23, i32 30)" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 121 'partselect' 'tmp_61' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_62 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln50_7, i32 23, i32 30)" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 122 'partselect' 'tmp_62' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 123 [1/1] (1.31ns)   --->   "%icmp_ln50 = icmp ne i8 %tmp_61, -1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 123 'icmp' 'icmp_ln50' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node and_ln50)   --->   "%or_ln50 = or i1 %icmp_ln50_15, %icmp_ln50" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 124 'or' 'or_ln50' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 125 [1/1] (1.31ns)   --->   "%icmp_ln50_17 = icmp ne i8 %tmp_62, -1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 125 'icmp' 'icmp_ln50_17' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node and_ln50)   --->   "%or_ln50_11 = or i1 %icmp_ln50_16, %icmp_ln50_17" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 126 'or' 'or_ln50_11' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 127 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln50 = and i1 %or_ln50, %or_ln50_11" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 127 'and' 'and_ln50' <Predicate = (!icmp_ln92)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_67 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 128 'partselect' 'tmp_67' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_68 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51_11, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 129 'partselect' 'tmp_68' <Predicate = (!icmp_ln92)> <Delay = 0.00>
+ST_5 : Operation 130 [1/1] (1.31ns)   --->   "%icmp_ln51 = icmp ne i8 %tmp_67, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 130 'icmp' 'icmp_ln51' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node and_ln51)   --->   "%or_ln51 = or i1 %icmp_ln51_23, %icmp_ln51" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 131 'or' 'or_ln51' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 132 [1/1] (1.31ns)   --->   "%icmp_ln51_25 = icmp ne i8 %tmp_68, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 132 'icmp' 'icmp_ln51_25' <Predicate = (!icmp_ln92)> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node and_ln51)   --->   "%or_ln51_13 = or i1 %icmp_ln51_24, %icmp_ln51_25" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 133 'or' 'or_ln51_13' <Predicate = (!icmp_ln92)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 134 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51 = and i1 %or_ln51, %or_ln51_13" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 134 'and' 'and_ln51' <Predicate = (!icmp_ln92)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 135 [1/1] (0.00ns)   --->   "ret i64 %collisions_0" [src/honeybee.c:127]   --->   Operation 135 'ret' <Predicate = (icmp_ln92)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 8.08>
+ST_6 : Operation 136 [3/4] (8.08ns)   --->   "%R_z = sitofp i32 %zext_ln92 to float" [src/honeybee.c:93]   --->   Operation 136 'sitofp' 'R_z' <Predicate = true> <Delay = 8.08> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 8.08> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.08>
+ST_7 : Operation 137 [2/4] (8.08ns)   --->   "%R_z = sitofp i32 %zext_ln92 to float" [src/honeybee.c:93]   --->   Operation 137 'sitofp' 'R_z' <Predicate = true> <Delay = 8.08> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 8.08> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 8.08>
+ST_8 : Operation 138 [1/4] (8.08ns)   --->   "%R_z = sitofp i32 %zext_ln92 to float" [src/honeybee.c:93]   --->   Operation 138 'sitofp' 'R_z' <Predicate = true> <Delay = 8.08> <Core = "Int2Float">   --->   Core 112 'Int2Float' <Latency = 3> <II = 1> <Delay = 8.08> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 8.58>
+ST_9 : Operation 139 [4/4] (8.58ns)   --->   "%PR_z = fsub float %R_z, %R_z" [src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93]   --->   Operation 139 'fsub' 'PR_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 8.58>
+ST_10 : Operation 140 [3/4] (8.58ns)   --->   "%PR_z = fsub float %R_z, %R_z" [src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93]   --->   Operation 140 'fsub' 'PR_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 8.58>
+ST_11 : Operation 141 [2/4] (8.58ns)   --->   "%PR_z = fsub float %R_z, %R_z" [src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93]   --->   Operation 141 'fsub' 'PR_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 8.58>
+ST_12 : Operation 142 [1/4] (8.58ns)   --->   "%PR_z = fsub float %R_z, %R_z" [src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93]   --->   Operation 142 'fsub' 'PR_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 8.43>
+ST_13 : Operation 143 [3/3] (8.43ns)   --->   "%tmp_i_i = fmul float %PR_z, 0.000000e+00" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 143 'fmul' 'tmp_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 8.43>
+ST_14 : Operation 144 [2/3] (8.43ns)   --->   "%tmp_i_i = fmul float %PR_z, 0.000000e+00" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 144 'fmul' 'tmp_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 8.43>
+ST_15 : Operation 145 [1/3] (8.43ns)   --->   "%tmp_i_i = fmul float %PR_z, 0.000000e+00" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 145 'fmul' 'tmp_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 146 [1/1] (0.00ns)   --->   "%bitcast_ln22 = bitcast float %PR_z to i32" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 146 'bitcast' 'bitcast_ln22' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 147 [1/1] (0.80ns)   --->   "%xor_ln22 = xor i32 %bitcast_ln22, -2147483648" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 147 'xor' 'xor_ln22' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 8.58>
+ST_16 : Operation 148 [1/1] (0.00ns)   --->   "%bitcast_ln22_3 = bitcast i32 %xor_ln22 to float" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 148 'bitcast' 'bitcast_ln22_3' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 149 [4/4] (8.58ns)   --->   "%norm_y = fsub float %tmp_i_i, %bitcast_ln22_3" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 149 'fsub' 'norm_y' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 8.58>
+ST_17 : Operation 150 [3/4] (8.58ns)   --->   "%norm_y = fsub float %tmp_i_i, %bitcast_ln22_3" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 150 'fsub' 'norm_y' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 8.58>
+ST_18 : Operation 151 [2/4] (8.58ns)   --->   "%norm_y = fsub float %tmp_i_i, %bitcast_ln22_3" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 151 'fsub' 'norm_y' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 8.58>
+ST_19 : Operation 152 [1/4] (8.58ns)   --->   "%norm_y = fsub float %tmp_i_i, %bitcast_ln22_3" [src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93]   --->   Operation 152 'fsub' 'norm_y' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 8.43>
+ST_20 : Operation 153 [3/3] (8.43ns)   --->   "%tmp_i9_i = fmul float %norm_y, 0.000000e+00" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 153 'fmul' 'tmp_i9_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 154 [3/3] (8.43ns)   --->   "%tmp_i11_i = fmul float %norm_y, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 154 'fmul' 'tmp_i11_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 155 [3/3] (8.43ns)   --->   "%tmp_i12_i = fmul float %norm_y, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 155 'fmul' 'tmp_i12_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 8.43>
+ST_21 : Operation 156 [2/3] (8.43ns)   --->   "%tmp_i9_i = fmul float %norm_y, 0.000000e+00" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 156 'fmul' 'tmp_i9_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 157 [2/3] (8.43ns)   --->   "%tmp_i11_i = fmul float %norm_y, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 157 'fmul' 'tmp_i11_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 158 [2/3] (8.43ns)   --->   "%tmp_i12_i = fmul float %norm_y, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 158 'fmul' 'tmp_i12_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 8.43>
+ST_22 : Operation 159 [1/3] (8.43ns)   --->   "%tmp_i9_i = fmul float %norm_y, 0.000000e+00" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 159 'fmul' 'tmp_i9_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 160 [1/3] (8.43ns)   --->   "%tmp_i11_i = fmul float %norm_y, %edge_p1_x_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 160 'fmul' 'tmp_i11_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 161 [1/3] (8.43ns)   --->   "%tmp_i12_i = fmul float %norm_y, %edge_p1_y_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 161 'fmul' 'tmp_i12_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 8.58>
+ST_23 : Operation 162 [4/4] (8.58ns)   --->   "%tmp_28_i_i = fadd float %tmp_i9_i, %tmp_i9_i" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 162 'fadd' 'tmp_28_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 163 [4/4] (8.58ns)   --->   "%tmp_15_i_i = fadd float %tmp_i11_i, %tmp_i12_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 163 'fadd' 'tmp_15_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 8.58>
+ST_24 : Operation 164 [3/4] (8.58ns)   --->   "%tmp_28_i_i = fadd float %tmp_i9_i, %tmp_i9_i" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 164 'fadd' 'tmp_28_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 165 [3/4] (8.58ns)   --->   "%tmp_15_i_i = fadd float %tmp_i11_i, %tmp_i12_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 165 'fadd' 'tmp_15_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 166 [3/3] (8.43ns)   --->   "%tmp_20_i_i = fmul float %tmp_19_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 166 'fmul' 'tmp_20_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 167 [3/3] (8.43ns)   --->   "%tmp_22_i_i = fmul float %tmp_21_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 167 'fmul' 'tmp_22_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 8.58>
+ST_25 : Operation 168 [2/4] (8.58ns)   --->   "%tmp_28_i_i = fadd float %tmp_i9_i, %tmp_i9_i" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 168 'fadd' 'tmp_28_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 169 [2/4] (8.58ns)   --->   "%tmp_15_i_i = fadd float %tmp_i11_i, %tmp_i12_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 169 'fadd' 'tmp_15_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 170 [2/3] (8.43ns)   --->   "%tmp_20_i_i = fmul float %tmp_19_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 170 'fmul' 'tmp_20_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 171 [2/3] (8.43ns)   --->   "%tmp_22_i_i = fmul float %tmp_21_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 171 'fmul' 'tmp_22_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 8.58>
+ST_26 : Operation 172 [1/4] (8.58ns)   --->   "%tmp_28_i_i = fadd float %tmp_i9_i, %tmp_i9_i" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 172 'fadd' 'tmp_28_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 173 [1/4] (8.58ns)   --->   "%tmp_15_i_i = fadd float %tmp_i11_i, %tmp_i12_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 173 'fadd' 'tmp_15_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 174 [1/3] (8.43ns)   --->   "%tmp_20_i_i = fmul float %tmp_19_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 174 'fmul' 'tmp_20_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 175 [1/3] (8.43ns)   --->   "%tmp_22_i_i = fmul float %tmp_21_i_i, %norm_y" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 175 'fmul' 'tmp_22_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 8.58>
+ST_27 : Operation 176 [4/4] (8.58ns)   --->   "%dot = fadd float %tmp_28_i_i, %R_z" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 176 'fadd' 'dot' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 177 [4/4] (8.58ns)   --->   "%tmp_17_i_i = fadd float %tmp_15_i_i, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 177 'fadd' 'tmp_17_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 178 [4/4] (8.58ns)   --->   "%tmp_23_i_i = fadd float %tmp_20_i_i, %tmp_22_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 178 'fadd' 'tmp_23_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 8.58>
+ST_28 : Operation 179 [3/4] (8.58ns)   --->   "%dot = fadd float %tmp_28_i_i, %R_z" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 179 'fadd' 'dot' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 180 [3/4] (8.58ns)   --->   "%tmp_17_i_i = fadd float %tmp_15_i_i, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 180 'fadd' 'tmp_17_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 181 [3/4] (8.58ns)   --->   "%tmp_23_i_i = fadd float %tmp_20_i_i, %tmp_22_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 181 'fadd' 'tmp_23_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 8.58>
+ST_29 : Operation 182 [2/4] (8.58ns)   --->   "%dot = fadd float %tmp_28_i_i, %R_z" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 182 'fadd' 'dot' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 183 [2/4] (8.58ns)   --->   "%tmp_17_i_i = fadd float %tmp_15_i_i, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 183 'fadd' 'tmp_17_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 184 [2/4] (8.58ns)   --->   "%tmp_23_i_i = fadd float %tmp_20_i_i, %tmp_22_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 184 'fadd' 'tmp_23_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 8.58>
+ST_30 : Operation 185 [1/4] (8.58ns)   --->   "%dot = fadd float %tmp_28_i_i, %R_z" [src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93]   --->   Operation 185 'fadd' 'dot' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 186 [1/4] (8.58ns)   --->   "%tmp_17_i_i = fadd float %tmp_15_i_i, %edge_p1_z_read" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 186 'fadd' 'tmp_17_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 187 [1/4] (8.58ns)   --->   "%tmp_23_i_i = fadd float %tmp_20_i_i, %tmp_22_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 187 'fadd' 'tmp_23_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 8.58>
+ST_31 : Operation 188 [4/4] (8.58ns)   --->   "%tmp_18_i_i = fsub float %dot, %tmp_17_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 188 'fsub' 'tmp_18_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 189 [4/4] (8.58ns)   --->   "%tmp_26_i_i = fadd float %tmp_23_i_i, %tmp_24_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 189 'fadd' 'tmp_26_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 8.58>
+ST_32 : Operation 190 [3/4] (8.58ns)   --->   "%tmp_18_i_i = fsub float %dot, %tmp_17_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 190 'fsub' 'tmp_18_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 191 [3/4] (8.58ns)   --->   "%tmp_26_i_i = fadd float %tmp_23_i_i, %tmp_24_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 191 'fadd' 'tmp_26_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 8.58>
+ST_33 : Operation 192 [2/4] (8.58ns)   --->   "%tmp_18_i_i = fsub float %dot, %tmp_17_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 192 'fsub' 'tmp_18_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 193 [2/4] (8.58ns)   --->   "%tmp_26_i_i = fadd float %tmp_23_i_i, %tmp_24_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 193 'fadd' 'tmp_26_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 8.58>
+ST_34 : Operation 194 [1/4] (8.58ns)   --->   "%tmp_18_i_i = fsub float %dot, %tmp_17_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 194 'fsub' 'tmp_18_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 195 [1/4] (8.58ns)   --->   "%tmp_26_i_i = fadd float %tmp_23_i_i, %tmp_24_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 195 'fadd' 'tmp_26_i_i' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 7.19>
+ST_35 : Operation 196 [12/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 196 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 7.19>
+ST_36 : Operation 197 [11/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 197 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 7.19>
+ST_37 : Operation 198 [10/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 198 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 7.19>
+ST_38 : Operation 199 [9/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 199 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 7.19>
+ST_39 : Operation 200 [8/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 200 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 7.19>
+ST_40 : Operation 201 [7/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 201 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 7.19>
+ST_41 : Operation 202 [6/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 202 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 7.19>
+ST_42 : Operation 203 [5/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 203 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 7.19>
+ST_43 : Operation 204 [4/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 204 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 7.19>
+ST_44 : Operation 205 [3/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 205 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 7.19>
+ST_45 : Operation 206 [2/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 206 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 7.19>
+ST_46 : Operation 207 [1/12] (7.19ns)   --->   "%T = fdiv float %tmp_18_i_i, %tmp_26_i_i" [src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93]   --->   Operation 207 'fdiv' 'T' <Predicate = true> <Delay = 7.19> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 11> <II = 1> <Delay = 7.19> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 8.43>
+ST_47 : Operation 208 [3/3] (8.43ns)   --->   "%tmp_i14_i = fmul float %tmp_19_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 208 'fmul' 'tmp_i14_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 209 [3/3] (8.43ns)   --->   "%tmp_12_i_i = fmul float %tmp_21_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 209 'fmul' 'tmp_12_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 210 [3/3] (8.43ns)   --->   "%tmp_14_i_i = fmul float %tmp_24_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 210 'fmul' 'tmp_14_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 8.43>
+ST_48 : Operation 211 [2/3] (8.43ns)   --->   "%tmp_i14_i = fmul float %tmp_19_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 211 'fmul' 'tmp_i14_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 212 [2/3] (8.43ns)   --->   "%tmp_12_i_i = fmul float %tmp_21_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 212 'fmul' 'tmp_12_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 213 [2/3] (8.43ns)   --->   "%tmp_14_i_i = fmul float %tmp_24_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 213 'fmul' 'tmp_14_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 8.43>
+ST_49 : Operation 214 [1/3] (8.43ns)   --->   "%tmp_i14_i = fmul float %tmp_19_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 214 'fmul' 'tmp_i14_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 215 [1/3] (8.43ns)   --->   "%tmp_12_i_i = fmul float %tmp_21_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 215 'fmul' 'tmp_12_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 216 [1/3] (8.43ns)   --->   "%tmp_14_i_i = fmul float %tmp_24_i_i, %T" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 216 'fmul' 'tmp_14_i_i' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 49> <Delay = 8.58>
+ST_50 : Operation 217 [4/4] (8.58ns)   --->   "%POI_x = fadd float %tmp_i14_i, %edge_p1_x_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 217 'fadd' 'POI_x' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 218 [4/4] (8.58ns)   --->   "%POI_z = fadd float %tmp_12_i_i, %edge_p1_y_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 218 'fadd' 'POI_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 219 [4/4] (8.58ns)   --->   "%POI_y_1 = fadd float %tmp_14_i_i, %edge_p1_z_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 219 'fadd' 'POI_y_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 220 [1/1] (0.00ns) (grouped into LUT with out node p_a)   --->   "%and_ln49_15 = and i1 %and_ln49, %tmp_s" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 220 'and' 'and_ln49_15' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 221 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a = select i1 %and_ln49_15, float %edge_p1_x_read, float %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 221 'select' 'p_a' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 222 [1/1] (0.00ns) (grouped into LUT with out node p_a_11)   --->   "%and_ln49_18 = and i1 %and_ln49, %tmp_51" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 222 'and' 'and_ln49_18' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 223 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a_11 = select i1 %and_ln49_18, float %edge_p1_x_read, float %edge_p2_x_read" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 223 'select' 'p_a_11' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 224 [1/1] (0.00ns) (grouped into LUT with out node p_a_12)   --->   "%and_ln50_9 = and i1 %and_ln50, %tmp_52" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 224 'and' 'and_ln50_9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 225 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a_12 = select i1 %and_ln50_9, float %edge_p1_z_read, float %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 225 'select' 'p_a_12' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 226 [1/1] (0.00ns) (grouped into LUT with out node p_a_13)   --->   "%and_ln50_12 = and i1 %and_ln50, %tmp_53" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 226 'and' 'and_ln50_12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 227 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a_13 = select i1 %and_ln50_12, float %edge_p1_z_read, float %edge_p2_z_read" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 227 'select' 'p_a_13' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 228 [1/1] (0.00ns) (grouped into LUT with out node p_a_14)   --->   "%and_ln51_25 = and i1 %and_ln51, %tmp_54" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 228 'and' 'and_ln51_25' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 229 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a_14 = select i1 %and_ln51_25, float %edge_p1_y_read, float %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 229 'select' 'p_a_14' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_50 : Operation 230 [1/1] (0.00ns) (grouped into LUT with out node p_a_15)   --->   "%and_ln51_26 = and i1 %and_ln51, %tmp_55" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 230 'and' 'and_ln51_26' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 231 [1/1] (0.80ns) (out node of the LUT)   --->   "%p_a_15 = select i1 %and_ln51_26, float %edge_p1_y_read, float %edge_p2_y_read" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 231 'select' 'p_a_15' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 8.58>
+ST_51 : Operation 232 [3/4] (8.58ns)   --->   "%POI_x = fadd float %tmp_i14_i, %edge_p1_x_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 232 'fadd' 'POI_x' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 233 [3/4] (8.58ns)   --->   "%POI_z = fadd float %tmp_12_i_i, %edge_p1_y_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 233 'fadd' 'POI_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 234 [3/4] (8.58ns)   --->   "%POI_y_1 = fadd float %tmp_14_i_i, %edge_p1_z_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 234 'fadd' 'POI_y_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 8.58>
+ST_52 : Operation 235 [2/4] (8.58ns)   --->   "%POI_x = fadd float %tmp_i14_i, %edge_p1_x_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 235 'fadd' 'POI_x' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 236 [2/4] (8.58ns)   --->   "%POI_z = fadd float %tmp_12_i_i, %edge_p1_y_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 236 'fadd' 'POI_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 237 [2/4] (8.58ns)   --->   "%POI_y_1 = fadd float %tmp_14_i_i, %edge_p1_z_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 237 'fadd' 'POI_y_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 8.58>
+ST_53 : Operation 238 [1/4] (8.58ns)   --->   "%POI_x = fadd float %tmp_i14_i, %edge_p1_x_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 238 'fadd' 'POI_x' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 239 [1/4] (8.58ns)   --->   "%POI_z = fadd float %tmp_12_i_i, %edge_p1_y_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 239 'fadd' 'POI_z' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 240 [1/4] (8.58ns)   --->   "%POI_y_1 = fadd float %tmp_14_i_i, %edge_p1_z_read" [src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93]   --->   Operation 240 'fadd' 'POI_y_1' <Predicate = true> <Delay = 8.58> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 8.58> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 53> <Delay = 4.19>
+ST_54 : Operation 241 [1/1] (0.00ns)   --->   "%bitcast_ln49_10 = bitcast float %p_a to i32" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 241 'bitcast' 'bitcast_ln49_10' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 242 [1/1] (0.00ns)   --->   "%tmp_57 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln49_10, i32 23, i32 30)" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 242 'partselect' 'tmp_57' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 243 [1/1] (0.00ns)   --->   "%trunc_ln49_10 = trunc i32 %bitcast_ln49_10 to i23" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 243 'trunc' 'trunc_ln49_10' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 244 [1/1] (0.00ns)   --->   "%p_Val2_12 = bitcast float %POI_x to i32" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 244 'bitcast' 'p_Val2_12' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_V = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_12, i32 23, i32 30)" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 245 'partselect' 'tmp_V' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_V_7 = trunc i32 %p_Val2_12 to i23" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 246 'trunc' 'tmp_V_7' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 247 [1/1] (1.31ns)   --->   "%icmp_ln49_22 = icmp ne i8 %tmp_57, -1" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 247 'icmp' 'icmp_ln49_22' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 248 [1/1] (2.02ns)   --->   "%icmp_ln49_23 = icmp eq i23 %trunc_ln49_10, 0" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 248 'icmp' 'icmp_ln49_23' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 249 [1/1] (1.31ns)   --->   "%icmp_ln49_24 = icmp ne i8 %tmp_V, -1" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 249 'icmp' 'icmp_ln49_24' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 250 [2/2] (4.19ns)   --->   "%tmp_58 = fcmp ole float %p_a, %POI_x" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 250 'fcmp' 'tmp_58' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 251 [1/1] (0.00ns)   --->   "%bitcast_ln49_12 = bitcast float %p_a_11 to i32" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 251 'bitcast' 'bitcast_ln49_12' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 252 [1/1] (0.00ns)   --->   "%tmp_59 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln49_12, i32 23, i32 30)" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 252 'partselect' 'tmp_59' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 253 [1/1] (0.00ns)   --->   "%trunc_ln49_12 = trunc i32 %bitcast_ln49_12 to i23" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 253 'trunc' 'trunc_ln49_12' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 254 [1/1] (1.31ns)   --->   "%icmp_ln49_26 = icmp ne i8 %tmp_59, -1" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 254 'icmp' 'icmp_ln49_26' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 255 [1/1] (2.02ns)   --->   "%icmp_ln49_27 = icmp eq i23 %trunc_ln49_12, 0" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 255 'icmp' 'icmp_ln49_27' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 256 [2/2] (4.19ns)   --->   "%tmp_60 = fcmp oge float %p_a_11, %POI_x" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 256 'fcmp' 'tmp_60' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 257 [1/1] (0.00ns)   --->   "%bitcast_ln50_8 = bitcast float %p_a_12 to i32" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 257 'bitcast' 'bitcast_ln50_8' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 258 [1/1] (0.00ns)   --->   "%tmp_63 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln50_8, i32 23, i32 30)" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 258 'partselect' 'tmp_63' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 259 [1/1] (0.00ns)   --->   "%trunc_ln50_8 = trunc i32 %bitcast_ln50_8 to i23" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 259 'trunc' 'trunc_ln50_8' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 260 [1/1] (0.00ns)   --->   "%bitcast_ln50_9 = bitcast float %POI_y_1 to i32" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 260 'bitcast' 'bitcast_ln50_9' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 261 [1/1] (0.00ns)   --->   "%tmp_64 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln50_9, i32 23, i32 30)" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 261 'partselect' 'tmp_64' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 262 [1/1] (0.00ns)   --->   "%trunc_ln50_9 = trunc i32 %bitcast_ln50_9 to i23" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 262 'trunc' 'trunc_ln50_9' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 263 [1/1] (1.31ns)   --->   "%icmp_ln50_18 = icmp ne i8 %tmp_63, -1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 263 'icmp' 'icmp_ln50_18' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 264 [1/1] (2.02ns)   --->   "%icmp_ln50_19 = icmp eq i23 %trunc_ln50_8, 0" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 264 'icmp' 'icmp_ln50_19' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 265 [1/1] (1.31ns)   --->   "%icmp_ln50_20 = icmp ne i8 %tmp_64, -1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 265 'icmp' 'icmp_ln50_20' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 266 [1/1] (2.02ns)   --->   "%icmp_ln50_21 = icmp eq i23 %trunc_ln50_9, 0" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 266 'icmp' 'icmp_ln50_21' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 267 [1/1] (0.80ns)   --->   "%or_ln50_13 = or i1 %icmp_ln50_21, %icmp_ln50_20" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 267 'or' 'or_ln50_13' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 268 [2/2] (4.19ns)   --->   "%tmp_66 = fcmp ole float %p_a_12, %POI_y_1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 268 'fcmp' 'tmp_66' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 269 [1/1] (0.00ns)   --->   "%bitcast_ln51_12 = bitcast float %p_a_15 to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 269 'bitcast' 'bitcast_ln51_12' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 270 [1/1] (0.00ns)   --->   "%tmp_69 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51_12, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 270 'partselect' 'tmp_69' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 271 [1/1] (0.00ns)   --->   "%trunc_ln51_12 = trunc i32 %bitcast_ln51_12 to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 271 'trunc' 'trunc_ln51_12' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 272 [1/1] (1.31ns)   --->   "%icmp_ln51_26 = icmp ne i8 %tmp_69, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 272 'icmp' 'icmp_ln51_26' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 273 [1/1] (2.02ns)   --->   "%icmp_ln51_27 = icmp eq i23 %trunc_ln51_12, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 273 'icmp' 'icmp_ln51_27' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 274 [2/2] (4.19ns)   --->   "%tmp_70 = fcmp oge float %p_a_15, %POI_z" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 274 'fcmp' 'tmp_70' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 275 [1/1] (0.00ns)   --->   "%bitcast_ln51_14 = bitcast float %p_a_14 to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 275 'bitcast' 'bitcast_ln51_14' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 276 [1/1] (0.00ns)   --->   "%tmp_71 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51_14, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 276 'partselect' 'tmp_71' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 277 [1/1] (0.00ns)   --->   "%trunc_ln51_14 = trunc i32 %bitcast_ln51_14 to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 277 'trunc' 'trunc_ln51_14' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 278 [1/1] (1.31ns)   --->   "%icmp_ln51_30 = icmp ne i8 %tmp_71, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 278 'icmp' 'icmp_ln51_30' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 279 [1/1] (2.02ns)   --->   "%icmp_ln51_31 = icmp eq i23 %trunc_ln51_14, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 279 'icmp' 'icmp_ln51_31' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 280 [2/2] (4.19ns)   --->   "%tmp_72 = fcmp ole float %p_a_14, %POI_z" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 280 'fcmp' 'tmp_72' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 281 [1/1] (0.00ns)   --->   "%bitcast_ln51_15 = bitcast float %p_a_13 to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 281 'bitcast' 'bitcast_ln51_15' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 282 [1/1] (0.00ns)   --->   "%tmp_73 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51_15, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 282 'partselect' 'tmp_73' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 283 [1/1] (0.00ns)   --->   "%trunc_ln51_15 = trunc i32 %bitcast_ln51_15 to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 283 'trunc' 'trunc_ln51_15' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 284 [1/1] (1.31ns)   --->   "%icmp_ln51_32 = icmp ne i8 %tmp_73, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 284 'icmp' 'icmp_ln51_32' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 285 [1/1] (2.02ns)   --->   "%icmp_ln51_33 = icmp eq i23 %trunc_ln51_15, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 285 'icmp' 'icmp_ln51_33' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 286 [2/2] (4.19ns)   --->   "%tmp_74 = fcmp oge float %p_a_13, %POI_y_1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 286 'fcmp' 'tmp_74' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 287 [1/1] (0.00ns)   --->   "%zext_ln339 = zext i8 %tmp_V to i9" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 287 'zext' 'zext_ln339' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 288 [1/1] (1.30ns)   --->   "%add_ln339 = add i9 -127, %zext_ln339" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 288 'add' 'add_ln339' <Predicate = true> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 289 [1/1] (0.00ns)   --->   "%isNeg = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %add_ln339, i32 8)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 289 'bitselect' 'isNeg' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 290 [1/1] (1.30ns)   --->   "%sub_ln1311 = sub i8 127, %tmp_V" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 290 'sub' 'sub_ln1311' <Predicate = true> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 291 [1/1] (0.00ns)   --->   "%sext_ln1311 = sext i8 %sub_ln1311 to i9" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 291 'sext' 'sext_ln1311' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 292 [1/1] (0.72ns)   --->   "%ush = select i1 %isNeg, i9 %sext_ln1311, i9 %add_ln339" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 292 'select' 'ush' <Predicate = true> <Delay = 0.72> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 55 <SV = 54> <Delay = 8.68>
+ST_55 : Operation 293 [1/1] (0.00ns) (grouped into LUT with out node and_ln49_21)   --->   "%or_ln49_10 = or i1 %icmp_ln49_23, %icmp_ln49_22" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 293 'or' 'or_ln49_10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 294 [1/1] (2.02ns)   --->   "%icmp_ln49_25 = icmp eq i23 %tmp_V_7, 0" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 294 'icmp' 'icmp_ln49_25' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 295 [1/1] (0.80ns)   --->   "%or_ln49_11 = or i1 %icmp_ln49_25, %icmp_ln49_24" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 295 'or' 'or_ln49_11' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 296 [1/1] (0.00ns) (grouped into LUT with out node and_ln49_21)   --->   "%and_ln49_16 = and i1 %or_ln49_10, %or_ln49_11" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 296 'and' 'and_ln49_16' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 297 [1/2] (4.19ns)   --->   "%tmp_58 = fcmp ole float %p_a, %POI_x" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 297 'fcmp' 'tmp_58' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 298 [1/1] (0.00ns) (grouped into LUT with out node and_ln49_21)   --->   "%and_ln49_17 = and i1 %and_ln49_16, %tmp_58" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 298 'and' 'and_ln49_17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 299 [1/1] (0.00ns) (grouped into LUT with out node and_ln49_20)   --->   "%or_ln49_12 = or i1 %icmp_ln49_27, %icmp_ln49_26" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 299 'or' 'or_ln49_12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node and_ln49_20)   --->   "%and_ln49_19 = and i1 %or_ln49_12, %or_ln49_11" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 300 'and' 'and_ln49_19' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 301 [1/2] (4.19ns)   --->   "%tmp_60 = fcmp oge float %p_a_11, %POI_x" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 301 'fcmp' 'tmp_60' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 302 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln49_20 = and i1 %and_ln49_19, %tmp_60" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 302 'and' 'and_ln49_20' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 303 [1/1] (0.00ns) (grouped into LUT with out node and_ln50_11)   --->   "%or_ln50_12 = or i1 %icmp_ln50_19, %icmp_ln50_18" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 303 'or' 'or_ln50_12' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 304 [1/1] (0.00ns) (grouped into LUT with out node and_ln50_11)   --->   "%and_ln50_10 = and i1 %or_ln50_12, %or_ln50_13" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 304 'and' 'and_ln50_10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 305 [1/2] (4.19ns)   --->   "%tmp_66 = fcmp ole float %p_a_12, %POI_y_1" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 305 'fcmp' 'tmp_66' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 306 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln50_11 = and i1 %and_ln50_10, %tmp_66" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 306 'and' 'and_ln50_11' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 307 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_36)   --->   "%xor_ln50 = xor i1 %and_ln50_11, true" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 307 'xor' 'xor_ln50' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 308 [1/1] (0.00ns)   --->   "%p_Val2_s = bitcast float %POI_z to i32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 308 'bitcast' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 309 [1/1] (0.00ns)   --->   "%tmp_V_8 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_s, i32 23, i32 30)" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 309 'partselect' 'tmp_V_8' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 310 [1/1] (0.00ns)   --->   "%tmp_V_9 = trunc i32 %p_Val2_s to i23" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 310 'trunc' 'tmp_V_9' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 311 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_31)   --->   "%or_ln51_14 = or i1 %icmp_ln51_27, %icmp_ln51_26" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 311 'or' 'or_ln51_14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 312 [1/1] (1.31ns)   --->   "%icmp_ln51_28 = icmp ne i8 %tmp_V_8, -1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 312 'icmp' 'icmp_ln51_28' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 313 [1/1] (2.02ns)   --->   "%icmp_ln51_29 = icmp eq i23 %tmp_V_9, 0" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 313 'icmp' 'icmp_ln51_29' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 314 [1/1] (0.80ns)   --->   "%or_ln51_15 = or i1 %icmp_ln51_29, %icmp_ln51_28" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 314 'or' 'or_ln51_15' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 315 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_31)   --->   "%and_ln51_27 = and i1 %or_ln51_14, %or_ln51_15" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 315 'and' 'and_ln51_27' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 316 [1/2] (4.19ns)   --->   "%tmp_70 = fcmp oge float %p_a_15, %POI_z" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 316 'fcmp' 'tmp_70' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 317 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_31)   --->   "%and_ln51_28 = and i1 %and_ln51_27, %tmp_70" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 317 'and' 'and_ln51_28' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 318 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln49_21 = and i1 %and_ln49_17, %and_ln49_20" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 318 'and' 'and_ln49_21' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 319 [1/1] (0.80ns)   --->   "%xor_ln49 = xor i1 %and_ln49_21, true" [src/honeybee.c:49->src/honeybee.c:108]   --->   Operation 319 'xor' 'xor_ln49' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 320 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_36)   --->   "%or_ln50_14 = or i1 %and_ln50_11, %xor_ln49" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 320 'or' 'or_ln50_14' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 321 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_36)   --->   "%or_ln50_15 = or i1 %xor_ln49, %xor_ln50" [src/honeybee.c:50->src/honeybee.c:108]   --->   Operation 321 'or' 'or_ln50_15' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 322 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_34)   --->   "%or_ln51_16 = or i1 %icmp_ln51_31, %icmp_ln51_30" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 322 'or' 'or_ln51_16' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 323 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_34)   --->   "%and_ln51_29 = and i1 %or_ln51_16, %or_ln51_15" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 323 'and' 'and_ln51_29' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 324 [1/2] (4.19ns)   --->   "%tmp_72 = fcmp ole float %p_a_14, %POI_z" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 324 'fcmp' 'tmp_72' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 325 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_34)   --->   "%and_ln51_30 = and i1 %and_ln51_29, %tmp_72" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 325 'and' 'and_ln51_30' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 326 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51_31 = and i1 %and_ln51_28, %and_ln49_21" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 326 'and' 'and_ln51_31' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 327 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_33)   --->   "%or_ln51_17 = or i1 %icmp_ln51_33, %icmp_ln51_32" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 327 'or' 'or_ln51_17' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 328 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_33)   --->   "%and_ln51_32 = and i1 %or_ln51_17, %or_ln50_13" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 328 'and' 'and_ln51_32' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 329 [1/2] (4.19ns)   --->   "%tmp_74 = fcmp oge float %p_a_13, %POI_y_1" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 329 'fcmp' 'tmp_74' <Predicate = true> <Delay = 4.19> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 4.19> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 330 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51_33 = and i1 %and_ln51_32, %tmp_74" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 330 'and' 'and_ln51_33' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 331 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51_34 = and i1 %and_ln51_30, %and_ln51_33" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 331 'and' 'and_ln51_34' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 332 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_36)   --->   "%or_ln51_18 = or i1 %or_ln50_15, %and_ln51_34" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 332 'or' 'or_ln51_18' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 333 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_36)   --->   "%and_ln51_35 = and i1 %or_ln51_18, %or_ln50_14" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 333 'and' 'and_ln51_35' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 334 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51_36 = and i1 %and_ln51_35, %and_ln51_31" [src/honeybee.c:51->src/honeybee.c:108]   --->   Operation 334 'and' 'and_ln51_36' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 335 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_12, i32 31)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:316->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:319->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:13->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 335 'bitselect' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 336 [1/1] (0.00ns)   --->   "%mantissa_V = call i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1(i1 true, i23 %tmp_V_7, i1 false)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 336 'bitconcatenate' 'mantissa_V' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 337 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%zext_ln682 = zext i25 %mantissa_V to i79" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 337 'zext' 'zext_ln682' <Predicate = (!isNeg)> <Delay = 0.00>
+ST_55 : Operation 338 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%sext_ln1311_7 = sext i9 %ush to i32" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 338 'sext' 'sext_ln1311_7' <Predicate = (!isNeg)> <Delay = 0.00>
+ST_55 : Operation 339 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%sext_ln1311_10 = sext i9 %ush to i25" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 339 'sext' 'sext_ln1311_10' <Predicate = (isNeg)> <Delay = 0.00>
+ST_55 : Operation 340 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%zext_ln1287 = zext i32 %sext_ln1311_7 to i79" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 340 'zext' 'zext_ln1287' <Predicate = (!isNeg)> <Delay = 0.00>
+ST_55 : Operation 341 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%r_V = lshr i25 %mantissa_V, %sext_ln1311_10" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 341 'lshr' 'r_V' <Predicate = (isNeg)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 342 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%r_V_7 = shl i79 %zext_ln682, %zext_ln1287" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 342 'shl' 'r_V_7' <Predicate = (!isNeg)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 343 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%tmp_77 = call i1 @_ssdm_op_BitSelect.i1.i25.i32(i25 %r_V, i32 24)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 343 'bitselect' 'tmp_77' <Predicate = (isNeg)> <Delay = 0.00>
+ST_55 : Operation 344 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%zext_ln662 = zext i1 %tmp_77 to i32" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 344 'zext' 'zext_ln662' <Predicate = (isNeg)> <Delay = 0.00>
+ST_55 : Operation 345 [1/1] (0.00ns) (grouped into LUT with out node p_Val2_15)   --->   "%tmp_65 = call i32 @_ssdm_op_PartSelect.i32.i79.i32.i32(i79 %r_V_7, i32 24, i32 55)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 345 'partselect' 'tmp_65' <Predicate = (!isNeg)> <Delay = 0.00>
+ST_55 : Operation 346 [1/1] (2.96ns) (out node of the LUT)   --->   "%p_Val2_15 = select i1 %isNeg, i32 %zext_ln662, i32 %tmp_65" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 346 'select' 'p_Val2_15' <Predicate = true> <Delay = 2.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_55 : Operation 347 [1/1] (1.89ns)   --->   "%result_V_2 = sub i32 0, %p_Val2_15" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 347 'sub' 'result_V_2' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 348 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%p_Val2_16 = select i1 %p_Result_s, i32 %result_V_2, i32 %p_Val2_15" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 348 'select' 'p_Val2_16' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_55 : Operation 349 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%p_Result_3 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_s, i32 31)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:316->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:319->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:13->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 349 'bitselect' 'p_Result_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 350 [1/1] (0.00ns)   --->   "%mantissa_V_3 = call i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1(i1 true, i23 %tmp_V_9, i1 false)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 350 'bitconcatenate' 'mantissa_V_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 351 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%zext_ln682_3 = zext i25 %mantissa_V_3 to i79" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 351 'zext' 'zext_ln682_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 352 [1/1] (0.00ns)   --->   "%zext_ln339_3 = zext i8 %tmp_V_8 to i9" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 352 'zext' 'zext_ln339_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 353 [1/1] (1.30ns)   --->   "%add_ln339_3 = add i9 -127, %zext_ln339_3" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 353 'add' 'add_ln339_3' <Predicate = true> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 354 [1/1] (0.00ns)   --->   "%isNeg_3 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %add_ln339_3, i32 8)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 354 'bitselect' 'isNeg_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 355 [1/1] (1.30ns)   --->   "%sub_ln1311_3 = sub i8 127, %tmp_V_8" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 355 'sub' 'sub_ln1311_3' <Predicate = true> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 356 [1/1] (0.00ns)   --->   "%sext_ln1311_8 = sext i8 %sub_ln1311_3 to i9" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 356 'sext' 'sext_ln1311_8' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 357 [1/1] (0.72ns)   --->   "%ush_3 = select i1 %isNeg_3, i9 %sext_ln1311_8, i9 %add_ln339_3" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 357 'select' 'ush_3' <Predicate = true> <Delay = 0.72> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_55 : Operation 358 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%sext_ln1311_9 = sext i9 %ush_3 to i32" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 358 'sext' 'sext_ln1311_9' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 359 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%sext_ln1311_11 = sext i9 %ush_3 to i25" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 359 'sext' 'sext_ln1311_11' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 360 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%zext_ln1287_3 = zext i32 %sext_ln1311_9 to i79" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 360 'zext' 'zext_ln1287_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 361 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%r_V_8 = lshr i25 %mantissa_V_3, %sext_ln1311_11" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 361 'lshr' 'r_V_8' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 362 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%r_V_9 = shl i79 %zext_ln682_3, %zext_ln1287_3" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 362 'shl' 'r_V_9' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 363 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i25.i32(i25 %r_V_8, i32 24)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 363 'bitselect' 'tmp_80' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 364 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%zext_ln662_3 = zext i1 %tmp_80 to i55" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 364 'zext' 'zext_ln662_3' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 365 [1/1] (0.00ns) (grouped into LUT with out node select_ln1312)   --->   "%tmp_75 = call i55 @_ssdm_op_PartSelect.i55.i79.i32.i32(i79 %r_V_9, i32 24, i32 78)" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:21->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 365 'partselect' 'tmp_75' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 366 [1/1] (2.96ns) (out node of the LUT)   --->   "%select_ln1312 = select i1 %isNeg_3, i55 %zext_ln662_3, i55 %tmp_75" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 366 'select' 'select_ln1312' <Predicate = true> <Delay = 2.96> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_55 : Operation 367 [1/1] (0.00ns)   --->   "%trunc_ln82 = trunc i55 %select_ln1312 to i28" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 367 'trunc' 'trunc_ln82' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 368 [1/1] (1.79ns)   --->   "%sub_ln82 = sub i28 0, %trunc_ln82" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 368 'sub' 'sub_ln82' <Predicate = true> <Delay = 1.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 369 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%trunc_ln82_6 = trunc i55 %select_ln1312 to i28" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 369 'trunc' 'trunc_ln82_6' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 370 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%select_ln59 = select i1 %p_Result_3, i28 %sub_ln82, i28 %trunc_ln82_6" [/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109]   --->   Operation 370 'select' 'select_ln59' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_55 : Operation 371 [1/1] (0.00ns) (grouped into LUT with out node add_ln82)   --->   "%shl_ln82_4 = call i32 @_ssdm_op_BitConcatenate.i32.i28.i4(i28 %select_ln59, i4 0)" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 371 'bitconcatenate' 'shl_ln82_4' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 372 [1/1] (1.89ns) (out node of the LUT)   --->   "%add_ln82 = add i32 %p_Val2_16, %shl_ln82_4" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 372 'add' 'add_ln82' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 55> <Delay = 5.60>
+ST_56 : Operation 373 [1/1] (0.00ns)   --->   "%trunc_ln82_5 = trunc i3 %j_assign to i2" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 373 'trunc' 'trunc_ln82_5' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 374 [1/1] (0.00ns)   --->   "%shl_ln = call i4 @_ssdm_op_BitConcatenate.i4.i2.i2(i2 %trunc_ln82_5, i2 0)" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 374 'bitconcatenate' 'shl_ln' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 375 [1/1] (0.00ns)   --->   "%zext_ln82 = zext i4 %shl_ln to i32" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 375 'zext' 'zext_ln82' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 376 [1/1] (1.89ns)   --->   "%add_ln82_7 = add i32 %add_ln82, %zext_ln82" [src/honeybee.c:82->src/honeybee.c:109]   --->   Operation 376 'add' 'add_ln82_7' <Predicate = (and_ln51_36)> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 377 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%zext_ln109 = zext i32 %add_ln82_7 to i64" [src/honeybee.c:109]   --->   Operation 377 'zext' 'zext_ln109' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 378 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%shl_ln109 = shl i64 1, %zext_ln109" [src/honeybee.c:109]   --->   Operation 378 'shl' 'shl_ln109' <Predicate = (and_ln51_36)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 379 [1/1] (0.76ns)   --->   "%add_ln82_8 = add i3 -1, %j_assign" [src/honeybee.c:82->src/honeybee.c:110]   --->   Operation 379 'add' 'add_ln82_8' <Predicate = (and_ln51_36)> <Delay = 0.76> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 380 [1/1] (0.00ns)   --->   "%tmp_76 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %add_ln82_8, i2 0)" [src/honeybee.c:82->src/honeybee.c:110]   --->   Operation 380 'bitconcatenate' 'tmp_76' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 381 [1/1] (0.00ns)   --->   "%sext_ln82 = sext i5 %tmp_76 to i32" [src/honeybee.c:82->src/honeybee.c:110]   --->   Operation 381 'sext' 'sext_ln82' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 382 [1/1] (1.89ns)   --->   "%add_ln82_9 = add i32 %add_ln82, %sext_ln82" [src/honeybee.c:82->src/honeybee.c:110]   --->   Operation 382 'add' 'add_ln82_9' <Predicate = (and_ln51_36)> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 383 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%zext_ln110 = zext i32 %add_ln82_9 to i64" [src/honeybee.c:110]   --->   Operation 383 'zext' 'zext_ln110' <Predicate = (and_ln51_36)> <Delay = 0.00>
+ST_56 : Operation 384 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%shl_ln110 = shl i64 1, %zext_ln110" [src/honeybee.c:110]   --->   Operation 384 'shl' 'shl_ln110' <Predicate = (and_ln51_36)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 385 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%or_ln110 = or i64 %collisions_0, %shl_ln110" [src/honeybee.c:110]   --->   Operation 385 'or' 'or_ln110' <Predicate = (and_ln51_36)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 386 [1/1] (0.00ns) (grouped into LUT with out node collisions_3)   --->   "%collisions = or i64 %or_ln110, %shl_ln109" [src/honeybee.c:110]   --->   Operation 386 'or' 'collisions' <Predicate = (and_ln51_36)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 387 [1/1] (2.93ns) (out node of the LUT)   --->   "%collisions_3 = select i1 %and_ln51_36, i64 %collisions, i64 %collisions_0" [src/honeybee.c:108]   --->   Operation 387 'select' 'collisions_3' <Predicate = true> <Delay = 2.93> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_56 : Operation 388 [1/1] (0.00ns)   --->   "br label %1" [src/honeybee.c:92]   --->   Operation 388 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.59ns
+The critical path consists of the following:
+	wire read on port 'edge_p2_z' (src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [7]  (0 ns)
+	'fsub' operation ('tmp_24_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [15]  (8.59 ns)
+
+ <State 2>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_19_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [13]  (8.59 ns)
+
+ <State 3>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_19_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [13]  (8.59 ns)
+
+ <State 4>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_19_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [13]  (8.59 ns)
+
+ <State 5>: 8.08ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', src/honeybee.c:92) [43]  (0 ns)
+	'sitofp' operation ('plane', src/honeybee.c:93) [50]  (8.08 ns)
+
+ <State 6>: 8.08ns
+The critical path consists of the following:
+	'sitofp' operation ('plane', src/honeybee.c:93) [50]  (8.08 ns)
+
+ <State 7>: 8.08ns
+The critical path consists of the following:
+	'sitofp' operation ('plane', src/honeybee.c:93) [50]  (8.08 ns)
+
+ <State 8>: 8.08ns
+The critical path consists of the following:
+	'sitofp' operation ('plane', src/honeybee.c:93) [50]  (8.08 ns)
+
+ <State 9>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.z', src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93) [51]  (8.59 ns)
+
+ <State 10>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.z', src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93) [51]  (8.59 ns)
+
+ <State 11>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.z', src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93) [51]  (8.59 ns)
+
+ <State 12>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.z', src/honeybee.c:14->src/honeybee.c:63->src/honeybee.c:93) [51]  (8.59 ns)
+
+ <State 13>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [52]  (8.43 ns)
+
+ <State 14>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [52]  (8.43 ns)
+
+ <State 15>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [52]  (8.43 ns)
+
+ <State 16>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.x', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [56]  (8.59 ns)
+
+ <State 17>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.x', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [56]  (8.59 ns)
+
+ <State 18>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.x', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [56]  (8.59 ns)
+
+ <State 19>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('agg.result.x', src/honeybee.c:22->src/honeybee.c:67->src/honeybee.c:93) [56]  (8.59 ns)
+
+ <State 20>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i9_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [57]  (8.43 ns)
+
+ <State 21>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i9_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [57]  (8.43 ns)
+
+ <State 22>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i9_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [57]  (8.43 ns)
+
+ <State 23>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_28_i_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [58]  (8.59 ns)
+
+ <State 24>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_28_i_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [58]  (8.59 ns)
+
+ <State 25>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_28_i_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [58]  (8.59 ns)
+
+ <State 26>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_28_i_i', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [58]  (8.59 ns)
+
+ <State 27>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('dot', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [59]  (8.59 ns)
+
+ <State 28>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('dot', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [59]  (8.59 ns)
+
+ <State 29>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('dot', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [59]  (8.59 ns)
+
+ <State 30>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('dot', src/honeybee.c:30->src/honeybee.c:70->src/honeybee.c:93) [59]  (8.59 ns)
+
+ <State 31>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_18_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [64]  (8.59 ns)
+
+ <State 32>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_18_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [64]  (8.59 ns)
+
+ <State 33>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_18_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [64]  (8.59 ns)
+
+ <State 34>: 8.59ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_18_i_i', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [64]  (8.59 ns)
+
+ <State 35>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 36>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 37>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 38>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 39>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 40>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 41>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 42>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 43>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 44>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 45>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 46>: 7.2ns
+The critical path consists of the following:
+	'fdiv' operation ('T', src/honeybee.c:34->src/honeybee.c:73->src/honeybee.c:93) [69]  (7.2 ns)
+
+ <State 47>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i14_i', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [70]  (8.43 ns)
+
+ <State 48>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i14_i', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [70]  (8.43 ns)
+
+ <State 49>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i14_i', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [70]  (8.43 ns)
+
+ <State 50>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('agg.result.x', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [71]  (8.59 ns)
+
+ <State 51>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('agg.result.x', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [71]  (8.59 ns)
+
+ <State 52>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('agg.result.x', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [71]  (8.59 ns)
+
+ <State 53>: 8.59ns
+The critical path consists of the following:
+	'fadd' operation ('agg.result.x', src/honeybee.c:40->src/honeybee.c:76->src/honeybee.c:93) [71]  (8.59 ns)
+
+ <State 54>: 4.2ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_58', src/honeybee.c:49->src/honeybee.c:108) [98]  (4.2 ns)
+
+ <State 55>: 8.69ns
+The critical path consists of the following:
+	'add' operation ('sh', /wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109) [215]  (1.31 ns)
+	'select' operation ('sh', /wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109) [219]  (0.722 ns)
+	'lshr' operation ('r.V', /wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109) [223]  (0 ns)
+	'select' operation ('select_ln1312', /wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109) [228]  (2.97 ns)
+	'sub' operation ('sub_ln82', src/honeybee.c:82->src/honeybee.c:109) [230]  (1.8 ns)
+	'select' operation ('select_ln59', /wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117->/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51->src/honeybee.c:109) [235]  (0 ns)
+	'add' operation ('add_ln82', src/honeybee.c:82->src/honeybee.c:109) [237]  (1.9 ns)
+
+ <State 56>: 5.6ns
+The critical path consists of the following:
+	'add' operation ('add_ln82_8', src/honeybee.c:82->src/honeybee.c:110) [241]  (0.768 ns)
+	'add' operation ('add_ln82_9', src/honeybee.c:82->src/honeybee.c:110) [244]  (1.9 ns)
+	'shl' operation ('shl_ln110', src/honeybee.c:110) [246]  (0 ns)
+	'or' operation ('or_ln110', src/honeybee.c:110) [247]  (0 ns)
+	'or' operation ('collisions', src/honeybee.c:110) [248]  (0 ns)
+	'select' operation ('collisions', src/honeybee.c:108) [249]  (2.94 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

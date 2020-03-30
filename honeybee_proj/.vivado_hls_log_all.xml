@@ -12,10 +12,14 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:59.037-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:58.750-0700" type="Warning"/>
-        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:58.663-0700" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] In file included from src/honeybee.c:1:&#xA;src/honeybee.c:158:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;Z = %lld\n&quot;, collisions_z);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;src/honeybee.c:160:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;y = %lld\n&quot;, collisions_y);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;src/honeybee.c:162:20: warning: format specifies type 'long long' but the argument has type 'Dout_t' (aka 'long') [-Wformat]&#xA;    printf(&quot;x = %lld\n&quot;, collisions_x);&#xA;                ~~~^     ~~~~~~~~~~~~&#xA;                %ld&#xA;3 warnings generated." projectName="honeybee_proj" solutionName="HBD" date="2020-03-29T20:18:48.537-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.534-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.422-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.383-0700" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name '__hls_fptosi_float_i' to 'p_hls_fptosi_float_i'." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:31.327-0700" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.529-0700" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.366-0700" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'collisions' (src/honeybee.c:84)." projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.320-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function '__hls_fptosi_float_i32' to '__hls_fptosi_float_i' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:15:54)" projectName="honeybee_proj" solutionName="HBG" date="2020-03-30T02:26:30.279-0700" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

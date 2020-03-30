@@ -52,6 +52,26 @@
 			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBD/.tcls</location>
 		</link>
 		<link>
+			<name>HBE/constraints</name>
+			<type>2</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBE/.tcls</location>
+		</link>
+		<link>
+			<name>HBF/constraints</name>
+			<type>2</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.tcls</location>
+		</link>
+		<link>
+			<name>HBG/constraints</name>
+			<type>2</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBG/.tcls</location>
+		</link>
+		<link>
+			<name>HBH/constraints</name>
+			<type>2</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBH/.tcls</location>
+		</link>
+		<link>
 			<name>source/honeybee.c</name>
 			<type>1</type>
 			<location>/mnt/hgfs/Thesis/HoneyBee/src/honeybee.c</location>
@@ -110,6 +130,66 @@
 			<name>HBD/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBD/script.tcl</location>
+		</link>
+		<link>
+			<name>HBE/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBE/HBE.directive</location>
+		</link>
+		<link>
+			<name>HBE/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBE/directives.tcl</location>
+		</link>
+		<link>
+			<name>HBE/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBE/script.tcl</location>
+		</link>
+		<link>
+			<name>HBF/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/HBF.directive</location>
+		</link>
+		<link>
+			<name>HBF/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/directives.tcl</location>
+		</link>
+		<link>
+			<name>HBF/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/script.tcl</location>
+		</link>
+		<link>
+			<name>HBG/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBG/HBG.directive</location>
+		</link>
+		<link>
+			<name>HBG/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBG/directives.tcl</location>
+		</link>
+		<link>
+			<name>HBG/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBG/script.tcl</location>
+		</link>
+		<link>
+			<name>HBH/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBH/HBH.directive</location>
+		</link>
+		<link>
+			<name>HBH/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBH/directives.tcl</location>
+		</link>
+		<link>
+			<name>HBH/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBH/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

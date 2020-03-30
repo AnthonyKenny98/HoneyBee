@@ -1,0 +1,1027 @@
+INFO-FLOW: Workspace /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF opened at Sun Mar 29 21:04:39 PDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.19 sec.
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.25 sec.
+Command     ap_source done; 0.26 sec.
+Execute     set_part xc7z030i-fbg484-2L 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data single -quiet 
+Command       ap_part_info done; 2.05 sec.
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z030i:-fbg484:-2L 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z030i-fbg484-2L 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data resources 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute         config_chip_info -quiet -resource {SLICE 19650} {LUT 78600} {FF 157200} {DSP48E 400} {BRAM 530} {URAM 0} 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.16 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7z030i-fbg484-2L'
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.56 sec.
+Execute     ap_part_info -data single -name xc7z030i-fbg484-2L 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data resources 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute     config_chip_info -quiet -resource {SLICE 19650} {LUT 78600} {FF 157200} {DSP48E 400} {BRAM 530} {URAM 0} 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute     config_chip_info -quiet -speed medium 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 3.14 sec.
+Execute   set_part xc7z030i-fbg484-2L 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data single -quiet 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z030i:-fbg484:-2L 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xc7z030i-fbg484-2L 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data resources 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       config_chip_info -quiet -resource {SLICE 19650} {LUT 78600} {FF 157200} {DSP48E 400} {BRAM 530} {URAM 0} 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       config_chip_info -quiet -speed medium 
+Command     add_library done; 0.15 sec.
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute     get_default_platform 
+Command   set_part done; 0.47 sec.
+Execute   create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+Execute   source ./honeybee_proj/HBF/directives.tcl 
+Execute     set_directive_unroll honeybee/honeybee_label0 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_unroll honeybee/honeybee_label1 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_function_instantiate checkAxis num 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+Execute     set_directive_unroll checkAxis/checkAxis_loop 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_unroll checkAxis/checkAxis_label0 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_unroll checkAxis/checkAxis_label1 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_unroll checkAxis/checkAxis_label2 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'src/honeybee.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling src/honeybee.c as C
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+Execute       is_encrypted src/honeybee.c 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "src/honeybee.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c" 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E src/honeybee.c -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c
+Command       clang done; 2.36 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c  -fno-limit-debug-info -gcc-toolchain "/tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c"  -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/useless.bc
+Command       clang done; 2.62 sec.
+INFO-FLOW: Done: GCC PP time: 5 seconds per iteration
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute       source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'FUNCTION_INSTANTIATE' instantiate=positionBooleanCmd variable=positionBooleanTextRequirednum 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c std=gnu89 -directive=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/.systemc_flag -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c std=gnu89 -directive=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/all.directive.json -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.28 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/xilinx-dataflow-lawyer.honeybee.pp.0.c.diag.yml /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu99 -fhls -ferror-limit=0 -fstrict-dataflow > /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/xilinx-dataflow-lawyer.honeybee.pp.0.c.out.log 2> /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/xilinx-dataflow-lawyer.honeybee.pp.0.c.err.log 
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c std=gnu89 
+Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/tidy-3.1.honeybee.pp.0.c.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/tidy-3.1.honeybee.pp.0.c.out.log 2> /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/tidy-3.1.honeybee.pp.0.c.err.log 
+Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/xilinx-legacy-rewriter.honeybee.pp.0.c.out.log 2> /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/xilinx-legacy-rewriter.honeybee.pp.0.c.err.log 
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.5 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pragma.1.c std=gnu89 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pragma.1.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pragma.2.c  -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pragma.2.c"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.bc" 
+INFO-FLOW: exec /tools/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.pragma.2.c -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot -I /tools/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.bc
+Command       clang done; 2.32 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.g.bc -hls-opt -except-internalize honeybee -L/tools/Xilinx/Vivado/2019.2/lnx64/lib -lhlsm -lhlsmc++ -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g 
+Command       llvm-ld done; 1.13 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 317 ; free virtual = 1846
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 965.715 ; gain = 526.004 ; free physical = 317 ; free virtual = 1846
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.pp.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.pp.0.bc -disable-opt -L/tools/Xilinx/Vivado/2019.2/lnx64/lib -lfloatconversion -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.0 
+Command         llvm-ld done; 2.58 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top honeybee -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.0.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 1.16 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 274 ; free virtual = 1808
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.1.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:65) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:71) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:74) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:109) automatically.
+Command         transform done; 0.77 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.2.prechk.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform done; 0.44 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 968.562 ; gain = 528.852 ; free physical = 240 ; free virtual = 1778
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.g.1.bc to /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.1.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [HLS 200-489] Unrolling loop 'checkAxis_loop' (src/honeybee.c:104) in function 'checkAxis' completely with a factor of 4.
+INFO: [XFORM 203-102] Automatically partitioning small array 'collisions' (src/honeybee.c:84) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'collisions' (src/honeybee.c:84) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'vector' into 'lineIntersectsPlane' (src/honeybee.c:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'crossProduct' into 'lineIntersectsPlane' (src/honeybee.c:65) automatically.
+INFO: [XFORM 203-602] Inlining function 'dotProduct' into 'lineIntersectsPlane' (src/honeybee.c:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'paramT' into 'lineIntersectsPlane' (src/honeybee.c:71) automatically.
+INFO: [XFORM 203-602] Inlining function 'pointOfIntersection' into 'lineIntersectsPlane' (src/honeybee.c:74) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:59) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:51) automatically.
+INFO: [XFORM 203-602] Inlining function 'shiftAmount' into 'checkAxis' (src/honeybee.c:109) automatically.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:83) to 'checkAxis.0' at call site (src/honeybee.c:161) by setting 'num' to '1'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:83) to 'checkAxis.1' at call site (src/honeybee.c:162) by setting 'num' to '2'.
+INFO: [XFORM 203-622] Instantiating function 'checkAxis'(src/honeybee.c:83) to 'checkAxis.2' at call site (src/honeybee.c:160) by setting 'num' to '0'.
+Command         transform done; 1.08 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.1.tmp.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:47:47) to (src/honeybee.c:51:1) in function 'pointOnSegment'... converting 7 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:84:40) to (src/honeybee.c:84:40) in function 'checkAxis.2'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:84:40) to (src/honeybee.c:84:40) in function 'checkAxis.1'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/honeybee.c:84:40) to (src/honeybee.c:84:40) in function 'checkAxis.0'... converting 6 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'pointOnSegment' (src/honeybee.c:47:1)...5 expression(s) balanced.
+Command         transform done; 0.57 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1031.723 ; gain = 592.012 ; free physical = 173 ; free virtual = 1717
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.2.bc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function '__hls_fptosi_float_i32' to '__hls_fptosi_float_i' (/wrk/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:15:54)
+Command         transform done; 0.86 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1031.723 ; gain = 592.012 ; free physical = 112 ; free virtual = 1658
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 8.01 sec.
+Command     elaborate done; 17.41 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'honeybee' ...
+Execute       ap_set_top_model honeybee 
+WARNING: [SYN 201-103] Legalizing function name '__hls_fptosi_float_i' to 'p_hls_fptosi_float_i'.
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.2' to 'checkAxis_2'.
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.0' to 'checkAxis_0'.
+WARNING: [SYN 201-103] Legalizing function name 'checkAxis.1' to 'checkAxis_1'.
+Command       ap_set_top_model done; 0.12 sec.
+Execute       get_model_list honeybee -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model honeybee 
+Execute       preproc_iomode -model checkAxis.1 
+Execute       preproc_iomode -model checkAxis.0 
+Execute       preproc_iomode -model checkAxis.2 
+Execute       preproc_iomode -model __hls_fptosi_float_i 
+Execute       preproc_iomode -model pointOnSegment 
+Execute       preproc_iomode -model lineIntersectsPlane 
+Execute       get_model_list honeybee -filter all-wo-channel 
+INFO-FLOW: Model list for configure: lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee
+INFO-FLOW: Configuring Module : lineIntersectsPlane ...
+Execute       set_default_model lineIntersectsPlane 
+Execute       apply_spec_resource_limit lineIntersectsPlane 
+INFO-FLOW: Configuring Module : pointOnSegment ...
+Execute       set_default_model pointOnSegment 
+Execute       apply_spec_resource_limit pointOnSegment 
+INFO-FLOW: Configuring Module : __hls_fptosi_float_i ...
+Execute       set_default_model __hls_fptosi_float_i 
+Execute       apply_spec_resource_limit __hls_fptosi_float_i 
+INFO-FLOW: Configuring Module : checkAxis.2 ...
+Execute       set_default_model checkAxis.2 
+Execute       apply_spec_resource_limit checkAxis.2 
+INFO-FLOW: Configuring Module : checkAxis.0 ...
+Execute       set_default_model checkAxis.0 
+Execute       apply_spec_resource_limit checkAxis.0 
+INFO-FLOW: Configuring Module : checkAxis.1 ...
+Execute       set_default_model checkAxis.1 
+Execute       apply_spec_resource_limit checkAxis.1 
+INFO-FLOW: Configuring Module : honeybee ...
+Execute       set_default_model honeybee 
+Execute       apply_spec_resource_limit honeybee 
+INFO-FLOW: Model list for preprocess: lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee
+INFO-FLOW: Preprocessing Module: lineIntersectsPlane ...
+Execute       set_default_model lineIntersectsPlane 
+Execute       cdfg_preprocess -model lineIntersectsPlane 
+Execute       rtl_gen_preprocess lineIntersectsPlane 
+INFO-FLOW: Preprocessing Module: pointOnSegment ...
+Execute       set_default_model pointOnSegment 
+Execute       cdfg_preprocess -model pointOnSegment 
+Execute       rtl_gen_preprocess pointOnSegment 
+INFO-FLOW: Preprocessing Module: __hls_fptosi_float_i ...
+Execute       set_default_model __hls_fptosi_float_i 
+Execute       cdfg_preprocess -model __hls_fptosi_float_i 
+Execute       rtl_gen_preprocess __hls_fptosi_float_i 
+INFO-FLOW: Preprocessing Module: checkAxis.2 ...
+Execute       set_default_model checkAxis.2 
+Execute       cdfg_preprocess -model checkAxis.2 
+Execute       rtl_gen_preprocess checkAxis.2 
+INFO-FLOW: Preprocessing Module: checkAxis.0 ...
+Execute       set_default_model checkAxis.0 
+Execute       cdfg_preprocess -model checkAxis.0 
+Execute       rtl_gen_preprocess checkAxis.0 
+INFO-FLOW: Preprocessing Module: checkAxis.1 ...
+Execute       set_default_model checkAxis.1 
+Execute       cdfg_preprocess -model checkAxis.1 
+Execute       rtl_gen_preprocess checkAxis.1 
+INFO-FLOW: Preprocessing Module: honeybee ...
+Execute       set_default_model honeybee 
+Execute       cdfg_preprocess -model honeybee 
+Execute       rtl_gen_preprocess honeybee 
+INFO-FLOW: Model list for synthesis: lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lineIntersectsPlane' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model lineIntersectsPlane 
+Execute       schedule -model lineIntersectsPlane 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.75 sec.
+INFO: [HLS 200-111]  Elapsed time: 22.86 seconds; current allocated memory: 283.654 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.verbose.sched.rpt 
+Command       syn_report done; 0.25 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.sched.adb -f 
+INFO-FLOW: Finish scheduling lineIntersectsPlane.
+Execute       set_default_model lineIntersectsPlane 
+Execute       bind -model lineIntersectsPlane 
+BIND OPTION: model=lineIntersectsPlane
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 283.988 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.verbose.bind.rpt 
+Command       syn_report done; 0.32 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.bind.adb -f 
+INFO-FLOW: Finish binding lineIntersectsPlane.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pointOnSegment' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pointOnSegment 
+Execute       schedule -model pointOnSegment 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 284.457 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.verbose.sched.rpt 
+Command       syn_report done; 0.16 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.sched.adb -f 
+Command       db_write done; 0.12 sec.
+INFO-FLOW: Finish scheduling pointOnSegment.
+Execute       set_default_model pointOnSegment 
+Execute       bind -model pointOnSegment 
+BIND OPTION: model=pointOnSegment
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.18 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.46 seconds; current allocated memory: 285.020 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.verbose.bind.rpt 
+Command       syn_report done; 0.38 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.bind.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish binding pointOnSegment.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_hls_fptosi_float_i' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model __hls_fptosi_float_i 
+Execute       schedule -model __hls_fptosi_float_i 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 285.278 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.verbose.sched.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.sched.adb -f 
+INFO-FLOW: Finish scheduling __hls_fptosi_float_i.
+Execute       set_default_model __hls_fptosi_float_i 
+Execute       bind -model __hls_fptosi_float_i 
+BIND OPTION: model=__hls_fptosi_float_i
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 285.390 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.verbose.bind.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.bind.adb -f 
+INFO-FLOW: Finish binding __hls_fptosi_float_i.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'checkAxis_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model checkAxis.2 
+Execute       schedule -model checkAxis.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.18 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 285.803 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.verbose.sched.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.sched.adb -f 
+Command       db_write done; 0.14 sec.
+INFO-FLOW: Finish scheduling checkAxis.2.
+Execute       set_default_model checkAxis.2 
+Execute       bind -model checkAxis.2 
+BIND OPTION: model=checkAxis.2
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.41 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 286.521 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.verbose.bind.rpt 
+Command       syn_report done; 0.47 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.bind.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish binding checkAxis.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'checkAxis_0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model checkAxis.0 
+Execute       schedule -model checkAxis.0 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.21 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 287.190 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.verbose.sched.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.sched.adb -f 
+Command       db_write done; 0.14 sec.
+INFO-FLOW: Finish scheduling checkAxis.0.
+Execute       set_default_model checkAxis.0 
+Execute       bind -model checkAxis.0 
+BIND OPTION: model=checkAxis.0
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.38 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 287.913 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.verbose.bind.rpt 
+Command       syn_report done; 0.46 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.bind.adb -f 
+INFO-FLOW: Finish binding checkAxis.0.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'checkAxis_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model checkAxis.1 
+Execute       schedule -model checkAxis.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.82 seconds; current allocated memory: 288.575 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.verbose.sched.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.sched.adb -f 
+Command       db_write done; 0.2 sec.
+INFO-FLOW: Finish scheduling checkAxis.1.
+Execute       set_default_model checkAxis.1 
+Execute       bind -model checkAxis.1 
+BIND OPTION: model=checkAxis.1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.41 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 289.312 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.verbose.bind.rpt 
+Command       syn_report done; 0.45 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.bind.adb -f 
+Command       db_write done; 0.12 sec.
+INFO-FLOW: Finish binding checkAxis.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model honeybee 
+Execute       schedule -model honeybee 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.63 seconds; current allocated memory: 289.591 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.verbose.sched.rpt 
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.sched.adb -f 
+INFO-FLOW: Finish scheduling honeybee.
+Execute       set_default_model honeybee 
+Execute       bind -model honeybee 
+BIND OPTION: model=honeybee
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.26 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.34 seconds; current allocated memory: 290.283 MB.
+Execute       syn_report -verbosereport -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.verbose.bind.rpt 
+Command       syn_report done; 0.97 sec.
+Execute       db_write -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.bind.adb -f 
+INFO-FLOW: Finish binding honeybee.
+Execute       get_model_list honeybee -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess lineIntersectsPlane 
+Execute       rtl_gen_preprocess pointOnSegment 
+Execute       rtl_gen_preprocess __hls_fptosi_float_i 
+Execute       rtl_gen_preprocess checkAxis.2 
+Execute       rtl_gen_preprocess checkAxis.0 
+Execute       rtl_gen_preprocess checkAxis.1 
+Execute       rtl_gen_preprocess honeybee 
+INFO-FLOW: Model list for RTL generation: lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lineIntersectsPlane' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model lineIntersectsPlane -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'honeybee_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'honeybee_faddfsubbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fadd_32ns_32ns_32_4_full_dsp_1' to 'honeybee_fadd_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fsub_32ns_32ns_32_4_full_dsp_1' to 'honeybee_fsub_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fmul_32ns_32ns_32_3_max_dsp_1' to 'honeybee_fmul_32neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'honeybee_fdiv_32ns_32ns_32_12_1' to 'honeybee_fdiv_32nfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fadd_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_faddfsubbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fdiv_32nfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fmul_32neOg': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fsub_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lineIntersectsPlane'.
+Command       create_rtl_model done; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.19 seconds; current allocated memory: 291.578 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl lineIntersectsPlane -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/lineIntersectsPlane -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl lineIntersectsPlane -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/lineIntersectsPlane 
+Execute       gen_rtl lineIntersectsPlane -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/lineIntersectsPlane 
+Execute       syn_report -csynth -model lineIntersectsPlane -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/lineIntersectsPlane_csynth.rpt 
+Execute       syn_report -rtlxml -model lineIntersectsPlane -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/lineIntersectsPlane_csynth.xml 
+Execute       syn_report -verbosereport -model lineIntersectsPlane -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.verbose.rpt 
+Command       syn_report done; 0.27 sec.
+Execute       db_write -model lineIntersectsPlane -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.adb 
+Execute       gen_tb_info lineIntersectsPlane -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pointOnSegment' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model pointOnSegment -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'honeybee_fcmp_32ns_32ns_1_2_1' to 'honeybee_fcmp_32ng8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_fcmp_32ng8j': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pointOnSegment'.
+Command       create_rtl_model done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.73 seconds; current allocated memory: 293.569 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pointOnSegment -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/pointOnSegment -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl pointOnSegment -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/pointOnSegment 
+Execute       gen_rtl pointOnSegment -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/pointOnSegment 
+Execute       syn_report -csynth -model pointOnSegment -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/pointOnSegment_csynth.rpt 
+Command       syn_report done; 0.16 sec.
+Execute       syn_report -rtlxml -model pointOnSegment -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/pointOnSegment_csynth.xml 
+Execute       syn_report -verbosereport -model pointOnSegment -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.verbose.rpt 
+Command       syn_report done; 0.35 sec.
+Execute       db_write -model pointOnSegment -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.adb 
+Command       db_write done; 0.3 sec.
+Execute       gen_tb_info pointOnSegment -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_hls_fptosi_float_i' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model __hls_fptosi_float_i -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_hls_fptosi_float_i'.
+INFO: [HLS 200-111]  Elapsed time: 1.08 seconds; current allocated memory: 296.304 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl __hls_fptosi_float_i -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/p_hls_fptosi_float_i -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl __hls_fptosi_float_i -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/p_hls_fptosi_float_i 
+Execute       gen_rtl __hls_fptosi_float_i -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/p_hls_fptosi_float_i 
+Execute       syn_report -csynth -model __hls_fptosi_float_i -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/p_hls_fptosi_float_i_csynth.rpt 
+Execute       syn_report -rtlxml -model __hls_fptosi_float_i -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/p_hls_fptosi_float_i_csynth.xml 
+Execute       syn_report -verbosereport -model __hls_fptosi_float_i -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.verbose.rpt 
+Execute       db_write -model __hls_fptosi_float_i -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.adb 
+Command       db_write done; 0.17 sec.
+Execute       gen_tb_info __hls_fptosi_float_i -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model checkAxis.2 -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'honeybee_mux_42_64_1_1' to 'honeybee_mux_42_6hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'honeybee_mux_42_6hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_2'.
+Command       create_rtl_model done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.52 seconds; current allocated memory: 297.837 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl checkAxis.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/checkAxis_2 -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl checkAxis.2 -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/checkAxis_2 
+Execute       gen_rtl checkAxis.2 -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/checkAxis_2 
+Execute       syn_report -csynth -model checkAxis.2 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_2_csynth.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       syn_report -rtlxml -model checkAxis.2 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_2_csynth.xml 
+Execute       syn_report -verbosereport -model checkAxis.2 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.verbose.rpt 
+Command       syn_report done; 0.47 sec.
+Execute       db_write -model checkAxis.2 -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.adb 
+Command       db_write done; 0.3 sec.
+Execute       gen_tb_info checkAxis.2 -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model checkAxis.0 -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'honeybee_mux_42_6hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_0'.
+INFO: [HLS 200-111]  Elapsed time: 1.26 seconds; current allocated memory: 301.407 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl checkAxis.0 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/checkAxis_0 -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl checkAxis.0 -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/checkAxis_0 
+Execute       gen_rtl checkAxis.0 -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/checkAxis_0 
+Execute       syn_report -csynth -model checkAxis.0 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_0_csynth.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       syn_report -rtlxml -model checkAxis.0 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_0_csynth.xml 
+Execute       syn_report -verbosereport -model checkAxis.0 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.verbose.rpt 
+Command       syn_report done; 0.47 sec.
+Execute       db_write -model checkAxis.0 -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.adb 
+Command       db_write done; 0.37 sec.
+Execute       gen_tb_info checkAxis.0 -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'checkAxis_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model checkAxis.1 -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'honeybee_mux_42_6hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'checkAxis_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.28 seconds; current allocated memory: 305.141 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl checkAxis.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/checkAxis_1 -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl checkAxis.1 -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/checkAxis_1 
+Execute       gen_rtl checkAxis.1 -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/checkAxis_1 
+Execute       syn_report -csynth -model checkAxis.1 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_1_csynth.rpt 
+Command       syn_report done; 0.11 sec.
+Execute       syn_report -rtlxml -model checkAxis.1 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/checkAxis_1_csynth.xml 
+Execute       syn_report -verbosereport -model checkAxis.1 -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.verbose.rpt 
+Command       syn_report done; 0.42 sec.
+Execute       db_write -model checkAxis.1 -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.adb 
+Command       db_write done; 0.38 sec.
+Execute       gen_tb_info checkAxis.1 -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'honeybee' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model honeybee -vendor xilinx -mg_file /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p1_z' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'honeybee/edge_p2_z' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'honeybee' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'honeybee'.
+INFO: [HLS 200-111]  Elapsed time: 1.3 seconds; current allocated memory: 308.111 MB.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       gen_rtl honeybee -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/systemc/honeybee -synmodules lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee 
+Execute       gen_rtl honeybee -istop -style xilinx -f -lang vhdl -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/vhdl/honeybee 
+Execute       gen_rtl honeybee -istop -style xilinx -f -lang vlog -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/verilog/honeybee 
+Execute       syn_report -csynth -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/honeybee_csynth.rpt 
+Execute       syn_report -rtlxml -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/syn/report/honeybee_csynth.xml 
+Execute       syn_report -verbosereport -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.verbose.rpt 
+Command       syn_report done; 0.94 sec.
+Execute       db_write -model honeybee -f -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.adb 
+Command       db_write done; 0.19 sec.
+Execute       gen_tb_info honeybee -p /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee 
+Execute       export_constraint_db -f -tool general -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.constraint.tcl 
+Execute       syn_report -designview -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.design.xml 
+Command       syn_report done; 0.4 sec.
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model honeybee -o /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks honeybee 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain honeybee 
+INFO-FLOW: Model list for RTL component generation: lineIntersectsPlane pointOnSegment __hls_fptosi_float_i checkAxis.2 checkAxis.0 checkAxis.1 honeybee
+INFO-FLOW: Handling components in module [lineIntersectsPlane] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+INFO-FLOW: Found component honeybee_faddfsubbkb.
+INFO-FLOW: Append model honeybee_faddfsubbkb
+INFO-FLOW: Found component honeybee_fadd_32ncud.
+INFO-FLOW: Append model honeybee_fadd_32ncud
+INFO-FLOW: Found component honeybee_fsub_32ndEe.
+INFO-FLOW: Append model honeybee_fsub_32ndEe
+INFO-FLOW: Found component honeybee_fmul_32neOg.
+INFO-FLOW: Append model honeybee_fmul_32neOg
+INFO-FLOW: Found component honeybee_fdiv_32nfYi.
+INFO-FLOW: Append model honeybee_fdiv_32nfYi
+INFO-FLOW: Handling components in module [pointOnSegment] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+INFO-FLOW: Found component honeybee_fcmp_32ng8j.
+INFO-FLOW: Append model honeybee_fcmp_32ng8j
+INFO-FLOW: Handling components in module [p_hls_fptosi_float_i] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+INFO-FLOW: Handling components in module [checkAxis_2] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+INFO-FLOW: Found component honeybee_mux_42_6hbi.
+INFO-FLOW: Append model honeybee_mux_42_6hbi
+INFO-FLOW: Handling components in module [checkAxis_0] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+INFO-FLOW: Handling components in module [checkAxis_1] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+INFO-FLOW: Handling components in module [honeybee] ... 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+INFO-FLOW: Append model lineIntersectsPlane
+INFO-FLOW: Append model pointOnSegment
+INFO-FLOW: Append model p_hls_fptosi_float_i
+INFO-FLOW: Append model checkAxis_2
+INFO-FLOW: Append model checkAxis_0
+INFO-FLOW: Append model checkAxis_1
+INFO-FLOW: Append model honeybee
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: honeybee_faddfsubbkb honeybee_fadd_32ncud honeybee_fsub_32ndEe honeybee_fmul_32neOg honeybee_fdiv_32nfYi honeybee_fcmp_32ng8j honeybee_mux_42_6hbi lineIntersectsPlane pointOnSegment p_hls_fptosi_float_i checkAxis_2 checkAxis_0 checkAxis_1 honeybee
+INFO-FLOW: To file: write model honeybee_faddfsubbkb
+INFO-FLOW: To file: write model honeybee_fadd_32ncud
+INFO-FLOW: To file: write model honeybee_fsub_32ndEe
+INFO-FLOW: To file: write model honeybee_fmul_32neOg
+INFO-FLOW: To file: write model honeybee_fdiv_32nfYi
+INFO-FLOW: To file: write model honeybee_fcmp_32ng8j
+INFO-FLOW: To file: write model honeybee_mux_42_6hbi
+INFO-FLOW: To file: write model lineIntersectsPlane
+INFO-FLOW: To file: write model pointOnSegment
+INFO-FLOW: To file: write model p_hls_fptosi_float_i
+INFO-FLOW: To file: write model checkAxis_2
+INFO-FLOW: To file: write model checkAxis_0
+INFO-FLOW: To file: write model checkAxis_1
+INFO-FLOW: To file: write model honeybee
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       syn_report -model honeybee -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 105.50 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.13 sec.
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.22 sec.
+Command       ap_source done; 0.22 sec.
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Command       ap_source done; 0.63 sec.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.17 sec.
+Command       ap_source done; 0.17 sec.
+Execute       source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /tools/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=honeybee xml_exists=0
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Command       ap_source done; 0.55 sec.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Command       ap_source done; 0.11 sec.
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute         ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Command       ap_source done; 0.49 sec.
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.compgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.tcl 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.constraint.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=16
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=7
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=14 #gSsdmPorts=16
+Execute       source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute         source /tools/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -xo 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.rtl_wrap.cfg.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.compgen.dataonly.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.constraint.tcl 
+Execute       sc_get_clocks honeybee 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data names -quiet 
+Execute       ap_part_info -name xc7z030i-fbg484-2L -data info -quiet 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_fadd_2_full_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_faddfsub_2_full_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_fcmp_0_no_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_fdiv_10_no_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_fmul_1_max_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/impl/misc/honeybee_ap_fsub_2_full_dsp_32_ip.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/lineIntersectsPlane.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/pointOnSegment.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/p_hls_fptosi_float_i.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_2.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_0.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/checkAxis_1.tbgen.tcl 
+Execute       source /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/honeybee.tbgen.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /mnt/hgfs/Thesis/HoneyBee/honeybee_proj/HBF/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 1157.715 ; gain = 718.004 ; free physical = 118 ; free virtual = 1628
+INFO: [VHDL 208-304] Generating VHDL RTL for honeybee.
+INFO: [VLOG 209-307] Generating Verilog RTL for honeybee.
+Command     autosyn done; 25.76 sec.
+Command   csynth_design done; 43.22 sec.
+Command ap_source done; 47.16 sec.
+Execute cleanup_all 

@@ -1,0 +1,180 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'checkAxis_1'" level="0">
+<item name = "Date">Mon Mar 30 02:26:43 2020
+</item>
+<item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
+<item name = "Project">honeybee_proj</item>
+<item name = "Solution">HBG</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z030i-fbg484-2L</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 9.478 ns, 1.25 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">217, 217, 2.170 us, 2.170 us, 217, 217, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_lineIntersectsPlane_fu_192">lineIntersectsPlane, 44, 44, 0.440 us, 0.440 us, 44, 44, none</column>
+<column name="grp_pointOnSegment_fu_207">pointOnSegment, 3, 3, 30.000 ns, 30.000 ns, 3, 3, none</column>
+<column name="grp_p_hls_fptosi_float_i_fu_220">p_hls_fptosi_float_i, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="grp_p_hls_fptosi_float_i_fu_225">p_hls_fptosi_float_i, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memset_collisions">3, 3, 1, -, -, 4, no</column>
+<column name="- Loop 2">8, 8, 2, -, -, 4, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2234, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 17, 2956, 6458, -</column>
+<column name="Memory">0, -, 128, 4, 0</column>
+<column name="Multiplexer">-, -, -, 33, -</column>
+<column name="Register">-, -, 322, -, -</column>
+<specialColumn name="Available">530, 400, 157200, 78600, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 4, 2, 11, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="grp_lineIntersectsPlane_fu_192">lineIntersectsPlane, 0, 17, 2348, 3666, 0</column>
+<column name="grp_p_hls_fptosi_float_i_fu_220">p_hls_fptosi_float_i, 0, 0, 0, 431, 0</column>
+<column name="grp_p_hls_fptosi_float_i_fu_225">p_hls_fptosi_float_i, 0, 0, 0, 431, 0</column>
+<column name="grp_pointOnSegment_fu_207">pointOnSegment, 0, 0, 608, 1930, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="collisions_U">checkAxis_2_collihbi, 0, 128, 4, 0, 4, 64, 1, 256</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln80_10_fu_312_p2">+, 0, 0, 32, 2, 32</column>
+<column name="add_ln80_11_fu_318_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_12_fu_359_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_13_fu_375_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_14_fu_416_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_15_fu_438_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_16_fu_479_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_17_fu_501_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln80_fu_296_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln84_fu_267_p2">+, 0, 0, 3, 2, 1</column>
+<column name="i_fu_530_p2">+, 0, 0, 4, 3, 1</column>
+<column name="icmp_ln138_fu_524_p2">icmp, 0, 0, 2, 3, 4</column>
+<column name="icmp_ln84_fu_278_p2">icmp, 0, 0, 1, 2, 2</column>
+<column name="or_ln133_1_fu_391_p2">or, 0, 0, 64, 64, 64</column>
+<column name="or_ln133_2_fu_454_p2">or, 0, 0, 64, 64, 64</column>
+<column name="or_ln133_3_fu_517_p2">or, 0, 0, 64, 64, 64</column>
+<column name="or_ln133_fu_334_p2">or, 0, 0, 64, 64, 64</column>
+<column name="or_ln80_1_fu_410_p2">or, 0, 0, 32, 32, 2</column>
+<column name="or_ln80_2_fu_432_p2">or, 0, 0, 32, 32, 1</column>
+<column name="or_ln80_3_fu_473_p2">or, 0, 0, 32, 32, 2</column>
+<column name="or_ln80_4_fu_495_p2">or, 0, 0, 32, 32, 2</column>
+<column name="or_ln80_fu_353_p2">or, 0, 0, 32, 32, 1</column>
+<column name="returnCollisions_fu_541_p2">or, 0, 0, 64, 64, 64</column>
+<column name="shl_ln132_1_fu_369_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln132_2_fu_426_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln132_3_fu_489_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln132_fu_306_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln133_1_fu_385_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln133_2_fu_448_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln133_3_fu_511_p2">shl, 0, 0, 182, 1, 64</column>
+<column name="shl_ln133_fu_328_p2">shl, 0, 0, 182, 1, 64</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">9, 21, 1, 21</column>
+<column name="ap_return">3, 2, 64, 128</column>
+<column name="collisions_address0">4, 7, 2, 14</column>
+<column name="collisions_d0">4, 6, 64, 384</column>
+<column name="grp_lineIntersectsPlane_fu_192_plane">4, 5, 32, 160</column>
+<column name="i_1_reg_181">3, 2, 3, 6</column>
+<column name="phi_ln84_reg_158">3, 2, 2, 4</column>
+<column name="returnCollisions_0_reg_169">3, 2, 64, 128</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">20, 0, 20, 0</column>
+<column name="ap_return_preg">64, 0, 64, 0</column>
+<column name="grp_lineIntersectsPlane_fu_192_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_pointOnSegment_fu_207_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_1_reg_181">3, 0, 3, 0</column>
+<column name="i_reg_610">3, 0, 3, 0</column>
+<column name="phi_ln84_reg_158">2, 0, 2, 0</column>
+<column name="reg_242">32, 0, 32, 0</column>
+<column name="reg_248">32, 0, 32, 0</column>
+<column name="reg_254">32, 0, 32, 0</column>
+<column name="reg_259">32, 0, 32, 0</column>
+<column name="reg_263">32, 0, 32, 0</column>
+<column name="returnCollisions_0_reg_169">64, 0, 64, 0</column>
+<column name="tmp_45_1_reg_595">1, 0, 1, 0</column>
+<column name="tmp_45_2_reg_599">1, 0, 1, 0</column>
+<column name="tmp_45_3_reg_603">1, 0, 1, 0</column>
+<column name="tmp_s_reg_591">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="ap_return">out, 64, ap_ctrl_hs, checkAxis.1, return value</column>
+<column name="edge_p1_x">in, 32, ap_none, edge_p1_x, scalar</column>
+<column name="edge_p1_y">in, 32, ap_none, edge_p1_y, scalar</column>
+<column name="edge_p1_z">in, 32, ap_none, edge_p1_z, scalar</column>
+<column name="edge_p2_x">in, 32, ap_none, edge_p2_x, scalar</column>
+<column name="edge_p2_y">in, 32, ap_none, edge_p2_y, scalar</column>
+<column name="edge_p2_z">in, 32, ap_none, edge_p2_z, scalar</column>
+</table>
+</item>
+</section>
+</profile>
