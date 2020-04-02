@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 12:59:19
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 20:13:57
+* @Last Modified time: 2020-03-31 14:48:16
 */
 #include "honeybee.h"
 
@@ -170,3 +170,13 @@ Dout_t honeybee(edge_t edge) {
     collisions = (collisions_z | collisions_y) | collisions_x;
     return collisions;
 }
+
+// ONLY FOR COMPILING INTO RV32I
+// int main(int argc, char* argv[]) {
+//     honeybee(
+//         (edge_t) {
+//             .p1 = (point_t) {.x=0.5, .y=0.5, .z=0.5},
+//             .p2 = (point_t) {.x=2.5, .y=1.5, .z=3.5},
+//         });
+//     return 0;
+// }

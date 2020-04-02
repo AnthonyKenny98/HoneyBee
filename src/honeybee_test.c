@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-02-20 13:00:48
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-03-30 21:09:32
+* @Last Modified time: 2020-03-31 20:41:58
 */
 
 #include "honeybee.h"
@@ -52,16 +52,18 @@ int main(int argc, char* argv[]) {
     float total = 0;
     
     for (i=0; i<NUM_EDGES; i++) { 
-        // Call HoneyBee
         start = clock();
+        // Call HoneyBee
         result = honeybee(edges[i]);
         finish = clock();
         total += (float)(finish - start) / (CLOCKS_PER_SEC / 1000000);
     }
-    
+
     // Print Results
     printf("********************************************\n");
-    printf("HoneyBee Test completed with in %f us (avg = %f us)\n", total, total/NUM_EDGES);
+    printf("HoneyBee Test completed with in %f us \n", total);
+    printf("Average Latency = %f us \n", total/NUM_EDGES);
+    printf("Average Throughput = %f edges/sec \n", NUM_EDGES/total*1000000);
     printBinary(result);
     printf("\n************************************************\n");
     return 0;
