@@ -1,8 +1,8 @@
-solution,latency,lut,color
-HBA,666,10593,red
-HBB,226,31539,red
-HBD,213,21943,red
-HBE,205,26524,red
-HBF,214,30475,red
-HBG,218,26191,red
-HBH,53,185663,red
+solution,iteration,latency,lut,color
+HoneyBee-A,HB-A,666,10593,red
+HoneyBee-B,1,226,31539,yellow
+HoneyBee-B,2,213,21943,yellow
+HoneyBee-B,3,205,26524,yellow
+HoneyBee-B,4,214,30475,yellow
+HoneyBee-B,5,218,26191,yellow
+HoneyBee-C,HB-C,53,185663,green

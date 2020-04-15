@@ -3,16 +3,16 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-03-30 06:23:57
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-03-30 10:04:59
+# @Last Modified time: 2020-04-08 18:17:35
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-FIGSIZE = (15, 10)
-TITLE_FONTSIZE = 24
-SUBTITLE_FONTSIZE = 18
+FIGSIZE = (20, 10)
+TITLE_FONTSIZE = 30
+SUBTITLE_FONTSIZE = 20
 LEGEND_FONTSIZE = 14
-AXIS_FONTSIZE = 18
+AXIS_FONTSIZE = 26
 TICK_LABEL_FONTSIZE = 14
 FRAMEON = True
 
